@@ -1,83 +1,124 @@
-# blackspike astro landing page
+# BlackSpike Company Landing Page
 
-[<img src="public/theme-preview/github-preview.jpg" alt="screens showing theme parts on iPads" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/github-preview.jpg)
+A modern, responsive landing page built with Astro and Tailwind CSS for our provisional company website.
 
-## A free, modern, [Astro](https://astro.build/) landing page theme made with [Tailwind](https://tailwindcss.com/) to help kick start your next Astro project
+## About This Document
 
-We built this page as the first version of our own website, [blackspike.com](https://www.blackspike.com), but switched to a different design later.
+**IMPORTANT: This file contains instructions and context for AI to work on the website. It must always be taken into account when making changes or additions to the codebase.**
 
-Rather than let it gather dust, we decided to modernise it, try out some fresh new CSS features and give it back to the Astro community.
+This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
 
-You can read more about how we built it and the cool new tech we used [on our blog post](https://www.blackspike.com/blog/blackspike-free-astro-tailwind-theme/).
+## Project Description
 
-Now available as an official Astro theme! [Download it from the Astro themes page](https://astro.build/themes/details/blackspike-astro-landing-page/)
+This is our provisional company landing page built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for our specific business needs while maintaining the modern design and performance optimizations of the original theme.
 
-## Live demo https://astro-theme.blackspike.com
+## Roadmap
 
-We hope you find it useful!
+### Phase 1: Installation & Setup ✅ COMPLETED
+- [x] Project initialization with Astro 5
+- [x] Tailwind CSS 4 integration
+- [x] Sharp image optimization installation
+- [x] Netlify deployment configuration
+- [x] GitHub integration for automatic deployments
+- [x] Build process optimization
+- [x] Static site generation setup
 
-## License
+### Phase 2: Form Management 🚧 IN PROGRESS
+- [ ] Contact form component implementation
+- [ ] Form validation and error handling
+- [ ] Netlify Forms integration
+- [ ] Email notification setup
+- [ ] Spam protection (reCAPTCHA/honeypot)
+- [ ] Form submission success/error states
+- [ ] Mobile-responsive form design
+- [ ] Form accessibility improvements
 
-Theme and 3D images are licensed under a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/).
+### Phase 3: Content Customization 📋 PLANNED
+- [ ] Company information and branding updates
+- [ ] Service offerings content
+- [ ] Team member profiles
+- [ ] Case studies and portfolio items
+- [ ] Testimonials and client reviews
+- [ ] Blog section setup (if needed)
+- [ ] Legal pages (Privacy Policy, Terms of Service)
+- [ ] Custom imagery and graphics
+- [ ] Content SEO optimization
 
-Created by blackspike [blackspike design](https://www.blackspike.com) – a web design & development team specialising in Astro, Vue, Nuxt & Wordpress websites
+### Phase 4: Refine and Go Live 🎯 FUTURE
+- [ ] SEO meta tags and structured data
+- [ ] Performance optimization and Core Web Vitals
+- [ ] Analytics integration (Google Analytics, etc.)
+- [ ] Social media meta tags
+- [ ] Custom domain setup
+- [ ] SSL certificate verification
+- [ ] 404 page customization
+- [ ] Search engine submission
+- [ ] Final testing and quality assurance
 
-## Astro 5 Features
+## Tech Stack
 
-- [Image component](https://docs.astro.build/en/guides/images/#display-optimized-images-with-the-image--component) for optimised AVIF images
-- All-[JSX](https://docs.astro.build/en/reference/astro-syntax/) native astro components
-- SVGs imported as [SVG components](https://docs.astro.build/en/guides/images/#svg-components)
-- JSON-powered content (easy to edit UI text or hook up a CMS!)
-- Experimental [Fonts API](https://docs.astro.build/en/reference/experimental-flags/fonts/)
+### Core Technologies
+- **Astro 5** - Static site generator with JSX support
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Sharp** - High-performance image processing
+- **Swiper.js** - Touch slider for carousels
 
-## CSS & HTML Features
+### Development Features
+- **Image Optimization** - AVIF format support with automatic optimization
+- **Font Loading** - Local Inter font with CSS variables
+- **Container Queries** - Modern CSS layout features
+- **CSS Animations** - JS-free scroll-linked animations
+- **Accordions** - Native HTML details/summary with animations
 
-- [Tailwind 4](https://tailwindcss.com/blog/tailwindcss-v4)
-- HTML modal dialog
-- JS-free scroll-linked animations
-- JS-free exclusive accordions with details/summary (animated!)
-- Container queries
-- Linear easing for bouncing / springing
-- Text wrap pretty / balance
+### Deployment
+- **Netlify** - Static hosting with automatic deployments
+- **GitHub Integration** - Continuous deployment from repository
+- **Build Process** - `npm run build` generates optimized static files
+- **Node.js 18** - LTS version for stability
 
-## JS Features
+## Deployment Instructions
 
-- [swiper.js](https://swiperjs.com/) carousel
+### Prerequisites
+- Node.js 18+ installed
+- Git repository connected to GitHub
+- Netlify account
 
-## Previews
+### Local Development
+```bash
+npm install
+npm run dev
+```
 
-[<img src="public/theme-preview/blackspike-theme-1.jpg" alt="screenshot of dark theme landing page on desktop and on ipad browsers" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-1.jpg)
+### Production Build
+```bash
+npm run build
+npm run preview
+```
 
-[<img src="public/theme-preview/blackspike-theme-2.jpg" alt="screenshot of dark theme carousel slides with 3D backgrounds" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-2.jpg)
+### Netlify Deployment
+1. Connect your GitHub repository to Netlify
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. Automatic deployments on every push to main branch
 
-[<img src="public/theme-preview/blackspike-theme-4.jpg" alt="screens showing theme parts" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-4.jpg)
+### Environment Variables
+No environment variables required for current setup. Form handling will require Netlify Forms configuration in Phase 2.
 
-[<img src="public/theme-preview/blackspike-theme-5.jpg" alt="dark theme pricing section on laptop and iPhone browsers" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-5.jpg)
-
-[<img src="public/theme-preview/blackspike-theme-full.webp" alt="full page preview" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-full.webp)
+## File Structure
+```
+src/
+├── components/     # Astro components
+├── data/          # JSON content files
+├── layouts/       # Page layouts
+├── pages/         # Route pages
+└── assets/        # CSS, fonts, images
+```
 
 ## Credits
 
-- Fake logos by [uicontent.co](https://uicontent.co/svg-dummy-logo/)
-- Quote avatar person by [thispersondoesnotexist.com](https://thispersondoesnotexist.com/)
-- Misc icons and logo from [icones.js.org](https://icones.js.org/) by [@antfu](https://github.com/antfu)
-- Carousel powered by [swiperjs.com](https://swiperjs.com/)
-- Inter font by [rsms.me](https://rsms.me/inter/)
+Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/) by blackspike design. Original theme licensed under Creative Commons Attribution 4.0 International Public License.
 
-## Tags
+---
 
-#tailwind #tailwind4 #astro #landingPage #css #html #swiper #dark #theme
-
-## Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Last Updated:** Phase 1 completed - Ready for Phase 2 development
 
