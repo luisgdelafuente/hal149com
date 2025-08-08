@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
+import netlify from '@astrojs/netlify/functions'
 
 export default defineConfig({
-  // For local middleware testing, uncomment this line:
-  // output: 'server',
+  output: 'server',
+  adapter: netlify(),
   vite: {
     plugins: [tailwindcss()]
   },

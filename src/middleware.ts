@@ -21,16 +21,31 @@ function isBot(userAgent: string | null): boolean {
 
 function parseAcceptLanguage(header: string | null): 'en' | 'es' | null {
   if (!header) return null;
-  // Simple parse: prioritize first language
-  const first = header.split(',')[0]?.trim().toLowerCase();
-  if (!first) return null;
-  if (first.startsWith('es')) return 'es';
-  if (first.startsWith('en')) return 'en';
+  
+  // Parse Accept-Language header more thoroughly
+  const languages = header.split(',').map(lang => {
+    const [language, quality = '1'] = lang.trim().split(';q=');
+    return { language: language.toLowerCase(), quality: parseFloat(quality) };
+  });
+  
+  // Sort by quality (highest first)
+  languages.sort((a, b) => b.quality - a.quality);
+  
+  // Check for Spanish first (es, es-ES, es-MX, etc.)
+  for (const { language } of languages) {
+    if (language.startsWith('es')) return 'es';
+  }
+  
+  // Check for English
+  for (const { language } of languages) {
+    if (language.startsWith('en')) return 'en';
+  }
+  
   return null;
 }
 
 export const onRequest: MiddlewareHandler = async (context, next) => {
-  const { request, redirect } = context;
+  const { request } = context;
   const url = new URL(request.url);
   const pathname = url.pathname;
 
@@ -45,6 +60,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
 
   const cookie = request.headers.get('cookie') || '';
   const cookieLang = /(?:^|;\s*)lang=(en|es)/.exec(cookie)?.[1] as 'en' | 'es' | undefined;
+  const acceptLanguage = request.headers.get('accept-language');
 
   // Persist cookie when already on a localized page
   if (pathname.startsWith('/es')) {
@@ -59,7 +75,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
 
   // Only consider redirecting from the root path '/'
   if (pathname === '/') {
-    const preferred = cookieLang || parseAcceptLanguage(request.headers.get('accept-language')) || 'en';
+    const preferred = cookieLang || parseAcceptLanguage(acceptLanguage) || 'en';
 
     if (preferred === 'es') {
       // Set cookie and redirect to Spanish home
