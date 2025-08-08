@@ -1,8 +1,12 @@
 ---
 
 import Logo from '../assets/theme-images/logo.svg'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 const { settings } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 ---
 
@@ -12,7 +16,7 @@ const { settings } = Astro.props
   <div class="bs-container py-6 flex justify-between items-center">
 
     <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href="/" aria-label={ settings.title + ' - Home' }>
+    <a class="flex xl:min-w-32 group" href={lang === 'en' ? '/' : '/es/'} aria-label={ settings.title + ' - Home' }>
 
       <Logo class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="48" width="48" />
 
@@ -24,7 +28,7 @@ const { settings } = Astro.props
       <!-- Links -->
       { settings.nav.map( item =>
 
-        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={item.link}>
+        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={lang === 'en' ? item.link : item.link.replace(/^\//, '/es/')}>
           { item.title }
         </a>
 
@@ -32,12 +36,20 @@ const { settings } = Astro.props
 
     </nav>
 
-    <!-- CTA -->
-    <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
+    <!-- Language Switcher and CTA -->
+    <div class="flex items-center gap-4">
+      
+      <!-- Language Switcher -->
+      <LanguageSwitcher />
 
-      { settings.demo.title }
+      <!-- CTA -->
+      <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
 
-    </button>
+        { settings.demo.title }
+
+      </button>
+
+    </div>
 
   </div>
 

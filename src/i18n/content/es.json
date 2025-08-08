@@ -1,0 +1,77 @@
+{
+  "global_settings": {
+    "title": "blackspike página de aterrizaje astro",
+    "description": "Un tema gratuito de Astro landing hecho con Tailwind",
+    "social_image": "/1200x630.jpg",
+    "base_url": "https://astro-theme.blackspike.com",
+    "demo": {
+      "title": "¿Necesitas diseño?",
+      "content": "<strong>Obtén un recorrido guiado por nuestros servicios</strong>, y descubre cómo tú y tu equipo pueden cambiar la forma en que trabajan, para siempre.",
+      "cta": "Reservar llamada"
+    },
+    "theme_color": "#18181b",
+    "nav": [
+      {
+        "title": "Servicios",
+        "link": "/#services"
+      },
+      {
+        "title": "Casos de estudio",
+        "link": "/#case-studies"
+      },
+      {
+        "title": "Precios",
+        "link": "/#pricing"
+      },
+      {
+        "title": "Preguntas frecuentes",
+        "link": "/#faq"
+      },
+      {
+        "title": "Boletín",
+        "link": "/#newsletter"
+      }
+    ],
+    "social_links": [
+      {
+        "title": "Twitter / X",
+        "link": "https://x.com/blackspikeltd/"
+      },
+      {
+        "title": "Mastodon",
+        "link": "https://mastodon.cloud/@blackspike"
+      },
+      {
+        "title": "GitHub",
+        "link": "https://github.com/blackspike/"
+      },
+      {
+        "title": "LinkedIn",
+        "link": "https://www.linkedin.com/company/blackspike"
+      },
+      {
+        "title": "Bluesky",
+        "link": "https://bsky.app/profile/blackspike.com/"
+      }
+    ]
+  },
+  "home": {
+    "hero_title": "blackspike página de aterrizaje astro",
+    "hero_content": "<p><strong>Un tema gratuito de Astro landing hecho con Tailwind</strong> para ayudar a iniciar tu sitio web Astro.</p><p>Usa características modernas de CSS y HTML para mayor velocidad, además de un elegante carrusel swiper. Todo en Astro JSX.</p>",
+    "services_title": "Nuestros servicios",
+    "clients_title": "Confiado por grandes empresas",
+    "testimonials_title": "Los clientes ♥ nos aman",
+    "case_studies_title": "Casos de estudio",
+    "pricing_title": "Hacemos retención de diseño",
+    "quote_content": "Esta <strong>agencia de diseño</strong> es un <strong>cambio de juego</strong>. Su <strong>visión creativa</strong>, <strong>enfoque centrado en el usuario</strong>, y <strong>colaboración fluida</strong> han <strong>transformado</strong> la forma en que <strong>construimos nuestra marca</strong>. No es <strong>solo una agencia</strong> — es un <strong>poderoso socio</strong> que <strong>entrega resultados reales</strong>.",
+    "quote_cite": "Sean Higgins",
+    "quote_role": "CTO, Interia",
+    "quote_image": "/content-images/quote-man.avif",
+    "faq_title": "Preguntas Frecuentes"
+  },
+  "newsletter": {
+    "title": "Mantente informado",
+    "content": "Obtén las últimas actualizaciones sobre nuestros servicios e información del sector.",
+    "cta": "Suscribirse"
+  }
+}

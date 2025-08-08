@@ -23,7 +23,24 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - [x] Build process optimization
 - [x] Static site generation setup
 
-### Phase 2: Form Management 🚧 IN PROGRESS
+### Phase 2: Language Management 🌐 COMPLETED
+- [x] Astro i18n integration setup
+- [x] Language detection and routing configuration
+- [x] URL structure setup (/en/, /es/, /)
+- [x] Translation files structure (JSON/YAML)
+- [x] Component internationalization (i18n)
+- [x] Language switcher component
+- [x] SEO-friendly language URLs
+- [x] Meta tags for multiple languages
+- [x] Font loading optimization for different languages
+- [x] Content translation (English/Spanish)
+- [x] Date and number formatting per locale
+- [x] RTL support preparation (if needed)
+- [x] Language-specific sitemap generation
+- [x] hreflang tags implementation
+- [x] Language detection middleware
+
+### Phase 3: Form Management 📋 PLANNED
 - [ ] Contact form component implementation
 - [ ] Form validation and error handling
 - [ ] Netlify Forms integration
@@ -32,8 +49,10 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - [ ] Form submission success/error states
 - [ ] Mobile-responsive form design
 - [ ] Form accessibility improvements
+- [ ] Multilingual form labels and messages
+- [ ] Language-specific form validation messages
 
-### Phase 3: Content Customization 📋 PLANNED
+### Phase 4: Content Customization 📋 PLANNED
 - [ ] Company information and branding updates
 - [ ] Service offerings content
 - [ ] Team member profiles
@@ -43,8 +62,9 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - [ ] Legal pages (Privacy Policy, Terms of Service)
 - [ ] Custom imagery and graphics
 - [ ] Content SEO optimization
+- [ ] Multilingual content management
 
-### Phase 4: Refine and Go Live 🎯 FUTURE
+### Phase 5: Refine and Go Live 🎯 FUTURE
 - [ ] SEO meta tags and structured data
 - [ ] Performance optimization and Core Web Vitals
 - [ ] Analytics integration (Google Analytics, etc.)
@@ -54,6 +74,7 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - [ ] 404 page customization
 - [ ] Search engine submission
 - [ ] Final testing and quality assurance
+- [ ] Multilingual SEO optimization
 
 ## Tech Stack
 
@@ -69,6 +90,7 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - **Container Queries** - Modern CSS layout features
 - **CSS Animations** - JS-free scroll-linked animations
 - **Accordions** - Native HTML details/summary with animations
+- **Internationalization** - Multi-language support (English/Spanish)
 
 ### Deployment
 - **Netlify** - Static hosting with automatic deployments
@@ -102,17 +124,47 @@ npm run preview
 4. Automatic deployments on every push to main branch
 
 ### Environment Variables
-No environment variables required for current setup. Form handling will require Netlify Forms configuration in Phase 2.
+No environment variables required for current setup. Form handling will require Netlify Forms configuration in Phase 3.
 
 ## File Structure
 ```
 src/
-├── components/     # Astro components
-├── data/          # JSON content files
-├── layouts/       # Page layouts
-├── pages/         # Route pages
-└── assets/        # CSS, fonts, images
+├── components/           # Astro components
+│   └── LanguageSwitcher.astro
+├── data/                 # JSON content files
+├── i18n/                 # Internationalization files
+│   ├── content/          # Language-specific content
+│   │   ├── en.json
+│   │   └── es.json
+│   ├── ui.ts             # UI translations (strings/labels)
+│   └── utils.ts          # i18n helpers (getLangFromUrl, createHref, etc.)
+├── layouts/              # Page layouts
+├── pages/                # Route pages
+│   └── es/               # Spanish pages
+└── assets/               # CSS, fonts, images
 ```
+
+## Internationalization (i18n)
+
+The site now supports multiple languages with the following structure:
+
+- **English (Default)**: `/` - Canonical version
+- **Spanish**: `/es/` - Spanish version
+
+### Features Implemented:
+- ✅ Language detection from URL
+- ✅ Language switcher component in header
+- ✅ SEO-friendly URLs with proper hreflang tags
+- ✅ Canonical URLs pointing to English version
+- ✅ Open Graph meta tags with locale
+- ✅ Content translation system
+- ✅ Fallback to English content if translation missing
+
+### URL Structure:
+- Homepage (English): `https://yoursite.com/`
+- Homepage (Spanish): `https://yoursite.com/es/`
+- Credits (English): `https://yoursite.com/credits/`
+- Credits (Spanish): `https://yoursite.com/es/credits/`
 
 ## Credits
 
@@ -120,5 +172,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 1 completed - Ready for Phase 2 development
+**Last Updated:** Phase 2 completed - Ready for Phase 3 (Form Management) development
 

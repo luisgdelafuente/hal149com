@@ -11,37 +11,63 @@ import { Font } from 'astro:assets';
 import Image from "astro/components/Image.astro"
 import bg_image from "../assets/theme-images/hero-image.jpg"
 
-import global_settings from "../data/global_settings.json"
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 import DialogModal from "../components/DialogModal.astro"
 import FooterMain from "../components/FooterMain.astro"
 import HeaderMain from "../components/HeaderMain.astro"
 
+import global_settings from "../data/global_settings.json"
+
 const { title, description } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Try to load i18n content, fallback to original
+let i18nContent;
+try {
+  i18nContent = await import(`../i18n/content/${lang}.json`);
+} catch (error) {
+  console.warn(`Could not load i18n content for ${lang}, using fallback`);
+}
+
+// Use i18n content if available, otherwise use original
+const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
 ---
 
-<html lang="en">
+<html lang={lang}>
 
   <head>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>{ title ?? global_settings.title }</title>
+    <title>{ title ?? globalSettings.title }</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <meta name="description" content={ description ?? global_settings.description } />
-    <meta name="theme-color" content={ global_settings.theme_color } />
+    <meta name="description" content={ description ?? globalSettings.description } />
+    <meta name="theme-color" content={ globalSettings.theme_color } />
 
-    <meta property="og:title" content={ title ?? global_settings.title } />
-    <meta property="og:description" content={ description ?? global_settings.description } />
+    <!-- Open Graph -->
+    <meta property="og:title" content={ title ?? globalSettings.title } />
+    <meta property="og:description" content={ description ?? globalSettings.description } />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
     <meta
       property="og:image"
-      content={ global_settings.base_url + global_settings.social_image }
+      content={ globalSettings.base_url + globalSettings.social_image }
     />
+
+    <!-- hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
+    <link rel="alternate" hreflang="es" href={Astro.url.origin + (Astro.url.pathname.startsWith('/es') ? Astro.url.pathname : '/es' + Astro.url.pathname)} />
+    <link rel="alternate" hreflang="x-default" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.origin + (lang === 'en' ? Astro.url.pathname : Astro.url.pathname.replace(/^\/es/, ''))} />
 
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-display" preload />
@@ -51,13 +77,13 @@ const { title, description } = Astro.props
   <body id="top">
 
     <!-- Skip link -->
-    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">Skip to content</a>
+    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">{t('skip.content')}</a>
 
     <!-- bg image -->
     <Image src={ bg_image } alt="" format="avif" height={1080} width={1920} class="absolute min-h-svh object-cover inset-0 bottom-auto -z-1 w-full h-auto opacity-20 mask-b-from-50%" loading="eager" />
 
     <!-- Header -->
-    <HeaderMain settings={ global_settings } />
+    <HeaderMain settings={ globalSettings } />
 
     <!-- Main slot -->
     <main id="main">
@@ -65,10 +91,10 @@ const { title, description } = Astro.props
     </main>
 
     <!-- Footer -->
-    <FooterMain settings={ global_settings } />
+    <FooterMain settings={ globalSettings } />
 
     <!-- Demo dialog modal -->
-    <DialogModal id="demo" content={ global_settings.demo }>
+    <DialogModal id="demo" content={ globalSettings.demo }>
 
   </body>
 </html>

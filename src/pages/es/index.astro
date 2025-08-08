@@ -1,29 +1,29 @@
 ---
 
-import Layout from "../layouts/Layout.astro"
+import Layout from "../../layouts/Layout.astro"
 
-import CaseStudiesSection from "../components/CaseStudiesSection.astro"
-import ClientsSection from "../components/ClientsSection.astro"
-import FaqSection from "../components/FaqSection.astro"
-import ServicesCarousel from "../components/ServicesCarousel.astro"
-import HeroSection from "../components/HeroSection.astro"
-import NewsletterSection from "../components/NewsletterSection.astro"
-import PricingSection from "../components/PricingSection.astro"
-import QuoteSection from "../components/QuoteSection.astro"
-import TestimonialsSection from "../components/TestimonialsSection.astro"
+import CaseStudiesSection from "../../components/CaseStudiesSection.astro"
+import ClientsSection from "../../components/ClientsSection.astro"
+import FaqSection from "../../components/FaqSection.astro"
+import ServicesCarousel from "../../components/ServicesCarousel.astro"
+import HeroSection from "../../components/HeroSection.astro"
+import NewsletterSection from "../../components/NewsletterSection.astro"
+import PricingSection from "../../components/PricingSection.astro"
+import QuoteSection from "../../components/QuoteSection.astro"
+import TestimonialsSection from "../../components/TestimonialsSection.astro"
 
-import { getLangFromUrl } from '../i18n/ui';
+import { getLangFromUrl } from '../../i18n/ui';
 
 // Import existing JSON data
-import caseStudies from "../data/case_studies.json"
-import clients from "../data/clients.json"
-import faq from "../data/faq.json"
-import services from "../data/services.json"
-import pricing from "../data/pricing.json"
-import testimonials from "../data/testimonials.json"
-import home from "../data/home.json"
-import global_settings from "../data/global_settings.json"
-import newsletter from "../data/newsletter.json"
+import caseStudies from "../../data/case_studies.json"
+import clients from "../../data/clients.json"
+import faq from "../../data/faq.json"
+import services from "../../data/services.json"
+import pricing from "../../data/pricing.json"
+import testimonials from "../../data/testimonials.json"
+import home from "../../data/home.json"
+import global_settings from "../../data/global_settings.json"
+import newsletter from "../../data/newsletter.json"
 
 // Load content based on language
 const lang = getLangFromUrl(Astro.url);
@@ -31,7 +31,7 @@ const lang = getLangFromUrl(Astro.url);
 // Try to load i18n content, fallback to original
 let i18nContent;
 try {
-  i18nContent = await import(`../i18n/content/${lang}.json`);
+  i18nContent = await import(`../../i18n/content/${lang}.json`);
 } catch (error) {
   console.warn(`Could not load i18n content for ${lang}, using fallback`);
 }

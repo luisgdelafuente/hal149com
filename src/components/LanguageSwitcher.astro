@@ -1,0 +1,77 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="language-switcher">
+  <button
+    id="language-toggle"
+    class="bs-btn rounded-full !p-2 flex items-center justify-center h-10 w-10"
+    aria-label="Toggle language"
+    aria-expanded="false"
+  >
+    <span class="text-sm font-semibold">{lang.toUpperCase()}</span>
+  </button>
+  
+  <div
+    id="language-menu"
+    class="absolute top-full right-0 mt-2 bg-bs-surface-0 border border-bs-surface-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-200 z-50"
+    role="menu"
+    aria-labelledby="language-toggle"
+  >
+    <a
+      href="/"
+      class:list={[
+        'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
+        { 'bg-bs-surface-1': lang === 'en' }
+      ]}
+      role="menuitem"
+    >
+      English
+    </a>
+    <a
+      href="/es/"
+      class:list={[
+        'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
+        { 'bg-bs-surface-1': lang === 'es' }
+      ]}
+      role="menuitem"
+    >
+      Español
+    </a>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('language-toggle');
+  const menu = document.getElementById('language-menu');
+  
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', (!isExpanded).toString());
+      
+      if (isExpanded) {
+        menu.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        menu.classList.remove('opacity-0', 'pointer-events-none');
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+  }
+</script>
+
+<style>
+  .language-switcher {
+    position: relative;
+  }
+</style>

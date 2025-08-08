@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  // For local middleware testing, uncomment this line:
+  // output: 'server',
   vite: {
     plugins: [tailwindcss()]
   },
