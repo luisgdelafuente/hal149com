@@ -23,6 +23,7 @@ const t = useTranslations(lang);
   >
     <a
       href="/"
+      data-lang="en"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
         { 'bg-bs-surface-1': lang === 'en' }
@@ -33,6 +34,7 @@ const t = useTranslations(lang);
     </a>
     <a
       href="/es/"
+      data-lang="es"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
         { 'bg-bs-surface-1': lang === 'es' }
@@ -47,6 +49,7 @@ const t = useTranslations(lang);
 <script>
   const toggle = document.getElementById('language-toggle');
   const menu = document.getElementById('language-menu');
+  const links = menu?.querySelectorAll('a[data-lang]') as NodeListOf<HTMLAnchorElement> | undefined;
   
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
@@ -67,6 +70,20 @@ const t = useTranslations(lang);
         menu.classList.add('opacity-0', 'pointer-events-none');
       }
     });
+
+    // Ensure language cookie is set before navigating
+    if (links) {
+      links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const lang = link.getAttribute('data-lang');
+          if (!lang) return;
+          e.preventDefault();
+          // Persist language preference for 1 year
+          document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`;
+          window.location.assign(link.href);
+        });
+      });
+    }
   }
 </script>
 
