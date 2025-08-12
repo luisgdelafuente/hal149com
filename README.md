@@ -98,6 +98,60 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - **Build Process** - `npm run build` generates optimized static files
 - **Node.js 18** - LTS version for stability
 
+## Challenges & Solutions
+
+### Netlify Forms Integration Challenge
+
+During Phase 3 implementation, we encountered a significant challenge with Netlify Forms integration. The original form implementation wasn't being detected by Netlify's form processing system, preventing form submissions from being processed correctly.
+
+#### The Problem
+- Netlify Forms requires specific HTML structure and attributes to auto-detect forms
+- Our dynamic modal-based form wasn't being recognized by Netlify's build-time form detection
+- Form submissions were failing silently without proper error handling
+- The multilingual form implementation added complexity to the detection process
+
+#### The Solution
+We implemented a comprehensive solution using a **dual-form approach**:
+
+1. **Hidden Static Form**: Added a hidden form with `data-netlify="true"` attribute that Netlify can detect during build time
+2. **Dynamic Modal Form**: Enhanced the existing `DialogModal.astro` component with proper Netlify attributes
+3. **Form Synchronization**: Implemented JavaScript to sync data between the hidden and visible forms
+4. **Multilingual Support**: Added language-specific form handling and validation messages
+
+#### Technical Implementation Details
+
+**Hidden Form Structure:**
+```html
+<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+  <input type="text" name="bot-field" />
+</form>
+```
+
+**Dynamic Form Enhancement:**
+- Added `data-netlify="true"` and `data-netlify-honeypot="bot-field"` attributes
+- Implemented proper form action and method attributes
+- Added honeypot field for spam protection
+- Enhanced accessibility with proper ARIA labels and focus management
+
+**Form Synchronization:**
+- JavaScript function to copy data from modal form to hidden form before submission
+- Proper error handling and user feedback
+- Multilingual success/error messages
+- Form validation with localized error messages
+
+#### Results
+- ✅ Netlify Forms now properly detects and processes form submissions
+- ✅ Email notifications configured and working
+- ✅ Spam protection via honeypot field
+- ✅ Multilingual form support (English/Spanish)
+- ✅ Proper accessibility and user experience
+- ✅ Form validation with localized error messages
+
+This solution ensures reliable form processing while maintaining the modern, dynamic user experience of our modal-based contact form.
+
 ## Deployment Instructions
 
 ### Prerequisites
