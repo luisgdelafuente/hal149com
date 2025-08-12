@@ -9,4 +9,17 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+
+# Form handling
+[[redirects]]
+  from = "/"
+  to = "/thank-you/"
+  status = 302
+  conditions = {Role = ["admin"]}
+
+# Handle form submissions
+[forms]
+  [forms.contact]
+    name = "Contact Form"
+    honeypot = "bot-field" 

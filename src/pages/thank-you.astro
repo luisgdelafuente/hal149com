@@ -1,0 +1,45 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<Layout title={t('thank-you.title')} description={t('thank-you.description')}>
+
+  <section class="bs-container py-24 text-center">
+    
+    <div class="max-w-2xl mx-auto">
+      
+      <!-- Success Icon -->
+      <div class="mb-8">
+        <svg class="w-16 h-16 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+
+      <!-- Title -->
+      <h1 class="bs-h1 mb-6">
+        {t('thank-you.title')}
+      </h1>
+
+      <!-- Message -->
+      <div class="bs-body-text xl:text-xl mb-8">
+        <p>{t('thank-you.message')}</p>
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="flex gap-4 justify-center">
+        <a href={lang === 'en' ? '/' : '/es/'} class="bs-btn">
+          {t('thank-you.back-home')}
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+</Layout>
