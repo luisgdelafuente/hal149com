@@ -96,18 +96,79 @@ const t = useTranslations(lang);
 
   </form>
 
+  <!-- Thank you message (hidden by default) -->
+  <div id="thank-you-message" class="hidden flex flex-col gap-6 items-center text-center">
+    
+    <!-- Success Icon -->
+    <div class="mb-4">
+      <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+
+    <!-- Thank you title -->
+    <h2 class="text-2xl font-bold">
+      {t('thank-you.title')}
+    </h2>
+
+    <!-- Thank you message -->
+    <div class="bs-body-text">
+      <p>{t('thank-you.message')}</p>
+    </div>
+
+    <!-- Close button -->
+    <button 
+      type="button"
+      onclick="this.closest('dialog').close('close')" 
+      class="bs-btn"
+    >
+      {t('close')}
+    </button>
+
+  </div>
+
 </dialog>
 
-<script>
-  // Simple form submission handling
+<script define:vars={{ t }}>
+  // Form submission handling with thank you message
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
     
-    if (!form) return;
+    if (!form || !thankYouMessage) return;
 
     form.addEventListener('submit', function(e) {
-      // Let the form submit normally to Netlify
-      // Netlify will handle the submission and redirect
+      e.preventDefault();
+      
+      // Submit form data to Netlify
+      const formData = new FormData(form);
+      
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          // Hide form and show thank you message
+          form.style.display = 'none';
+          thankYouMessage.classList.remove('hidden');
+          
+          // Close modal after 3 seconds
+          setTimeout(() => {
+            const dialog = document.getElementById('demo');
+            dialog?.close();
+            // Reset form for next time
+            form.reset();
+            form.style.display = 'flex';
+            thankYouMessage.classList.add('hidden');
+          }, 3000);
+        }
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        // You could show an error message here if needed
+      });
     });
   });
 </script>
