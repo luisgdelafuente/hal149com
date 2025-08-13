@@ -51,6 +51,9 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
 - [x] Form accessibility improvements (proper labels, ARIA attributes, focus management)
 - [x] Multilingual form labels and messages (English/Spanish support)
 - [x] Language-specific form validation messages (localized error messages)
+ - [x] Newsletter subscription form integration (distinct Netlify form: `newsletter`)
+ - [x] Hidden static `newsletter` form added in layout for Netlify detection
+ - [x] AJAX submission with inline success message for newsletter form
 
 ### Phase 4: Content Customization 📋 PLANNED
 - [ ] Company information and branding updates

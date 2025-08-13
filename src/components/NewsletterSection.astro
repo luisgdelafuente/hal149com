@@ -24,24 +24,73 @@ const { newsletter } = Astro.props
       <div class="bs-body-text flex-grow" set:html={ newsletter.content } />
 
       <!-- Form -->
-      <form class="flex gap-4 flex-col" action="">
+      <form 
+        name="newsletter"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        class="flex gap-4 flex-col"
+        id="newsletter-form"
+      >
+
+        <!-- Netlify form detection -->
+        <input type="hidden" name="form-name" value="newsletter" />
+
+        <!-- Honeypot field for spam protection -->
+        <div class="hidden">
+          <label for="nl-bot">Don't fill this out if you're human:</label>
+          <input id="nl-bot" name="bot-field" />
+        </div>
 
         <label class="sr-only" for="nl-name">Name</label>
         <input
           id="nl-name"
+          name="name"
           class="border-2 rounded-lg text-center bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
           placeholder="Your name">
 
         <label class="sr-only" for="nl-email">Email</label>
         <input
           id="nl-email"
+          name="email"
           type="email"
           class="border-2 rounded-lg text-center bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-          placeholder="Your email">
+          placeholder="Your email"
+          required>
 
         <input type="submit" value={ newsletter.cta } class="bs-btn form-input px-4 py-3">
 
       </form>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('newsletter-form');
+          if (!(form instanceof HTMLFormElement)) return;
+
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            const params = new URLSearchParams();
+            formData.forEach((value, key) => {
+              params.append(key, String(value));
+            });
+
+            fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: params.toString()
+            })
+            .then((res) => {
+              if (res.ok) {
+                form.reset();
+                form.innerHTML = '<p class="bs-body-text font-semibold">Thanks! You’re subscribed.</p>';
+              }
+            })
+            .catch((err) => console.error('Newsletter submission error:', err));
+          });
+        });
+      </script>
 
     </div>
 
