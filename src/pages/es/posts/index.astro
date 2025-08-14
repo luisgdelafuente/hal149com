@@ -21,11 +21,11 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout title="Artículos del Blog | Frontier Agency" description="Últimas noticias, insights y actualizaciones de Frontier Agency">
-  <div class="container mx-auto px-4 py-16">
+  <div class="bs-container py-16">
     <!-- Header -->
     <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">Artículos del Blog</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <h1 class="bs-h1 mb-6">Artículos del Blog</h1>
+      <p class="bs-body-text xl:text-xl max-w-2xl mx-auto text-bs-foreground-dark">
         Últimas noticias, insights y actualizaciones de nuestro equipo
       </p>
     </div>
@@ -33,34 +33,37 @@ const lang = getLangFromUrl(Astro.url);
     <!-- Posts Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       {currentPosts.map(post => (
-        <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-          {post.data.image && (
-            <div class="aspect-video overflow-hidden">
-              <img 
-                src={post.data.image} 
-                alt={post.data.title}
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          )}
-          <div class="p-6">
-            <h2 class="text-xl font-bold mb-3 line-clamp-2">
-              <a href={`/es/posts/${post.slug}/`} class="hover:text-blue-600 transition-colors">
-                {post.data.title}
-              </a>
-            </h2>
-            <p class="text-gray-600 mb-4 line-clamp-3">
-              {post.data.description}
-            </p>
-            <div class="flex items-center justify-between text-sm text-gray-500">
-              <span>{post.data.author}</span>
-              <time datetime={post.data.date.toISOString()}>
-                {post.data.date.toLocaleDateString('es-ES', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </time>
+        <article class="@container group">
+          <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
+            {post.data.image && (
+              <div class="aspect-video overflow-hidden">
+                <img 
+                  src={post.data.image} 
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="p-6 flex flex-col gap-4 h-full">
+              <h2 class="bs-h3 line-clamp-2 flex-grow-0">
+                <a href={`/es/posts/${post.slug}/`} class="hover:text-bs-foreground-light transition-colors">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="bs-body-text text-bs-foreground-dark line-clamp-3 flex-grow">
+                {post.data.description}
+              </p>
+              <div class="flex items-center justify-between text-sm text-bs-foreground-dark mt-auto">
+                <span>{post.data.author}</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('es-ES', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </time>
+              </div>
             </div>
           </div>
         </article>
@@ -71,7 +74,7 @@ const lang = getLangFromUrl(Astro.url);
     {totalPages > 1 && (
       <div class="flex justify-center items-center gap-2">
         {currentPage > 1 && (
-          <a href={`/es/posts/?page=${currentPage - 1}`} class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors">
+          <a href={`/es/posts/?page=${currentPage - 1}`} class="bs-btn">
             Anterior
           </a>
         )}
@@ -81,8 +84,8 @@ const lang = getLangFromUrl(Astro.url);
             href={`/es/posts/?page=${page}`} 
             class={`px-4 py-2 rounded transition-colors ${
               page === currentPage 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                ? 'bg-bs-surface-3 text-bs-foreground-light' 
+                : 'bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70'
             }`}
           >
             {page}
@@ -90,7 +93,7 @@ const lang = getLangFromUrl(Astro.url);
         ))}
         
         {currentPage < totalPages && (
-          <a href={`/es/posts/?page=${currentPage + 1}`} class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors">
+          <a href={`/es/posts/?page=${currentPage + 1}`} class="bs-btn">
             Siguiente
           </a>
         )}
@@ -100,8 +103,10 @@ const lang = getLangFromUrl(Astro.url);
     <!-- No posts message -->
     {currentPosts.length === 0 && (
       <div class="text-center py-16">
-        <h3 class="text-2xl font-bold mb-4">No se encontraron artículos</h3>
-        <p class="text-gray-600">¡Vuelve pronto para ver nuevo contenido!</p>
+        <div class="bg-bs-surface-0/90 rounded-xl p-8 max-w-md mx-auto">
+          <h3 class="bs-h3 mb-4">No se encontraron artículos</h3>
+          <p class="bs-body-text text-bs-foreground-dark">¡Vuelve pronto para ver nuevo contenido!</p>
+        </div>
       </div>
     )}
   </div>
