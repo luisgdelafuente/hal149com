@@ -55,7 +55,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
  - [x] Hidden static `newsletter` form added in layout for Netlify detection
  - [x] AJAX submission with inline success message for newsletter form
 
-### Phase 4: Blog Posts Implementation 📝 PLANNED
+### Phase 4: Blog Post Implementation 📝 PLANNED
 - [ ] Content collections setup in astro.config.mjs for type safety
 - [ ] Create src/content/posts/ directory structure
 - [ ] Define frontmatter schema with metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
