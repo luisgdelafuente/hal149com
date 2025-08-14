@@ -20,9 +20,38 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout 
-  title={`${post.data.title} | Frontier Agency`} 
+  title={`${post.data.title} - Blog | Frontier Agency`} 
   description={post.data.description}
+  image={post.data.image}
+  type="article"
 >
+  
+  <!-- Structured Data for Blog Post -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "author": {
+      "@type": "Person",
+      "name": post.data.author
+    },
+    "datePublished": post.data.date.toISOString(),
+    "dateModified": post.data.date.toISOString(),
+    "url": `https://your-domain.com/posts/${post.slug}/`,
+    "image": post.data.image ? `https://your-domain.com${post.data.image}` : undefined,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Frontier Agency",
+      "url": "https://your-domain.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://your-domain.com/posts/${post.slug}/`
+    },
+    "articleSection": "Blog",
+    "keywords": post.data.tags?.join(", ") || ""
+  })} />
   <article class="bs-container py-16 max-w-4xl">
     <!-- Breadcrumbs -->
     <nav class="mb-8" aria-label="Breadcrumb">

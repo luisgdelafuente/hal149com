@@ -19,7 +19,7 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 import global_settings from "../data/global_settings.json"
 
-const { title, description } = Astro.props
+const { title, description, image, type = "website" } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -54,12 +54,23 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Open Graph -->
     <meta property="og:title" content={ title ?? globalSettings.title } />
     <meta property="og:description" content={ description ?? globalSettings.description } />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ type } />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:url" content={ Astro.url.href } />
     <meta
       property="og:image"
-      content={ globalSettings.base_url + globalSettings.social_image }
+      content={ image ? (image.startsWith('http') ? image : globalSettings.base_url + image) : globalSettings.base_url + globalSettings.social_image }
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Frontier Agency" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ title ?? globalSettings.title } />
+    <meta name="twitter:description" content={ description ?? globalSettings.description } />
+    <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : globalSettings.base_url + image) : globalSettings.base_url + globalSettings.social_image } />
+    <meta name="twitter:site" content="@frontieragency" />
 
     <!-- hreflang tags for SEO -->
     <link rel="alternate" hreflang="en" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
