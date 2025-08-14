@@ -74,8 +74,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **4.12** Implement client-side search functionality with debounced input and results highlighting
 - [x] **4.14** Implement structured data (JSON-LD) for posts and archive pages
 - [x] **4.15** Add Open Graph and Twitter Card meta tags to all post pages
-- [ ] **4.16** Configure image optimization for post images using existing Sharp setup
-- [ ] **4.17** Ensure all post components are fully responsive (mobile, tablet, desktop)
+- [x] **4.16** Configure image optimization for post images using existing Sharp setup
+- [x] **4.17** Ensure all post components are fully responsive (mobile, tablet, desktop)
 - [x] **4.18** Add proper meta title and description to all post pages and archive pages
 - [x] **4.19** Create 6 dummy AI-related posts (3 English + 3 Spanish pairs) with full Markdown features for testing
 - [x] **4.20** Test all blog functionality with dummy posts (separate testing session)
