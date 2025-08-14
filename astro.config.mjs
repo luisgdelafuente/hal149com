@@ -5,7 +5,30 @@ export default defineConfig({
   output: 'static',
   site: 'https://your-domain.com', // Replace with your actual domain
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    css: {
+      // Optimize CSS for better performance
+      devSourcemap: false,
+    },
+    build: {
+      // Optimize CSS chunks
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          // Optimize CSS file naming
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name?.endsWith('.css')) {
+              return 'assets/css/[name]-[hash][extname]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+        },
+      },
+    },
+  },
+  build: {
+    // Optimize CSS delivery
+    inlineStylesheets: 'auto',
   },
   content: {
     collections: {

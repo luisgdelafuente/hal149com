@@ -1,0 +1,463 @@
+/* Critical CSS - Above the fold styles only */
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-inter-display), "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
+
+  --color-bs-surface-0: #121212;
+  --color-bs-surface-1: #18181B;
+  --color-bs-surface-2: rgba(255, 255, 255, 0.03);
+  --color-bs-surface-3: #2F2F31;
+
+  --color-bs-foreground-light: #eee;
+  --color-bs-foreground-dark: #9f9f9f;
+
+  --color-current: currentColor;
+
+  --ease-bs-bounce: linear(0,.01,.04 1.6%,.161 3.3%,.816 9.4%,1.046,1.189 14.4%,1.231,1.254 17%,1.259,1.257 18.6%,1.236,1.194 22.3%,1.057 27%,.999 29.4%,.955 32.1%,.942,.935 34.9%,.933,.939 38.4%,1 47.3%,1.011,1.017 52.6%,1.016 56.4%,1 65.2%,.996 70.2%,1.001 87.2%,1);
+
+  --ease-bs-spring: linear(
+    0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017,
+    1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%,
+    1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%,
+    0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
+}
+
+/* Critical above-the-fold styles */
+html {
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+  background-color: var(--color-bs-surface-0);
+  color: var(--color-bs-foreground-light);
+}
+
+/* Essential layout classes */
+.bs-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .bs-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bs-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bs-container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .bs-container {
+    max-width: 1280px;
+  }
+}
+
+/* Essential typography */
+.bs-h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.bs-h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.bs-h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.bs-body-text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: var(--font-body);
+}
+
+/* Essential spacing */
+.bs-mt-md {
+  margin-top: 2rem;
+}
+
+.bs-mt-lg {
+  margin-top: 3rem;
+}
+
+/* Essential colors */
+.text-bs-foreground-light {
+  color: var(--color-bs-foreground-light);
+}
+
+.text-bs-foreground-dark {
+  color: var(--color-bs-foreground-dark);
+}
+
+.bg-bs-surface-0 {
+  background-color: var(--color-bs-surface-0);
+}
+
+.bg-bs-surface-1 {
+  background-color: var(--color-bs-surface-1);
+}
+
+/* Essential button styles */
+.bs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background-color: var(--color-bs-foreground-light);
+  color: var(--color-bs-surface-0);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.bs-btn:hover {
+  background-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+/* Essential grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Essential flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Essential spacing utilities */
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+/* Essential responsive utilities */
+@media (min-width: 640px) {
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+  
+  .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .sm\:gap-6 {
+    gap: 1.5rem;
+  }
+  
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .lg\:gap-8 {
+    gap: 2rem;
+  }
+}
+
+/* Essential text utilities */
+.text-center {
+  text-align: center;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Essential rounded corners */
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+/* Essential transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Essential hover states */
+.hover\:bg-bs-surface-2\/70:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.hover\:text-bs-foreground-light:hover {
+  color: var(--color-bs-foreground-light);
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Essential aspect ratios */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Essential overflow */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Essential object fit */
+.object-cover {
+  object-fit: cover;
+}
+
+.object-center {
+  object-position: center;
+}
+
+/* Essential width/height */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+/* Essential positioning */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* Essential z-index */
+.-z-1 {
+  z-index: -1;
+}
+
+/* Essential inset */
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Essential opacity */
+.opacity-20 {
+  opacity: 0.2;
+}
+
+/* Essential shadow */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Essential line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Essential flex utilities */
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+/* Essential text sizes */
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.xl\:text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+/* Essential font weights */
+.font-medium {
+  font-weight: 500;
+}
+
+/* Essential background opacity */
+.bg-bs-surface-0\/90 {
+  background-color: rgba(18, 18, 18, 0.9);
+}
+
+/* Essential group hover */
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+/* Essential focus utilities */
+.focus-visible\:top-0:focus-visible {
+  top: 0;
+}
+
+/* Essential fixed positioning */
+.fixed {
+  position: fixed;
+}
+
+.-top-20 {
+  top: -5rem;
+}
+
+/* Essential background colors for focus */
+.bg-black\/90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Essential transition duration */
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+/* Essential padding for skip link */
+.p-3 {
+  padding: 0.75rem;
+}
