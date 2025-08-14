@@ -7,6 +7,7 @@ import ClientsSection from "../../components/ClientsSection.astro"
 import FaqSection from "../../components/FaqSection.astro"
 import ServicesCarousel from "../../components/ServicesCarousel.astro"
 import HeroSection from "../../components/HeroSection.astro"
+import LatestPostsSection from "../../components/LatestPostsSection.astro"
 import NewsletterSection from "../../components/NewsletterSection.astro"
 import PricingSection from "../../components/PricingSection.astro"
 import QuoteSection from "../../components/QuoteSection.astro"
@@ -77,6 +78,8 @@ const newsletterContent = i18nContent?.default?.newsletter || newsletter;
     testimonials={ testimonials }
     title={ homeContent.testimonials_title }
   />
+
+  <LatestPostsSection />
 
   <PricingSection
     pricing={ pricing }

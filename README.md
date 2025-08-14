@@ -8,6 +8,8 @@ A complete, best-in-class Astro website for a business agency with all the featu
 
 This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
 
+**DEVELOPMENT RULE: All phases must use numbered tasks (e.g., 4.1, 4.2, etc.) and each task must produce specific and measurable changes so we can track progress effectively.**
+
 ## Project Description
 
 This is our complete business agency website built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for Frontier Agency's specific business needs while maintaining the modern design and performance optimizations of the original theme, and enhanced it with comprehensive features for a professional agency presence.
@@ -56,25 +58,26 @@ This is our complete business agency website built on the [BlackSpike Astro Land
  - [x] AJAX submission with inline success message for newsletter form
 
 ### Phase 4: Blog Post Implementation 📝 PLANNED
-- [ ] Content collections setup in astro.config.mjs for type safety
-- [ ] Create src/content/posts/ directory structure
-- [ ] Define frontmatter schema with metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
-- [ ] Create posts archive pages (/posts/ and /es/posts/) with responsive grid layout
-- [ ] Implement pagination for posts archive
-- [ ] Create individual post pages (/posts/[slug]/ and /es/posts/[slug]/) with full content rendering
-- [ ] Add tag pages (/posts/tag/[tag]/ and /es/posts/tag/[tag]/) for filtered views
-- [ ] Create LatestPostsSection.astro component for homepage integration
-- [ ] Add latest 3 posts block to homepage with responsive design
-- [ ] Implement cross-language post linking (language switcher in post layout)
-- [ ] Add RSS feeds for both languages
-- [ ] Implement search functionality for posts
-- [ ] Add related posts suggestions
-- [ ] SEO optimization with structured data and meta tags
-- [ ] Social media meta tags for posts (Open Graph, Twitter Cards)
-- [ ] Image optimization using existing Sharp setup
-- [ ] Fully responsive rendering for all post-related components
-- [ ] Metadata implementation (title, description) for each post and archive pages
-- [ ] Create 6 dummy AI-related posts (English + Spanish) with full Markdown functionality for testing
+- [ ] **4.1** Configure content collections in astro.config.mjs with type-safe schema for posts
+- [ ] **4.2** Create src/content/posts/ directory structure with proper organization
+- [ ] **4.3** Define frontmatter schema with all required metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
+- [ ] **4.4** Create posts archive page (/posts/) with responsive grid layout and pagination (10 posts per page)
+- [ ] **4.5** Create Spanish posts archive page (/es/posts/) with same functionality as English version
+- [ ] **4.6** Create individual post page template (/posts/[slug]/) with full Markdown content rendering
+- [ ] **4.7** Create Spanish individual post page template (/es/posts/[slug]/) with same functionality
+- [ ] **4.8** Implement tag filtering pages (/posts/tag/[tag]/ and /es/posts/tag/[tag]/) with post count display
+- [ ] **4.9** Create LatestPostsSection.astro component with latest 3 posts display
+- [ ] **4.10** Integrate LatestPostsSection into homepage with responsive design
+- [ ] **4.11** Generate RSS feeds for both languages (/rss.xml and /es/rss.xml)
+- [ ] **4.12** Implement client-side search functionality with debounced input and results highlighting
+- [ ] **4.13** Add related posts section to individual post pages (based on tags)
+- [ ] **4.14** Implement structured data (JSON-LD) for posts and archive pages
+- [ ] **4.15** Add Open Graph and Twitter Card meta tags to all post pages
+- [ ] **4.16** Configure image optimization for post images using existing Sharp setup
+- [ ] **4.17** Ensure all post components are fully responsive (mobile, tablet, desktop)
+- [ ] **4.18** Add proper meta title and description to all post pages and archive pages
+- [x] **4.19** Create 6 dummy AI-related posts (3 English + 3 Spanish pairs) with full Markdown features for testing
+- [ ] **4.20** Test all blog functionality with dummy posts (separate testing session)
 
 ### Phase 5: Content Customization 📋 FUTURE
 - [ ] Company information and branding updates
