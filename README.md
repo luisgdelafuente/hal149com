@@ -57,20 +57,20 @@ This is our complete business agency website built on the [BlackSpike Astro Land
  - [x] Hidden static `newsletter` form added in layout for Netlify detection
  - [x] AJAX submission with inline success message for newsletter form
 
-### Phase 4: Blog Post Implementation 📝 PLANNED
-- [ ] **4.1** Configure content collections in astro.config.mjs with type-safe schema for posts
-- [ ] **4.2** Create src/content/posts/ directory structure with proper organization
-- [ ] **4.3** Define frontmatter schema with all required metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
-- [ ] **4.4** Create posts archive page (/posts/) with responsive grid layout and pagination (10 posts per page)
-- [ ] **4.5** Create Spanish posts archive page (/es/posts/) with same functionality as English version
-- [ ] **4.6** Create individual post page template (/posts/[slug]/) with full Markdown content rendering
-- [ ] **4.7** Create Spanish individual post page template (/es/posts/[slug]/) with same functionality
-- [ ] **4.8** Implement tag filtering pages (/posts/tag/[tag]/ and /es/posts/tag/[tag]/) with post count display
-- [ ] **4.9** Create LatestPostsSection.astro component with latest 3 posts display
-- [ ] **4.10** Integrate LatestPostsSection into homepage with responsive design
+### Phase 4: Blog Post Implementation 📝 IN PROGRESS
+- [x] **4.1** Configure content collections in astro.config.mjs with type-safe schema for posts
+- [x] **4.2** Create src/content/posts/ directory structure with proper organization
+- [x] **4.3** Define frontmatter schema with all required metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
+- [x] **4.4** Create posts archive page (/posts/) with responsive grid layout and pagination (10 posts per page)
+- [x] **4.5** Create Spanish posts archive page (/es/posts/) with same functionality as English version
+- [x] **4.6** Create individual post page template (/posts/[slug]/) with full Markdown content rendering
+- [x] **4.7** Create Spanish individual post page template (/es/posts/[slug]/) with same functionality
+- [x] **4.8** ~~Implement tag filtering pages~~ - **MOVED TO PHASE 5** - Basic tag functionality removed for now
+- [x] **4.9** Create LatestPostsSection.astro component with latest 3 posts display
+- [x] **4.10** Integrate LatestPostsSection into homepage with responsive design
 - [ ] **4.11** Generate RSS feeds for both languages (/rss.xml and /es/rss.xml)
 - [ ] **4.12** Implement client-side search functionality with debounced input and results highlighting
-- [ ] **4.13** Add related posts section to individual post pages (based on tags)
+- [ ] **4.13** ~~Add related posts section to individual post pages (based on tags)~~ - **MOVED TO PHASE 5** - Removed due to tag dependency
 - [ ] **4.14** Implement structured data (JSON-LD) for posts and archive pages
 - [ ] **4.15** Add Open Graph and Twitter Card meta tags to all post pages
 - [ ] **4.16** Configure image optimization for post images using existing Sharp setup
@@ -97,6 +97,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [ ] Post scheduling system for future publications
 - [ ] Comments system integration (external like Disqus or built-in)
 - [ ] Enhanced social sharing integration for posts
+- [ ] **Tag functionality enhancement** - Advanced tag management system with filtering, search, and related posts
+- [ ] **Related posts system** - Implement alternative related posts logic (not tag-based)
 
 ### Phase 7: Refine and Go Live 🎯 FUTURE
 - [ ] SEO meta tags and structured data
@@ -260,5 +262,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 3 completed - Ready for Phase 4 (Blog Posts Implementation) development
+**Last Updated:** Phase 4 functional issues fixed - Language switcher for posts, breadcrumbs added, "Read More" links removed, tag functionality moved to Phase 5. Ready for comprehensive testing.
 

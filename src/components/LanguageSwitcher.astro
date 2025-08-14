@@ -8,29 +8,33 @@ const t = useTranslations(lang);
 // Get current URL path to determine if we're on a post page
 const currentPath = Astro.url.pathname;
 
-// Check if we're on a post page and get the translated version
-let translatedUrl = '';
+// Check if we're on a post page and get the corresponding slug
+let enUrl = '/';
+let esUrl = '/es/';
+
+// If we're on a post page, find the corresponding translation
 if (currentPath.includes('/posts/')) {
   const allPosts = await getCollection('posts');
-  const currentSlug = currentPath.split('/posts/')[1]?.replace(/\/$/, '');
   
-  if (currentSlug) {
-    const currentPost = allPosts.find(post => post.slug === currentSlug);
-    if (currentPost) {
-      if (lang === 'en' && currentPost.data.esSlug) {
-        translatedUrl = `/es/posts/${currentPost.data.esSlug}/`;
-      } else if (lang === 'es' && currentPost.data.enSlug) {
-        translatedUrl = `/posts/${currentPost.data.enSlug}/`;
-      }
+  // Extract slug from current URL
+  const pathParts = currentPath.split('/');
+  const currentSlug = pathParts[pathParts.length - 1];
+  
+  // Find the current post
+  const currentPost = allPosts.find(post => post.slug === currentSlug);
+  
+  if (currentPost) {
+    if (currentPost.data.lang === 'en' && currentPost.data.esSlug) {
+      // We're on English post, link to Spanish version
+      enUrl = `/posts/${currentPost.slug}/`;
+      esUrl = `/es/posts/${currentPost.data.esSlug}/`;
+    } else if (currentPost.data.lang === 'es' && currentPost.data.enSlug) {
+      // We're on Spanish post, link to English version
+      enUrl = `/posts/${currentPost.data.enSlug}/`;
+      esUrl = `/es/posts/${currentPost.slug}/`;
     }
   }
 }
-
-// Default URLs for non-post pages
-const defaultUrls = {
-  en: '/',
-  es: '/es/'
-};
 ---
 
 <div class="language-switcher">
@@ -50,7 +54,7 @@ const defaultUrls = {
     aria-labelledby="language-toggle"
   >
     <a
-      href={lang === 'en' ? translatedUrl || defaultUrls.en : defaultUrls.en}
+      href={enUrl}
       data-lang="en"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
@@ -61,7 +65,7 @@ const defaultUrls = {
       English
     </a>
     <a
-      href={lang === 'es' ? translatedUrl || defaultUrls.es : defaultUrls.es}
+      href={esUrl}
       data-lang="es"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
