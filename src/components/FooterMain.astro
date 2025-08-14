@@ -1,8 +1,9 @@
 ---
-
 import Logo from '../assets/theme-images/logo.svg'
+import { getLangFromUrl } from '../i18n/ui';
 
 const { settings } = Astro.props
+const lang = getLangFromUrl(Astro.url);
 
 ---
 
@@ -70,11 +71,17 @@ const { settings } = Astro.props
 
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
-        <!-- Copyright/Date -->
-        <a href="https://blackspike.com/">by blackspike.com</a>
+        <!-- Copyright -->
+        <span>© 2025 HAL149</span>
+
+        <!-- About -->
+        <a href={lang === 'es' ? '/es/about' : '/about'}>About</a>
 
         <!-- Credits -->
-        <a href="/credits">about / credits</a>
+        <a href={lang === 'es' ? '/es/credits' : '/credits'}>Credits</a>
+
+        <!-- RSS Feed -->
+        <a href={lang === 'es' ? '/es/rss.xml' : '/rss.xml'}>Feed RSS</a>
 
       </nav>
 

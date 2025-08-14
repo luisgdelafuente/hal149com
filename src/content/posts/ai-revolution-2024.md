@@ -4,7 +4,8 @@ description: "Explore the transformative impact of AI on business operations, fr
 date: 2024-01-15
 author: "Sarah Johnson"
 tags: ["AI", "Business", "Technology", "Innovation"]
-image: "/content-images/ai-business.jpg"
+image: "/blog-images/ai-revolution-2024.webp"
+featured: true
 lang: "en"
 esSlug: "revolucion-ia-2024"
 ---
@@ -114,4 +115,5 @@ The AI revolution is not a distant future—it's happening now. Businesses that 
 ---
 
 *Ready to explore how AI can transform your business? Contact our team to discuss your specific needs and discover the right AI solutions for your organization.*
+
 

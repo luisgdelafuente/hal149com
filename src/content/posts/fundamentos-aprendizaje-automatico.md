@@ -4,7 +4,8 @@ description: "Sumérgete en el mundo del aprendizaje automático con esta guía 
 date: 2024-01-20
 author: "David Chen"
 tags: ["Aprendizaje Automático", "IA", "Ciencia de Datos", "Tecnología"]
-image: "/content-images/ml-basics.jpg"
+image: "/blog-images/machine-learning-basics.webp"
+featured: true
 lang: "es"
 enSlug: "machine-learning-basics"
 ---
@@ -230,4 +231,5 @@ La clave del éxito en ML es comenzar simple, enfocarse en problemas reales y ap
 ---
 
 *¿Listo para comenzar tu viaje de aprendizaje automático? Nuestro equipo puede ayudarte a identificar las oportunidades de ML adecuadas para tu negocio y guiarte a través de la implementación.*
+
 

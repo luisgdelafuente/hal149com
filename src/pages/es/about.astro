@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl } from '../../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "About",
+    subtitle: "Learn more about Frontier Agency",
+    description: "Frontier Agency is a leading design and development agency specializing in creating innovative digital solutions for modern businesses. We combine cutting-edge technology with creative design to deliver exceptional user experiences."
+  },
+  es: {
+    title: "Acerca de",
+    subtitle: "Conoce más sobre Frontier Agency",
+    description: "Frontier Agency es una agencia líder de diseño y desarrollo especializada en crear soluciones digitales innovadoras para empresas modernas. Combinamos tecnología de vanguardia con diseño creativo para ofrecer experiencias de usuario excepcionales."
+  }
+};
+
+const currentContent = content[lang as keyof typeof content];
+---
+
+<Layout title={`${currentContent.title} | Frontier Agency`} description={currentContent.description}>
+  <div class="bs-container py-16">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="bs-h1 mb-6">{currentContent.title}</h1>
+        <p class="bs-body-text xl:text-xl max-w-2xl mx-auto text-bs-foreground-dark">
+          {currentContent.subtitle}
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <p class="bs-body-text text-bs-foreground-light leading-relaxed">
+          {currentContent.description}
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

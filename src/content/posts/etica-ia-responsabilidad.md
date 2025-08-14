@@ -4,7 +4,8 @@ description: "Explora la importancia crítica del desarrollo ético de la IA, lo
 date: 2024-01-25
 author: "Dr. Emily Rodriguez"
 tags: ["Ética de IA", "Responsabilidad", "Confianza", "Sesgo", "Transparencia"]
-image: "/content-images/ai-ethics.jpg"
+image: "/blog-images/ai-ethics-responsibility.webp"
+featured: true
 lang: "es"
 enSlug: "ai-ethics-responsibility"
 ---
@@ -265,4 +266,5 @@ Recuerda, la IA ética no es un destino sino un viaje. Requiere atención, adapt
 ---
 
 *¿Listo para construir sistemas de IA éticos? Nuestro equipo puede ayudarte a desarrollar soluciones de IA responsables que prioricen la justicia, transparencia y bienestar humano.*
+
 

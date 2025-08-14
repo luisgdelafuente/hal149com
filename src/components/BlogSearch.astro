@@ -1,0 +1,200 @@
+---
+interface Props {
+  posts: any[];
+  lang: 'en' | 'es';
+}
+
+const { posts, lang } = Astro.props;
+
+const searchContent = {
+  en: {
+    placeholder: "Search posts...",
+    noResults: "No posts found matching your search.",
+    resultsCount: "posts found"
+  },
+  es: {
+    placeholder: "Buscar artículos...",
+    noResults: "No se encontraron artículos que coincidan con tu búsqueda.",
+    resultsCount: "artículos encontrados"
+  }
+};
+
+const currentContent = searchContent[lang];
+---
+
+<div class="mb-8">
+  <!-- Search Input -->
+  <div class="relative max-w-md mx-auto">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-bs-foreground-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </div>
+    <input
+      type="text"
+      id="search-input"
+      class="block w-full pl-10 pr-3 py-2 border border-bs-surface-3 rounded-lg bg-bs-surface-0/90 text-bs-foreground-light placeholder-bs-foreground-dark focus:outline-none focus:ring-2 focus:ring-bs-surface-3 focus:border-transparent"
+      placeholder={currentContent.placeholder}
+    />
+  </div>
+
+  <!-- Results Count -->
+  <div id="results-count" class="text-center text-sm text-bs-foreground-dark mt-4 hidden">
+    <span id="results-number">0</span> {currentContent.resultsCount}
+  </div>
+
+  <!-- No Results Message -->
+  <div id="no-results" class="text-center py-8 hidden">
+    <div class="bg-bs-surface-0/90 rounded-xl p-8 max-w-md mx-auto">
+      <h3 class="bs-h3 mb-4">{currentContent.noResults}</h3>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ posts, lang }}>
+  class BlogSearch {
+    constructor() {
+      this.searchInput = document.getElementById('search-input');
+      this.resultsCount = document.getElementById('results-count');
+      this.resultsNumber = document.getElementById('results-number');
+      this.noResults = document.getElementById('no-results');
+      this.posts = posts;
+      this.debounceTimer = null;
+      this.searchDelay = 300;
+
+      this.init();
+    }
+
+    init() {
+      if (!this.searchInput) return;
+
+      this.searchInput.addEventListener('input', () => {
+        clearTimeout(this.debounceTimer);
+        this.debounceTimer = setTimeout(() => {
+          this.performSearch();
+        }, this.searchDelay);
+      });
+
+      // Clear search on escape key
+      this.searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.clearSearch();
+        }
+      });
+    }
+
+    performSearch() {
+      const query = this.searchInput.value.toLowerCase().trim();
+      
+      if (!query) {
+        this.showAllPosts();
+        return;
+      }
+
+      const results = this.posts.filter(post => {
+        const searchableText = [
+          post.data.title,
+          post.data.description,
+          post.data.author,
+          ...post.data.tags
+        ].join(' ').toLowerCase();
+
+        return searchableText.includes(query);
+      });
+
+      this.updateResults(results, query);
+    }
+
+    updateResults(results, query) {
+      const postElements = document.querySelectorAll('[data-post-id]');
+      
+      postElements.forEach(element => {
+        const postId = element.getAttribute('data-post-id');
+        const post = this.posts.find(p => p.slug === postId);
+        
+        if (post) {
+          const isMatch = this.isPostMatch(post, query);
+          element.style.display = isMatch ? 'block' : 'none';
+          
+          if (isMatch) {
+            this.highlightText(element, query);
+          }
+        }
+      });
+
+      this.updateUI(results.length);
+    }
+
+    isPostMatch(post, query) {
+      const searchableText = [
+        post.data.title,
+        post.data.description,
+        post.data.author,
+        ...post.data.tags
+      ].join(' ').toLowerCase();
+
+      return searchableText.includes(query);
+    }
+
+    highlightText(element, query) {
+      const titleElement = element.querySelector('h2 a');
+      const descriptionElement = element.querySelector('p');
+      
+      if (titleElement) {
+        titleElement.innerHTML = this.highlightMatches(titleElement.textContent, query);
+      }
+      
+      if (descriptionElement) {
+        descriptionElement.innerHTML = this.highlightMatches(descriptionElement.textContent, query);
+      }
+    }
+
+    highlightMatches(text, query) {
+      if (!text || !query) return text;
+      
+      const regex = new RegExp(`(${query})`, 'gi');
+      return text.replace(regex, '<mark class="bg-yellow-200 text-black px-1 rounded">$1</mark>');
+    }
+
+    showAllPosts() {
+      const postElements = document.querySelectorAll('[data-post-id]');
+      postElements.forEach(element => {
+        element.style.display = 'block';
+        // Remove highlighting
+        const titleElement = element.querySelector('h2 a');
+        const descriptionElement = element.querySelector('p');
+        
+        if (titleElement) {
+          titleElement.innerHTML = titleElement.textContent;
+        }
+        if (descriptionElement) {
+          descriptionElement.innerHTML = descriptionElement.textContent;
+        }
+      });
+
+      this.updateUI(this.posts.length);
+    }
+
+    updateUI(resultsCount) {
+      this.resultsNumber.textContent = resultsCount;
+      
+      if (resultsCount === 0) {
+        this.resultsCount.classList.add('hidden');
+        this.noResults.classList.remove('hidden');
+      } else {
+        this.resultsCount.classList.remove('hidden');
+        this.noResults.classList.add('hidden');
+      }
+    }
+
+    clearSearch() {
+      this.searchInput.value = '';
+      this.showAllPosts();
+    }
+  }
+
+  // Initialize search when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new BlogSearch();
+  });
+</script>

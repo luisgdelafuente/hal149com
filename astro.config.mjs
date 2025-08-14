@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   output: 'static',
+  site: 'https://your-domain.com', // Replace with your actual domain
   vite: {
     plugins: [tailwindcss()]
   },

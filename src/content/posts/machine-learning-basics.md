@@ -4,7 +4,8 @@ description: "Dive into the world of machine learning with this comprehensive gu
 date: 2024-01-20
 author: "David Chen"
 tags: ["Machine Learning", "AI", "Data Science", "Technology"]
-image: "/content-images/ml-basics.jpg"
+image: "/blog-images/machine-learning-basics.webp"
+featured: true
 lang: "en"
 esSlug: "fundamentos-aprendizaje-automatico"
 ---
@@ -230,4 +231,5 @@ The key to success in ML is to start simple, focus on real problems, and continu
 ---
 
 *Ready to start your machine learning journey? Our team can help you identify the right ML opportunities for your business and guide you through implementation.*
+
 

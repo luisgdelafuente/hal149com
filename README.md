@@ -2,13 +2,15 @@
 
 A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
 
-## About This Document
+## HOW TO USE THIS DOCUMENT 
 
 **IMPORTANT: This file contains instructions and context for AI to work on the website. It must always be taken into account when making changes or additions to the codebase.**
 
-This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
-
 **DEVELOPMENT RULE: All phases must use numbered tasks (e.g., 4.1, 4.2, etc.) and each task must produce specific and measurable changes so we can track progress effectively.**
+
+AI AGENTS ARE NEVER running install or builld commands by themselves. Always ask the user to run the commands when needed. 
+
+This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
 
 ## Project Description
 
@@ -57,7 +59,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
  - [x] Hidden static `newsletter` form added in layout for Netlify detection
  - [x] AJAX submission with inline success message for newsletter form
 
-### Phase 4: Blog Post Implementation 📝 COMPLETED
+### Phase 4: Blog Post Implementation 📝 IN PROGRESS
 - [x] **4.1** Configure content collections in astro.config.mjs with type-safe schema for posts
 - [x] **4.2** Create src/content/posts/ directory structure with proper organization
 - [x] **4.3** Define frontmatter schema with all required metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
@@ -68,16 +70,15 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **4.8** ~~Implement tag filtering pages~~ - **MOVED TO PHASE 5** - Basic tag functionality removed for now
 - [x] **4.9** Create LatestPostsSection.astro component with latest 3 posts display
 - [x] **4.10** Integrate LatestPostsSection into homepage with responsive design
-- [ ] **4.11** Generate RSS feeds for both languages (/rss.xml and /es/rss.xml)
-- [ ] **4.12** Implement client-side search functionality with debounced input and results highlighting
-- [ ] **4.13** ~~Add related posts section to individual post pages (based on tags)~~ - **MOVED TO PHASE 5** - Removed due to tag dependency
+- [x] **4.11** Generate RSS feeds for both languages (/rss.xml and /es/rss.xml)
+- [x] **4.12** Implement client-side search functionality with debounced input and results highlighting
 - [ ] **4.14** Implement structured data (JSON-LD) for posts and archive pages
 - [ ] **4.15** Add Open Graph and Twitter Card meta tags to all post pages
 - [ ] **4.16** Configure image optimization for post images using existing Sharp setup
 - [ ] **4.17** Ensure all post components are fully responsive (mobile, tablet, desktop)
 - [ ] **4.18** Add proper meta title and description to all post pages and archive pages
 - [x] **4.19** Create 6 dummy AI-related posts (3 English + 3 Spanish pairs) with full Markdown features for testing
-- [ ] **4.20** Test all blog functionality with dummy posts (separate testing session)
+- [x] **4.20** Test all blog functionality with dummy posts (separate testing session)
 - [x] **4.21** Fix Homepage Posts Section Design - Apply theme's dark background, typography classes (bs-h2, bs-h3, bs-body-text), container utilities, and surface styling
 - [x] **4.22** Fix Posts Archive Pages Design - Apply theme background, surface colors, typography classes, and button styling for both English and Spanish versions
 - [x] **4.23** Fix Individual Post Content Styling - Replace custom prose styles with theme-consistent typography, colors, and surface styling
@@ -86,7 +87,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **4.26** Improve prose content formatting - Fix spacing, typography, and layout for all markdown elements in post content
 - [x] **4.27** Fix critical prose formatting issues - Poor contrast, broken code blocks, bad readability
 - [x] **4.28** Fix missing bullet points in lists - Add proper list styling with visible bullets and markers
-- [ ] **4.29** Image management strategy for git-hosted images in posts
+- [x] **4.29** Image management strategy for git-hosted images in posts - **COMPLETED** - Implemented single gallery approach with `featured` field in schema, updated all posts to use `/blog-images/` paths, created comprehensive documentation, optimized image display with responsive heights for individual posts and centered cropping for archives
 
 ### Phase 5: Content Customization 📋 FUTURE
 - [ ] Company information and branding updates
@@ -363,5 +364,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 4 blog functionality completed - All post-related components now feature professional, magazine-quality formatting with excellent readability. Fixed critical issues: code block contrast, missing bullet points, typography hierarchy, and CSS specificity conflicts. Added comprehensive documentation of challenges and solutions. Ready for image management implementation (task 4.29).
+**Last Updated:** Phase 4 high priority tasks completed - RSS feeds for both languages implemented and working, client-side search functionality with debounced input and results highlighting added to blog archive pages, comprehensive testing completed. All blog functionality working correctly with professional formatting and excellent user experience.
 

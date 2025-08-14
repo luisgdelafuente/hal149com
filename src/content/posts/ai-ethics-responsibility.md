@@ -4,7 +4,8 @@ description: "Explore the critical importance of ethical AI development, the cha
 date: 2024-01-25
 author: "Dr. Emily Rodriguez"
 tags: ["AI Ethics", "Responsibility", "Trust", "Bias", "Transparency"]
-image: "/content-images/ai-ethics.jpg"
+image: "/blog-images/ai-ethics-responsibility.webp"
+featured: true
 lang: "en"
 esSlug: "etica-ia-responsabilidad"
 ---

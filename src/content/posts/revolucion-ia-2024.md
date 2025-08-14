@@ -4,7 +4,8 @@ description: "Explora el impacto transformador de la IA en las operaciones empre
 date: 2024-01-15
 author: "Sarah Johnson"
 tags: ["IA", "Negocios", "Tecnología", "Innovación"]
-image: "/content-images/ai-business.jpg"
+image: "/blog-images/ai-revolution-2024.webp"
+featured: true
 lang: "es"
 enSlug: "ai-revolution-2024"
 ---
@@ -114,4 +115,5 @@ La revolución de la IA no es un futuro distante—está sucediendo ahora. Las e
 ---
 
 *¿Listo para explorar cómo la IA puede transformar tu negocio? Contacta a nuestro equipo para discutir tus necesidades específicas y descubrir las soluciones de IA adecuadas para tu organización.*
+
 
