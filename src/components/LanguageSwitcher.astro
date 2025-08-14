@@ -1,8 +1,36 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { getCollection } from 'astro:content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Get current URL path to determine if we're on a post page
+const currentPath = Astro.url.pathname;
+
+// Check if we're on a post page and get the translated version
+let translatedUrl = '';
+if (currentPath.includes('/posts/')) {
+  const allPosts = await getCollection('posts');
+  const currentSlug = currentPath.split('/posts/')[1]?.replace(/\/$/, '');
+  
+  if (currentSlug) {
+    const currentPost = allPosts.find(post => post.slug === currentSlug);
+    if (currentPost) {
+      if (lang === 'en' && currentPost.data.esSlug) {
+        translatedUrl = `/es/posts/${currentPost.data.esSlug}/`;
+      } else if (lang === 'es' && currentPost.data.enSlug) {
+        translatedUrl = `/posts/${currentPost.data.enSlug}/`;
+      }
+    }
+  }
+}
+
+// Default URLs for non-post pages
+const defaultUrls = {
+  en: '/',
+  es: '/es/'
+};
 ---
 
 <div class="language-switcher">
@@ -22,7 +50,7 @@ const t = useTranslations(lang);
     aria-labelledby="language-toggle"
   >
     <a
-      href="/"
+      href={lang === 'en' ? translatedUrl || defaultUrls.en : defaultUrls.en}
       data-lang="en"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
@@ -33,7 +61,7 @@ const t = useTranslations(lang);
       English
     </a>
     <a
-      href="/es/"
+      href={lang === 'es' ? translatedUrl || defaultUrls.es : defaultUrls.es}
       data-lang="es"
       class:list={[
         'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
