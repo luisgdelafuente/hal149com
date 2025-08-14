@@ -1,6 +1,6 @@
-# BlackSpike Company Landing Page
+# Frontier Agency Website
 
-A modern, responsive landing page built with Astro and Tailwind CSS for our provisional company website.
+A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
 
 ## About This Document
 
@@ -10,7 +10,7 @@ This README serves as the primary reference for understanding the project struct
 
 ## Project Description
 
-This is our provisional company landing page built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for our specific business needs while maintaining the modern design and performance optimizations of the original theme.
+This is our complete business agency website built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for Frontier Agency's specific business needs while maintaining the modern design and performance optimizations of the original theme, and enhanced it with comprehensive features for a professional agency presence.
 
 ## Roadmap
 
@@ -55,19 +55,47 @@ This is our provisional company landing page built on the [BlackSpike Astro Land
  - [x] Hidden static `newsletter` form added in layout for Netlify detection
  - [x] AJAX submission with inline success message for newsletter form
 
-### Phase 4: Content Customization 📋 PLANNED
+### Phase 4: Blog Posts Implementation 📝 PLANNED
+- [ ] Content collections setup in astro.config.mjs for type safety
+- [ ] Create src/content/posts/ directory structure
+- [ ] Define frontmatter schema with metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
+- [ ] Create posts archive pages (/posts/ and /es/posts/) with responsive grid layout
+- [ ] Implement pagination for posts archive
+- [ ] Create individual post pages (/posts/[slug]/ and /es/posts/[slug]/) with full content rendering
+- [ ] Add tag pages (/posts/tag/[tag]/ and /es/posts/tag/[tag]/) for filtered views
+- [ ] Create LatestPostsSection.astro component for homepage integration
+- [ ] Add latest 3 posts block to homepage with responsive design
+- [ ] Implement cross-language post linking (language switcher in post layout)
+- [ ] Add RSS feeds for both languages
+- [ ] Implement search functionality for posts
+- [ ] Add related posts suggestions
+- [ ] SEO optimization with structured data and meta tags
+- [ ] Social media meta tags for posts (Open Graph, Twitter Cards)
+- [ ] Image optimization using existing Sharp setup
+- [ ] Fully responsive rendering for all post-related components
+- [ ] Metadata implementation (title, description) for each post and archive pages
+- [ ] Create 6 dummy AI-related posts (English + Spanish) with full Markdown functionality for testing
+
+### Phase 5: Content Customization 📋 FUTURE
 - [ ] Company information and branding updates
 - [ ] Service offerings content
 - [ ] Team member profiles
 - [ ] Case studies and portfolio items
 - [ ] Testimonials and client reviews
-- [ ] Blog section setup (if needed)
 - [ ] Legal pages (Privacy Policy, Terms of Service)
 - [ ] Custom imagery and graphics
 - [ ] Content SEO optimization
 - [ ] Multilingual content management
+- [ ] Content management strategy for posts (markdown files in git workflow)
+- [ ] Image management strategy for git-hosted images in posts
+- [ ] Author profiles and author pages implementation
+- [ ] Content organization strategy (categories vs tags system)
+- [ ] Draft posts functionality for unpublished content
+- [ ] Post scheduling system for future publications
+- [ ] Comments system integration (external like Disqus or built-in)
+- [ ] Enhanced social sharing integration for posts
 
-### Phase 5: Refine and Go Live 🎯 FUTURE
+### Phase 7: Refine and Go Live 🎯 FUTURE
 - [ ] SEO meta tags and structured data
 - [ ] Performance optimization and Core Web Vitals
 - [ ] Analytics integration (Google Analytics, etc.)
@@ -229,5 +257,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 3 completed - Ready for Phase 4 (Content Customization) development
+**Last Updated:** Phase 3 completed - Ready for Phase 4 (Blog Posts Implementation) development
 
