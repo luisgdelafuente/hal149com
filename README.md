@@ -44,6 +44,28 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] hreflang tags implementation
 - [x] Language detection middleware
 
+### Phase 2.1: Complete Language Functionality 🔄 **IN PROGRESS**
+- [x] **2.1.1** Basic language switcher component implementation
+- [x] **2.1.2** Homepage language switching (English ↔ Spanish)
+- [x] **2.1.3** Static pages language switching (about, credits, thank-you)
+- [x] **2.1.4** Blog archive pages language switching (/posts/ ↔ /es/posts/)
+- [ ] **2.1.5** Individual blog post language switching using enSlug/esSlug fields
+- [ ] **2.1.6** Navigation menu language-aware URL generation
+- [ ] **2.1.7** Internal link translation (all href attributes)
+- [ ] **2.1.8** Breadcrumb navigation language switching
+- [ ] **2.1.9** Search functionality language switching
+- [ ] **2.1.10** Pagination language switching
+- [ ] **2.1.11** Tag pages language switching (if implemented)
+- [ ] **2.1.12** RSS feed language switching
+- [ ] **2.1.13** 404 page language switching
+- [ ] **2.1.14** Language switcher fallback handling (when translation not available)
+- [ ] **2.1.15** Language switcher accessibility improvements
+- [ ] **2.1.16** Language switcher mobile responsiveness
+- [ ] **2.1.17** Language switcher visual feedback (loading states)
+- [ ] **2.1.18** Language switcher error handling
+- [ ] **2.1.19** Language switcher testing across all page types
+- [ ] **2.1.20** Language switcher documentation and maintenance guide
+
 ### Phase 3: Form Management ✅ COMPLETED
 - [x] Contact form component implementation (enhanced existing DialogModal.astro)
 - [x] Form validation and error handling (client-side validation with multilingual messages)
@@ -159,6 +181,29 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Current Status**: All performance optimization changes have been reverted to restore website functionality. The render-blocking CSS issue remains unsolved.
 
 **Next Steps**: Need to find an alternative approach to CSS optimization that doesn't interfere with the existing BlackSpike theme layout and styling.
+
+### Language Switcher Functionality Challenge ❌ **NOT SOLVED**
+
+**Problem**: Language switcher component only works correctly on the homepage. Users cannot switch languages from other pages (blog posts, archive pages, etc.), forcing them to return to the homepage to change languages.
+
+**Root Cause**: The current `LanguageSwitcher.astro` component has limited logic that only handles basic page types and doesn't properly handle:
+- Individual blog post translations using `enSlug`/`esSlug` fields
+- Complex URL structures for different page types
+- Navigation menu language-aware URL generation
+- Internal link translation throughout the site
+
+**Current Implementation Issues**:
+- Language switcher logic is too simplistic for complex routing
+- No fallback handling when translations are not available
+- Missing support for dynamic content (blog posts, search results, pagination)
+- Navigation links don't respect current language context
+
+**Impact**: 
+- Poor user experience - users must navigate back to homepage to change language
+- Broken multilingual functionality - core feature not working as expected
+- SEO issues - language-specific URLs not properly linked
+
+**Solution Strategy**: Implement comprehensive Phase 2.1 tasks to create a robust language switching system that works across all page types and content.
 
 ### Netlify Forms Integration Challenge
 
@@ -357,15 +402,21 @@ The site now supports multiple languages with the following structure:
 
 ### Known Issues
 
-#### Language Switcher for Blog Pages 🔄 **PENDING**
-- **Issue**: Language switcher not working properly for blog archive pages (`/posts/` and `/es/posts/`) and individual post pages
-- **Expected Behavior**: 
-  - `/posts/` → Click "Español" → should go to `/es/posts/`
-  - `/es/posts/` → Click "English" → should go to `/posts/`
-  - Individual posts should switch between language versions using `enSlug`/`esSlug` fields
-- **Current Status**: Language switcher logic implemented but not functioning correctly
+#### Language Switcher Functionality 🔄 **PENDING - PHASE 2.1**
+- **Issue**: Language switcher only works on homepage, not on other pages
+- **Current Working**: 
+  - ✅ Homepage language switching (English ↔ Spanish)
+  - ✅ Static pages language switching (about, credits, thank-you)
+  - ✅ Blog archive pages language switching (/posts/ ↔ /es/posts/)
+- **Current Broken**:
+  - ❌ Individual blog post language switching using enSlug/esSlug fields
+  - ❌ Navigation menu language-aware URL generation
+  - ❌ Internal link translation (all href attributes)
+  - ❌ Breadcrumb navigation language switching
+  - ❌ Search functionality language switching
+  - ❌ Pagination language switching
 - **Priority**: High - affects core multilingual functionality
-- **Next Steps**: Debug language switcher logic and fix URL construction for blog pages
+- **Next Steps**: Implement Phase 2.1 tasks to fix all language switching issues
 
 ### Resolved Issues
 
