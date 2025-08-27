@@ -1,40 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import { getCollection } from 'astro:content';
+import { getLanguageUrls } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Get current URL path to determine if we're on a post page
-const currentPath = Astro.url.pathname;
-
-// Check if we're on a post page and get the corresponding slug
-let enUrl = '/';
-let esUrl = '/es/';
-
-// If we're on a post page, find the corresponding translation
-if (currentPath.includes('/posts/')) {
-  const allPosts = await getCollection('posts');
-  
-  // Extract slug from current URL
-  const pathParts = currentPath.split('/');
-  const currentSlug = pathParts[pathParts.length - 1];
-  
-  // Find the current post
-  const currentPost = allPosts.find(post => post.slug === currentSlug);
-  
-  if (currentPost) {
-    if (currentPost.data.lang === 'en' && currentPost.data.esSlug) {
-      // We're on English post, link to Spanish version
-      enUrl = `/posts/${currentPost.slug}/`;
-      esUrl = `/es/posts/${currentPost.data.esSlug}/`;
-    } else if (currentPost.data.lang === 'es' && currentPost.data.enSlug) {
-      // We're on Spanish post, link to English version
-      enUrl = `/posts/${currentPost.data.enSlug}/`;
-      esUrl = `/es/posts/${currentPost.slug}/`;
-    }
-  }
-}
+// Get language URLs using the new comprehensive utility
+const languageUrls = await getLanguageUrls(Astro.url);
+const { enUrl, esUrl } = languageUrls;
 ---
 
 <div class="language-switcher">

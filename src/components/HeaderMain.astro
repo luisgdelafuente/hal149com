@@ -3,6 +3,7 @@
 import Logo from '../assets/theme-images/logo.svg'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { createNavLink } from '../i18n/utils';
 
 const { settings } = Astro.props
 const lang = getLangFromUrl(Astro.url);
@@ -28,7 +29,7 @@ const t = useTranslations(lang);
       <!-- Links -->
       { settings.nav.map( item =>
 
-        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={lang === 'en' ? item.link : item.link.replace(/^\//, '/es/')}>
+        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={createNavLink(lang, item.link)}>
           { item.title }
         </a>
 

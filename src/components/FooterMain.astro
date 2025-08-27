@@ -1,6 +1,7 @@
 ---
 import Logo from '../assets/theme-images/logo.svg'
 import { getLangFromUrl } from '../i18n/ui';
+import { createNavLink } from '../i18n/utils';
 
 const { settings } = Astro.props
 const lang = getLangFromUrl(Astro.url);
@@ -40,7 +41,7 @@ const lang = getLangFromUrl(Astro.url);
 
           { settings.nav.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
 
-            <a href={ item.link }>
+            <a href={createNavLink(lang, item.link)}>
               { item.title }
             </a>
 

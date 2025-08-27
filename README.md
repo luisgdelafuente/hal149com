@@ -49,9 +49,9 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **2.1.2** Homepage language switching (English ↔ Spanish)
 - [x] **2.1.3** Static pages language switching (about, credits, thank-you)
 - [x] **2.1.4** Blog archive pages language switching (/posts/ ↔ /es/posts/)
-- [ ] **2.1.5** Individual blog post language switching using enSlug/esSlug fields
-- [ ] **2.1.6** Navigation menu language-aware URL generation
-- [ ] **2.1.7** Internal link translation (all href attributes)
+- [x] **2.1.5** Individual blog post language switching using enSlug/esSlug fields
+- [x] **2.1.6** Navigation menu language-aware URL generation
+- [x] **2.1.7** Internal link translation (all href attributes)
 - [ ] **2.1.8** Breadcrumb navigation language switching
 - [ ] **2.1.9** Search functionality language switching
 - [ ] **2.1.10** Pagination language switching
@@ -402,21 +402,22 @@ The site now supports multiple languages with the following structure:
 
 ### Known Issues
 
-#### Language Switcher Functionality 🔄 **PENDING - PHASE 2.1**
-- **Issue**: Language switcher only works on homepage, not on other pages
+#### Language Switcher Functionality ✅ **RESOLVED - GROUP 1 COMPLETED**
+- **Issue**: Language switcher only worked on homepage, not on other pages
+- **Solution**: Implemented comprehensive URL generation utilities and updated all navigation components
 - **Current Working**: 
   - ✅ Homepage language switching (English ↔ Spanish)
   - ✅ Static pages language switching (about, credits, thank-you)
   - ✅ Blog archive pages language switching (/posts/ ↔ /es/posts/)
-- **Current Broken**:
-  - ❌ Individual blog post language switching using enSlug/esSlug fields
-  - ❌ Navigation menu language-aware URL generation
-  - ❌ Internal link translation (all href attributes)
-  - ❌ Breadcrumb navigation language switching
-  - ❌ Search functionality language switching
-  - ❌ Pagination language switching
-- **Priority**: High - affects core multilingual functionality
-- **Next Steps**: Implement Phase 2.1 tasks to fix all language switching issues
+  - ✅ Individual blog post language switching using enSlug/esSlug fields
+  - ✅ Navigation menu language-aware URL generation
+  - ✅ Internal link translation (all href attributes)
+- **Remaining Tasks**:
+  - 🔄 Breadcrumb navigation language switching
+  - 🔄 Search functionality language switching
+  - 🔄 Pagination language switching
+- **Status**: Group 1 completed - core language switcher functionality now works on all page types
+- **Next Steps**: Continue with Group 2 (Navigation & Links) for remaining functionality
 
 ### Resolved Issues
 
@@ -431,5 +432,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 4 high priority tasks completed - RSS feeds for both languages implemented and working, client-side search functionality with debounced input and results highlighting added to blog archive pages, comprehensive testing completed. All blog functionality working correctly with professional formatting and excellent user experience.
+**Last Updated:** Phase 2.1 Group 1 completed - Core language switcher functionality now works on ALL page types including individual blog posts, navigation menu links are language-aware, and internal links properly respect current language context. Language switcher button design and behavior unchanged - only the logic behind it has been improved.
 
