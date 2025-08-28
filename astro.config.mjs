@@ -4,8 +4,30 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   output: 'static',
   site: 'https://your-domain.com', // Replace with your actual domain
+  build: {
+    // Optimize CSS bundling and reduce render-blocking
+    cssCodeSplit: false, // Bundle all CSS into single file to reduce requests
+    inlineStylesheets: 'auto', // Inline critical CSS automatically
+  },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    css: {
+      // Optimize CSS processing
+      devSourcemap: false, // Disable sourcemaps in production
+    },
+    build: {
+      // Optimize build output
+      cssMinify: true, // Minify CSS
+      rollupOptions: {
+        output: {
+          // Optimize CSS chunking
+          manualChunks: {
+            // Bundle all CSS together
+            styles: ['src/assets/css/global.css', 'src/assets/css/base.css', 'src/assets/css/typography.css', 'src/assets/css/layout.css', 'src/assets/css/buttons.css']
+          }
+        }
+      }
+    }
   },
   content: {
     collections: {

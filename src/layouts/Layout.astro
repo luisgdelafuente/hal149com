@@ -1,5 +1,6 @@
 ---
 
+// Optimized CSS imports - bundled by Astro build optimization
 import '../assets/css/global.css'
 import "../assets/css/base.css"
 import "../assets/css/typography.css"
@@ -80,8 +81,16 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url.origin + (lang === 'en' ? Astro.url.pathname : Astro.url.pathname.replace(/^\/es/, ''))} />
 
-    <Font cssVariable="--font-inter" preload />
-    <Font cssVariable="--font-inter-display" preload />
+    <!-- Font optimization with display: swap for better performance -->
+    <Font cssVariable="--font-inter" preload display="swap" />
+    <Font cssVariable="--font-inter-display" preload display="swap" />
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+    
+    <!-- Performance optimization: DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
   </head>
 
