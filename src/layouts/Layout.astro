@@ -1,11 +1,7 @@
 ---
 
-// Optimized CSS imports - bundled by Astro build optimization
-import '../assets/css/global.css'
-import "../assets/css/base.css"
-import "../assets/css/typography.css"
-import "../assets/css/layout.css"
-import "../assets/css/buttons.css"
+// Consolidated CSS import for optimal loading performance
+import '../assets/css/main.css'
 
 import { Font } from 'astro:assets';
 
@@ -81,9 +77,9 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url.origin + (lang === 'en' ? Astro.url.pathname : Astro.url.pathname.replace(/^\/es/, ''))} />
 
-    <!-- Font optimization with display: swap for better performance -->
-    <Font cssVariable="--font-inter" preload display="swap" />
-    <Font cssVariable="--font-inter-display" preload display="swap" />
+    <!-- Font optimization with preload for better performance -->
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-inter-display" preload />
 
     <!-- Performance optimization: Preload critical resources -->
     <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
@@ -91,6 +87,36 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Performance optimization: DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Performance optimization: Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Performance optimization: Critical CSS inline -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      :root {
+        --font-display: var(--font-inter-display), "ui-sans-serif", "system-ui", "sans-serif";
+        --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
+        --color-bs-surface-0: #121212;
+        --color-bs-surface-1: #18181B;
+        --color-bs-surface-2: rgba(255, 255, 255, 0.03);
+        --color-bs-surface-3: #2F2F31;
+        --color-bs-foreground-light: #eee;
+        --color-bs-foreground-dark: #9f9f9f;
+      }
+      body {
+        background-color: var(--color-bs-surface-1);
+        color: var(--color-bs-foreground-light);
+        font-family: var(--font-body);
+        margin: 0;
+        padding: 0;
+      }
+      .bs-container {
+        inline-size: min(92vw, 90rem);
+        margin-inline: auto;
+      }
+    </style>
 
   </head>
 

@@ -143,10 +143,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
   - ✅ Configure critical CSS extraction
   - ✅ Set up CSS code splitting optimization
 
-- [ ] **7.1.2** Optimize CSS imports in Layout.astro
-  - Consolidate CSS imports to reduce file count
-  - Implement CSS loading strategy (preload critical, defer non-critical)
-  - Add media queries for non-critical CSS
+- [x] **7.1.2** Optimize CSS imports in Layout.astro
+  - ✅ Consolidate CSS imports to reduce file count
+  - ✅ Implement CSS loading strategy (preload critical, defer non-critical)
+  - ✅ Add media queries for non-critical CSS
 
 - [ ] **7.1.3** Implement font loading optimization
   - Configure font-display: swap

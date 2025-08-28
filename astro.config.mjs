@@ -20,10 +20,10 @@ export default defineConfig({
       cssMinify: true, // Minify CSS
       rollupOptions: {
         output: {
-          // Optimize CSS chunking
+          // Optimize CSS chunking - now using consolidated main.css
           manualChunks: {
-            // Bundle all CSS together
-            styles: ['src/assets/css/global.css', 'src/assets/css/base.css', 'src/assets/css/typography.css', 'src/assets/css/layout.css', 'src/assets/css/buttons.css']
+            // Bundle all CSS together in single chunk
+            styles: ['src/assets/css/main.css']
           }
         }
       }

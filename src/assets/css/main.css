@@ -1,0 +1,61 @@
+/* 
+ * Consolidated CSS file for optimal loading
+ * This file imports all CSS in the correct order to minimize render-blocking
+ */
+
+/* 1. Global styles and Tailwind - Load first */
+@import "./global.css";
+
+/* 2. Base styles - Essential layout and typography */
+@import "./base.css";
+
+/* 3. Typography - Font definitions and text styles */
+@import "./typography.css";
+
+/* 4. Layout - Container and spacing utilities */
+@import "./layout.css";
+
+/* 5. Components - Buttons and interactive elements */
+@import "./buttons.css";
+
+/* 
+ * Performance optimization: Critical CSS inlining
+ * These styles are essential for above-the-fold rendering
+ */
+:root {
+  /* Ensure critical variables are available immediately */
+  --font-display: var(--font-inter-display), "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
+  --color-bs-surface-0: #121212;
+  --color-bs-surface-1: #18181B;
+  --color-bs-surface-2: rgba(255, 255, 255, 0.03);
+  --color-bs-surface-3: #2F2F31;
+  --color-bs-foreground-light: #eee;
+  --color-bs-foreground-dark: #9f9f9f;
+}
+
+/* Critical above-the-fold styles */
+body {
+  background-color: var(--color-bs-surface-1);
+  color: var(--color-bs-foreground-light);
+  font-family: var(--font-body);
+}
+
+/* Ensure critical layout classes are available */
+.bs-container {
+  inline-size: min(92vw, 90rem);
+  margin-inline: auto;
+}
+
+.bs-h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-wrap: balance;
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .bs-h1 {
+    font-size: 3.75rem;
+  }
+}
