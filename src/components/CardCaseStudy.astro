@@ -31,6 +31,8 @@ const optimizedImage = imageMap[caseStudy.image] || caseStudy.image
     <Image
       src={ optimizedImage }
       alt={ caseStudy.image_alt }
+      width={400}
+      height={300}
       widths={[300, 400, 500]}
       sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 400px"
       format="avif"
