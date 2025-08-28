@@ -111,10 +111,16 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
         font-family: var(--font-body);
         margin: 0;
         padding: 0;
+        /* Font optimization: Prevent layout shift during font loading */
+        font-display: swap;
       }
       .bs-container {
         inline-size: min(92vw, 90rem);
         margin-inline: auto;
+      }
+      /* Font loading optimization: Reduce layout shift */
+      .bs-h1, .bs-h2, .bs-h3 {
+        font-display: swap;
       }
     </style>
 
