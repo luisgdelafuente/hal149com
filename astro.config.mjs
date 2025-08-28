@@ -5,9 +5,10 @@ export default defineConfig({
   output: 'static',
   site: 'https://your-domain.com', // Replace with your actual domain
   build: {
-    // Optimize CSS bundling and reduce render-blocking
+    // Aggressive CSS bundling to eliminate render-blocking
     cssCodeSplit: false, // Bundle all CSS into single file to reduce requests
     inlineStylesheets: 'auto', // Inline critical CSS automatically
+    assets: '_astro', // Use consistent asset naming
   },
   vite: {
     plugins: [tailwindcss()],
@@ -20,11 +21,17 @@ export default defineConfig({
       cssMinify: true, // Minify CSS
       rollupOptions: {
         output: {
-          // Optimize CSS chunking - now using consolidated main.css
-          manualChunks: {
-            // Bundle all CSS together in single chunk
-            styles: ['src/assets/css/main.css']
-          }
+          // Force single CSS bundle - eliminate code splitting
+          manualChunks: undefined, // Disable manual chunking
+          assetFileNames: (assetInfo) => {
+            // Force all CSS into single file
+            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+              return 'assets/styles.[hash].css';
+            }
+            return 'assets/[name].[hash].[ext]';
+          },
+          chunkFileNames: 'assets/[name].[hash].js',
+          entryFileNames: 'assets/[name].[hash].js'
         }
       }
     }

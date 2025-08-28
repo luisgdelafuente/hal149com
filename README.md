@@ -129,14 +129,26 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 #### 7.1 Performance Optimization & Core Web Vitals
 
-**Target**: Fix 440ms render-blocking CSS delay (Google PageSpeed Insights)
+**Target**: Fix 430ms render-blocking CSS delay + 726ms critical path latency (Google PageSpeed Insights)
 
-**Current Issue**: 
-- `/_astro/about.iilU201Y.css` (10.4 KiB, 180ms)
+**Current Issues Identified**:
+
+**Issue 1: Render Blocking CSS (430ms delay)**
+- `/_astro/about.DVfm7jDp.css` (8.2 KiB, 180ms)
 - `/_astro/_slug_.CIxkfWyM.css` (1.4 KiB, 480ms)
-- Total delay: 440ms affecting Core Web Vitals
+- **Problem**: CSS code splitting still creating multiple files despite our bundling config
 
-**Safe Implementation Strategy** (Zero layout/design changes):
+**Issue 2: Network Dependency Tree (726ms critical path)**
+- `/posts/ai-ethics-responsibility/` - 365ms, 10.62 KiB
+- `/_astro/_slug_.CIxkfWyM.css` - 641ms, 1.42 KiB  
+- `/_astro/about.DVfm7jDp.css` - 726ms, 8.24 KiB
+- **Problem**: Critical request chains blocking LCP
+
+**Issue 3: Image Delivery (11 KiB savings possible)**
+- `/blog-images/ai-ethics-responsibility.webp` (16.0 KiB → 10.6 KiB possible)
+- **Problem**: Images larger than displayed dimensions (654x292 → 379x169)
+
+**Targeted Implementation Strategy**:
 
 - [x] **7.1.1** Configure Astro CSS optimization in astro.config.mjs
   - ✅ Enable CSS bundling and minification
@@ -153,20 +165,25 @@ This is our complete business agency website built on the [BlackSpike Astro Land
   - ✅ Optimize font preloading strategy
   - ✅ Reduce font file sizes if possible
 
-- [ ] **7.1.4** Add CSS performance headers
-  - Configure cache headers for CSS files
-  - Enable compression for CSS assets
-  - Set up CDN optimization if available
+- [x] **7.1.4** Fix CSS Code Splitting Issue
+  - ✅ **Problem**: Astro still generating separate CSS files despite `cssCodeSplit: false`
+  - ✅ **Solution**: Force single CSS bundle by modifying build configuration
+  - ✅ **Action**: Update astro.config.mjs with more aggressive CSS bundling
 
-- [ ] **7.1.5** Test and validate performance improvements
-  - Measure PageSpeed scores before/after each change
-  - Ensure no visual regressions
-  - Verify Core Web Vitals improvements
+- [ ] **7.1.5** Implement Critical CSS Inlining
+  - **Problem**: CSS files still loading as external resources
+  - **Solution**: Inline critical CSS directly in HTML head
+  - **Action**: Extract and inline above-the-fold CSS styles
 
-- [ ] **7.1.6** Additional optimizations (if needed)
-  - Image lazy loading implementation
-  - JavaScript loading optimization
-  - Final performance tuning
+- [ ] **7.1.6** Optimize Image Delivery
+  - **Problem**: Blog images larger than displayed dimensions
+  - **Solution**: Implement responsive images with correct sizes
+  - **Action**: Update blog post images with proper width/height attributes
+
+- [ ] **7.1.7** Add Preconnect Hints
+  - **Problem**: No preconnect hints for critical origins
+  - **Solution**: Add preconnect for Netlify CDN and other critical domains
+  - **Action**: Add preconnect hints to Layout.astro head section
 
 #### 7.2 Infrastructure & Deployment
 - [x] **7.2.1** Custom domain setup
