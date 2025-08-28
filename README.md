@@ -18,6 +18,9 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 ## Roadmap
 
+## VERSION 1 🚀
+**All basic functionalities and optimizations to get a functional website for our AI Agency including company pages, contact forms, posts, etc.**
+
 ### Phase 1: Installation & Setup ✅ COMPLETED
 - [x] Project initialization with Astro 5
 - [x] Tailwind CSS 4 integration
@@ -125,9 +128,58 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [ ] **Tag functionality enhancement**   - Advanced tag management system with filtering, search, and related posts
 - [ ] **Related posts system** - Implement alternative related posts logic (not tag-based)
 
+### Phase 6: Final Configurations ✅ COMPLETED
+- [x] **6.1** Robots.txt configuration
+  - ✅ Created simple robots.txt file allowing all crawling
+  - ✅ Added sitemap reference for better SEO indexing
+  - ✅ File located at `public/robots.txt`
+
 ### Phase 7: Performance Optimization & Go Live 🎯 PENDING
 
 **All optimizations are pending: images, block rendering, etc. waiting for a new session just to focus on this issue.**
+
+---
+
+## VERSION 2 🔮
+**Optimization updates, automatisms to improve V1 functionalities, connection to social media, admin pane, etc.**
+
+### Phase 8: Advanced Performance Optimization 🎯 FUTURE
+- [ ] Render-blocking CSS optimization
+- [ ] Critical CSS inlining
+- [ ] Image delivery optimization (responsive images)
+- [ ] Preconnect hints for critical origins
+- [ ] Core Web Vitals improvement
+- [ ] Bundle size optimization
+- [ ] Lazy loading enhancements
+
+### Phase 9: Social Media & External Integrations 🌐 FUTURE
+- [ ] Social media API connections
+- [ ] Automated social sharing
+- [ ] Instagram/LinkedIn feed integration
+- [ ] Analytics dashboard integration
+- [ ] Third-party CRM integration
+- [ ] Email marketing automation
+- [ ] Social login functionality
+
+### Phase 10: Content Management & Automation 🤖 FUTURE
+- [ ] Admin panel implementation
+- [ ] Content management interface
+- [ ] Automated content scheduling
+- [ ] Draft management system
+- [ ] Multi-author workflows
+- [ ] Content approval processes
+- [ ] Automated SEO optimization
+- [ ] Bulk content operations
+
+### Phase 11: Advanced Features & Enhancements 🚀 FUTURE
+- [ ] Advanced search functionality
+- [ ] User accounts and profiles
+- [ ] Comment system with moderation
+- [ ] Newsletter automation
+- [ ] Lead scoring system
+- [ ] A/B testing framework
+- [ ] Advanced analytics tracking
+- [ ] Customer portal functionality
 
 ## Tech Stack
 
@@ -154,164 +206,23 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 ## Challenges & Solutions
 
 ### Render-Blocking CSS Performance Issue ❌ **NOT SOLVED**
+**Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
+**Status**: Optimization attempts broke website layout, changes reverted.
 
-**Problem**: Google PageSpeed Insights reports render-blocking CSS requests causing 430ms delays in page rendering, affecting Core Web Vitals scores.
+### Language Switcher Functionality ✅ **RESOLVED**
+**Problem**: Language switcher only worked on homepage.
+**Solution**: Implemented comprehensive URL generation utilities for all page types.
+**Status**: Works across all pages (homepage, blog posts, archives, navigation).
 
-**Attempted Solution**: Implemented critical CSS inlining and async CSS loading strategy, but this broke the website layout:
-- Menu disappeared
-- Hero section split into multiple blocks
-- Products section layout changed
-- Overall design was compromised
+### Netlify Forms Integration ✅ **RESOLVED**
+**Problem**: Dynamic modal forms not detected by Netlify.
+**Solution**: Dual-form approach with hidden static form + dynamic modal.
+**Status**: Forms working with multilingual support and spam protection.
 
-**Current Status**: All performance optimization changes have been reverted to restore website functionality. The render-blocking CSS issue remains unsolved.
-
-**Next Steps**: Need to find an alternative approach to CSS optimization that doesn't interfere with the existing BlackSpike theme layout and styling.
-
-### Language Switcher Functionality Challenge ❌ **NOT SOLVED**
-
-**Problem**: Language switcher component only works correctly on the homepage. Users cannot switch languages from other pages (blog posts, archive pages, etc.), forcing them to return to the homepage to change languages.
-
-**Root Cause**: The current `LanguageSwitcher.astro` component has limited logic that only handles basic page types and doesn't properly handle:
-- Individual blog post translations using `enSlug`/`esSlug` fields
-- Complex URL structures for different page types
-- Navigation menu language-aware URL generation
-- Internal link translation throughout the site
-
-**Current Implementation Issues**:
-- Language switcher logic is too simplistic for complex routing
-- No fallback handling when translations are not available
-- Missing support for dynamic content (blog posts, search results, pagination)
-- Navigation links don't respect current language context
-
-**Impact**: 
-- Poor user experience - users must navigate back to homepage to change language
-- Broken multilingual functionality - core feature not working as expected
-- SEO issues - language-specific URLs not properly linked
-
-**Solution Strategy**: Implement comprehensive Phase 2.1 tasks to create a robust language switching system that works across all page types and content.
-
-### Netlify Forms Integration Challenge
-
-During Phase 3 implementation, we encountered a significant challenge with Netlify Forms integration. The original form implementation wasn't being detected by Netlify's form processing system, preventing form submissions from being processed correctly.
-
-#### The Problem
-- Netlify Forms requires specific HTML structure and attributes to auto-detect forms
-- Our dynamic modal-based form wasn't being recognized by Netlify's build-time form detection
-- Form submissions were failing silently without proper error handling
-- The multilingual form implementation added complexity to the detection process
-
-#### The Solution
-We implemented a comprehensive solution using a **dual-form approach**:
-
-1. **Hidden Static Form**: Added a hidden form with `data-netlify="true"` attribute that Netlify can detect during build time
-2. **Dynamic Modal Form**: Enhanced the existing `DialogModal.astro` component with proper Netlify attributes
-3. **Form Synchronization**: Implemented JavaScript to sync data between the hidden and visible forms
-4. **Multilingual Support**: Added language-specific form handling and validation messages
-
-#### Technical Implementation Details
-
-**Hidden Form Structure:**
-```html
-<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-  <textarea name="message"></textarea>
-  <input type="text" name="bot-field" />
-</form>
-```
-
-**Dynamic Form Enhancement:**
-- Added `data-netlify="true"` and `data-netlify-honeypot="bot-field"` attributes
-- Implemented proper form action and method attributes
-- Added honeypot field for spam protection
-- Enhanced accessibility with proper ARIA labels and focus management
-
-**Form Synchronization:**
-- JavaScript function to copy data from modal form to hidden form before submission
-- Proper error handling and user feedback
-- Multilingual success/error messages
-- Form validation with localized error messages
-
-#### Results
-- ✅ Netlify Forms now properly detects and processes form submissions
-- ✅ Email notifications configured and working
-- ✅ Spam protection via honeypot field
-- ✅ Multilingual form support (English/Spanish)
-- ✅ Proper accessibility and user experience
-- ✅ Form validation with localized error messages
-
-This solution ensures reliable form processing while maintaining the modern, dynamic user experience of our modal-based contact form.
-
-### Blog Post Content Formatting Challenge
-
-During Phase 4 implementation, we encountered significant challenges with blog post content formatting that required multiple iterations to resolve properly.
-
-#### The Problem
-- **Poor Code Block Contrast**: Code blocks were displaying with dark text on dark backgrounds, making them completely unreadable
-- **Missing Visual Hierarchy**: Headings lacked proper contrast and spacing, making content difficult to scan
-- **Inconsistent Typography**: Text colors and spacing were inconsistent across different content elements
-- **Missing List Bullets**: Unordered and ordered lists were displaying without bullet points or numbers
-- **CSS Specificity Issues**: Theme styles were overriding our custom prose styles due to CSS specificity conflicts
-
-#### The Solution
-We implemented a comprehensive solution using **high-specificity CSS selectors** and **global styling**:
-
-1. **Changed Class Names**: Replaced `prose-content` with `post-content` to avoid conflicts
-2. **Added Global Styles**: Used `is:global` attribute to ensure styles apply correctly
-3. **High Specificity Selectors**: Used `article .post-content` with `!important` flags to override theme styles
-4. **Fixed Code Block Contrast**: 
-   - Background: `#1f2937` (dark gray)
-   - Text: `#f8fafc` (bright white)
-   - Added `article .post-content pre * { color: #f8fafc !important; }` to force all code text to be white
-5. **Restored List Styling**: 
-   - Added `list-style: revert !important;` to restore default list styling
-   - Explicitly set `list-style-type: disc` for unordered lists and `decimal` for ordered lists
-   - Styled markers with `color: #9ca3af` for professional appearance
-
-#### Technical Implementation Details
-
-**CSS Structure:**
-```css
-<style is:global>
-  article .post-content {
-    font-family: var(--font-body);
-    color: #e5e7eb !important;
-    line-height: 1.8 !important;
-    font-size: 1.125rem !important;
-  }
-  
-  article .post-content h1 {
-    font-size: 2.5rem !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-  }
-  
-  article .post-content pre {
-    background-color: #1f2937 !important;
-    color: #f8fafc !important;
-  }
-  
-  article .post-content ul {
-    list-style-type: disc !important;
-  }
-</style>
-```
-
-**Key Features:**
-- ✅ **Professional Typography**: Clear heading hierarchy with proper font weights and colors
-- ✅ **Readable Code Blocks**: High contrast with proper syntax highlighting support
-- ✅ **Visible List Markers**: Bullets and numbers properly displayed
-- ✅ **Consistent Spacing**: Proper margins and padding throughout content
-- ✅ **Theme Integration**: All styling uses theme color variables and fonts
-
-#### Results
-- ✅ Blog posts now display with **magazine-quality typography**
-- ✅ Code blocks are **highly readable** with excellent contrast
-- ✅ Lists display **proper bullets and numbers**
-- ✅ Content maintains **visual hierarchy** and professional appearance
-- ✅ **Consistent styling** across both English and Spanish versions
-
-This solution ensures that blog content is not only functional but also visually appealing and professional, matching the high-quality standards of the BlackSpike theme.
+### Blog Post Content Formatting ✅ **RESOLVED**
+**Problem**: Poor code block contrast, missing list bullets, CSS conflicts.
+**Solution**: High-specificity CSS selectors with global styling.
+**Status**: Magazine-quality typography with proper code highlighting.
 
 ## Deployment Instructions
 
@@ -383,37 +294,7 @@ The site now supports multiple languages with the following structure:
 
 
 
-## Issues & Fixes
 
-### Known Issues
-
-#### Language Switcher Functionality ✅ **RESOLVED - GROUP 1 COMPLETED**
-- **Issue**: Language switcher only worked on homepage, not on other pages
-- **Solution**: Implemented comprehensive URL generation utilities and updated all navigation components
-- **Current Working**: 
-  - ✅ Homepage language switching (English ↔ Spanish)
-  - ✅ Static pages language switching (about, credits, thank-you)
-  - ✅ Blog archive pages language switching (/posts/ ↔ /es/posts/)
-  - ✅ Individual blog post language switching using enSlug/esSlug fields
-  - ✅ Navigation menu language-aware URL generation
-  - ✅ Internal link translation (all href attributes)
-- **Remaining Tasks**:
-  - ✅ Breadcrumb navigation language switching
-  - ✅ Search functionality language switching
-  - ✅ RSS feed language switching
-  - ✅ Language switcher fallback handling
-  - 🔄 **2.1.10** Pagination language switching (will implement when >10 posts)
-  - 🔄 **2.1.11** Tag pages language switching (will implement when tags are added)
-  - 🔄 **2.1.13** 404 page language switching (will implement when 404 page is added)
-- **Status**: Phase 2.1 core functionality completed - language switcher now works perfectly on all page types
-- **Next Steps**: Only 3 minor tasks remain for future implementation
-
-### Resolved Issues
-
-#### Netlify Forms Integration ✅ **RESOLVED**
-- **Issue**: Forms not being detected by Netlify's form processing system
-- **Solution**: Implemented dual-form approach with hidden static form and dynamic modal form
-- **Result**: Forms now properly detected and processed by Netlify
 
 ## Credits
 
