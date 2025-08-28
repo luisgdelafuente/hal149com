@@ -3,7 +3,21 @@
 import Arrow from '../assets/theme-images/icon-arrow.svg'
 import Image from "astro/components/Image.astro"
 
+// Import wallpaper images from assets for optimization
+import wallpaper01 from "../assets/content-images/blackspike-wallpaper-01.avif"
+import wallpaper02 from "../assets/content-images/blackspike-wallpaper-02.avif"
+import wallpaper03 from "../assets/content-images/blackspike-wallpaper-03.avif"
+import wallpaper04 from "../assets/content-images/blackspike-wallpaper-04.avif"
+
 const { title, services } = Astro.props
+
+// Map wallpaper image paths to imported assets
+const wallpaperMap = {
+  "/content-images/blackspike-wallpaper-01.avif": wallpaper01,
+  "/content-images/blackspike-wallpaper-02.avif": wallpaper02,
+  "/content-images/blackspike-wallpaper-03.avif": wallpaper03,
+  "/content-images/blackspike-wallpaper-04.avif": wallpaper04,
+}
 
 ---
 
@@ -50,7 +64,7 @@ const { title, services } = Astro.props
 
           {/* BG image */}
           <Image 
-            src={ item.image } 
+            src={ wallpaperMap[item.image] || item.image } 
             alt={ item.image_alt } 
             loading="lazy"
             width={800}

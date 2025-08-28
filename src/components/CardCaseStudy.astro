@@ -2,7 +2,22 @@
 
 import Image from "astro/components/Image.astro"
 
+// Import case study images from assets for optimization
+import pixelateImage from "../assets/content-images/pixelate.pictures.avif"
+import spikeImage from "../assets/content-images/spike.news.avif"
+// Note: brighton.dog.avif is not available in assets, will use original path
+
 const { caseStudy } = Astro.props
+
+// Map image paths to imported assets
+const imageMap = {
+  "/content-images/pixelate.pictures.avif": pixelateImage,
+  "/content-images/spike.news.avif": spikeImage,
+  // brighton.dog.avif will use original path from public folder
+}
+
+// Get the optimized image or fallback to original path
+const optimizedImage = imageMap[caseStudy.image] || caseStudy.image
 
 ---
 
@@ -14,7 +29,7 @@ const { caseStudy } = Astro.props
     class:list={["relative isolate flex h-full w-full gap-6 overflow-hidden rounded-xl pt-[20rem] @md:pt-[28rem] @xl:justify-end @4xl:pt-0", caseStudy.bg]}>
 
     <Image
-      src={ caseStudy.image }
+      src={ optimizedImage }
       alt={ caseStudy.image_alt }
       width={400}
       height={300}
