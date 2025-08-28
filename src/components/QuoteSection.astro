@@ -1,5 +1,7 @@
 ---
 
+import Image from "astro/components/Image.astro"
+
 const { content, image, cite, role } = Astro.props
 
 ---
@@ -13,14 +15,16 @@ const { content, image, cite, role } = Astro.props
   <!-- Cite -->
   <cite class="not-italic flex gap-4 items-center">
 
-    <img
+    <Image
       src={ image }
       class="h-12 w-12 rounded-full"
       alt=""
-      width="128"
-      height="128"
+      width={48}
+      height={48}
+      format="avif"
+      quality="high"
       loading="lazy"
-    >
+    />
 
     <div class="text-bs-foreground-light bs-h3">
       { cite } <span class="text-bs-foreground-dark">{ role }</span>

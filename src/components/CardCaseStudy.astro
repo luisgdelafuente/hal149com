@@ -1,5 +1,7 @@
 ---
 
+import Image from "astro/components/Image.astro"
+
 const { caseStudy } = Astro.props
 
 ---
@@ -11,14 +13,16 @@ const { caseStudy } = Astro.props
   <article
     class:list={["relative isolate flex h-full w-full gap-6 overflow-hidden rounded-xl pt-[20rem] @md:pt-[28rem] @xl:justify-end @4xl:pt-0", caseStudy.bg]}>
 
-    <img
+    <Image
       src={ caseStudy.image }
       alt={ caseStudy.image_alt }
-      class="drop-shadow-[0_100px_100px_rgba(0,0,0,0.5)] absolute top-[4cqb] left-8 mx-auto w-[90cqi] rounded-xl  @4xl:w-[60cqi] group-hover:scale-105 transition-transform duration-3000 ease-bs-spring transform-gpu"
+      width={400}
+      height={300}
+      format="avif"
+      quality="high"
+      class="drop-shadow-[0_100px_100px_rgba(0,0,0,0.5)] absolute top-[4cqb] left-8 mx-auto w-[90cqi] rounded-xl @4xl:w-[60cqi] group-hover:scale-105 transition-transform duration-3000 ease-bs-spring transform-gpu"
       loading="lazy"
-      height="1024"
-      width="768"
-    >
+    />
 
     <!-- Content -->
     <div class="z-10 flex h-full w-full flex-col gap-6 bg-bs-surface-0/50 backdrop-blur-3xl p-6 @4xl:w-1/2 @4xl:p-20">

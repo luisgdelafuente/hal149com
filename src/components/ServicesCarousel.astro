@@ -1,6 +1,7 @@
 ---
 
 import Arrow from '../assets/theme-images/icon-arrow.svg'
+import Image from "astro/components/Image.astro"
 
 const { title, services } = Astro.props
 
@@ -48,9 +49,16 @@ const { title, services } = Astro.props
         <figure class="flex flex-col gap-6 isolate min-h-[50svh] md:min-h-[40rem] h-full">
 
           {/* BG image */}
-          <img src={ item.image } alt={ item.image_alt } loading="lazy"
-            class="opacity-20 md:opacity-80 rounded-xl grayscale overflow-hidden w-full h-full object-cover object-left absolute inset-0"
-            height="1024" width="768" />
+          <Image 
+            src={ item.image } 
+            alt={ item.image_alt } 
+            loading="lazy"
+            width={800}
+            height={600}
+            format="avif"
+            quality="high"
+            class="opacity-20 md:opacity-80 rounded-xl grayscale overflow-hidden w-full h-full object-cover object-left absolute inset-0" 
+          />
 
           {/* Gradient mask */}
           <div
