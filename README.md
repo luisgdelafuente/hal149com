@@ -251,6 +251,19 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: High-specificity CSS selectors with global styling.
 **Status**: Magazine-quality typography with proper code highlighting.
 
+### Responsive Image Optimization ❌ **NOT SOLVED**
+**Problem**: Google PageSpeed reports 90KB+ savings possible on blog post images. Mobile devices receive full-size (800px) images when displaying at 379px, causing unnecessary bandwidth usage and poor LCP scores.
+**Root Cause**: Astro's Image component with responsive features (widths, sizes, srcset) only works with imported assets from `/src/assets/`, not with dynamic string paths from `/public/` folder used in blog post frontmatter.
+**Attempted Solutions**: 
+- Responsive image component with widths/sizes attributes (failed - no responsive generation)
+- Moving images to `/src/assets/` with import mapping (failed - dynamic paths not supported)
+**Current Status**: Using fixed 800x450px images for all devices, causing performance issues.
+**Most Probable Solution**: Implement fixed image sizing strategy with WebP format:
+- Standardize all blog images to specific dimensions (e.g., 600x338px for hero, 400x225px for archive)
+- Use WebP format consistently for better compression
+- Accept single-size approach rather than true responsive images
+- Potential 30-40% file size reduction through format optimization alone
+
 ## Deployment Instructions
 
 ### Prerequisites
