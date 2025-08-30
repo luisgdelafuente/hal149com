@@ -2,7 +2,7 @@
 title: "Machine Learning Fundamentals: A Beginner's Guide"
 description: "Dive into the world of machine learning with this comprehensive guide covering the basics, algorithms, and practical applications for business and technology professionals."
 date: 2024-01-20
-author: "David Chen"
+author: "Luis García de la Fuente"
 tags: ["Machine Learning", "AI", "Data Science", "Technology"]
 image: "/blog-images/machine-learning-basics.webp"
 featured: true

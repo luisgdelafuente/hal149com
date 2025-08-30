@@ -2,7 +2,7 @@
 title: "AI Ethics and Responsibility: Building Trust in Artificial Intelligence"
 description: "Explore the critical importance of ethical AI development, the challenges of bias and transparency, and how organizations can build trustworthy artificial intelligence systems."
 date: 2024-01-25
-author: "Dr. Emily Rodriguez"
+author: "Luis García de la Fuente"
 tags: ["AI Ethics", "Responsibility", "Trust", "Bias", "Transparency"]
 image: "/blog-images/ai-ethics-responsibility.webp"
 featured: true

@@ -2,7 +2,7 @@
 title: "El Archivo LLMs.txt: Un Nuevo Estándar para la Atribución de Datos de Entrenamiento de IA"
 description: "Explora el estándar emergente LLMs.txt, una solución propuesta para la atribución adecuada y transparencia en los datos de entrenamiento de IA, similar a robots.txt pero para modelos de lenguaje grandes."
 date: 2024-01-30
-author: "Dr. Sarah Chen"
+author: "Luis García de la Fuente"
 tags: ["AI Ethics", "Training Data", "Transparency", "Attribution", "LLMs.txt"]
 image: "/blog-images/thellmstxtfile.webp"
 featured: true
