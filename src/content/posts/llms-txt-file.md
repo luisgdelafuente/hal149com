@@ -7,6 +7,7 @@ tags: ["AI Ethics", "Training Data", "Transparency", "Attribution", "LLMs.txt"]
 image: "/blog-images/thellmstxtfile.webp"
 featured: true
 lang: "en"
+esSlug: "formato-llms-txt"
 ---
 
 # The LLMs.txt File: A New Standard for AI Training Data Attribution
