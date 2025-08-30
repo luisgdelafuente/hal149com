@@ -7,7 +7,7 @@ tags: ["AI", "SEO", "Optimization", "Content", "ChatGPT", "Citation"]
 image: "/blog-images/chatgpt-citation-guide.webp"
 featured: true
 lang: "en"
-esSlug: "claves-citado-chatgpt-modelos-ia"
+enSlug: "keys-cited-chatgpt-ai-models"
 ---
 
 # 6 Keys to Being Cited by ChatGPT and Other AI Models
@@ -22,7 +22,7 @@ It's interesting to note how the focus shifts from technical considerations to t
 
 AI models value information that can be verified and contextualized. The inclusion of **hard data and statistics** with their respective sources is an indicator of credibility.
 
-A study from Princeton University demonstrated a [correlation between the use of citable data and a 40% increase in visibility](https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization){:rel="nofollow"}. Each data point should be accompanied by a reference linked to its original source (e.g., [Pew Research Center](https://www.pewresearch.org/){:target="_blank" rel="nofollow"}, government reports, academic studies).
+A study from Princeton University demonstrated a <a href="https://collaborate.princeton.edu/en/publications/geo-generative-engine-optimization" rel="nofollow">correlation between the use of citable data and a 40% increase in visibility</a>. Each data point should be accompanied by a reference linked to its original source (e.g., <a href="https://www.pewresearch.org/" target="_blank" rel="nofollow">Pew Research Center</a>, government reports, academic studies).
 
 This method not only validates your content but also facilitates AI verification of information accuracy, improving its classification as an authoritative source.
 
@@ -30,7 +30,7 @@ This method not only validates your content but also facilitates AI verification
 
 LLMs analyze the authority of an information source heuristically. One of these heuristics is the association with recognized experts in a field. By incorporating **short and well-attributed quotes from niche authorities**, a semantic connection is established between your content and an external authority source. This acts as a "vote of confidence" for algorithms.
 
-For example, citing a researcher with peer-reviewed publications or a recognized industry thought leader increases the perception of content quality and reliability. Tools like [SparkToro](https://sparktoro.com/){:target="_blank" rel="nofollow"} can be useful for identifying these influential figures.
+For example, citing a researcher with peer-reviewed publications or a recognized industry thought leader increases the perception of content quality and reliability. Tools like <a href="https://sparktoro.com/" target="_blank" rel="nofollow">SparkToro</a> can be useful for identifying these influential figures.
 
 ## 3. Question-and-Answer Format (Q-and-A)
 
@@ -40,7 +40,7 @@ This answer should be concise, ideally under 300 characters, to be easily select
 
 ## 4. Semantic Links on Third-Party Platforms
 
-Domain authority is built both internally and externally. Platforms like [Reddit](https://www.reddit.com/){:target="_blank" rel="nofollow"} and [Quora](https://www.quora.com/){:target="_blank" rel="nofollow"} are highly valued by LLMs due to their user-generated content nature and freshness.
+Domain authority is built both internally and externally. Platforms like <a href="https://www.reddit.com/" target="_blank" rel="nofollow">Reddit</a> and <a href="https://www.quora.com/" target="_blank" rel="nofollow">Quora</a> are highly valued by LLMs due to their user-generated content nature and freshness.
 
 Strategic participation in these forums, offering high-quality answers that include a **natural mention of your brand and a link to your content**, creates a network of external references.
 
@@ -54,7 +54,7 @@ This action is an explicit signal to algorithms that the content has been review
 
 ## 6. Multimedia Content with Metadata
 
-LLMs don't just process text. Metadata from multimedia elements like videos and graphics are also indexed. Embedding a **60-second explanatory video** and a **simple graphic** in the content, while hosting them on platforms like [YouTube](https://www.youtube.com/){:target="_blank" rel="nofollow"}, allows information to be accessible in multiple formats.
+LLMs don't just process text. Metadata from multimedia elements like videos and graphics are also indexed. Embedding a **60-second explanatory video** and a **simple graphic** in the content, while hosting them on platforms like <a href="https://www.youtube.com/" target="_blank" rel="nofollow">YouTube</a>, allows information to be accessible in multiple formats.
 
 It's essential that these visual elements are accompanied by **detailed descriptions and relevant tags** that AI models can process. This creates an additional data point for indexing, increasing the chances that your content will be cited multimodally.
 
