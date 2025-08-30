@@ -1,11 +1,18 @@
 ---
 /**
  * ResponsivePostImage.astro
- * Optimized responsive image component for blog posts
+ * UPDATED: Now handles optimization for public images by moving them to assets
  * Automatically generates multiple sizes and formats for different viewports
  */
 
 import { Image } from 'astro:assets';
+
+// Import all blog images from assets for optimization
+import aiEthicsImg from '../assets/blog-images/ai-ethics-responsibility.webp';
+import aiRevolutionImg from '../assets/blog-images/ai-revolution-2024.webp';
+import chatgptGuideImg from '../assets/blog-images/chatgpt-citation-guide.webp';
+import machineLearningImg from '../assets/blog-images/machine-learning-basics.webp';
+import llmsTxtImg from '../assets/blog-images/thellmstxtfile.webp';
 
 export interface Props {
   src: string;
@@ -22,6 +29,18 @@ const {
   loading = "lazy",
   style = "hero"
 } = Astro.props;
+
+// Map public paths to imported assets for optimization
+const imageMap = {
+  "/blog-images/ai-ethics-responsibility.webp": aiEthicsImg,
+  "/blog-images/ai-revolution-2024.webp": aiRevolutionImg,
+  "/blog-images/chatgpt-citation-guide.webp": chatgptGuideImg,
+  "/blog-images/machine-learning-basics.webp": machineLearningImg,
+  "/blog-images/thellmstxtfile.webp": llmsTxtImg,
+};
+
+// Get optimized image or fallback to public path
+const optimizedSrc = imageMap[src] || src;
 
 // Define responsive configurations for different contexts
 const imageConfigs = {
@@ -48,7 +67,7 @@ const config = imageConfigs[style];
 
 <!-- Responsive optimized image with multiple breakpoints -->
 <Image
-  src={src}
+  src={optimizedSrc}
   alt={alt}
   width={config.width}
   height={config.height}
@@ -58,7 +77,6 @@ const config = imageConfigs[style];
   loading={loading}
   format="webp"
   quality={config.quality}
-  densities={[1, 2]}
 />
 
 <!-- 
