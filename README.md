@@ -1,22 +1,21 @@
-# Frontier Agency Website
-
-A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
-
-## PROJECT POLICIES
+# PROJECT POLICIES
 
 The following rules must be always followed to work in this project and keep this document updated:
 
 1) **Roadmap must always be clean**, with clear steps and brief names for versions, phases and tasks. NO detailed descriptions here.
 2) **Details about challenges and complex tasks** will be included in the corresponding chapter "CHALLENGES & SOLUTIONS"
 3) **AI Never launches commands on the console**, the user will do it manually at the request of the AI, or to proceed with the testing of the development.
+4) I don´t always need a complete description of the work done, only when it has implied a significant amount of work, trials or errors. You can finish each task with a small briefing and ask me to test it. 
 
 This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
 
-## Project Description
+# Project Description
+
+A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
 
 This is our complete business agency website built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for Frontier Agency's specific business needs while maintaining the modern design and performance optimizations of the original theme, and enhanced it with comprehensive features for a professional agency presence.
 
-## Roadmap
+# Roadmap
 
 ## VERSION 1 🚀
 **All basic functionalities and optimizations to get a functional website for our AI Agency including company pages, contact forms, posts, etc.**
@@ -109,26 +108,13 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **4.29** Image management strategy for git-hosted images
 
 ### Phase 5: Content Customization 📋 PARTIAL
-- [ ] Company information and branding updates
+- [ ] Filter home page sections 
+- [ ] Company logo
+- [ ] Company meta data for social and seo 
 - [ ] Service offerings content
-- [ ] Team member profiles
-- [ ] Case studies and portfolio items
-- [ ] Testimonials and client reviews
-- [ ] Legal pages (Privacy Policy, Terms of Service)
-- [ ] Custom imagery and graphics
-- [ ] Content SEO optimization
-- [ ] Multilingual content management
 - [x] Content management strategy for posts (markdown files in git workflow)
-- [x] **Responsive Menu Implementation** ✅ **COMPLETED** - Fully responsive mobile menu with hamburger navigation, language switcher integration, and accessibility features
-- [ ] **Company Logo Implementation** - Replace placeholder logo with Frontier Agency company logo in header
-- [ ] Author profiles and author pages implementation
-- [ ] Content organization strategy (categories vs tags system)
-- [ ] Draft posts functionality for unpublished content
-- [ ] Post scheduling system for future publications
-- [ ] Comments system integration (external like Disqus or built-in)
-- [ ] Enhanced social sharing integration for posts
-- [ ] **Tag functionality enhancement**   - Advanced tag management system with filtering, search, and related posts
-- [ ] **Related posts system** - Implement alternative related posts logic (not tag-based)
+- [x] Responsive Menu Implementation ✅ **COMPLETED** - Fully responsive mobile menu with hamburger navigation, language switcher integration, and accessibility features
+- [ ] Company Logo Implementation - Replace placeholder logo with Frontier Agency company logo in header
 
 ### Phase 6: Final Configurations ✅ COMPLETED
 - [x] **6.1** Robots.txt configuration
@@ -180,6 +166,23 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 ## VERSION 2 🔮
 **Optimization updates, automatisms to improve V1 functionalities, connection to social media, admin pane, etc.**
+
+### Phase 7.5: Advanced Content Features 📝 FUTURE
+- [ ] **7.5.1** Case studies and portfolio items
+- [ ] **7.5.2** Legal pages (Privacy Policy, Terms of Service)
+- [ ] **7.5.3** Content SEO optimization
+- [ ] **7.5.4** Team member profiles
+- [ ] **7.5.5** Testimonials and client reviews
+- [ ] **7.5.6** Custom imagery and graphics
+- [ ] **7.5.7** Multilingual content management
+- [ ] **7.5.8** Author profiles and author pages implementation
+- [ ] **7.5.9** Content organization strategy (categories vs tags system)
+- [ ] **7.5.10** Draft posts functionality for unpublished content
+- [ ] **7.5.11** Post scheduling system for future publications
+- [ ] **7.5.12** Comments system integration (external like Disqus or built-in)
+- [ ] **7.5.13** Enhanced social sharing integration for posts
+- [ ] **7.5.14** Tag functionality enhancement - Advanced tag management system with filtering, search, and related posts
+- [ ] **7.5.15** Related posts system - Implement alternative related posts logic (not tag-based)
 
 ### Phase 8: Content Management System Implementation 📝 FUTURE
 - [ ] **8.1** Decap CMS (formerly Netlify CMS) integration setup
@@ -246,7 +249,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [ ] Advanced analytics tracking
 - [ ] Customer portal functionality
 
-## Tech Stack
+# Tech Stack
 
 ### Core Technologies
 - **Astro 5** - Static site generator with JSX support
@@ -268,7 +271,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - **Build Process** - `npm run build` generates optimized static files
 - **Node.js 18** - LTS version for stability
 
-## Challenges & Solutions
+# Challenges & Solutions
 
 ### Render-Blocking CSS Performance Issue ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
@@ -344,7 +347,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - **Independent functionality**: Each instance works independently without interference
 **Status**: ✅ **COMPLETED** - Language switcher now works perfectly in both desktop and mobile modes
 
-## Deployment Instructions
+# Deployment Instructions
 
 ### Prerequisites
 - Node.js 18+ installed
