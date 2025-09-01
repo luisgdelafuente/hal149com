@@ -2,13 +2,13 @@
 
 A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
 
-## HOW TO USE THIS DOCUMENT 
+## PROJECT POLICIES
 
-**IMPORTANT: This file contains instructions and context for AI to work on the website. It must always be taken into account when making changes or additions to the codebase.**
+The following rules must be always followed to work in this project and keep this document updated:
 
-**DEVELOPMENT RULE: All phases must use numbered tasks (e.g., 4.1, 4.2, etc.) and each task must produce specific and measurable changes so we can track progress effectively.**
-
-AI AGENTS ARE NEVER running install or builld commands by themselves. Always ask the user to run the commands when needed. 
+1) **Roadmap must always be clean**, with clear steps and brief names for versions, phases and tasks. NO detailed descriptions here.
+2) **Details about challenges and complex tasks** will be included in the corresponding chapter "CHALLENGES & SOLUTIONS"
+3) **AI Never launches commands on the console**, the user will do it manually at the request of the AI, or to proceed with the testing of the development.
 
 This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
 
@@ -78,35 +78,35 @@ This is our complete business agency website built on the [BlackSpike Astro Land
  - [x] Hidden static `newsletter` form added in layout for Netlify detection
  - [x] AJAX submission with inline success message for newsletter form
 
-### Phase 4: Blog Post Implementation 📝 IN PROGRESS
-- [x] **4.1** Configure content collections in astro.config.mjs with type-safe schema for posts
-- [x] **4.2** Create src/content/posts/ directory structure with proper organization
-- [x] **4.3** Define frontmatter schema with all required metadata fields (title, description, date, author, tags, image, lang, enSlug, esSlug)
-- [x] **4.4** Create posts archive page (/posts/) with responsive grid layout and pagination (10 posts per page)
-- [x] **4.5** Create Spanish posts archive page (/es/posts/) with same functionality as English version
-- [x] **4.6** Create individual post page template (/posts/[slug]/) with full Markdown content rendering
-- [x] **4.7** Create Spanish individual post page template (/es/posts/[slug]/) with same functionality
-- [x] **4.8** ~~Implement tag filtering pages~~ - **MOVED TO PHASE 5** - Basic tag functionality removed for now
-- [x] **4.9** Create LatestPostsSection.astro component with latest 3 posts display
-- [x] **4.10** Integrate LatestPostsSection into homepage with responsive design
-- [x] **4.11** Generate RSS feeds for both languages (/rss.xml and /es/rss.xml)
-- [x] **4.12** Implement client-side search functionality with debounced input and results highlighting
-- [x] **4.14** Implement structured data (JSON-LD) for posts and archive pages
-- [x] **4.15** Add Open Graph and Twitter Card meta tags to all post pages
-- [x] **4.16** Configure image optimization for post images using existing Sharp setup
-- [x] **4.17** Ensure all post components are fully responsive (mobile, tablet, desktop)
-- [x] **4.18** Add proper meta title and description to all post pages and archive pages
-- [x] **4.19** Create 6 dummy AI-related posts (3 English + 3 Spanish pairs) with full Markdown features for testing
-- [x] **4.20** Test all blog functionality with dummy posts (separate testing session)
-- [x] **4.21** Fix Homepage Posts Section Design - Apply theme's dark background, typography classes (bs-h2, bs-h3, bs-body-text), container utilities, and surface styling
-- [x] **4.22** Fix Posts Archive Pages Design - Apply theme background, surface colors, typography classes, and button styling for both English and Spanish versions
-- [x] **4.23** Fix Individual Post Content Styling - Replace custom prose styles with theme-consistent typography, colors, and surface styling
-- [x] **4.24** Apply Consistent Button Styling - Replace custom button classes with bs-btn theme class across all post-related components
-- [x] **4.25** Update README Phase 4 with design consistency fixes tasks
-- [x] **4.26** Improve prose content formatting - Fix spacing, typography, and layout for all markdown elements in post content
-- [x] **4.27** Fix critical prose formatting issues - Poor contrast, broken code blocks, bad readability
-- [x] **4.28** Fix missing bullet points in lists - Add proper list styling with visible bullets and markers
-- [x] **4.29** Image management strategy for git-hosted images in posts - **COMPLETED** - Implemented single gallery approach with `featured` field in schema, updated all posts to use `/blog-images/` paths, created comprehensive documentation, optimized image display with responsive heights for individual posts and centered cropping for archives
+### Phase 4: Blog Post Implementation 📝 ✅ **COMPLETED**
+- [x] **4.1** Configure content collections
+- [x] **4.2** Create posts directory structure
+- [x] **4.3** Define frontmatter schema
+- [x] **4.4** Create English posts archive page
+- [x] **4.5** Create Spanish posts archive page
+- [x] **4.6** Create English individual post template
+- [x] **4.7** Create Spanish individual post template
+- [x] **4.8** ~~Tag filtering pages~~ - **MOVED TO PHASE 5**
+- [x] **4.9** Create LatestPostsSection component
+- [x] **4.10** Integrate LatestPostsSection into homepage
+- [x] **4.11** Generate RSS feeds for both languages
+- [x] **4.12** Implement client-side search functionality
+- [x] **4.14** Implement structured data (JSON-LD)
+- [x] **4.15** Add Open Graph and Twitter Card meta tags
+- [x] **4.16** Configure image optimization
+- [x] **4.17** Ensure responsive design
+- [x] **4.18** Add proper meta titles and descriptions
+- [x] **4.19** Create 6 dummy AI-related posts
+- [x] **4.20** Test all blog functionality
+- [x] **4.21** Fix Homepage Posts Section Design
+- [x] **4.22** Fix Posts Archive Pages Design
+- [x] **4.23** Fix Individual Post Content Styling
+- [x] **4.24** Apply Consistent Button Styling
+- [x] **4.25** Update README Phase 4
+- [x] **4.26** Improve prose content formatting
+- [x] **4.27** Fix critical prose formatting issues
+- [x] **4.28** Fix missing bullet points in lists
+- [x] **4.29** Image management strategy for git-hosted images
 
 ### Phase 5: Content Customization 📋 PARTIAL
 - [ ] Company information and branding updates
@@ -138,106 +138,41 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 **Critical performance optimizations required before launch to achieve optimal Core Web Vitals scores and user experience.**
 
-#### 7.1: Responsive Image Optimization 🖼️ ✅ **COMPLETED**
-- [x] **7.1.1** Implement dynamic image sizing solution for blog post images
-  - **Problem**: Mobile devices receive 800px images when displaying at 379px (90KB+ waste)
-  - **Root Cause**: Astro Image component doesn't work with dynamic `/public/` paths from frontmatter
-  - **Solution Implemented**: Custom ResponsivePostImage component with asset mapping
-    - [x] **Step 1**: Moved blog images from `/public/blog-images/` to `/src/assets/blog-images/`
-    - [x] **Step 2**: Created ResponsivePostImage.astro component with image path mapping
-    - [x] **Step 3**: Updated all blog components to use the new responsive component
-    - [x] **Step 4**: Implemented responsive widths and sizes attributes for optimal delivery
-  - **Results Achieved**: 
-    - ✅ 60-82% image size reduction across all blog post images
-    - ✅ Multiple responsive sizes generated (380px, 400px, 600px, 800px, 1200px)
-    - ✅ Proper srcset and sizes attributes for optimal device delivery
-    - ✅ WebP format optimization with fallback support
-    - ✅ 90KB+ bandwidth savings achieved as expected
-    - ✅ **Safety**: Original images preserved in `/public/blog-images/` as backup
-    - ✅ **Fallback**: Component gracefully falls back to original images if optimization fails
-- [ ] **7.1.2** Optimize hero and content images for responsive delivery
-  - [ ] Implement proper `sizes` attributes for all responsive images
-  - [ ] Add WebP/AVIF format support with fallbacks
-  - [ ] Implement lazy loading for below-the-fold images
-  - [ ] Optimize image compression ratios for different screen sizes
-- [ ] **7.1.3** Complete image migration from `/public/` to `/src/assets/` for Astro optimization
-  - [ ] Move remaining content images following `IMAGE_MIGRATION_INSTRUCTIONS.md`
-  - [ ] Update all component references to use optimized image paths
-  - [ ] Verify Sharp processing is working for all migrated images
-  - [ ] Test responsive behavior across all device sizes
+#### 7.1: Responsive Image Optimization 🖼️ ⚠️ **PARTIALLY SOLVED**
+- [x] **7.1.1** Implement responsive image optimization for blog posts
+- [ ] **7.1.2** Optimize hero and content images
+- [ ] **7.1.3** Complete image migration to assets folder
 
 #### 7.2: CSS Render-Blocking Optimization ⚡ **PENDING**
-- [ ] **7.2.1** Implement critical CSS inlining strategy
-  - **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals
-  - **Current Status**: Optimization attempts broke layout, changes reverted
-  - **Solution Approach**:
-    - [ ] **Step 1**: Identify critical above-the-fold CSS classes
-    - [ ] **Step 2**: Create inline critical CSS for immediate rendering
-    - [ ] **Step 3**: Defer non-critical CSS loading with preload
-    - [ ] **Step 4**: Test layout integrity across all pages
+- [ ] **7.2.1** Implement critical CSS inlining
 - [ ] **7.2.2** Optimize CSS delivery and loading
-  - [ ] Implement CSS code splitting for page-specific styles
-  - [ ] Add preconnect hints for critical origins
-  - [ ] Optimize font loading with `font-display: swap`
-  - [ ] Minimize CSS bundle size through tree-shaking
 - [ ] **7.2.3** Implement progressive CSS loading
-  - [ ] Load essential styles inline for immediate rendering
-  - [ ] Defer non-critical styles with `media="print"` and JavaScript
-  - [ ] Implement CSS loading state management
-  - [ ] Add fallback styles for progressive enhancement
 
 #### 7.3: Core Web Vitals Optimization 📊 **PENDING**
 - [ ] **7.3.1** Optimize Largest Contentful Paint (LCP)
-  - [ ] Prioritize hero image loading and optimization
-  - [ ] Implement resource hints (preload, prefetch) for critical resources
-  - [ ] Optimize server response times and TTFB
-  - [ ] Minimize render-blocking resources
 - [ ] **7.3.2** Optimize First Input Delay (FID) and Interaction to Next Paint (INP)
-  - [ ] Reduce JavaScript bundle size and execution time
-  - [ ] Implement code splitting for non-critical JavaScript
-  - [ ] Optimize event handlers and interaction responsiveness
-  - [ ] Add loading states for interactive elements
 - [ ] **7.3.3** Optimize Cumulative Layout Shift (CLS)
-  - [ ] Set explicit dimensions for all images and media
-  - [ ] Reserve space for dynamic content (ads, embeds)
-  - [ ] Optimize font loading to prevent layout shifts
-  - [ ] Implement skeleton loading states
 
 #### 7.4: Bundle and Asset Optimization 📦 **PENDING**
 - [ ] **7.4.1** JavaScript optimization
-  - [ ] Implement tree-shaking for unused code elimination
-  - [ ] Add code splitting for route-based chunks
-  - [ ] Optimize third-party script loading
-  - [ ] Implement service worker for caching strategy
 - [ ] **7.4.2** Asset delivery optimization
-  - [ ] Configure proper cache headers for static assets
-  - [ ] Implement CDN optimization for global delivery
-  - [ ] Add compression (gzip/brotli) for all text assets
-  - [ ] Optimize favicon and app icon delivery
 
 #### 7.5: Performance Testing and Validation 🧪 **PENDING**
 - [ ] **7.5.1** Comprehensive performance testing
-  - [ ] Run Lighthouse audits on all major pages
-  - [ ] Test performance across different devices and networks
-  - [ ] Validate Core Web Vitals scores meet targets
-  - [ ] Test performance under load and stress conditions
 - [ ] **7.5.2** Performance monitoring setup
-  - [ ] Implement Real User Monitoring (RUM) for performance tracking
-  - [ ] Set up performance budgets and alerts
-  - [ ] Configure automated performance testing in CI/CD
-  - [ ] Monitor performance metrics post-launch
 
 #### 7.6: Final Launch Preparation 🚀 **PENDING**
 - [ ] **7.6.1** Pre-launch checklist
-  - [ ] Verify all performance optimizations are working
-  - [ ] Test all functionality across browsers and devices
-  - [ ] Validate SEO meta tags and structured data
-  - [ ] Confirm analytics and tracking are properly configured
 - [ ] **7.6.2** Go-live deployment
-  - [ ] Deploy to production with all optimizations
-  - [ ] Monitor performance metrics immediately post-launch
-  - [ ] Set up ongoing performance monitoring
-  - [ ] Document performance optimization results and learnings
+
+#### 7.7: LCP Request Discovery 🔍 **PENDING**
+- [ ] **7.7.1** Make LCP image discoverable from HTML immediately
+- [ ] **7.7.2** Avoid lazy-loading LCP images
+
+#### 7.8: Network Dependency Tree Optimization 🌐 **PENDING**
+- [ ] **7.8.1** Reduce critical request chains length
+- [ ] **7.8.2** Reduce download size of critical resources
+- [ ] **7.8.3** Defer download of unnecessary resources
 
 ---
 
@@ -352,7 +287,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: High-specificity CSS selectors with global styling.
 **Status**: Magazine-quality typography with proper code highlighting.
 
-### Responsive Image Optimization ✅ **RESOLVED**
+### Responsive Image Optimization ⚠️ **PARTIALLY SOLVED**
 **Problem**: Google PageSpeed reports 90KB+ savings possible on blog post images. Mobile devices receive full-size (800px) images when displaying at 379px, causing unnecessary bandwidth usage and poor LCP scores.
 **Root Cause**: Astro's Image component with responsive features (widths, sizes, srcset) only works with imported assets from `/src/assets/`, not with dynamic string paths from `/public/` folder used in blog post frontmatter.
 **Solution Implemented**: Custom ResponsivePostImage component with asset mapping
@@ -360,13 +295,43 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - Created ResponsivePostImage.astro component that maps string paths to imported assets
 - Updated all blog components to use the new responsive component
 - Implemented responsive widths and sizes attributes for optimal delivery
+- **Latest Optimization**: Added 380px size for mobile displays, improved compression (75% default, 80% for individual posts)
 **Results Achieved**: 
 - ✅ 60-82% image size reduction across all blog post images
-- ✅ Multiple responsive sizes generated (400px, 600px, 800px, 1200px)
+- ✅ Multiple responsive sizes generated (380px, 400px, 600px, 800px, 1200px)
 - ✅ Proper srcset and sizes attributes for optimal device delivery
 - ✅ WebP format optimization with fallback support
 - ✅ 90KB+ bandwidth savings achieved as expected
-**Status**: Fully optimized responsive images working across all blog pages
+- ✅ **Safety**: Original images preserved in `/public/blog-images/` as backup
+- ✅ **Fallback**: Component gracefully falls back to original images if optimization fails
+**Current Status**: ⚠️ **ORANGE WARNING PERSISTS** - Google PageSpeed still reports large images and compression issues. Responsive optimization system not working as expected. Moving to CSS optimization priority.
+
+### CSS Render-Blocking Optimization ❌ **NOT SOLVED**
+**Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
+**Current Status**: Optimization attempts broke website layout, changes reverted.
+**Solution Approach**:
+- **Step 1**: Identify critical above-the-fold CSS classes
+- **Step 2**: Create inline critical CSS for immediate rendering
+- **Step 3**: Defer non-critical CSS loading with preload
+- **Step 4**: Test layout integrity across all pages
+**Status**: Pending implementation in Phase 7.2
+
+### LCP Request Discovery ❌ **NOT SOLVED**
+**Problem**: Google Speed Test reports LCP image not discoverable from HTML immediately, affecting Largest Contentful Paint performance.
+**Solution Approach**:
+- **Step 1**: Identify the LCP element (likely hero image)
+- **Step 2**: Ensure LCP image is loaded without lazy-loading
+- **Step 3**: Optimize image loading priority and preloading
+**Status**: Pending implementation in Phase 7.7
+
+### Network Dependency Tree Optimization ❌ **NOT SOLVED**
+**Problem**: Critical request chains are too long, affecting page load performance and LCP scores.
+**Solution Approach**:
+- **Step 1**: Analyze critical request chains
+- **Step 2**: Reduce chain length by optimizing resource loading order
+- **Step 3**: Defer non-critical resources
+- **Step 4**: Optimize resource sizes
+**Status**: Pending implementation in Phase 7.8
 
 ## Deployment Instructions
 
@@ -446,5 +411,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 2.1 core functionality completed - Language switcher now works perfectly on ALL page types including individual blog posts, navigation menus, breadcrumbs, search functionality, and RSS feeds. Only 3 minor tasks remain for future implementation (pagination, tags, 404 page). Language switcher button design and behavior unchanged - only the logic behind it has been improved.
+**Last Updated:** Phase 7 expanded with 4 pending optimizations: CSS render-blocking (7.2), LCP request discovery (7.7), Network dependency tree (7.8), plus existing image optimization (7.1). README reorganized with clean roadmap and detailed challenges section.
 
