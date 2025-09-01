@@ -15,7 +15,7 @@ const {
   height = 450, 
   class: className = '',
   format = 'webp',
-  quality = 85,
+  quality = 75, // Reduced from 85 to 75 for better compression
   loading = 'lazy'
 } = Astro.props;
 
@@ -31,12 +31,13 @@ const imageMap = {
 // Get the optimized image or fallback to original path
 const optimizedImage = imageMap[src as keyof typeof imageMap];
 
-// Calculate responsive widths based on the original width
-const responsiveWidths = [400, 600, 800, 1200].filter(w => w <= width * 1.5);
+// Calculate responsive widths - optimized for better mobile sizing
+// Added 380px specifically for mobile displays (379px mentioned in speed test)
+const responsiveWidths = [380, 400, 600, 800, 1200].filter(w => w <= width * 1.5);
 
-// Generate responsive sizes attribute
+// Generate responsive sizes attribute - more precise breakpoints
 const sizes = responsiveWidths.length > 1 
-  ? `(max-width: 640px) ${responsiveWidths[0]}px, (max-width: 1024px) ${responsiveWidths[1] || responsiveWidths[0]}px, ${responsiveWidths[responsiveWidths.length - 1]}px`
+  ? `(max-width: 480px) ${responsiveWidths[0]}px, (max-width: 640px) ${responsiveWidths[1]}px, (max-width: 1024px) ${responsiveWidths[2] || responsiveWidths[1]}px, ${responsiveWidths[responsiveWidths.length - 1]}px`
   : `${width}px`;
 ---
 
