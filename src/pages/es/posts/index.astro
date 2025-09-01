@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
 import { getLangFromUrl } from '../../../i18n/ui';
 import BlogSearch from "../../../components/BlogSearch.astro";
-import { Image } from 'astro:assets';
+import ResponsivePostImage from "../../../components/ResponsivePostImage.astro";
 
 // Get all posts and sort by date
 const allPosts = await getCollection('posts');
@@ -73,7 +73,7 @@ const lang = getLangFromUrl(Astro.url);
           <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
             {post.data.image && (
               <div class="aspect-video overflow-hidden">
-                <Image 
+                <ResponsivePostImage 
                   src={post.data.image} 
                   alt={post.data.title}
                   width={400}

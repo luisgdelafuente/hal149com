@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { getLangFromUrl } from '../i18n/ui';
-import { Image } from 'astro:assets';
+import ResponsivePostImage from './ResponsivePostImage.astro';
 
 // Get latest 3 posts for the current language
 const lang = getLangFromUrl(Astro.url);
@@ -47,7 +47,7 @@ const currentContent = content[lang as keyof typeof content];
           <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
             {post.data.image && (
               <div class="aspect-video overflow-hidden">
-                <Image 
+                <ResponsivePostImage 
                   src={post.data.image} 
                   alt={post.data.title}
                   width={400}
