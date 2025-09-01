@@ -55,6 +55,9 @@ export const ui = {
     'footer.credits': 'Based on the BlackSpike Astro Landing Page theme.',
     'skip.content': 'Skip to content',
     'close': 'Close',
+    'menu.open': 'Open menu',
+    'menu.close': 'Close menu',
+    'menu.navigation': 'Navigation',
   },
   es: {
     'nav.services': 'Servicios',
@@ -105,6 +108,9 @@ export const ui = {
     'footer.credits': 'Basado en el tema BlackSpike Astro Landing Page.',
     'skip.content': 'Saltar al contenido',
     'close': 'Cerrar',
+    'menu.open': 'Abrir menú',
+    'menu.close': 'Cerrar menú',
+    'menu.navigation': 'Navegación',
   },
 } as const;
 

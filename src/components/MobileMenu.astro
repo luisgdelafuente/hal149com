@@ -1,0 +1,129 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { createNavLink } from '../i18n/utils';
+
+const { settings } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!-- Mobile Menu Overlay -->
+<div 
+  id="mobile-menu" 
+  class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+  aria-hidden="true"
+>
+  <!-- Menu Container -->
+  <div class="flex flex-col h-full">
+    
+    <!-- Header with Close Button -->
+    <div class="flex justify-between items-center p-6 border-b border-bs-surface-3">
+      <h2 class="text-lg font-semibold text-bs-foreground-light">
+        {t('menu.navigation')}
+      </h2>
+      <button 
+        id="mobile-menu-close"
+        class="p-2 text-bs-foreground-light hover:text-white transition-colors"
+        aria-label={t('menu.close')}
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 p-6">
+      <ul class="space-y-4">
+        {settings.nav.map((item, index) => (
+          <li>
+            <a 
+              class="block text-lg font-medium text-bs-foreground-light hover:text-white transition-colors py-2"
+              href={createNavLink(lang, item.link)}
+              onclick="mobileMenu.close()"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+
+  </div>
+</div>
+
+<script>
+  class MobileMenu {
+    menu: HTMLElement | null;
+    openButton: HTMLElement | null;
+    closeButton: HTMLElement | null;
+    isOpen: boolean;
+
+    constructor() {
+      this.menu = document.getElementById('mobile-menu');
+      this.openButton = document.getElementById('mobile-menu-open');
+      this.closeButton = document.getElementById('mobile-menu-close');
+      this.isOpen = false;
+      
+      this.init();
+    }
+
+    init() {
+      // Open menu
+      this.openButton?.addEventListener('click', () => this.open());
+      
+      // Close menu
+      this.closeButton?.addEventListener('click', () => this.close());
+      
+      // Close on overlay click
+      this.menu?.addEventListener('click', (e) => {
+        if (e.target === this.menu) {
+          this.close();
+        }
+      });
+      
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen) {
+          this.close();
+        }
+      });
+    }
+
+    open() {
+      if (!this.menu) return;
+      
+      this.menu.classList.remove('opacity-0', 'pointer-events-none');
+      this.menu.setAttribute('aria-hidden', 'false');
+      this.openButton?.setAttribute('aria-expanded', 'true');
+      this.isOpen = true;
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+      
+      // Focus management
+      this.closeButton?.focus();
+    }
+
+    close() {
+      if (!this.menu) return;
+      
+      this.menu.classList.add('opacity-0', 'pointer-events-none');
+      this.menu.setAttribute('aria-hidden', 'true');
+      this.openButton?.setAttribute('aria-expanded', 'false');
+      this.isOpen = false;
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+      
+      // Return focus to open button
+      this.openButton?.focus();
+    }
+  }
+
+  // Initialize mobile menu when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    window.mobileMenu = new MobileMenu();
+  });
+</script>

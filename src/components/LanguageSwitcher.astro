@@ -12,8 +12,7 @@ const { enUrl, esUrl } = languageUrls;
 
 <div class="language-switcher">
   <button
-    id="language-toggle"
-    class="bs-btn !px-4 flex items-center justify-center"
+    class="language-toggle bs-btn !px-4 flex items-center justify-center"
     aria-label="Toggle language"
     aria-expanded="false"
   >
@@ -21,10 +20,8 @@ const { enUrl, esUrl } = languageUrls;
   </button>
   
   <div
-    id="language-menu"
-    class="absolute top-full right-0 mt-2 bg-bs-surface-0 border border-bs-surface-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-200 z-50"
+    class="language-menu absolute top-full right-0 mt-2 bg-bs-surface-0 border border-bs-surface-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-200 z-50"
     role="menu"
-    aria-labelledby="language-toggle"
   >
     <a
       href={enUrl}
@@ -52,12 +49,17 @@ const { enUrl, esUrl } = languageUrls;
 </div>
 
 <script>
-  const toggle = document.getElementById('language-toggle');
-  const menu = document.getElementById('language-menu');
-  const links = menu?.querySelectorAll('a[data-lang]') as NodeListOf<HTMLAnchorElement> | undefined;
-  
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
+  // Use event delegation to handle all language switchers
+  document.addEventListener('DOMContentLoaded', () => {
+    // Handle language toggle clicks
+    document.addEventListener('click', (e) => {
+      const toggle = (e.target as Element).closest('.language-toggle');
+      if (!toggle) return;
+      
+      e.preventDefault();
+      const menu = toggle.parentElement?.querySelector('.language-menu');
+      if (!menu) return;
+      
       const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', (!isExpanded).toString());
       
@@ -68,28 +70,34 @@ const { enUrl, esUrl } = languageUrls;
       }
     });
     
-    // Close menu when clicking outside
+    // Handle language link clicks
     document.addEventListener('click', (e) => {
-      if (!toggle.contains(e.target as Node) && !menu.contains(e.target as Node)) {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.add('opacity-0', 'pointer-events-none');
-      }
+      const link = (e.target as Element).closest('a[data-lang]');
+      if (!link) return;
+      
+      e.preventDefault();
+      const lang = link.getAttribute('data-lang');
+      if (!lang) return;
+      
+      // Persist language preference for 1 year
+      document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`;
+      window.location.assign(link.getAttribute('href') || '');
     });
-
-    // Ensure language cookie is set before navigating
-    if (links) {
-      links.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          const lang = link.getAttribute('data-lang');
-          if (!lang) return;
-          e.preventDefault();
-          // Persist language preference for 1 year
-          document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`;
-          window.location.assign(link.href);
-        });
+    
+    // Close menus when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Element;
+      if (target.closest('.language-switcher')) return;
+      
+      // Close all open language menus
+      document.querySelectorAll('.language-menu').forEach(menu => {
+        menu.classList.add('opacity-0', 'pointer-events-none');
       });
-    }
-  }
+      document.querySelectorAll('.language-toggle').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
 </script>
 
 <style>
