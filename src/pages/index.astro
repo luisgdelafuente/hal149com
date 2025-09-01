@@ -42,55 +42,89 @@ const homeContent = i18nContent?.default?.home || home;
 const globalSettings = i18nContent?.default?.global_settings || global_settings;
 const newsletterContent = i18nContent?.default?.newsletter || newsletter;
 
+// Get homepage sections configuration
+const sections = globalSettings.homepage_sections || {
+  hero: true,
+  services: true,
+  clients: true,
+  quote: true,
+  case_studies: true,
+  testimonials: true,
+  latest_posts: true,
+  pricing: true,
+  faq: true,
+  newsletter: true
+};
+
 ---
 
 <Layout title={ globalSettings.title }>
 
-  <HeroSection
-    content={ homeContent.hero_content }
-    settings={ globalSettings }
-    title={ homeContent.hero_title }
-  />
+  {sections.hero && (
+    <HeroSection
+      content={ homeContent.hero_content }
+      settings={ globalSettings }
+      title={ homeContent.hero_title }
+    />
+  )}
 
-  <ServicesCarousel
-    services={ services }
-    title={ homeContent.services_title }
-  />
+  {sections.services && (
+    <ServicesCarousel
+      services={ services }
+      title={ homeContent.services_title }
+    />
+  )}
 
-  <ClientsSection
-    clients={ clients }
-    title={ homeContent.clients_title }
-  />
+  {sections.clients && (
+    <ClientsSection
+      clients={ clients }
+      title={ homeContent.clients_title }
+    />
+  )}
 
-  <QuoteSection
-    cite={ homeContent.quote_cite }
-    content={ homeContent.quote_content }
-    image={ homeContent.quote_image }
-    role={ homeContent.quote_role }
-  />
+  {sections.quote && (
+    <QuoteSection
+      cite={ homeContent.quote_cite }
+      content={ homeContent.quote_content }
+      image={ homeContent.quote_image }
+      role={ homeContent.quote_role }
+    />
+  )}
 
-  <CaseStudiesSection
-    caseStudies={ caseStudies }
-    title={ homeContent.case_studies_title }
-  />
+  {sections.case_studies && (
+    <CaseStudiesSection
+      caseStudies={ caseStudies }
+      title={ homeContent.case_studies_title }
+    />
+  )}
 
-  <TestimonialsSection
-    testimonials={ testimonials }
-    title={ homeContent.testimonials_title }
-  />
+  {sections.testimonials && (
+    <TestimonialsSection
+      testimonials={ testimonials }
+      title={ homeContent.testimonials_title }
+    />
+  )}
 
-  <LatestPostsSection />
+  {sections.latest_posts && (
+    <LatestPostsSection />
+  )}
 
-  <PricingSection
-    pricing={ pricing }
-    title={ homeContent.pricing_title }
-  />
+  {sections.pricing && (
+    <PricingSection
+      pricing={ pricing }
+      title={ homeContent.pricing_title }
+    />
+  )}
 
-  <FaqSection
-    faq={ faq }
-    title={ homeContent.faq_title }
-  />
+  {sections.faq && (
+    <FaqSection
+      faq={ faq }
+      title={ homeContent.faq_title }
+    />
+  )}
 
-  <NewsletterSection newsletter={newsletterContent} />
+  {sections.newsletter && (
+    <NewsletterSection newsletter={newsletterContent} />
+  )}
 
 </Layout>

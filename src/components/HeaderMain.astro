@@ -1,6 +1,7 @@
 ---
 
-import Logo from '../assets/theme-images/logo.svg'
+import { Image } from 'astro:assets';
+import Logo from '../assets/theme-images/hal149192px.webp'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 import MobileMenu from './MobileMenu.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
@@ -18,23 +19,32 @@ const t = useTranslations(lang);
   <div class="bs-container py-6 flex justify-between items-center">
 
     <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href={lang === 'en' ? '/' : '/es/'} aria-label={ settings.title + ' - Home' }>
+    <a class="flex xl:min-w-32" href={lang === 'en' ? '/' : '/es/'} aria-label={ settings.title + ' - Home' }>
 
-      <Logo class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="48" width="48" />
+      <Image 
+        src={Logo} 
+        alt={settings.title}
+        class="h-10 w-auto max-w-32 md:h-12 md:max-w-40"
+      />
 
     </a>
 
     <!-- Nav -->
-    <nav class="hidden col-span-6 md:flex mx-auto self-stretch lg:gap-2">
+    <nav class="hidden md:flex mx-auto items-center gap-2">
+
+      <!-- Debug: Show navigation data -->
+      <!-- {JSON.stringify(settings.nav)} -->
 
       <!-- Links -->
-      { settings.nav.map( item =>
+      { settings.nav.map( (item, index) =>
 
         <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={createNavLink(lang, item.link)}>
           { item.title }
         </a>
 
       )}
+
+
 
     </nav>
 

@@ -9,25 +9,37 @@
     "cta": "Book a call"
   },
   "theme_color": "#18181b",
+  "homepage_sections": {
+    "hero": true,
+    "services": true,
+    "clients": false,
+    "quote": true,
+    "case_studies": true,
+    "testimonials": false,
+    "latest_posts": true,
+    "pricing": true,
+    "faq": true,
+    "newsletter": true
+  },
   "nav": [
     {
       "title": "Services",
       "link": "/#services"
     },
     {
-      "title": "Case studies",
-      "link": "/#case-studies"
+      "title": "Projects",
+      "link": "/#projects"
+    },
+    {
+      "title": "Blog",
+      "link": "/posts/"
     },
     {
       "title": "Pricing",
       "link": "/#pricing"
     },
     {
-      "title": "FAQ",
-      "link": "/#faq"
-    },
-    {
-      "title": "Newsletter",
+      "title": "Register",
       "link": "/#newsletter"
     }
   ],

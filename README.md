@@ -11,6 +11,8 @@ This README serves as the primary reference for understanding the project struct
 
 # Project Description
 
+Official name of the project HAL149
+
 A complete, best-in-class Astro website for a business agency with all the features needed to present the company, offerings, news, git-hosted images, ultra-optimized for SEO, and more.
 
 This is our complete business agency website built on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/details/blackspike-astro-landing-page/). We've customized it for Frontier Agency's specific business needs while maintaining the modern design and performance optimizations of the original theme, and enhanced it with comprehensive features for a professional agency presence.
@@ -108,13 +110,15 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] **4.29** Image management strategy for git-hosted images
 
 ### Phase 5: Content Customization 📋 PARTIAL
-- [ ] Filter home page sections 
-- [ ] Company logo
-- [ ] Company meta data for social and seo 
+- [x] Filter home page sections ✅ **COMPLETED** - Configuration-based section filtering system implemented. "Trusted by some great companies" and "Clients ♥ us" sections hidden while preserving all code for easy reactivation
+- [ ] Company meta data for social and seo
+- [ ] **Navigation Menu Order Fix** ❌ **NOT SOLVED** - Menu items displaying in wrong order despite correct JSON data 
 - [ ] Service offerings content
 - [x] Content management strategy for posts (markdown files in git workflow)
 - [x] Responsive Menu Implementation ✅ **COMPLETED** - Fully responsive mobile menu with hamburger navigation, language switcher integration, and accessibility features
 - [ ] Company Logo Implementation - Replace placeholder logo with Frontier Agency company logo in header
+- [ ] Home sections names and placeholders - Define proper section names and IDs for menu navigation references
+- [ ] Final menu contents - Implement proper menu links and navigation structure for Frontier Agency
 
 ### Phase 6: Final Configurations ✅ COMPLETED
 - [x] **6.1** Robots.txt configuration
@@ -346,6 +350,17 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - **Automatic cleanup**: Closes other menus when opening a new one
 - **Independent functionality**: Each instance works independently without interference
 **Status**: ✅ **COMPLETED** - Language switcher now works perfectly in both desktop and mobile modes
+
+### Navigation Menu Order Issue ❌ **NOT SOLVED**
+**Problem**: Navigation menu displaying in wrong order (Blog, Pricing, Projects, Register, Services) instead of desired order (Services, Projects, Blog, Pricing, Register).
+**Attempted Solutions**:
+- **CSS Flexbox Fix**: Removed conflicting CSS classes (`col-span-6`, `self-stretch`) and simplified navigation layout
+- **Data Source Verification**: Confirmed JSON files have correct order in both English and Spanish
+- **Debug Output**: Added debug logging showing data arrives in wrong order despite correct JSON
+- **Hardcoded Test**: Temporarily hardcoded navigation array to verify rendering works correctly
+- **Layout Debug**: Added console logging to trace data flow from JSON to component
+**Root Cause**: Unknown - Data appears correct in JSON files but arrives at component in wrong order
+**Status**: ❌ **NOT SOLVED** - Menu order remains incorrect despite all attempted fixes
 
 # Deployment Instructions
 
