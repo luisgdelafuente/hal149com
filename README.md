@@ -138,8 +138,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 **Critical performance optimizations required before launch to achieve optimal Core Web Vitals scores and user experience.**
 
-#### 7.1: Responsive Image Optimization 🖼️ ⚠️ **PARTIALLY SOLVED**
-- [x] **7.1.1** Implement responsive image optimization for blog posts
+#### 7.1: Responsive Image Optimization 🖼️ ❌ **REVERTED**
+- [ ] **7.1.1** Implement responsive image optimization for blog posts
 - [ ] **7.1.2** Optimize hero and content images
 - [ ] **7.1.3** Complete image migration to assets folder
 
@@ -287,24 +287,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: High-specificity CSS selectors with global styling.
 **Status**: Magazine-quality typography with proper code highlighting.
 
-### Responsive Image Optimization ⚠️ **PARTIALLY SOLVED**
+### Responsive Image Optimization ❌ **REVERTED**
 **Problem**: Google PageSpeed reports 90KB+ savings possible on blog post images. Mobile devices receive full-size (800px) images when displaying at 379px, causing unnecessary bandwidth usage and poor LCP scores.
-**Root Cause**: Astro's Image component with responsive features (widths, sizes, srcset) only works with imported assets from `/src/assets/`, not with dynamic string paths from `/public/` folder used in blog post frontmatter.
-**Solution Implemented**: Custom ResponsivePostImage component with asset mapping
-- Moved blog images from `/public/blog-images/` to `/src/assets/blog-images/`
-- Created ResponsivePostImage.astro component that maps string paths to imported assets
-- Updated all blog components to use the new responsive component
-- Implemented responsive widths and sizes attributes for optimal delivery
-- **Latest Optimization**: Added 380px size for mobile displays, improved compression (75% default, 80% for individual posts)
-**Results Achieved**: 
-- ✅ 60-82% image size reduction across all blog post images
-- ✅ Multiple responsive sizes generated (380px, 400px, 600px, 800px, 1200px)
-- ✅ Proper srcset and sizes attributes for optimal device delivery
-- ✅ WebP format optimization with fallback support
-- ✅ 90KB+ bandwidth savings achieved as expected
-- ✅ **Safety**: Original images preserved in `/public/blog-images/` as backup
-- ✅ **Fallback**: Component gracefully falls back to original images if optimization fails
-**Current Status**: ⚠️ **ORANGE WARNING PERSISTS** - Google PageSpeed still reports large images and compression issues. Responsive optimization system not working as expected. Moving to CSS optimization priority.
+**Previous Solution Attempt**: Custom ResponsivePostImage component with asset mapping was implemented but reverted due to user request.
+**Current Status**: ❌ **REVERTED** - All image optimization changes have been undone. Images are back to using regular `<img>` tags from `/public/` folder. Performance optimization priority moved to CSS render-blocking issues.
 
 ### CSS Render-Blocking Optimization ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
@@ -411,5 +397,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Phase 7 expanded with 4 pending optimizations: CSS render-blocking (7.2), LCP request discovery (7.7), Network dependency tree (7.8), plus existing image optimization (7.1). README reorganized with clean roadmap and detailed challenges section.
+**Last Updated:** Image optimization changes reverted. All components now use regular `<img>` tags from `/public/` folder. Performance optimization priority moved to CSS render-blocking issues (7.2), LCP request discovery (7.7), and Network dependency tree (7.8).
 

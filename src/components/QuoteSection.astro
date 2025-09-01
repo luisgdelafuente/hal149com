@@ -1,14 +1,6 @@
 ---
 
-import Image from "astro/components/Image.astro"
-
-// Import quote image from assets for optimization
-import quoteImage from "../assets/content-images/quote-man.avif"
-
 const { content, image, cite, role } = Astro.props
-
-// Use optimized image if it matches the quote image path
-const optimizedImage = image === "/content-images/quote-man.avif" ? quoteImage : image
 
 ---
 
@@ -21,14 +13,12 @@ const optimizedImage = image === "/content-images/quote-man.avif" ? quoteImage :
   <!-- Cite -->
   <cite class="not-italic flex gap-4 items-center">
 
-    <Image
-      src={ optimizedImage }
+    <img
+      src={ image }
       class="h-12 w-12 rounded-full"
       alt=""
       width={48}
       height={48}
-      format="avif"
-      quality="high"
       loading="lazy"
     />
 
