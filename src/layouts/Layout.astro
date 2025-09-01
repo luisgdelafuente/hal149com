@@ -47,7 +47,10 @@ console.log('Layout Debug - Navigation order:', globalSettings.nav.map((item, i)
 
     <title>{ title ?? globalSettings.title }</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Favicon - PNG icons only -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
     <meta name="description" content={ description ?? globalSettings.description } />
@@ -87,7 +90,7 @@ console.log('Layout Debug - Navigation order:', globalSettings.nav.map((item, i)
     <Font cssVariable="--font-inter-display" preload />
 
     <!-- Performance optimization: Preload critical resources -->
-    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/favicon-32x32.png" as="image" type="image/png" />
     
     <!-- Performance optimization: DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />

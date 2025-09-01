@@ -1,7 +1,7 @@
 ---
 
 import { Image } from 'astro:assets';
-import Logo from '../assets/theme-images/hal149192px.webp'
+import Logo from '../assets/theme-images/hal149logo.png'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 import MobileMenu from './MobileMenu.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
@@ -57,7 +57,7 @@ const t = useTranslations(lang);
       <!-- CTA -->
       <button type="button" class="min-w-32 bs-btn" onclick="demo.showModal()">
 
-        { settings.demo.title }
+        { t('contact.title') }
 
       </button>
 
@@ -72,7 +72,7 @@ const t = useTranslations(lang);
       <!-- CTA -->
       <button type="button" class="bs-btn" onclick="demo.showModal()">
 
-        { settings.demo.title }
+        { t('contact.title') }
 
       </button>
 
