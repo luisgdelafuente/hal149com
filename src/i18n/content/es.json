@@ -1,7 +1,7 @@
 {
   "global_settings": {
-    "title": "blackspike página de aterrizaje astro",
-    "description": "Un tema gratuito de Astro landing hecho con Tailwind",
+    "title": "Posiciona tu negocio en las principales IAs",
+    "description": "Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones",
     "social_image": "/1200x630.jpg",
     "base_url": "https://astro-theme.blackspike.com",
     "demo": {
@@ -68,8 +68,8 @@
     ]
   },
   "home": {
-    "hero_title": "blackspike página de aterrizaje astro",
-    "hero_content": "<p><strong>Un tema gratuito de Astro landing hecho con Tailwind</strong> para ayudar a iniciar tu sitio web Astro.</p><p>Usa características modernas de CSS y HTML para mayor velocidad, además de un elegante carrusel swiper. Todo en Astro JSX.</p>",
+    "hero_title": "Posiciona tu negocio en las principales IAs",
+    "hero_content": "<p><strong>Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones.</strong></p><p>Haz que cada búsqueda con IA te posicione por encima de tu competencia.</p>",
     "services_title": "Servicios",
     "clients_title": "Confiado por grandes empresas",
     "testimonials_title": "Los clientes ♥ nos aman",

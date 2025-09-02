@@ -1,6 +1,6 @@
 {
   "global_settings": {
-    "title": "blackspike astro landing page",
+    "title": "Position your business on AI Platforms",
     "description": "A free Astro landing theme made with Tailwind",
     "social_image": "/1200x630.jpg",
     "base_url": "https://astro-theme.blackspike.com",
@@ -68,8 +68,8 @@
     ]
   },
   "home": {
-    "hero_title": "blackspike astro landing page",
-    "hero_content": "<p><strong>A free Astro landing theme made with Tailwind</strong> to help kick start your Astro website.</p><p>Uses modern CSS and HTML features for added zip, plus a slick swiper carousel. All in Astro JSX.</p>",
+    "hero_title": "Position your business on AI Platforms",
+    "hero_content": "<p><strong>Become the option that ChatGPT, Perplexity, Google AI, and others prioritize when your customers ask.</strong> to help kick start your Astro website.</p><p>Make every AI query put you ahead of your competitors.</p>",
     "services_title": "Services",
     "clients_title": "Trusted by some great companies",
     "testimonials_title": "Clients ♥ us",
