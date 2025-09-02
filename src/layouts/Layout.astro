@@ -31,10 +31,7 @@ try {
 // Use i18n content if available, otherwise use original
 const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
-// Debug: Log what data source is being used
-console.log('Layout Debug - i18nContent loaded:', !!i18nContent?.default?.global_settings);
-console.log('Layout Debug - Using fallback:', !i18nContent?.default?.global_settings);
-console.log('Layout Debug - Navigation order:', globalSettings.nav.map((item, i) => `${i}:${item.title}`).join(', '));
+// Navigation data loaded from i18n content or fallback
 
 ---
 

@@ -44,7 +44,7 @@ const lang = getLangFromUrl(Astro.url);
         <!-- Nav -->
         <nav class="flex flex-col">
 
-          { settings.nav.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
+          { settings.nav.map( item =>
 
             <a href={createNavLink(lang, item.link)}>
               { item.title }

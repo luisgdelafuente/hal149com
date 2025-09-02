@@ -24,24 +24,24 @@
     },
     "nav": [
       {
-        "title": "Blog",
-        "link": "/es/posts/"
-      },
-      {
-        "title": "Precios",
-        "link": "/#pricing"
+        "title": "Servicios",
+        "link": "/#servicios"
       },
       {
         "title": "Proyectos",
-        "link": "/#projects"
+        "link": "/#proyectos"
+      },
+      {
+        "title": "Blog",
+        "link": "/posts/"
+      },
+      {
+        "title": "Tarifas",
+        "link": "/#tarifas"
       },
       {
         "title": "Registro",
         "link": "/#newsletter"
-      },
-      {
-        "title": "Servicios",
-        "link": "/#services"
       }
     ],
     "social_links": [
@@ -70,10 +70,10 @@
   "home": {
     "hero_title": "blackspike página de aterrizaje astro",
     "hero_content": "<p><strong>Un tema gratuito de Astro landing hecho con Tailwind</strong> para ayudar a iniciar tu sitio web Astro.</p><p>Usa características modernas de CSS y HTML para mayor velocidad, además de un elegante carrusel swiper. Todo en Astro JSX.</p>",
-    "services_title": "Proyectos",
+    "services_title": "Servicios",
     "clients_title": "Confiado por grandes empresas",
     "testimonials_title": "Los clientes ♥ nos aman",
-    "case_studies_title": "Proyectos en que trabajamos",
+    "case_studies_title": "Proyectos",
     "pricing_title": "Nuestras tarifas",
     "quote_content": "Esta <strong>agencia de diseño</strong> es un <strong>cambio de juego</strong>. Su <strong>visión creativa</strong>, <strong>enfoque centrado en el usuario</strong>, y <strong>colaboración fluida</strong> han <strong>transformado</strong> la forma en que <strong>construimos nuestra marca</strong>. No es <strong>solo una agencia</strong> — es un <strong>poderoso socio</strong> que <strong>entrega resultados reales</strong>.",
     "quote_cite": "Sean Higgins",
