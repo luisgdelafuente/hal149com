@@ -42,6 +42,7 @@ const homeContent = i18nContent?.default?.home || home;
 const globalSettings = i18nContent?.default?.global_settings || global_settings;
 const newsletterContent = i18nContent?.default?.newsletter || newsletter;
 const caseStudiesContent = i18nContent?.default?.case_studies || caseStudies;
+const servicesContent = i18nContent?.default?.services || services;
 
 // Get homepage sections configuration
 const sections = globalSettings.homepage_sections || {
@@ -71,7 +72,7 @@ const sections = globalSettings.homepage_sections || {
 
   {sections.services && (
     <ServicesCarousel
-      services={ services }
+      services={ servicesContent }
       title={ homeContent.services_title }
     />
   )}

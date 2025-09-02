@@ -113,6 +113,36 @@
       "bg": "bg-gradient-to-r from-purple-500 to-pink-500"
     }
   ],
+  "services": [
+    {
+      "title": "GEO: Generative Engine Optimization",
+      "content": "We help you become the answer your customers are looking for on ChatGPT, Perplexity, and Google AI",
+      "cta": "Consulta de Estrategia IA",
+      "image": "/content-images/blackspike-wallpaper-01.avif",
+      "image_alt": "Interfaz de planificación de estrategia IA"
+    },
+    {
+      "title": "YouTube Shorts Campaigns",
+      "content": "Publish <strong>thematic video content</strong> and let YouTube Shorts algorithms find your potential customers.",
+      "cta": "Solicitar Demo del Sitio",
+      "image": "/content-images/blackspike-wallpaper-02.avif",
+      "image_alt": "Interfaz de sitio web potenciado por IA"
+    },
+    {
+      "title": "AI Consulting and Training",
+      "content": "Don't know where to start? We guide you and help transform AI into your definitive competitive advantage.",
+      "cta": "Explorar IA de Contenido",
+      "image": "/content-images/blackspike-wallpaper-03.avif",
+      "image_alt": "Dashboard de generación de contenido IA"
+    },
+    {
+      "title": "Custom Enterprise Application Development",
+      "content": "Tailored technology solutions focused on optimizing processes and boosting growth.",
+      "cta": "Agendar Auditoría de Automatización",
+      "image": "/content-images/blackspike-wallpaper-04.avif",
+      "image_alt": "Interfaz de flujo de trabajo de automatización IA"
+    }
+  ],
   "newsletter": {
     "title": "Stay in the loop",
     "content": "Get the latest updates on our services and industry insights.",

@@ -113,6 +113,36 @@
       "bg": "bg-gradient-to-r from-purple-500 to-pink-500"
     }
   ],
+  "services": [
+    {
+      "title": "GEO: Optimización para Motores Generativos",
+      "content": "Te ayudamos a convertirte en la respuesta que buscan tus clientes en ChatGPT, Perplexity y Google AI",
+      "cta": "Consulta de Estrategia IA",
+      "image": "/content-images/blackspike-wallpaper-01.avif",
+      "image_alt": "Interfaz de planificación de estrategia IA"
+    },
+    {
+      "title": "Campañas en YouTube Shorts",
+      "content": "Publica <strong>contenidos de vídeo temáticos</strong> y deja que los algoritmos de Youtube Shorts encuentren a tus clientes potenciales.",
+      "cta": "Solicitar Demo del Sitio",
+      "image": "/content-images/blackspike-wallpaper-02.avif",
+      "image_alt": "Interfaz de sitio web potenciado por IA"
+    },
+    {
+      "title": "Consultoría y Formación IA",
+      "content": "¿No sabes por dónde empezar? Te orientamos y ayudamos a transformar la IA en tu ventaja competitiva definitiva .",
+      "cta": "Explorar IA de Contenido",
+      "image": "/content-images/blackspike-wallpaper-03.avif",
+      "image_alt": "Dashboard de generación de contenido IA"
+    },
+    {
+      "title": "Desarrollo de Aplicaciones Empresariales Personalizadas",
+      "content": "Soluciones tecnológicas a medida orientadas a optimizar procesos y potenciar el crecimiento.",
+      "cta": "Agendar Auditoría de Automatización",
+      "image": "/content-images/blackspike-wallpaper-04.avif",
+      "image_alt": "Interfaz de flujo de trabajo de automatización IA"
+    }
+  ],
   "newsletter": {
     "title": "Mantente informado",
     "content": "Obtén las últimas actualizaciones sobre nuestros servicios e información del sector.",
