@@ -41,6 +41,7 @@ try {
 const homeContent = i18nContent?.default?.home || home;
 const globalSettings = i18nContent?.default?.global_settings || global_settings;
 const newsletterContent = i18nContent?.default?.newsletter || newsletter;
+const caseStudiesContent = i18nContent?.default?.case_studies || caseStudies;
 
 // Get homepage sections configuration
 const sections = globalSettings.homepage_sections || {
@@ -93,7 +94,7 @@ const sections = globalSettings.homepage_sections || {
 
   {sections.case_studies && (
     <CaseStudiesSection
-      caseStudies={ caseStudies }
+      caseStudies={ caseStudiesContent }
       title={ homeContent.case_studies_title }
     />
   )}

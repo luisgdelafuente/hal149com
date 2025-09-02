@@ -81,6 +81,38 @@
     "quote_image": "/content-images/quote-man.avif",
     "faq_title": "Preguntas Frecuentes"
   },
+  "case_studies": [
+    {
+      "title": "Gen Scoring",
+      "sector": "AI SEO",
+      "content": "¿Cómo aparece mi negocio en las IA? ¿Qué ranking estoy teniendo y quién es citado más y mejor que yo? Gen Scoring es una webapp diseñada para medir y optimizar cómo aparecen los negocios en las recomendaciones de la inteligencia artificia, y descubrir quién está siendo citado más y mejor en estas plataformas.",
+      "case_study_link": "#",
+      "cta": "Conoce Más",
+      "image": "/content-images/spike.news.avif",
+      "image_alt": "Dashboard de interfaz de Gen Scoring",
+      "bg": "bg-gradient-to-r from-blue-500 to-purple-600"
+    },
+    {
+      "title": "Epica Works",
+      "sector": "Campañas en Redes",
+      "content": "Epica Works revoluciona la creación de campañas de video en YouTube Shorts. Esta herramienta analiza tu nicho, audiencia objetivo y objetivos comerciales para generar automáticamente los temas y contenidos más efectivos para asegurar el engagement y las conversiones en redes sociales.",
+      "case_study_link": "#",
+      "cta": "Ver Resultados",
+      "image": "/content-images/pixelate.pictures.avif",
+      "image_alt": "Interfaz de campañas de video de Epica Works",
+      "bg": "bg-gradient-to-r from-green-500 to-blue-500"
+    },
+    {
+      "title": "Leads MGT",
+      "sector": "Generación de Leads",
+      "content": "Leads MGT maximiza conversiones del tráfico orgánico sin comprometer la usabilidad y estética de tu website. Esta aplicación utiliza modales dinámicos React que se optimizan automáticamente, se integran perfectamente con la web, y mantienen la experiencia de usuario mientras multiplican las conversiones.",
+      "case_study_link": "#",
+      "cta": "Explorar Plataforma",
+      "image": "/content-images/brighton.dog.avif",
+      "image_alt": "Dashboard de conversiones de Leads MGT",
+      "bg": "bg-gradient-to-r from-purple-500 to-pink-500"
+    }
+  ],
   "newsletter": {
     "title": "Mantente informado",
     "content": "Obtén las últimas actualizaciones sobre nuestros servicios e información del sector.",

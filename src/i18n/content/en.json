@@ -81,6 +81,38 @@
     "quote_image": "/content-images/quote-man.avif",
     "faq_title": "Frequently Asked Questions"
   },
+  "case_studies": [
+    {
+      "title": "Gen Scoring",
+      "sector": "AI SEO",
+      "content": "How does my business appear in AIs? What ranking am I getting and who is being cited more and better than me? Gen Scoring is a webapp designed to measure and optimize how businesses appear in artificial intelligence recommendations, and discover who is being cited more effectively on these platforms.",
+      "case_study_link": "#",
+      "cta": "Learn More",
+      "image": "/content-images/spike.news.avif",
+      "image_alt": "Gen Scoring dashboard interface",
+      "bg": "bg-gradient-to-r from-blue-500 to-purple-600"
+    },
+    {
+      "title": "Epica Works",
+      "sector": "Social Media Campaigns",
+      "content": "Epica Works revolutionizes video campaign creation for YouTube Shorts. This tool analyzes your niche, target audience, and business objectives to automatically generate the most effective topics and content to ensure engagement and conversions on social media.",
+      "case_study_link": "#",
+      "cta": "View Results",
+      "image": "/content-images/pixelate.pictures.avif",
+      "image_alt": "Epica Works video campaign interface",
+      "bg": "bg-gradient-to-r from-green-500 to-blue-500"
+    },
+    {
+      "title": "Leads MGT",
+      "sector": "Lead Generation",
+      "content": "Leads MGT maximizes conversions from organic traffic without compromising your website's usability and aesthetics. This application uses dynamic React modals that automatically optimize, integrate seamlessly with your site, and maintain user experience while multiplying conversions.",
+      "case_study_link": "#",
+      "cta": "Explore Platform",
+      "image": "/content-images/brighton.dog.avif",
+      "image_alt": "Leads MGT conversion dashboard",
+      "bg": "bg-gradient-to-r from-purple-500 to-pink-500"
+    }
+  ],
   "newsletter": {
     "title": "Stay in the loop",
     "content": "Get the latest updates on our services and industry insights.",
