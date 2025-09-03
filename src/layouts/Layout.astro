@@ -40,7 +40,7 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
   <head>
 
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Primary Meta Tags -->
     <title>{ title ?? globalSettings.title }</title>
@@ -62,9 +62,12 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ title ?? globalSettings.title } />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:secure_url" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
     <meta property="og:site_name" content="HAL149" />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
     <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+    <meta property="og:determiner" content="the" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -74,12 +77,24 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <meta name="twitter:description" content={ description ?? globalSettings.description } />
     <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
     <meta name="twitter:image:alt" content={ title ?? globalSettings.title } />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
 
     <!-- Additional SEO Meta Tags -->
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
     {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     {section && <meta property="article:section" content={section} />}
     {tags && tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
+    
+    <!-- Enhanced SEO meta tags -->
+    <meta name="application-name" content="HAL149" />
+    <meta name="msapplication-TileColor" content={ globalSettings.theme_color } />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content={ globalSettings.theme_color } />
+    <meta name="color-scheme" content="dark" />
+    
+
 
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -121,6 +136,7 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
     <!-- Performance optimization: Preload critical resources -->
     <link rel="preload" href="/favicon-32x32.png" as="image" type="image/png" />
+    <link rel="preload" href={globalSettings.social_image} as="image" type="image/png" />
     
     <!-- Performance optimization: DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />

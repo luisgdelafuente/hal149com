@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   output: 'static',
-  site: 'https://your-domain.com', // Replace with your actual domain
+  site: 'https://hal149.com', // HAL149 domain
   build: {
     // Aggressive CSS bundling to eliminate render-blocking
     cssCodeSplit: false, // Bundle all CSS into single file to reduce requests
