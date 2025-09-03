@@ -88,8 +88,8 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
       "name": title ?? globalSettings.title,
       "description": description ?? globalSettings.description,
       "url": Astro.url.href,
-      "logo": globalSettings.base_url + "/192.png",
-      "image": image ? (image.startsWith('http') ? image : globalSettings.base_url + image) : globalSettings.base_url + globalSettings.social_image,
+      "logo": Astro.url.origin + "/192.png",
+      "image": image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image,
       "sameAs": globalSettings.social_links?.map((link: any) => link.link) || [],
       "address": {
         "@type": "PostalAddress",
