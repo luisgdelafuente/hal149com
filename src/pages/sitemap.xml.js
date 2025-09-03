@@ -1,8 +1,13 @@
+import { getCollection } from 'astro:content';
+
 export async function GET({ request }) {
   const baseUrl = new URL(request.url).origin;
   
-  // Define your pages
-  const pages = [
+  // Get all blog posts
+  const posts = await getCollection('posts');
+  
+  // Define static pages
+  const staticPages = [
     {
       url: '/',
       lastmod: new Date().toISOString(),
@@ -26,7 +31,7 @@ export async function GET({ request }) {
     {
       url: '/posts',
       lastmod: new Date().toISOString(),
-      changefreq: 'weekly',
+      changefreq: 'daily',
       priority: 0.9,
       hreflang: [
         { lang: 'en', url: '/posts', hreflang: 'en' },
@@ -42,8 +47,45 @@ export async function GET({ request }) {
         { lang: 'en', url: '/credits', hreflang: 'en' },
         { lang: 'es', url: '/es/credits', hreflang: 'es' }
       ]
+    },
+    {
+      url: '/thank-you',
+      lastmod: new Date().toISOString(),
+      changefreq: 'yearly',
+      priority: 0.3,
+      hreflang: [
+        { lang: 'en', url: '/thank-you', hreflang: 'en' },
+        { lang: 'es', url: '/es/thank-you', hreflang: 'es' }
+      ]
     }
   ];
+  
+  // Generate blog post entries
+  const blogPages = [];
+  posts.forEach(post => {
+    const slug = post.slug;
+    const isSpanish = post.data.lang === 'es';
+    const enSlug = isSpanish ? post.data.enSlug : slug;
+    const esSlug = isSpanish ? slug : post.data.esSlug;
+    
+    if (!isSpanish && enSlug) {
+      blogPages.push({
+        url: `/posts/${enSlug}`,
+        lastmod: post.data.date ? new Date(post.data.date).toISOString() : new Date().toISOString(),
+        changefreq: 'monthly',
+        priority: 0.7,
+        hreflang: esSlug ? [
+          { lang: 'en', url: `/posts/${enSlug}`, hreflang: 'en' },
+          { lang: 'es', url: `/es/posts/${esSlug}`, hreflang: 'es' }
+        ] : [
+          { lang: 'en', url: `/posts/${enSlug}`, hreflang: 'en' }
+        ]
+      });
+    }
+  });
+  
+  // Combine all pages
+  const pages = [...staticPages, ...blogPages];
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
