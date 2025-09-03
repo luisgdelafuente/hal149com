@@ -2,9 +2,9 @@
 
 The following rules must be always followed to work in this project and keep this document updated:
 
-1) **Roadmap must always be clean**, with clear steps and brief names for versions, phases and tasks. NO detailed descriptions here.
-2) **Details about challenges and complex tasks** will be included in the corresponding chapter "CHALLENGES & SOLUTIONS"
-3) **AI Never launches commands on the console**, the user will do it manually at the request of the AI, or to proceed with the testing of the development.
+1) Roadmap must always be clean, with clear steps and brief names for versions, phases and tasks. NO detailed descriptions here.
+2) Details about challenges and complex tasks** will be included in the corresponding chapter "CHALLENGES & SOLUTIONS"
+3) AI Never launches commands on the console, the user will do it manually at the request of the AI, or to proceed with the testing of the development.
 4) I don´t always need a complete description of the work done, only when it has implied a significant amount of work, trials or errors. You can finish each task with a small briefing and ask me to test it. 
 
 This README serves as the primary reference for understanding the project structure, deployment process, and development roadmap. All AI assistants should consult this document before making modifications.
