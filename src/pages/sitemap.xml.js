@@ -1,5 +1,5 @@
-export async function GET() {
-  const baseUrl = 'https://hal149.com';
+export async function GET({ request }) {
+  const baseUrl = new URL(request.url).origin;
   
   // Define your pages
   const pages = [
