@@ -1,10 +1,12 @@
 {
-  "title": "blackspike astro landing page",
-  "description": "A free Astro landing theme made with Tailwind",
+  "title": "Unlock Your Business Potential with AI | HAL149",
+  "description": "From AI automations to strategic programs, HAL149 is your partner to build and deploy tailored AI strategies that drive real business results.",
+  "keywords": "AI, artificial intelligence, business optimization, ChatGPT, Perplexity, Google AI, SEO, digital marketing, HAL149, AI consulting",
+  "author": "HAL149",
   "social_image": "/1200x630.jpg",
-  "base_url": "https://astro-theme.blackspike.com",
+  "base_url": "https://hal149.com",
   "demo": {
-    "title": "Need design?",
+    "title": "Need AI strategy?",
     "content": "<strong>Get a guided tour through our services</strong>, and find out how you and your team can change the way you work, forever.",
     "cta": "Book a call"
   },

@@ -1,9 +1,11 @@
 {
   "global_settings": {
-    "title": "Posiciona tu negocio en las principales IAs",
-    "description": "Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones",
+    "title": "Desbloquea el Potencial de tu Negocio con IA | HAL149",
+    "description": "Desde automatizaciones de IA hasta programas estratégicos, HAL149 es tu socio para construir e implementar estrategias de IA personalizadas que generen resultados empresariales reales.",
+    "keywords": "IA, inteligencia artificial, optimización empresarial, ChatGPT, Perplexity, Google AI, SEO, marketing digital, HAL149, consultoría IA",
+    "author": "HAL149",
     "social_image": "/1200x630.jpg",
-    "base_url": "https://astro-theme.blackspike.com",
+    "base_url": "https://hal149.com",
     "demo": {
       "title": "¿Necesitas diseño?",
       "content": "<strong>Obtén un recorrido guiado por nuestros servicios</strong>, y descubre cómo tú y tu equipo pueden cambiar la forma en que trabajan, para siempre.",
