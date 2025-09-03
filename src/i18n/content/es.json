@@ -147,5 +147,27 @@
     "title": "Mantente informado",
     "content": "Obtén las últimas actualizaciones sobre nuestros servicios e información del sector.",
     "cta": "Suscribirse"
-  }
+  },
+  "faq": [
+    {
+      "question": "¿Qué hace que HAL149 sea diferente de otras empresas de IA?",
+      "answer": "HAL149 combina la consultoría estratégica empresarial con el desarrollo práctico de IA en un enfoque integrado. Mientras que la mayoría de las empresas proporcionan estrategia sin implementación o construyen tecnología sin contexto empresarial, nosotros conectamos ambos mundos para entregar soluciones de IA funcionales que generan resultados medibles para tu negocio."
+    },
+    {
+      "question": "¿Cómo pueden ayudar a que mi negocio aparezca en plataformas de IA como ChatGPT?",
+      "answer": "Optimizamos la presencia de tu negocio en plataformas de IA para que cuando los clientes busquen servicios como los tuyos, los sistemas de IA prioricen tu empresa como la solución recomendada. Esto te posiciona por delante de la competencia en el creciente panorama de búsquedas impulsadas por IA, asegurando que tu negocio capture más oportunidades a través de consultas de IA."
+    },
+    {
+      "question": "¿Solo trabajan con empresas tecnológicas?",
+      "answer": "HAL149 trabaja con empresas de todas las industrias. Nuestro enfoque se centra en identificar dónde la IA puede impulsar específicamente las ventas, la eficiencia y la ventaja competitiva para tu sector particular y modelo de negocio, independientemente de tu experiencia técnica actual o industria."
+    },
+    {
+      "question": "¿Cuánto tiempo tarda en ver resultados?",
+      "answer": "El tiempo varía según el alcance del proyecto, pero nuestro enfoque enfatiza la entrega de impacto tangible en lugar de ciclos de desarrollo largos. Vamos más allá de los prototipos para implementar soluciones funcionales, con muchos clientes viendo resultados iniciales en los primeros meses de implementación."
+    },
+    {
+      "question": "¿Qué pasa si mi negocio no tiene experiencia técnica?",
+      "answer": "Absolutamente. HAL149 se especializa en hacer que la IA sea accesible para empresas sin antecedentes técnicos. Manejamos tanto la planificación estratégica como la ejecución técnica, traduciendo conceptos complejos de IA en soluciones empresariales prácticas que tu equipo puede entender y operar efectivamente."
+    }
+  ]
 }

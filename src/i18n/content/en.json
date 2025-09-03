@@ -147,5 +147,27 @@
     "title": "Stay in the loop",
     "content": "Get the latest updates on our services and industry insights.",
     "cta": "Subscribe"
-  }
+  },
+  "faq": [
+    {
+      "question": "What makes HAL149 different from other AI companies?",
+      "answer": "HAL149 combines strategic business consulting with hands-on AI development in one integrated approach. While most companies either provide strategy without implementation or build technology without business context, we bridge both worlds to deliver functioning AI solutions that generate measurable results for your business."
+    },
+    {
+      "question": "How can you help my business appear on AI platforms like ChatGPT?",
+      "answer": "We optimize your business presence across AI platforms so when customers search for services like yours, AI systems prioritize your company as the recommended solution. This positions you ahead of competitors in the growing AI-driven search landscape, ensuring your business captures more opportunities through AI queries."
+    },
+    {
+      "question": "Do you only work with tech companies?",
+      "answer": "HAL149 works with businesses across all industries. Our approach focuses on identifying where AI can specifically drive sales, efficiency, and competitive advantage for your particular sector and business model, regardless of your current technical expertise or industry."
+    },
+    {
+      "question": "How long does it take to see results?",
+      "answer": "Timeline varies by project scope, but our approach emphasizes delivering tangible impact rather than lengthy development cycles. We move beyond prototypes to deploy functioning solutions, with many clients seeing initial results within the first few months of implementation."
+    },
+    {
+      "question": "What if my business doesn't have technical expertise?",
+      "answer": "Absolutely. HAL149 specializes in making AI accessible to businesses without technical backgrounds. We handle both the strategic planning and technical execution, translating complex AI concepts into practical business solutions that your team can understand and operate effectively."
+    }
+  ]
 }
