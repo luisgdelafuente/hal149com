@@ -122,8 +122,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 5.10 Customize long testimonial home page
 - [x] 5.11 Customize and translate contact form
 - [x] 5.12 Customize and translate registration form
-- [ ] 5.13 Customize About Us page
-- [ ] 5.14 Customize Credits page
+- [x] 5.13 Customize About Us page ✅ COMPLETED
+- [x] 5.14 Customize Credits page ✅ COMPLETED
 - [ ] 5.15 Customize Legal page
 
 ### Phase 6: Final Configurations ✅ COMPLETED
