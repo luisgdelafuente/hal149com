@@ -1,22 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /
 
 # Sitemap
 Sitemap: https://hal149.com/sitemap.xml
 
-# All content is allowed for crawling
-Allow: /
-Allow: /es/
-Allow: /posts/
-Allow: /es/posts/
-Allow: /about
-Allow: /es/about
-Allow: /credits
-Allow: /es/credits
-Allow: /thank-you
-Allow: /es/thank-you
-
-# No admin areas exist in this project
-# All content is public
-
-# No crawl delay - allow search engines to crawl at their preferred rate
