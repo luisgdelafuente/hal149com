@@ -22,4 +22,8 @@
 [forms]
   [forms.contact]
     name = "Contact Form"
+    honeypot = "bot-field"
+  
+  [forms.newsletter]
+    name = "Newsletter Subscription"
     honeypot = "bot-field" 
