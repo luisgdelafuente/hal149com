@@ -72,7 +72,7 @@
   "home": {
     "hero_title": "Posiciona tu negocio en las principales IAs",
     "hero_content": "<p><strong>Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones.</strong></p><p>Haz que cada búsqueda con IA te posicione por encima de tu competencia.</p>",
-    "services_title": "Servicios",
+    "services_title": "Cómo podemos ayudar",
     "clients_title": "Confiado por grandes empresas",
     "testimonials_title": "Los clientes ♥ nos aman",
     "case_studies_title": "Proyectos",
@@ -119,28 +119,28 @@
     {
       "title": "GEO: Optimización para Motores Generativos",
       "content": "Te ayudamos a convertirte en la respuesta que buscan tus clientes en ChatGPT, Perplexity y Google AI",
-      "cta": "Consulta de Estrategia IA",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-01.avif",
       "image_alt": "Interfaz de planificación de estrategia IA"
     },
     {
       "title": "Campañas en YouTube Shorts",
       "content": "Publica <strong>contenidos de vídeo temáticos</strong> y deja que los algoritmos de Youtube Shorts encuentren a tus clientes potenciales.",
-      "cta": "Solicitar Demo del Sitio",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-02.avif",
       "image_alt": "Interfaz de sitio web potenciado por IA"
     },
     {
       "title": "Consultoría y Formación IA",
       "content": "¿No sabes por dónde empezar? Te orientamos y ayudamos a transformar la IA en tu ventaja competitiva definitiva .",
-      "cta": "Explorar IA de Contenido",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-03.avif",
       "image_alt": "Dashboard de generación de contenido IA"
     },
     {
       "title": "Desarrollo de Aplicaciones Empresariales Personalizadas",
       "content": "Soluciones tecnológicas a medida orientadas a optimizar procesos y potenciar el crecimiento.",
-      "cta": "Agendar Auditoría de Automatización",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-04.avif",
       "image_alt": "Interfaz de flujo de trabajo de automatización IA"
     }
