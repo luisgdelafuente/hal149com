@@ -1,32 +1,56 @@
 {
+  "name": "HAL149 - AI Business Optimization",
+  "short_name": "HAL149",
+  "description": "Position your business on AI Platforms. Become the option that ChatGPT, Perplexity, Google AI, and others prioritize when your customers ask for solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#18181b",
+  "theme_color": "#18181b",
+  "orientation": "portrait-primary",
+  "scope": "/",
   "lang": "en",
-  "dir": "ltr",
-  "name": "blackspike astro landing page",
-  "description": "A free Astro landing theme made with Tailwind to help kick start your Astro website.",
-  "short_name": "blackspike astro theme",
-  "theme_color": "#18181B",
+  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
       "src": "/192.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/192.png",
-      "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "purpose": "any maskable"
     },
     {
       "src": "/512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our AI optimization services",
+      "url": "/#services",
+      "icons": [{ "src": "/192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Read our latest AI insights",
+      "url": "/posts",
+      "icons": [{ "src": "/192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/theme-preview/blackspike-theme-full.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide"
     }
   ]
 }

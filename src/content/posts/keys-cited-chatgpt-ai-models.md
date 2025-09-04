@@ -1,6 +1,6 @@
 ---
 title: "6 Keys to Being Cited by ChatGPT and Other AI Models"
-description: "Discover essential strategies to optimize your content and increase the chances of being cited by ChatGPT, Gemini, Perplexity, and other artificial intelligence models."
+description: "Essential strategies to optimize your content and increase the chances of being cited by ChatGPT, Gemini, Perplexity, and other artificial intelligence models."
 date: 2024-01-25
 author: "Luis García de la Fuente"
 tags: ["AI", "SEO", "Optimization", "Content", "ChatGPT", "Citation"]

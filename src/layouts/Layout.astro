@@ -16,7 +16,7 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 import global_settings from "../data/global_settings.json"
 
-const { title, description, image, type = "website" } = Astro.props
+const { title, description, image, type = "website", keywords, author, publishedTime, modifiedTime, section, tags } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -40,39 +40,81 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
   <head>
 
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- Primary Meta Tags -->
     <title>{ title ?? globalSettings.title }</title>
-
-    <!-- Favicon - PNG icons only -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
-
+    <meta name="title" content={ title ?? globalSettings.title } />
     <meta name="description" content={ description ?? globalSettings.description } />
+    <meta name="keywords" content={ keywords ?? globalSettings.keywords ?? "AI, artificial intelligence, business optimization, ChatGPT, Perplexity, Google AI, SEO, digital marketing" } />
+    <meta name="author" content={ author ?? globalSettings.author ?? "HAL149" } />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content={lang === 'es' ? 'es' : 'en'} />
+    <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content={ globalSettings.theme_color } />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ type } />
+    <meta property="og:url" content={ Astro.url.href } />
     <meta property="og:title" content={ title ?? globalSettings.title } />
     <meta property="og:description" content={ description ?? globalSettings.description } />
-    <meta property="og:type" content={ type } />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-    <meta property="og:url" content={ Astro.url.href } />
-    <meta
-      property="og:image"
-      content={ image ? (image.startsWith('http') ? image : globalSettings.base_url + image) : globalSettings.base_url + globalSettings.social_image }
-    />
+    <meta property="og:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Frontier Agency" />
+    <meta property="og:image:alt" content={ title ?? globalSettings.title } />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:secure_url" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
+    <meta property="og:site_name" content="HAL149" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+    <meta property="og:determiner" content="the" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hal149" />
+    <meta name="twitter:creator" content="@hal149" />
     <meta name="twitter:title" content={ title ?? globalSettings.title } />
     <meta name="twitter:description" content={ description ?? globalSettings.description } />
-    <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : globalSettings.base_url + image) : globalSettings.base_url + globalSettings.social_image } />
-    <meta name="twitter:site" content="@frontieragency" />
+    <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
+    <meta name="twitter:image:alt" content={ title ?? globalSettings.title } />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+
+    <!-- Additional SEO Meta Tags -->
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    {section && <meta property="article:section" content={section} />}
+    {tags && tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
+    
+    <!-- Enhanced SEO meta tags -->
+    <meta name="application-name" content="HAL149" />
+    <meta name="msapplication-TileColor" content={ globalSettings.theme_color } />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content={ globalSettings.theme_color } />
+    <meta name="color-scheme" content="dark" />
+    
+
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": type === "article" ? "Article" : "Organization",
+      "name": title ?? globalSettings.title,
+      "description": description ?? globalSettings.description,
+      "url": Astro.url.href,
+      "logo": Astro.url.origin + "/192.png",
+      "image": image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image,
+      "sameAs": globalSettings.social_links?.map((link: any) => link.link) || [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service"
+      }
+    })} />
 
     <!-- hreflang tags for SEO -->
     <link rel="alternate" hreflang="en" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
@@ -82,12 +124,19 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url.origin + (lang === 'en' ? Astro.url.pathname : Astro.url.pathname.replace(/^\/es/, ''))} />
 
+    <!-- Favicon - PNG icons only -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <!-- Font optimization with preload for better performance -->
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-display" preload />
 
     <!-- Performance optimization: Preload critical resources -->
     <link rel="preload" href="/favicon-32x32.png" as="image" type="image/png" />
+    <link rel="preload" href={globalSettings.social_image} as="image" type="image/png" />
     
     <!-- Performance optimization: DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />

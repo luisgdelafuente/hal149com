@@ -28,9 +28,6 @@ const lang = getLangFromUrl(Astro.url);
 
         </a>
 
-        <!-- CTA title -->
-        <h2 class="bs-h3">{ settings.demo.title  }</h2>
-
         <!-- CTA Button -->
         <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3" onclick="demo.showModal()">
           { settings.demo.cta }
@@ -86,8 +83,8 @@ const lang = getLangFromUrl(Astro.url);
         <!-- Credits -->
         <a href={lang === 'es' ? '/es/credits' : '/credits'}>Credits</a>
 
-        <!-- RSS Feed -->
-        <a href={lang === 'es' ? '/es/rss.xml' : '/rss.xml'}>Feed RSS</a>
+        <!-- Legal -->
+        <a href={lang === 'es' ? '/es/legal' : '/legal'}>Legal</a>
 
       </nav>
 

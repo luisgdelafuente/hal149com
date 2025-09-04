@@ -3,14 +3,12 @@ import Layout from "../../layouts/Layout.astro"
 
 const credits = {
   title: "Créditos",
-  content: "Este es un pequeño tema hecho con <a href='https://astro.build/'>Astro</a> y <a href='https://tailwindcss.com/'>Tailwind</a> por <a href='https://www.blackspike.com'>blackspike design</a>. <a href='https://github.com/blackspike/blackspike-astro-landing-page'>Ver el código en GitHub</a>.",
+  content: "Este sitio fue construido con <a href='https://astro.build/'>Astro</a> y <a href='https://tailwindcss.com/'>Tailwind</a> usando un diseño de página de aterrizaje de <a href='https://www.blackspike.com'>Blackspike</a>. <a href='https://github.com/blackspike/blackspike-astro-landing-page'>Código original disponible en GitHub</a>.",
   list: [
     {
       item: "Logos falsos por <a href='https://uicontent.co/svg-dummy-logo/'>uicontent.co</a>"
     },
-    {
-      item: "Avatar de persona de la cita por <a href='https://thispersondoesnotexist.com/'>thispersondoesnotexist.com</a>"
-    },
+
     {
       item: "Iconos varios y logo de <a href='https://icones.js.org/'>icones.js.org</a> por <a href='https://github.com/antfu'>@antfu</a>"
     },
@@ -27,7 +25,13 @@ const credits = {
 }
 ---
 
-<Layout title={ credits.title }>
+<Layout 
+  title="Desbloquea el Potencial de tu Negocio con IA | HAL149"
+  description="Desde automatizaciones de IA hasta programas estratégicos, HAL149 es tu socio para construir e implementar estrategias de IA personalizadas que generen resultados empresariales reales."
+  keywords="HAL149, consultoría IA, optimización empresarial, optimización ChatGPT, estrategia IA, consultoría inteligencia artificial"
+  author="HAL149"
+  type="website"
+>
 
   <section class="max-w-[92vw] lg:max-w-4xl mx-auto bs-mt-md px-5 py-8 md:p-20 flex flex-col gap-3 justify-between border rounded-md bg-bs-surface-2 border-bs-surface-3 [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-bs-foreground-dark/80 [&_a]:hover:decoration-bs-foreground-light">
 

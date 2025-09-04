@@ -18,7 +18,7 @@ import { getLangFromUrl } from '../i18n/ui';
 // Import existing JSON data
 import caseStudies from "../data/case_studies.json"
 import clients from "../data/clients.json"
-import faq from "../data/faq.json"
+
 import services from "../data/services.json"
 import pricing from "../data/pricing.json"
 import testimonials from "../data/testimonials.json"
@@ -43,6 +43,7 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
 const newsletterContent = i18nContent?.default?.newsletter || newsletter;
 const caseStudiesContent = i18nContent?.default?.case_studies || caseStudies;
 const servicesContent = i18nContent?.default?.services || services;
+const faqContent = i18nContent?.default?.faq || [];
 
 // Get homepage sections configuration
 const sections = globalSettings.homepage_sections || {
@@ -60,7 +61,13 @@ const sections = globalSettings.homepage_sections || {
 
 ---
 
-<Layout title={ globalSettings.title }>
+<Layout 
+  title={ globalSettings.title }
+  description={ globalSettings.description }
+  keywords={ globalSettings.keywords }
+  author={ globalSettings.author }
+  image={ globalSettings.social_image }
+>
 
   {sections.hero && (
     <HeroSection
@@ -120,7 +127,7 @@ const sections = globalSettings.homepage_sections || {
 
   {sections.faq && (
     <FaqSection
-      faq={ faq }
+      faq={ faqContent }
       title={ homeContent.faq_title }
     />
   )}

@@ -1,13 +1,15 @@
 {
   "global_settings": {
-    "title": "Posiciona tu negocio en las principales IAs",
-    "description": "Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones",
-    "social_image": "/1200x630.jpg",
-    "base_url": "https://astro-theme.blackspike.com",
+    "title": "Desbloquea el Potencial de tu Negocio con IA | HAL149",
+    "description": "Desde automatizaciones de IA hasta programas estratégicos, HAL149 es tu socio para construir e implementar estrategias de IA personalizadas que generen resultados empresariales reales.",
+    "keywords": "IA, inteligencia artificial, optimización empresarial, ChatGPT, Perplexity, Google AI, SEO, marketing digital, HAL149, consultoría IA",
+    "author": "HAL149",
+    "social_image": "/1200x630.png",
+    "base_url": "https://hal149.com",
     "demo": {
-      "title": "¿Necesitas diseño?",
-      "content": "<strong>Obtén un recorrido guiado por nuestros servicios</strong>, y descubre cómo tú y tu equipo pueden cambiar la forma en que trabajan, para siempre.",
-      "cta": "Reservar llamada"
+      "title": "Contactar:",
+      "content": "Contacta con nosotros para saber más y obtener una evaluación estratégica de IA para tu negocio.",
+      "cta": "Contactar"
     },
     "theme_color": "#18181b",
     "homepage_sections": {
@@ -70,14 +72,14 @@
   "home": {
     "hero_title": "Posiciona tu negocio en las principales IAs",
     "hero_content": "<p><strong>Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones.</strong></p><p>Haz que cada búsqueda con IA te posicione por encima de tu competencia.</p>",
-    "services_title": "Servicios",
+    "services_title": "Cómo podemos ayudar",
     "clients_title": "Confiado por grandes empresas",
     "testimonials_title": "Los clientes ♥ nos aman",
     "case_studies_title": "Proyectos",
     "pricing_title": "Nuestras tarifas",
-    "quote_content": "Esta <strong>agencia de diseño</strong> es un <strong>cambio de juego</strong>. Su <strong>visión creativa</strong>, <strong>enfoque centrado en el usuario</strong>, y <strong>colaboración fluida</strong> han <strong>transformado</strong> la forma en que <strong>construimos nuestra marca</strong>. No es <strong>solo una agencia</strong> — es un <strong>poderoso socio</strong> que <strong>entrega resultados reales</strong>.",
-    "quote_cite": "Sean Higgins",
-    "quote_role": "CTO, Interia",
+    "quote_content": "Como fabricante de aerosoles, llevábamos años perdiendo visibilidad online. En 8 meses transformaron nuestro posicionamiento digital: <strong>300% más leads cualificados</strong>, <strong>60% más tráfico orgánico</strong> y <strong>ROI positivo desde el segundo mes</strong>.",
+    "quote_cite": "Jaume Castellà",
+    "quote_role": "CEO, Ilerspray",
     "quote_image": "/content-images/quote-man.avif",
     "faq_title": "Preguntas Frecuentes"
   },
@@ -117,28 +119,28 @@
     {
       "title": "GEO: Optimización para Motores Generativos",
       "content": "Te ayudamos a convertirte en la respuesta que buscan tus clientes en ChatGPT, Perplexity y Google AI",
-      "cta": "Consulta de Estrategia IA",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-01.avif",
       "image_alt": "Interfaz de planificación de estrategia IA"
     },
     {
       "title": "Campañas en YouTube Shorts",
       "content": "Publica <strong>contenidos de vídeo temáticos</strong> y deja que los algoritmos de Youtube Shorts encuentren a tus clientes potenciales.",
-      "cta": "Solicitar Demo del Sitio",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-02.avif",
       "image_alt": "Interfaz de sitio web potenciado por IA"
     },
     {
       "title": "Consultoría y Formación IA",
       "content": "¿No sabes por dónde empezar? Te orientamos y ayudamos a transformar la IA en tu ventaja competitiva definitiva .",
-      "cta": "Explorar IA de Contenido",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-03.avif",
       "image_alt": "Dashboard de generación de contenido IA"
     },
     {
       "title": "Desarrollo de Aplicaciones Empresariales Personalizadas",
       "content": "Soluciones tecnológicas a medida orientadas a optimizar procesos y potenciar el crecimiento.",
-      "cta": "Agendar Auditoría de Automatización",
+      "cta": "Contactar",
       "image": "/content-images/blackspike-wallpaper-04.avif",
       "image_alt": "Interfaz de flujo de trabajo de automatización IA"
     }
@@ -147,5 +149,57 @@
     "title": "Mantente informado",
     "content": "Obtén las últimas actualizaciones sobre nuestros servicios e información del sector.",
     "cta": "Suscribirse"
+  },
+  "faq": [
+    {
+      "question": "¿Qué hace que HAL149 sea diferente de otras empresas de IA?",
+      "answer": "HAL149 combina la consultoría estratégica empresarial con el desarrollo práctico de IA en un enfoque integrado. Mientras que la mayoría de las empresas proporcionan estrategia sin implementación o construyen tecnología sin contexto empresarial, nosotros conectamos ambos mundos para entregar soluciones de IA funcionales que generan resultados medibles para tu negocio."
+    },
+    {
+      "question": "¿Cómo pueden ayudar a que mi negocio aparezca en plataformas de IA como ChatGPT?",
+      "answer": "Optimizamos la presencia de tu negocio en plataformas de IA para que cuando los clientes busquen servicios como los tuyos, los sistemas de IA prioricen tu empresa como la solución recomendada. Esto te posiciona por delante de la competencia en el creciente panorama de búsquedas impulsadas por IA, asegurando que tu negocio capture más oportunidades a través de consultas de IA."
+    },
+    {
+      "question": "¿Solo trabajan con empresas tecnológicas?",
+      "answer": "HAL149 trabaja con empresas de todas las industrias. Nuestro enfoque se centra en identificar dónde la IA puede impulsar específicamente las ventas, la eficiencia y la ventaja competitiva para tu sector particular y modelo de negocio, independientemente de tu experiencia técnica actual o industria."
+    },
+    {
+      "question": "¿Cuánto tiempo tarda en ver resultados?",
+      "answer": "El tiempo varía según el alcance del proyecto, pero nuestro enfoque enfatiza la entrega de impacto tangible en lugar de ciclos de desarrollo largos. Vamos más allá de los prototipos para implementar soluciones funcionales, con muchos clientes viendo resultados iniciales en los primeros meses de implementación."
+    },
+    {
+      "question": "¿Qué pasa si mi negocio no tiene experiencia técnica?",
+      "answer": "Absolutamente. HAL149 se especializa en hacer que la IA sea accesible para empresas sin antecedentes técnicos. Manejamos tanto la planificación estratégica como la ejecución técnica, traduciendo conceptos complejos de IA en soluciones empresariales prácticas que tu equipo puede entender y operar efectivamente."
+    }
+  ],
+  "about": {
+    "title": "Acerca de HAL149",
+    "subtitle": "Conectando Estrategia de IA con Implementación",
+    "description": "HAL149 conecta la estrategia de IA con la implementación. Mientras la mayoría de empresas ofrecen recomendaciones estratégicas sin ejecución o soluciones técnicas sin contexto empresarial, nosotros combinamos ambos mundos para entregar soluciones de IA funcionales que generan resultados medibles.",
+    "mission": "Hacemos la IA accesible y rentable para empresas de todas las industrias. Nuestro enfoque identifica exactamente dónde la inteligencia artificial puede impulsar el crecimiento de ventas, la eficiencia operativa y la ventaja competitiva para tu modelo de negocio específico.",
+    "experience": "Con más de 30 años de experiencia, transformamos la IA de posibilidad futura en ventaja competitiva inmediata. No solo estrategizamos—construimos. No solo diagnosticamos—implementamos.",
+    "cta_title": "¿Listo para transformar tu negocio con IA?",
+    "cta_content": "Hablemos de cómo HAL149 puede ayudarte a implementar soluciones de IA que generen resultados reales.",
+    "cta_button": "Contáctanos"
+  },
+  "legal": {
+    "title": "Legal",
+    "subtitle": "Información Legal y Políticas",
+    "description": "Información legal importante sobre los servicios de HAL149, prácticas de privacidad y términos de uso.",
+    "privacy_policy": {
+      "title": "Política de Privacidad",
+      "content": "Esta Política de Privacidad describe cómo HAL149 (\"nosotros,\" \"nos,\" o \"nuestro\") recopila, utiliza y protege su información personal cuando utiliza nuestros servicios de consultoría en IA y visita nuestro sitio web. Estamos comprometidos a proteger su privacidad y garantizar la seguridad de sus datos personales. Esta política describe nuestras prácticas con respecto a la recopilación, procesamiento y protección de datos en cumplimiento con las leyes de protección de datos aplicables. Al utilizar nuestros servicios, usted acepta la recopilación y uso de información de acuerdo con esta política. Podemos actualizar esta Política de Privacidad de vez en cuando, y le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página."
+    },
+    "terms_of_service": {
+      "title": "Términos de Servicio",
+      "content": "Estos Términos de Servicio (\"Términos\") rigen su uso de los servicios de consultoría en IA de HAL149 y del sitio web. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estos Términos. Nuestros servicios incluyen consultoría estratégica en IA, soporte de implementación y servicios relacionados de optimización empresarial. Proporcionamos estos servicios \"tal como están\" y no hacemos garantías sobre la precisión, integridad o utilidad de cualquier información proporcionada. Usted acepta utilizar nuestros servicios solo para fines legales y de acuerdo con estos Términos. Usted es responsable de mantener la confidencialidad de cualquier credencial de cuenta y de todas las actividades que ocurran bajo su cuenta."
+    },
+    "cookie_policy": {
+      "title": "Política de Cookies",
+      "content": "Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio y entender de dónde vienen nuestros visitantes. Utilizamos cookies esenciales que son necesarias para que el sitio web funcione correctamente, así como cookies analíticas para ayudarnos a mejorar nuestros servicios y entender cómo los visitantes interactúan con nuestro sitio. Usted puede controlar y gestionar las cookies a través de la configuración de su navegador. Sin embargo, deshabilitar ciertas cookies puede afectar la funcionalidad de nuestro sitio web y su experiencia de usuario."
+    },
+    "cta_title": "¿Tiene Preguntas Sobre Nuestras Políticas Legales?",
+    "cta_content": "Si tiene alguna pregunta sobre nuestras políticas legales o necesita aclaración sobre cualquier término, no dude en contactarnos.",
+    "cta_button": "Contáctenos"
   }
 }

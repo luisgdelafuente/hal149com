@@ -27,13 +27,13 @@ const lang = getLangFromUrl(Astro.url);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Blog de Frontier Agency",
-    "description": "Últimas noticias, insights y actualizaciones de Frontier Agency",
-    "url": "https://your-domain.com/es/posts/",
+    "name": "Blog de HAL149",
+    "description": "Últimas noticias, insights y actualizaciones de HAL149",
+    "url": "/es/posts/",
     "publisher": {
       "@type": "Organization",
-      "name": "Frontier Agency",
-      "url": "https://your-domain.com"
+      "name": "HAL149",
+      "url": "/"
     },
     "blogPost": currentPosts.map(post => ({
       "@type": "BlogPosting",
@@ -45,12 +45,12 @@ const lang = getLangFromUrl(Astro.url);
       },
       "datePublished": post.data.date.toISOString(),
       "dateModified": post.data.date.toISOString(),
-      "url": `https://your-domain.com/es/posts/${post.slug}/`,
-      "image": post.data.image ? `https://your-domain.com${post.data.image}` : undefined,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Frontier Agency"
-      }
+      "url": `/es/posts/${post.slug}/`,
+      "image": post.data.image ? post.data.image : undefined,
+              "publisher": {
+          "@type": "Organization",
+          "name": "HAL149"
+        }
     }))
   })} />
   <div class="bs-container py-16">
