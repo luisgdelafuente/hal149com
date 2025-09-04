@@ -56,40 +56,40 @@ const t = useTranslations(lang);
       <!-- Form inputs -->
 
       <!-- Name -->
-      <label class="sr-only" for="name">Name</label>
+      <label class="sr-only" for="name">{t('form.name.label')}</label>
 
       <input
         id="name"
         name="name"
         type="text"
         class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-        placeholder="Your name"
+        placeholder={t('form.name.placeholder')}
       >
 
       <!-- Company -->
-      <label class="sr-only" for="company">Company</label>
+      <label class="sr-only" for="company">{t('form.company.label')}</label>
 
       <input
         id="company"
         name="company"
         type="text"
         class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-        placeholder="Your company"
+        placeholder={t('form.company.placeholder')}
       >
 
       <!-- Email -->
-      <label class="sr-only" for="email">Email</label>
+      <label class="sr-only" for="email">{t('form.email.label')}</label>
 
       <input
         id="email"
         name="email"
         type="email"
         class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-        placeholder="Your email"
+        placeholder={t('form.email.placeholder')}
       >
 
       <!-- Submit -->
-      <button type="submit" class="bs-btn form-input px-4 py-3">{ content.cta }</button>
+      <button type="submit" class="bs-btn form-input px-4 py-3">{t('form.submit')}</button>
 
     </div>
 
