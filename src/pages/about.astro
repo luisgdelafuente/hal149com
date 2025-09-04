@@ -1,51 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const content = {
-  en: {
-    title: "About",
-    subtitle: "Learn more about HAL149",
-    description: "From AI automations to strategic programs, HAL149 is your partner to build and deploy tailored AI strategies that drive real business results.",
-    keywords: "HAL149, AI consulting, business optimization, ChatGPT optimization, AI strategy, artificial intelligence consulting",
-    author: "HAL149"
-  },
-  es: {
-    title: "Acerca de",
-    subtitle: "Conoce más sobre HAL149",
-    description: "Desde automatizaciones de IA hasta programas estratégicos, HAL149 es tu socio para construir e implementar estrategias de IA personalizadas que generen resultados empresariales reales.",
-    keywords: "HAL149, consultoría IA, optimización empresarial, optimización ChatGPT, estrategia IA, consultoría inteligencia artificial",
-    author: "HAL149"
-  }
+// Try to load i18n content, fallback to original
+let i18nContent;
+try {
+  i18nContent = await import(`../i18n/content/${lang}.json`);
+} catch (error) {
+  console.warn(`Could not load i18n content for ${lang}, using fallback`);
+}
+
+const aboutContent = i18nContent?.default?.about || {
+  title: "About",
+  subtitle: "Learn more about HAL149",
+  description: "From AI automations to strategic programs, HAL149 is your partner to build and deploy tailored AI strategies that drive real business results.",
+  keywords: "HAL149, AI consulting, business optimization, ChatGPT optimization, AI strategy, artificial intelligence consulting",
+  author: "HAL149"
 };
 
-const currentContent = content[lang as keyof typeof content];
+const currentContent = aboutContent;
 ---
 
 <Layout 
   title={`${currentContent.title} | HAL149`} 
   description={currentContent.description}
-  keywords={currentContent.keywords}
-  author={currentContent.author}
+  keywords="HAL149, AI consulting, business optimization, ChatGPT optimization, AI strategy, artificial intelligence consulting, AI implementation"
+  author="HAL149"
   type="website"
 >
   <div class="bs-container py-16">
-    <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-16">
+    <div class="max-w-6xl mx-auto">
+      <!-- Hero Header -->
+      <div class="text-center mb-20">
         <h1 class="bs-h1 mb-6">{currentContent.title}</h1>
-        <p class="bs-body-text xl:text-xl max-w-2xl mx-auto text-bs-foreground-dark">
+        <p class="bs-body-text xl:text-xl max-w-3xl mx-auto text-bs-foreground-dark mb-8">
           {currentContent.subtitle}
         </p>
       </div>
 
-      <!-- Content -->
-      <div class="prose prose-lg max-w-none">
-        <p class="bs-body-text text-bs-foreground-light leading-relaxed">
-          {currentContent.description}
-        </p>
+      <!-- Main Content Sections -->
+      <div class="grid gap-16">
+        <!-- Mission Section -->
+        <div class="max-w-4xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-8">
+              {currentContent.description}
+            </p>
+            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-8">
+              {currentContent.mission}
+            </p>
+            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg">
+              {currentContent.experience}
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="text-center bg-gradient-to-r from-bs-primary to-bs-primary-dark rounded-2xl p-12 text-white">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            {currentContent.cta_title}
+          </h3>
+          <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+            {currentContent.cta_content}
+          </p>
+          <button 
+            type="button" 
+            class="bs-btn" 
+            onclick="demo.showModal()"
+          >
+            {currentContent.cta_button}
+          </button>
+        </div>
       </div>
     </div>
   </div>

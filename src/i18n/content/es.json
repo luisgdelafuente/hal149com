@@ -171,5 +171,15 @@
       "question": "¿Qué pasa si mi negocio no tiene experiencia técnica?",
       "answer": "Absolutamente. HAL149 se especializa en hacer que la IA sea accesible para empresas sin antecedentes técnicos. Manejamos tanto la planificación estratégica como la ejecución técnica, traduciendo conceptos complejos de IA en soluciones empresariales prácticas que tu equipo puede entender y operar efectivamente."
     }
-  ]
+  ],
+  "about": {
+    "title": "Acerca de HAL149",
+    "subtitle": "Conectando Estrategia de IA con Implementación",
+    "description": "HAL149 conecta la estrategia de IA con la implementación. Mientras la mayoría de empresas ofrecen recomendaciones estratégicas sin ejecución o soluciones técnicas sin contexto empresarial, nosotros combinamos ambos mundos para entregar soluciones de IA funcionales que generan resultados medibles.",
+    "mission": "Hacemos la IA accesible y rentable para empresas de todas las industrias. Nuestro enfoque identifica exactamente dónde la inteligencia artificial puede impulsar el crecimiento de ventas, la eficiencia operativa y la ventaja competitiva para tu modelo de negocio específico.",
+    "experience": "Con más de 30 años de experiencia, transformamos la IA de posibilidad futura en ventaja competitiva inmediata. No solo estrategizamos—construimos. No solo diagnosticamos—implementamos.",
+    "cta_title": "¿Listo para transformar tu negocio con IA?",
+    "cta_content": "Hablemos de cómo HAL149 puede ayudarte a implementar soluciones de IA que generen resultados reales.",
+    "cta_button": "Contáctanos"
+  }
 }

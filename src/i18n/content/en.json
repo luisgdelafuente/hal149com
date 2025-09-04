@@ -119,28 +119,28 @@
     {
       "title": "GEO: Generative Engine Optimization",
       "content": "We help you become the answer your customers are looking for on ChatGPT, Perplexity, and Google AI",
-      "cta": "Consulta de Estrategia IA",
+      "cta": "Contact",
       "image": "/content-images/blackspike-wallpaper-01.avif",
       "image_alt": "Interfaz de planificación de estrategia IA"
     },
     {
       "title": "YouTube Shorts Campaigns",
       "content": "Publish <strong>thematic video content</strong> and let YouTube Shorts algorithms find your potential customers.",
-      "cta": "Solicitar Demo del Sitio",
+      "cta": "Contact",
       "image": "/content-images/blackspike-wallpaper-02.avif",
       "image_alt": "Interfaz de sitio web potenciado por IA"
     },
     {
       "title": "AI Consulting and Training",
       "content": "Don't know where to start? We guide you and help transform AI into your definitive competitive advantage.",
-      "cta": "Explorar IA de Contenido",
+      "cta": "Contact",
       "image": "/content-images/blackspike-wallpaper-03.avif",
       "image_alt": "Dashboard de generación de contenido IA"
     },
     {
       "title": "Custom Enterprise Application Development",
       "content": "Tailored technology solutions focused on optimizing processes and boosting growth.",
-      "cta": "Agendar Auditoría de Automatización",
+      "cta": "Contact",
       "image": "/content-images/blackspike-wallpaper-04.avif",
       "image_alt": "Interfaz de flujo de trabajo de automatización IA"
     }
@@ -171,5 +171,15 @@
       "question": "What if my business doesn't have technical expertise?",
       "answer": "Absolutely. HAL149 specializes in making AI accessible to businesses without technical backgrounds. We handle both the strategic planning and technical execution, translating complex AI concepts into practical business solutions that your team can understand and operate effectively."
     }
-  ]
+  ],
+  "about": {
+    "title": "About HAL149",
+    "subtitle": "Bridging AI Strategy with Implementation",
+    "description": "HAL149 bridges the gap between AI strategy and implementation. While most companies offer either strategic recommendations without execution or technical solutions without business context, we combine both worlds to deliver functional AI solutions that generate measurable results.",
+    "mission": "We make AI accessible and profitable for businesses across all industries. Our approach identifies exactly where artificial intelligence can drive sales growth, operational efficiency, and competitive advantage for your specific business model.",
+    "experience": "With over 30 years of experience, we transform AI from future possibility into immediate competitive advantage. We don't just strategize—we build. We don't just diagnose—we implement.",
+    "cta_title": "Ready to transform your business with AI?",
+    "cta_content": "Let's discuss how HAL149 can help you implement AI solutions that drive real results.",
+    "cta_button": "Contact Us"
+  }
 }
