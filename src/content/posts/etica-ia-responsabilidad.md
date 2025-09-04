@@ -1,6 +1,6 @@
 ---
 title: "Ética de la IA y Responsabilidad: Construyendo Confianza en la Inteligencia Artificial"
-description: "Explora la importancia crítica del desarrollo ético de la IA, los desafíos del sesgo y la transparencia, y cómo las organizaciones pueden construir sistemas de inteligencia artificial confiables."
+description: "La importancia crítica del desarrollo ético de la IA, los desafíos del sesgo y la transparencia. Cómo las organizaciones pueden construir sistemas de inteligencia artificial confiables."
 date: 2024-01-25
 author: "Luis García de la Fuente"
 tags: ["Ética de IA", "Responsabilidad", "Confianza", "Sesgo", "Transparencia"]

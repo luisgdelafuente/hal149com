@@ -181,5 +181,25 @@
     "cta_title": "¿Listo para transformar tu negocio con IA?",
     "cta_content": "Hablemos de cómo HAL149 puede ayudarte a implementar soluciones de IA que generen resultados reales.",
     "cta_button": "Contáctanos"
+  },
+  "legal": {
+    "title": "Legal",
+    "subtitle": "Información Legal y Políticas",
+    "description": "Información legal importante sobre los servicios de HAL149, prácticas de privacidad y términos de uso.",
+    "privacy_policy": {
+      "title": "Política de Privacidad",
+      "content": "Esta Política de Privacidad describe cómo HAL149 (\"nosotros,\" \"nos,\" o \"nuestro\") recopila, utiliza y protege su información personal cuando utiliza nuestros servicios de consultoría en IA y visita nuestro sitio web. Estamos comprometidos a proteger su privacidad y garantizar la seguridad de sus datos personales. Esta política describe nuestras prácticas con respecto a la recopilación, procesamiento y protección de datos en cumplimiento con las leyes de protección de datos aplicables. Al utilizar nuestros servicios, usted acepta la recopilación y uso de información de acuerdo con esta política. Podemos actualizar esta Política de Privacidad de vez en cuando, y le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página."
+    },
+    "terms_of_service": {
+      "title": "Términos de Servicio",
+      "content": "Estos Términos de Servicio (\"Términos\") rigen su uso de los servicios de consultoría en IA de HAL149 y del sitio web. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estos Términos. Nuestros servicios incluyen consultoría estratégica en IA, soporte de implementación y servicios relacionados de optimización empresarial. Proporcionamos estos servicios \"tal como están\" y no hacemos garantías sobre la precisión, integridad o utilidad de cualquier información proporcionada. Usted acepta utilizar nuestros servicios solo para fines legales y de acuerdo con estos Términos. Usted es responsable de mantener la confidencialidad de cualquier credencial de cuenta y de todas las actividades que ocurran bajo su cuenta."
+    },
+    "cookie_policy": {
+      "title": "Política de Cookies",
+      "content": "Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio y entender de dónde vienen nuestros visitantes. Utilizamos cookies esenciales que son necesarias para que el sitio web funcione correctamente, así como cookies analíticas para ayudarnos a mejorar nuestros servicios y entender cómo los visitantes interactúan con nuestro sitio. Usted puede controlar y gestionar las cookies a través de la configuración de su navegador. Sin embargo, deshabilitar ciertas cookies puede afectar la funcionalidad de nuestro sitio web y su experiencia de usuario."
+    },
+    "cta_title": "¿Tiene Preguntas Sobre Nuestras Políticas Legales?",
+    "cta_content": "Si tiene alguna pregunta sobre nuestras políticas legales o necesita aclaración sobre cualquier término, no dude en contactarnos.",
+    "cta_button": "Contáctenos"
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: "Fundamentos del Aprendizaje Automático: Una Guía para Principiantes"
-description: "Sumérgete en el mundo del aprendizaje automático con esta guía integral que cubre los conceptos básicos, algoritmos y aplicaciones prácticas para profesionales de negocios y tecnología."
+description: "Conceptos básicos de machine learning en esta guía integral que cubre algoritmos y aplicaciones prácticas para profesionales de negocios y tecnología."
 date: 2024-01-20
 author: "Luis García de la Fuente"
 tags: ["Aprendizaje Automático", "IA", "Ciencia de Datos", "Tecnología"]

@@ -1,22 +1,13 @@
 ---
-title: 'AI Ethics and Responsibility: Building Trust in Artificial Intelligence?'
-description: >-
-  Explore the critical importance of ethical AI development, the challenges of
-  bias and transparency, and how organizations can build trustworthy artificial
-  intelligence systems.
+title: "AI Ethics and Responsibility: Building Trust in Artificial Intelligence"
+description: "The critical importance of ethical AI development, the challenges of bias and transparency of modes, and how organizations can build trustworthy AI systems."
 date: 2024-01-25T00:00:00.000Z
-author: Luis García de la Fuente
-tags:
-  - AI Ethics
-  - Responsibility
-  - Trust
-  - Bias
-  - Transparency
-image: /blog-images/ai-ethics-responsibility.webp
+author: "Luis García de la Fuente"
+tags: ["AI Ethics", "Responsibility", "Trust", "Bias", "Transparency"]
+image: "/blog-images/ai-ethics-responsibility.webp"
 featured: true
-lang: en
-esSlug: etica-ia-responsabilidad
-draft: false
+lang: "en"
+esSlug: "etica-ia-responsabilidad"
 ---
 # AI Ethics and Responsibility: Building Trust in Artificial Intelligence?
 
