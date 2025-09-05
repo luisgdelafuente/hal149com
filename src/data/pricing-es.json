@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Asesoría Estrategia IA",
+    "tag": "Más Popular",
+    "content": "Sesión estratégica única de 1 hora sobre AI para ventaja competitiva de tu negocio.",
+    "cta": "Agendar",
+    "price": "490€",
+    "services": [
+      { "item": "Hoja de Ruta AI Estratégica" },
+      { "item": "Prioridades de Implementación" },
+      { "item": "Recomendaciones Stack Tecnológico" },
+      { "item": "Análisis Competitivo" },
+      { "item": "Plan de Próximos Pasos" }
+    ]
+  },
+  {
+    "title": "Plan Transformación IA",
+    "tag": "Mejor Valor",
+    "content": "Nos convertimos en tu socio AI y de negocio para entregar crecimiento medible cada mes.",
+    "cta": "Empezar",
+    "price": "1.800€",
+    "services": [
+      { "item": "Implementación Estrategia IA" },
+      { "item": "Motor de Contenido Optimizado AI" },
+      { "item": "Gestión Inteligente de Redes Sociales" },
+      { "item": "Posicionamiento AI SEO" },
+      { "item": "Generación y Cualificación de Leads" }
+    ]
+  }
+]

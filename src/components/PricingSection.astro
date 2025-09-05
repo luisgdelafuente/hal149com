@@ -3,8 +3,9 @@
 import Check from '../assets/theme-images/icon-check.svg'
 import Cube from '../assets/theme-images/icon-cube.svg'
 import CubeOutline from '../assets/theme-images/icon-cube-outline.svg'
+import pricingData from '../data/pricing-en.json'
 
-const { title, pricing } = Astro.props
+const { title, pricing = pricingData } = Astro.props
 
 ---
 
@@ -21,10 +22,10 @@ const { title, pricing } = Astro.props
     { pricing.map( ( item, index ) =>
 
     <article
-      class:list={['@container p-6 xl:p-16 flex flex-col gap-6 h-full w-full rounded-xl overflow-hidden lg:scale-90 @xl:justify-end', index === 1 ? 'bg-white/90 text-black/90 lg:scale-none' : 'bg-bs-surface-0/90']}>
+      class:list={['@container p-6 xl:p-16 flex flex-col gap-6 min-h-[600px] w-full rounded-xl overflow-hidden', index === 1 ? 'bg-white/90 text-black/90' : 'bg-bs-surface-0/90']}>
 
       <!-- Content -->
-      <div class="relative">
+      <div class="relative flex flex-col h-full">
 
         <!-- Title -->
         <h2 class="bs-h3 flex gap-3 items-center">
@@ -44,10 +45,10 @@ const { title, pricing } = Astro.props
         </h2>
 
         <!-- Intro -->
-        <div class="text-xl flex-grow mt-4 " set:html={ item.content } />
+        <div class="text-xl mt-4 " set:html={ item.content } />
 
         <!-- Services list -->
-        <ul role="list" class="flex flex-col gap-4 my-8">
+        <ul role="list" class="flex flex-col gap-4 my-8 flex-grow">
 
           { item.services.map( ({ item }) =>
 
@@ -66,10 +67,10 @@ const { title, pricing } = Astro.props
         </ul>
 
         <!-- CTA -->
-        <footer class="flex justify-between items-center gap-2">
+        <footer class="flex justify-between items-center gap-2 mt-auto">
 
           <!-- Price -->
-          <span class="text-4xl lg:text-5xl">£{ item.price }<span class="text-2xl hidden @md:inline-block -translate-y-1 ms-2"> / month</span></span>
+          <span class="text-4xl lg:text-5xl">{ item.price }{ index === 1 && <span class="text-2xl hidden @md:inline-block -translate-y-1 ms-2"> / month</span> }</span>
 
           <!-- CTA button -->
           <button type="button" class="bs-btn inline-block self-start @4xl:mt-12 text-xl" onclick="demo.showModal()">

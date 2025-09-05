@@ -1,0 +1,30 @@
+[
+  {
+    "title": "AI Strategic Assessment",
+    "tag": "Most Popular",
+    "content": "One-time 1-hour strategic session on AI for competitive advantage for your business.",
+    "cta": "Schedule",
+    "price": "490€",
+    "services": [
+      { "item": "Strategic AI Roadmap" },
+      { "item": "Implementation Priorities" },
+      { "item": "Technology Stack Recommendations" },
+      { "item": "Competitive Analysis" },
+      { "item": "Next Steps Blueprint" }
+    ]
+  },
+  {
+    "title": "AI Transformation Partnership",
+    "tag": "Best Value",
+    "content": "We become your AI and business partner to deliver measurable growth every month.",
+    "cta": "Get Started",
+    "price": "1.800€",
+    "services": [
+      { "item": "Strategic AI Implementation" },
+      { "item": "AI-Optimized Content Engine" },
+      { "item": "Intelligent Social Media Management" },
+      { "item": "AI SEO Positioning" },
+      { "item": "AI Leadgen & Qualification" }
+    ]
+  }
+]

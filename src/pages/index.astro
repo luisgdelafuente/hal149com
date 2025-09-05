@@ -20,7 +20,6 @@ import caseStudies from "../data/case_studies.json"
 import clients from "../data/clients.json"
 
 import services from "../data/services.json"
-import pricing from "../data/pricing.json"
 import testimonials from "../data/testimonials.json"
 import home from "../data/home.json"
 import global_settings from "../data/global_settings.json"
@@ -120,7 +119,6 @@ const sections = globalSettings.homepage_sections || {
 
   {sections.pricing && (
     <PricingSection
-      pricing={ pricing }
       title={ homeContent.pricing_title }
     />
   )}
