@@ -48,24 +48,20 @@
     ],
     "social_links": [
       {
-        "title": "Twitter / X",
-        "link": "https://x.com/blackspikeltd/"
-      },
-      {
-        "title": "Mastodon",
-        "link": "https://mastodon.cloud/@blackspike"
-      },
-      {
         "title": "GitHub",
-        "link": "https://github.com/blackspike/"
+        "link": "#"
       },
       {
         "title": "LinkedIn",
-        "link": "https://www.linkedin.com/company/blackspike"
+        "link": "#"
       },
       {
-        "title": "Bluesky",
-        "link": "https://bsky.app/profile/blackspike.com/"
+        "title": "Twitter",
+        "link": "#"
+      },
+      {
+        "title": "YouTube",
+        "link": "#"
       }
     ]
   },

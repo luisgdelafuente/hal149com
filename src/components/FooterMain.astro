@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../assets/theme-images/hal149logo.png'
-import { getLangFromUrl } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 import { createNavLink } from '../i18n/utils';
 
 const { settings } = Astro.props
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 ---
 
@@ -75,16 +76,16 @@ const lang = getLangFromUrl(Astro.url);
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
         <!-- Copyright -->
-        <span>© 2025 HAL149</span>
+        <span>{t('footer.copyright')}</span>
 
         <!-- About -->
-        <a href={lang === 'es' ? '/es/about' : '/about'}>About</a>
+        <a href={lang === 'es' ? '/es/nosotros' : '/about'}>{t('footer.about')}</a>
 
         <!-- Credits -->
-        <a href={lang === 'es' ? '/es/credits' : '/credits'}>Credits</a>
+        <a href={lang === 'es' ? '/es/creditos' : '/credits'}>{t('footer.credits_link')}</a>
 
         <!-- Legal -->
-        <a href={lang === 'es' ? '/es/legal' : '/legal'}>Legal</a>
+        <a href={lang === 'es' ? '/es/legal' : '/legal'}>{t('footer.legal')}</a>
 
       </nav>
 
