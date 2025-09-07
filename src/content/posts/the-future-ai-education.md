@@ -11,13 +11,13 @@ esSlug: "futuro-educacion-ia"
 ---
 Let's review how AI could be impacting the present and future of education and related trends.
 
-## From Just in Case to Just in Time Learning
+## From Just in Case to Just in Time (JIT) Learning
 
 The way we approach education is undergoing a fundamental shift. For too long, the focus has been on comprehensive courses, often covering vast amounts of information that may or may not be relevant to the individual learner. This "just in case" model is becoming increasingly obsolete.
 
-### The "just in time" approach
+### The "Just in Time" approach
 
-Instead of broad, pre-packaged courses, learners need access to information and assistance precisely when they require it to solve specific problems. This requires a change in mindset, moving away from passive content consumption to active problem-solving.
+Instead of broad, pre-packaged courses, learners need access to information and assistance precisely when they require it to solve specific problems. This requires a change in mindset, moving away **from passive content consumption to active problem-solving**.
 
 JIT learning is not a new idea. In fact, it's been around for more than 10 years. However, it is only now, with the advent of AI, that this concept can truly become mainstream. 
 
@@ -36,6 +36,6 @@ The most effective AI learning tools leverage integration across different platf
 
 ## Monetizing Expertise in the AI Era
 
-The traditional model of selling courses is being challenged. One viable alternative is to offer ongoing personal support and mentorship, complementing AI's capabilities with human expertise. This "human-in-the-loop" approach provides valuable guidance, helps learners navigate challenges, and offers a more personalized learning experience.
+The traditional model of selling courses is being challenged. One viable alternative is to offer ongoing personal support and mentorship, complementing AI's capabilities with human expertise. This **"human-in-the-loop"** approach provides valuable guidance, helps learners navigate challenges, and offers a more personalized learning experience.
 
 The future of education is about empowering learners to become effective problem solvers. By embracing AI and adapting to this new landscape, educators and business leaders can create more dynamic, personalized, and impactful learning experiences.
