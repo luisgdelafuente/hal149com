@@ -11,8 +11,10 @@
   },
   "themeConfig": [
     "src/content/config.ts",
-    "astro.config.mjs"
+    "astro.config.mjs",
+    "public/browserconfig.xml",
+    ".sitepins/config.json"
   ],
   "arrangement": [],
-  "showCommitModal": true
+  "showCommitModal": false
 }
