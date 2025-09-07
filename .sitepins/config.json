@@ -1,10 +1,13 @@
 {
   "media": {
-    "root": "public",
+    "root": "public/blog-images",
     "public": "public"
   },
   "content": {
     "root": "src/content/posts"
+  },
+  "code": {
+    "root": "src"
   },
   "themeConfig": [
     "src/content/config.ts",
