@@ -126,7 +126,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 5.14 Customize Credits page
 - [x] 5.15 Customize Legal page
 - [x] 5.16 Footer Customizing
-- [ ] 5.17 Offer and pricing customizing
+- [x] 5.17 Offer and pricing customizing
+- [ ] 5.18 Customize Projects section images
+- [ ] 5.19 Customize Services section images 
+- [ ] 5.20 Remove CTA buttons from Projects provisionally
 
 ### Phase 6: Final Configurations
 - [x] 6.1 Robots.txt configuration
