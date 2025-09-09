@@ -10,26 +10,30 @@ lang: "en"
 esSlug: "formato-llms-txt"
 ---
 
-# The LLMs.txt File: A New Standard for AI Training Data Attribution
+# LLMs.txt: The New Format for the AI Era
 
-As large language models (LLMs) become increasingly sophisticated and widely deployed, questions about training data attribution, transparency, and ethical AI development have come to the forefront. The proposed `LLMs.txt` standard represents a significant step toward addressing these concerns by providing a structured way for content creators to communicate their preferences about how their work is used in AI training.
+## Why your brand needs to be cited by AI (and not just by Google)
 
-## What is LLMs.txt?
+Traditional search is no longer the first point of contact: <a href="https://www.gs.statcounter.com/search-engine-market-share" target="_blank" rel="nofollow">more than 25% of US users</a> already ask ChatGPT, Claude, or Perplexity first. If your content doesn't appear in their responses, you disappear from the conversation. The new SEO isn't about ranking ten blue links, but about **training the model** to name you when someone queries your niche.
 
-The `LLMs.txt` file is a proposed standard that allows website owners and content creators to specify how their content should be handled by AI training systems. Similar to the widely adopted `robots.txt` file that controls web crawler access, `LLMs.txt` would provide clear instructions for AI training data collection.
+This shift has fueled speculation about *"magic formats"* that would make AIs read us better. The latest on the list is **LLMs.txt**.
 
-### The Problem It Solves
+## What is LLMs.txt and what problem does it solve?
 
-Currently, AI training data collection happens largely without explicit permission or clear attribution mechanisms. This creates several issues:
+LLMs.txt is a plain text file inspired by the classic <a href="https://www.robotstxt.org/" target="_blank" rel="nofollow">robots.txt</a> that allows website owners to specify how their content should be handled by AI training systems. Its purpose: communicate to AI crawlers which pages of your site are relevant, offer summaries in markdown, and theoretically facilitate semantic indexing.
+
+### The problem it solves
+
+Currently, AI training data collection occurs largely without explicit permissions or clear attribution mechanisms. This creates several problems:
 
 - **Lack of Transparency**: Content creators often don't know if their work is being used for AI training
-- **No Attribution**: Original authors receive no credit when their content contributes to AI models
+- **No Attribution**: Original authors don't receive credit when their content contributes to AI models
 - **Ethical Concerns**: Some creators may not want their work used for AI training at all
 - **Quality Control**: No mechanism exists to ensure training data quality and source verification
 
-## Proposed LLMs.txt Format
+## LLMs.txt file format and directives
 
-The proposed `LLMs.txt` format would be placed at the root of websites (e.g., `https://example.com/llms.txt`) and could include directives such as:
+The file is placed at the website root (e.g., `https://example.com/llms.txt`) and can include directives like:
 
 ```
 # LLMs.txt - AI Training Data Attribution
@@ -41,133 +45,78 @@ License: CC-BY-4.0
 Contact: ai-licensing@example.com
 ```
 
-### Key Directives
+### Main directives
 
-- **Allow/Disallow**: Specify which content can be used for training
+- **Allow/Disallow**: Specify what content can be used for training
 - **Attribution**: Require proper attribution when content is used
-- **License**: Specify licensing terms for AI training use
+- **License**: Specify license terms for AI training use
 - **Contact**: Provide contact information for AI licensing inquiries
 
-## Benefits for Content Creators
+## Does it actually work? Market reality
 
-### 1. Control Over Usage
+OpenAI, Anthropic, and Perplexity have *referenced* the standard in internal documentation. <a href="https://platform.openai.com/docs/tools/file-search" target="_blank" rel="nofollow">OpenAI File Search</a> itself mentions the utility of plain text files for training embeddings, which generated optimistic headlines. But referencing isn't the same as prioritizing.
 
-Content creators can explicitly control how their work is used in AI training:
+### Do SEO heavyweights use it?
 
-```
-# Allow general use but require attribution
-Allow: /
-Attribution: required
-License: CC-BY-4.0
-```
+To settle doubts, we checked six top sites: Ahrefs, Moz, HubSpot, Semrush, Backlinko, Wordstream. The result: **all return 404**. Neither do <a href="https://nytimes.com/llms.txt" target="_blank" rel="nofollow">The New York Times</a>, <a href="https://bbc.com/llms.txt" target="_blank" rel="nofollow">BBC</a>, nor the brands most cited by AIs in their responses.
 
-### 2. Opt-Out Capability
+ChatGPT, for its part, can read navigation, footers, YouTube transcripts with timestamps, and complete articles without needing this file. The conclusion is clear: **the problem isn't the format, it's content quality and quantity**.
 
-Creators who don't want their content used for AI training can opt out:
+## Google is becoming a publisher with its AI
 
-```
-# Opt out of AI training entirely
-User-agent: *
-Disallow: /
-```
+Meanwhile, Google responds to generic queries —*"what is inbound marketing"*, *"best AI courses"*, *"what is urban mobility"*, etc.— and republishes them. This turns Google into both competitor *and* distributor, a scenario reminiscent of <a href="https://instantarticles.fb.com/" target="_blank" rel="nofollow">Facebook Instant Articles</a> or <a href="https://developer.apple.com/news-publisher/" target="_blank" rel="nofollow">Apple News</a>, but powered by language models.
 
-### 3. Licensing Revenue
+The <a href="https://developers.google.com/search/blog/2024/05/google-io-search-updates" target="_blank" rel="nofollow">official Google I/O 2024 documentation</a> confirms that content indexed for *AI Overviews* comes from the same traditional index; there's no special LLMs.txt signal.
 
-Creators can specify licensing terms and potentially generate revenue:
+## Potential benefits for creators and AI developers
 
-```
-# Require licensing for commercial AI use
-Allow: /blog/
-License: commercial-license-required
-Contact: licensing@example.com
-```
+### For content creators
 
-## Benefits for AI Developers
+1. **Control over usage**: Creators can explicitly control how their work is used
+2. **Opt-out capability**: Ability to completely exclude themselves from AI training
+3. **Licensing revenue**: Specify license terms and potentially generate income
 
-### 1. Clear Guidelines
+### For AI developers
 
-AI developers get explicit guidance on what content they can use and how:
+1. **Clear guidelines**: Explicit guidance on what content they can use and how
+2. **Ethical compliance**: Follow ethical AI development practices
+3. **Quality assurance**: Better tracking of training data sources
 
-```
-# Example of clear usage guidelines
-Allow: /public-research/
-Attribution: required
-License: CC-BY-4.0
-Disallow: /proprietary/
-```
+## Implementation challenges
 
-### 2. Ethical Compliance
-
-Developers can ensure they're following ethical AI development practices:
-
-```
-# Respect creator preferences
-User-agent: *
-Allow: /open-content/
-Disallow: /restricted/
-Attribution: required
-```
-
-### 3. Quality Assurance
-
-Better tracking of training data sources leads to improved model quality and accountability.
-
-## Implementation Challenges
-
-### 1. Adoption
-
-Getting widespread adoption across websites and content platforms:
+### Adoption and standardization
 
 - **Major platforms** need to implement the standard
 - **Content creators** need to understand and use it
 - **AI developers** need to respect the directives
 
-### 2. Enforcement
+### Practical enforcement
 
-Ensuring AI developers actually follow the directives:
+Ensuring AI developers actually follow the directives requires:
 
 - **Technical enforcement** mechanisms
 - **Legal frameworks** for compliance
 - **Audit and verification** processes
 
-### 3. Standardization
+## Current state and outlook
 
-Creating a widely accepted standard:
+Sites like <a href="https://myllmtxt.com" target="_blank" rel="nofollow">MyLLMtxt.com</a> promote it as the "basic AI Intelligence tool," while <a href="https://directory.llmstxt.cloud/" target="_blank" rel="nofollow">Directory.llmstxt.cloud</a> collects implementation examples.
 
-- **Industry consensus** on format and directives
-- **Documentation and tools** for implementation
-- **Best practices** and guidelines
+The `LLMs.txt` standard is still in the proposal stage, but represents an important step toward more ethical and transparent AI development. Various organizations and researchers are working on:
 
-## Current Status and Future Outlook
+- **Development and refinement** of the standard
+- **Implementation tools and libraries**
+- **Industry adoption strategies**
 
-The `LLMs.txt` standard is still in the proposal stage, but it represents an important step toward more ethical and transparent AI development. Several organizations and researchers are working on:
+## Conclusion: content before format
 
-- **Standard development** and refinement
-- **Implementation tools** and libraries
-- **Industry adoption** strategies
-- **Legal framework** integration
+LLMs.txt is *hype* useful for selling tools, not a confirmed ranking signal. If your goal is to appear in ChatGPT or Claude, focus efforts on: long and well-referenced articles, *FAQPage* and *HowTo* schema, or presence in sources that AIs already consume (<a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank" rel="nofollow">Wikipedia</a>, <a href="https://stackoverflow.com/" target="_blank" rel="nofollow">Stack Overflow</a>, academic repositories).
 
-### Potential Impact
+In the era of generative responses, **being a primary source of content in text or video, and transactions is more valuable than keeping up with trendy formats**.
 
-If widely adopted, `LLMs.txt` could:
+### Implementation example
 
-- **Improve transparency** in AI training data collection
-- **Protect creator rights** and provide fair attribution
-- **Enable new business models** for content licensing
-- **Build trust** between content creators and AI developers
-
-## Getting Started
-
-Content creators interested in the `LLMs.txt` standard can:
-
-1. **Learn more** about the proposed format and directives
-2. **Create a basic LLMs.txt file** for their website
-3. **Join discussions** about standard development
-4. **Implement the standard** as it evolves
-
-### Example Implementation
-
-Here's a simple `LLMs.txt` file for a blog:
+For those interested in experimenting, here's a basic `LLMs.txt` file:
 
 ```
 # LLMs.txt for AI Training Data Attribution
@@ -182,14 +131,6 @@ Contact: ai-licensing@example.com
 Last-Modified: 2024-01-30
 ```
 
-## Conclusion
-
-The `LLMs.txt` file represents a promising approach to addressing the complex issues surrounding AI training data attribution and transparency. While still in development, it offers a practical solution for content creators to maintain control over how their work is used in AI training while providing clear guidelines for AI developers.
-
-As the AI landscape continues to evolve, standards like `LLMs.txt` will become increasingly important for ensuring ethical AI development and protecting creator rights. The success of this initiative will depend on widespread adoption and the development of robust enforcement mechanisms.
-
-For now, content creators and AI developers alike should stay informed about the development of this standard and consider how it might impact their work in the future.
-
 ---
 
-*The LLMs.txt standard is still in development. This article reflects the current state of the proposal and may not represent the final implementation.*
+*The LLMs.txt standard is still in development and its practical effectiveness remains unproven. Content creators and AI developers should stay informed about its evolution, but prioritize content quality over experimental formats.*
