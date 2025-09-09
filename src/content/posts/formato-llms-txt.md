@@ -10,15 +10,19 @@ lang: "es"
 enSlug: "llms-txt-file"
 ---
 
-# El Formato LLMs.txt: Un Nuevo Estándar para la Atribución de Datos de Entrenamiento de IA
+# LLMs.txt: El Nuevo Formato para la Era de la IA
 
-A medida que los modelos de lenguaje grandes (LLMs) se vuelven cada vez más sofisticados y ampliamente desplegados, las preguntas sobre la atribución de datos de entrenamiento, la transparencia y el desarrollo ético de IA han llegado al primer plano. El estándar propuesto, en formato `LLMs.txt` representa un paso significativo hacia abordar estas preocupaciones al proporcionar una forma estructurada para que los creadores de contenido comuniquen sus preferencias sobre cómo se usa su trabajo en el entrenamiento de IA.
+## Por qué tu marca necesita ser citada por la IA (y no solo por Google)
 
-## ¿Qué es LLMs.txt?
+La búsqueda tradicional ya no es el primer contacto: <a href="https://www.gs.statcounter.com/search-engine-market-share" target="_blank" rel="nofollow">más del 25% de los usuarios de EE. UU.</a> ya pregunta primero a ChatGPT, Claude o Perplexity. Si tu contenido no aparece en sus respuestas, desapareces de la conversación. El nuevo SEO no consiste en posicionar diez enlaces azules, sino en **entrenar al modelo** para que te nombre cuando alguien consulta tu nicho.
 
-El archivo `LLMs.txt` es un estándar propuesto que permite a los propietarios de sitios web y creadores de contenido especificar cómo debe ser manejado su contenido por los sistemas de entrenamiento de IA. Similar al ampliamente adoptado archivo `robots.txt` que controla el acceso de rastreadores web, `LLMs.txt` proporcionaría instrucciones claras para la recolección de datos de entrenamiento de IA.
+Este cambio ha disparado la especulación sobre *"formatos mágicos"* que harían que las IAs nos lean mejor. El último en la lista es **LLMs.txt**.
 
-### El Problema que Resuelve
+## ¿Qué es LLMs.txt y qué problema resuelve?
+
+LLMs.txt es un archivo de texto plano inspirado en el clásico <a href="https://www.robotstxt.org/" target="_blank" rel="nofollow">robots.txt</a> que permite a los propietarios de sitios web especificar cómo debe ser manejado su contenido por los sistemas de entrenamiento de IA. Su propósito: comunicar a los crawlers de IA qué páginas de tu site son relevantes, ofrecer resúmenes en markdown y, teóricamente, facilitar la indexación semántica.
+
+### El problema que resuelve
 
 Actualmente, la recolección de datos de entrenamiento de IA ocurre en gran medida sin permisos explícitos o mecanismos claros de atribución. Esto crea varios problemas:
 
@@ -27,9 +31,9 @@ Actualmente, la recolección de datos de entrenamiento de IA ocurre en gran medi
 - **Preocupaciones Éticas**: Algunos creadores pueden no querer que su trabajo sea usado para entrenamiento de IA en absoluto
 - **Control de Calidad**: No existe un mecanismo para asegurar la calidad de los datos de entrenamiento y la verificación de fuentes
 
-## Formato Propuesto de LLMs.txt
+## Formato y directivas del archivo LLMs.txt
 
-El formato propuesto `LLMs.txt` se colocaría en la raíz de los sitios web (ej., `https://example.com/llms.txt`) y podría incluir directivas como:
+El archivo se coloca en la raíz de los sitios web (ej., `https://example.com/llms.txt`) y puede incluir directivas como:
 
 ```
 # LLMs.txt - Atribución de Datos de Entrenamiento de IA
@@ -41,133 +45,78 @@ License: CC-BY-4.0
 Contact: ai-licensing@example.com
 ```
 
-### Directivas Clave
+### Directivas principales
 
 - **Allow/Disallow**: Especificar qué contenido puede ser usado para entrenamiento
 - **Attribution**: Requerir atribución adecuada cuando se usa el contenido
 - **License**: Especificar términos de licencia para uso en entrenamiento de IA
 - **Contact**: Proporcionar información de contacto para consultas sobre licencias de IA
 
-## Beneficios para Creadores de Contenido
+## ¿Funciona realmente? La realidad del mercado
 
-### 1. Control Sobre el Uso
+OpenAI, Anthropic y Perplexity han *referenciado* el estándar en documentación interna. El propio <a href="https://platform.openai.com/docs/tools/file-search" target="_blank" rel="nofollow">OpenAI File Search</a> menciona la utilidad de ficheros de texto plano para entrenar embeddings, lo que generó titulares optimistas. Pero referenciar no es lo mismo que priorizar.
 
-Los creadores de contenido pueden controlar explícitamente cómo se usa su trabajo en el entrenamiento de IA:
+### ¿Lo usan los pesos pesados del SEO?
 
-```
-# Permitir uso general pero requerir atribución
-Allow: /
-Attribution: required
-License: CC-BY-4.0
-```
+Para salir de dudas, revisamos seis sitios top: Ahrefs, Moz, HubSpot, Semrush, Backlinko, Wordstream. El resultado: **todos devuelven 404**. Tampoco lo hacen <a href="https://nytimes.com/llms.txt" target="_blank" rel="nofollow">The New York Times</a>, <a href="https://bbc.com/llms.txt" target="_blank" rel="nofollow">BBC</a> ni las marcas que más citan las IAs en sus respuestas.
 
-### 2. Capacidad de Exclusión
+ChatGPT, por su parte, es capaz de leer navegación, footer, transcripciones de YouTube con timestamps y artículos completos sin necesidad de este fichero. La conclusión es clara: **el problema no es el formato, es la calidad y la cantidad de contenido**.
 
-Los creadores que no quieren que su contenido sea usado para entrenamiento de IA pueden excluirse:
+## Google se está haciendo publisher con su IA
 
-```
-# Excluirse completamente del entrenamiento de IA
-User-agent: *
-Disallow: /
-```
+Mientras tanto, Google responde a consultas genéricas —*"qué es el inbound marketing"*, *"mejores cursos de IA"*, *"qué es urban mobility"*, etc.— y los publica de nuevo. Esto convierte a Google en competidor *y* distribuidor, un escenario que recuerda a <a href="https://instantarticles.fb.com/" target="_blank" rel="nofollow">Facebook Instant Articles</a> o <a href="https://developer.apple.com/news-publisher/" target="_blank" rel="nofollow">Apple News</a>, pero potenciado por modelos de lenguaje.
 
-### 3. Ingresos por Licencias
+La <a href="https://developers.google.com/search/blog/2024/05/google-io-search-updates" target="_blank" rel="nofollow">documentación oficial de Google I/O 2024</a> confirma que el contenido indexado para *AI Overviews* proviene del mismo índice tradicional; no existe una señal especial de LLMs.txt.
 
-Los creadores pueden especificar términos de licencia y potencialmente generar ingresos:
+## Beneficios potenciales para creadores y desarrolladores de IA
 
-```
-# Requerir licencia para uso comercial de IA
-Allow: /blog/
-License: commercial-license-required
-Contact: licensing@example.com
-```
+### Para creadores de contenido
 
-## Beneficios para Desarrolladores de IA
+1. **Control sobre el uso**: Los creadores pueden controlar explícitamente cómo se usa su trabajo
+2. **Capacidad de exclusión**: Posibilidad de excluirse completamente del entrenamiento de IA
+3. **Ingresos por licencias**: Especificar términos de licencia y potencialmente generar ingresos
 
-### 1. Directrices Claras
+### Para desarrolladores de IA
 
-Los desarrolladores de IA obtienen orientación explícita sobre qué contenido pueden usar y cómo:
+1. **Directrices claras**: Orientación explícita sobre qué contenido pueden usar y cómo
+2. **Cumplimiento ético**: Seguir prácticas de desarrollo ético de IA
+3. **Garantía de calidad**: Mejor seguimiento de las fuentes de datos de entrenamiento
 
-```
-# Ejemplo de directrices claras de uso
-Allow: /public-research/
-Attribution: required
-License: CC-BY-4.0
-Disallow: /proprietary/
-```
+## Desafíos de implementación
 
-### 2. Cumplimiento Ético
+### Adopción y estandarización
 
-Los desarrolladores pueden asegurar que están siguiendo prácticas de desarrollo ético de IA:
+- Las **plataformas principales** necesitan implementar el estándar
+- Los **creadores de contenido** necesitan entenderlo y usarlo
+- Los **desarrolladores de IA** necesitan respetar las directivas
 
-```
-# Respetar las preferencias del creador
-User-agent: *
-Allow: /open-content/
-Disallow: /restricted/
-Attribution: required
-```
+### Aplicación práctica
 
-### 3. Garantía de Calidad
-
-Un mejor seguimiento de las fuentes de datos de entrenamiento lleva a una mejor calidad del modelo y responsabilidad.
-
-## Desafíos de Implementación
-
-### 1. Adopción
-
-Lograr una adopción generalizada en sitios web y plataformas de contenido:
-
-- **Las plataformas principales** necesitan implementar el estándar
-- **Los creadores de contenido** necesitan entenderlo y usarlo
-- **Los desarrolladores de IA** necesitan respetar las directivas
-
-### 2. Aplicación
-
-Asegurar que los desarrolladores de IA realmente sigan las directivas:
+Asegurar que los desarrolladores de IA realmente sigan las directivas requiere:
 
 - **Mecanismos de aplicación** técnicos
 - **Marcos legales** para el cumplimiento
 - **Procesos de auditoría y verificación**
 
-### 3. Estandarización
+## Estado actual y perspectiva
 
-Crear un estándar ampliamente aceptado:
-
-- **Consenso de la industria** sobre formato y directivas
-- **Documentación y herramientas** para implementación
-- **Mejores prácticas** y directrices
-
-## Estado Actual y Perspectiva Futura
+Sitios como <a href="https://myllmtxt.com" target="_blank" rel="nofollow">MyLLMtxt.com</a> lo promocionan como la "herramienta básica de AI Intelligence", mientras que <a href="https://directory.llmstxt.cloud/" target="_blank" rel="nofollow">Directory.llmstxt.cloud</a> recopila ejemplos de implementación.
 
 El estándar `LLMs.txt` aún está en la etapa de propuesta, pero representa un paso importante hacia un desarrollo de IA más ético y transparente. Varias organizaciones e investigadores están trabajando en:
 
 - **Desarrollo y refinamiento** del estándar
 - **Herramientas y bibliotecas** de implementación
 - **Estrategias de adopción** de la industria
-- **Integración de marcos legales**
 
-### Impacto Potencial
+## Conclusión: contenido antes que formato
 
-Si se adopta ampliamente, `LLMs.txt` podría:
+LLMs.txt es *hype* útil para vender herramientas, no una señal de ranking confirmada. Si tu objetivo es aparecer en ChatGPT o Claude, centra los esfuerzos en: artículos largos y bien referenciados, esquema *FAQPage* y *HowTo*, o presencia en fuentes que las IAs ya consumen (<a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank" rel="nofollow">Wikipedia</a>, <a href="https://stackoverflow.com/" target="_blank" rel="nofollow">Stack Overflow</a>, repositorios académicos).
 
-- **Mejorar la transparencia** en la recolección de datos de entrenamiento de IA
-- **Proteger los derechos del creador** y proporcionar atribución justa
-- **Habilitar nuevos modelos de negocio** para licencias de contenido
-- **Construir confianza** entre creadores de contenido y desarrolladores de IA
+En la era de las respuestas generativas, **ser fuente primaria de contenidos en texto o vídeo, y de transacciones es más interesante que estar pendiente de los formatos de moda**.
 
-## Comenzando
+### Ejemplo de implementación
 
-Los creadores de contenido interesados en el estándar `LLMs.txt` pueden:
-
-1. **Aprender más** sobre el formato y directivas propuestas
-2. **Crear un archivo LLMs.txt básico** para su sitio web
-3. **Unirse a discusiones** sobre el desarrollo del estándar
-4. **Implementar el estándar** a medida que evolucione
-
-### Ejemplo de Implementación
-
-Aquí hay un archivo `LLMs.txt` simple para un blog:
+Para aquellos interesados en experimentar, aquí hay un archivo `LLMs.txt` básico:
 
 ```
 # LLMs.txt para Atribución de Datos de Entrenamiento de IA
@@ -182,14 +131,6 @@ Contact: ai-licensing@example.com
 Last-Modified: 2024-01-30
 ```
 
-## Conclusión
-
-El archivo `LLMs.txt` representa un enfoque prometedor para abordar los problemas complejos que rodean la atribución y transparencia de los datos de entrenamiento de IA. Aunque aún está en desarrollo, ofrece una solución práctica para que los creadores de contenido mantengan control sobre cómo se usa su trabajo en el entrenamiento de IA mientras proporcionan directrices claras para los desarrolladores de IA.
-
-A medida que el panorama de IA continúa evolucionando, estándares como `LLMs.txt` se volverán cada vez más importantes para asegurar el desarrollo ético de IA y proteger los derechos del creador. El éxito de esta iniciativa dependerá de la adopción generalizada y el desarrollo de mecanismos robustos de aplicación.
-
-Por ahora, tanto los creadores de contenido como los desarrolladores de IA deberían mantenerse informados sobre el desarrollo de este estándar y considerar cómo podría impactar su trabajo en el futuro.
-
 ---
 
-*El estándar LLMs.txt aún está en desarrollo. Este artículo refleja el estado actual de la propuesta y puede no representar la implementación final.*
+*El estándar LLMs.txt aún está en desarrollo y su efectividad práctica permanece sin demostrar. Los creadores de contenido y desarrolladores de IA deberían mantenerse informados sobre su evolución, pero priorizar la calidad del contenido por encima de formatos experimentales.*
