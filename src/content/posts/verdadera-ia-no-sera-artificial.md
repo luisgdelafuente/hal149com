@@ -4,7 +4,7 @@ description: "Examinando las narrativas simplistas sobre la IA y por qué el té
 date: 2025-08-24
 author: "Luis García de la Fuente"
 tags: ["IA", "Filosofía", "Tecnología", "Inteligencia", "Ética"]
-image: "/blog-images/utopian-dystopian-ideas-ai.webp"
+image: "/blog-images/true-ai-no-artificial.webp"
 featured: true
 lang: "es"
 enSlug: "true-ai-no-artificial"

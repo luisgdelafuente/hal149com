@@ -9,7 +9,7 @@
     "demo": {
       "title": "Contactar:",
       "content": "Contacta con nosotros para saber más y obtener una evaluación estratégica de IA para tu negocio.",
-      "cta": "Contactar"
+      "cta": "¡Empecemos!"
     },
     "theme_color": "#18181b",
     "homepage_sections": {
@@ -66,8 +66,8 @@
     ]
   },
   "home": {
-    "hero_title": "Posiciona tu negocio en las principales IAs",
-    "hero_content": "<p><strong>Conviértete en la opción que ChatGPT, Perplexity y Google AI priorizan cuando tus clientes buscan soluciones.</strong></p><p>Haz que cada búsqueda con IA te posicione por encima de tu competencia.</p>",
+    "hero_title": "Transforma tu negocio para la era de la IA",
+    "hero_content": "<p><strong>En HAL149, combinamos visión y tecnología para hacer tu negocio más eficiente, abrir nuevos canales de venta y establecer tu presencia en los nuevos motores de IA.</strong></p><p>¿Listo para liderar tu industria con la IA?</p>",
     "services_title": "Cómo podemos ayudar",
     "clients_title": "Confiado por grandes empresas",
     "testimonials_title": "Los clientes ♥ nos aman",
