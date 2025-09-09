@@ -263,8 +263,6 @@ El camino hacia la IA ética requiere compromiso, recursos y esfuerzo continuo, 
 
 Recuerda, la IA ética no es un destino sino un viaje. Requiere atención, adaptación y mejora continuas a medida que evolucionan la tecnología y la sociedad.
 
----
 
-*¿Listo para construir sistemas de IA éticos? Nuestro equipo puede ayudarte a desarrollar soluciones de IA responsables que prioricen la justicia, transparencia y bienestar humano.*
 
 
