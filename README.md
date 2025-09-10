@@ -108,6 +108,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 4.27 Fix critical prose formatting issues
 - [x] 4.28 Fix missing bullet points in lists
 - [x] 4.29 Image management strategy for git-hosted images
+- [ ] 4.30 Implement Astro Image optimization for blog post images
 
 ### Phase 5: Content Customization ✅ **COMPLETED**
 - [x] 5.1 Filter home page sections
@@ -129,7 +130,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 5.17 Offer and pricing customizing
 - [ ] 5.18 Customize Projects section images
 - [ ] 5.19 Customize Services section images 
-- [ ] 5.20 Remove CTA buttons from Projects provisionally
+- [x] 5.20 Remove CTA buttons from Projects provisionally
+- [x] 5.21 Customize hero section image
 
 ### Phase 6: Final Configurations
 - [x] 6.1 Robots.txt configuration
