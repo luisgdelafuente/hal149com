@@ -1,32 +1,32 @@
 [
   {
-    "title": "Powering Growth.<br>Simplifying Success.",
-    "sector": "Web design",
-    "content": "<strong>Our custom web design solution helped Biotechlet Ltd elevate its digital presence with a clean, modern interface and intuitive user experience. </strong> <br><br>The redesigned site streamlined user journeys, improved accessibility, and strengthened brand credibility.",
-    "case_study_link": "https://www.spike.news",
-    "cta": "Visit spike.news",
-    "image": "/content-images/spike.news.avif",
-    "image_alt": "iPad showing spike.news website",
+    "title": "Gen Scoring",
+    "sector": "AI SEO",
+    "content": "<strong>Our AI-powered SEO solution helps businesses optimize their search engine visibility and drive organic traffic growth.</strong> <br><br>Advanced algorithms analyze content, keywords, and competition to deliver data-driven SEO strategies that deliver measurable results.",
+    "case_study_link": "#",
+    "cta": "Learn more",
+    "image": "/content-images/gen-scoring.avif",
+    "image_alt": "Gen Scoring AI SEO platform interface",
     "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
   },
   {
-    "title": "Accelerating Innovation.<br>Empowering Results.",
-    "sector": "Development",
-    "content": "Our dynamic design and build simplified productivity, delivering automated solutions, seamless collaboration, and data-driven insights",
-    "case_study_link": "https://pixelate.pictures",
-    "cta": "Visit pixelate.pictures",
-    "image": "/content-images/pixelate.pictures.avif",
-    "image_alt": "iPad showing pixelated wave painting",
+    "title": "Epica Works",
+    "sector": "AI Social Media",
+    "content": "Our AI social media management platform automates content creation, scheduling, and engagement to maximize your social media presence and reach.",
+    "case_study_link": "#",
+    "cta": "Learn more",
+    "image": "/content-images/epica-works.avif",
+    "image_alt": "Epica Works AI social media dashboard",
     "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
   },
   {
-    "title": "Enhance productivity,<br>boost efficiency.",
-    "sector": "3D Design",
-    "content": "Create, collaborate, and render — all in one streamlined workflow. Teams are connected and producing stunning visuals in minutes.",
-    "case_study_link": "https://www.brighton.dog",
-    "cta": "Visit brighton.dog",
-    "image": "/content-images/brighton.dog.avif",
-    "image_alt": "iPad showing the web page of brighton.dog",
+    "title": "Leads MGT",
+    "sector": "AI Leads Management",
+    "content": "Intelligent lead management system that automates lead scoring, nurturing, and conversion tracking to optimize your sales pipeline and boost revenue.",
+    "case_study_link": "#",
+    "cta": "Learn more",
+    "image": "/content-images/leads-mgt.avif",
+    "image_alt": "Leads MGT AI management platform interface",
     "bg": "bg-gradient-to-r from-pink-500 to-yellow-500"
   }
 ]
