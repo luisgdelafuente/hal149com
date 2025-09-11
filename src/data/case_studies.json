@@ -5,7 +5,7 @@
     "content": "<strong>Our AI-powered SEO solution helps businesses optimize their search engine visibility and drive organic traffic growth.</strong> <br><br>Advanced algorithms analyze content, keywords, and competition to deliver data-driven SEO strategies that deliver measurable results.",
     "case_study_link": "#",
     "cta": "Learn more",
-    "image": "gen-scoring.png",
+    "image": "/content-images/spike.news.avif",
     "image_alt": "Gen Scoring AI SEO platform interface",
     "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
   },
@@ -15,7 +15,7 @@
     "content": "Our AI social media management platform automates content creation, scheduling, and engagement to maximize your social media presence and reach.",
     "case_study_link": "#",
     "cta": "Learn more",
-    "image": "epica-works.png",
+    "image": "/content-images/pixelate.pictures.avif",
     "image_alt": "Epica Works AI social media dashboard",
     "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
   },
@@ -25,7 +25,7 @@
     "content": "Intelligent lead management system that automates lead scoring, nurturing, and conversion tracking to optimize your sales pipeline and boost revenue.",
     "case_study_link": "#",
     "cta": "Learn more",
-    "image": "leads-mgt.png",
+    "image": "/content-images/brighton.dog.avif",
     "image_alt": "Leads MGT AI management platform interface",
     "bg": "bg-gradient-to-r from-pink-500 to-yellow-500"
   }

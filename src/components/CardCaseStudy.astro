@@ -1,20 +1,6 @@
 ---
 
-import Image from "astro/components/Image.astro"
-import genScoringImage from "../assets/content-images/gen-scoring.png"
-import epicaWorksImage from "../assets/content-images/epica-works.png"
-import leadsMgtImage from "../assets/content-images/leads-mgt.png"
-
 const { caseStudy } = Astro.props
-
-// Map image names to imported assets
-const imageMap = {
-  "gen-scoring.png": genScoringImage,
-  "epica-works.png": epicaWorksImage,
-  "leads-mgt.png": leadsMgtImage
-}
-
-const imageSrc = imageMap[caseStudy.image]
 
 ---
 
@@ -25,13 +11,11 @@ const imageSrc = imageMap[caseStudy.image]
   <article
     class:list={["relative isolate flex h-full w-full gap-6 overflow-hidden rounded-xl pt-[20rem] @md:pt-[28rem] @xl:justify-end @4xl:pt-0", caseStudy.bg]}>
 
-    <Image
-      src={ imageSrc }
+    <img
+      src={ caseStudy.image }
       alt={ caseStudy.image_alt }
       width={400}
       height={300}
-      format="avif"
-      quality="max"
       class="drop-shadow-[0_100px_100px_rgba(0,0,0,0.5)] absolute top-[4cqb] left-8 mx-auto w-[90cqi] rounded-xl @4xl:w-[60cqi] group-hover:scale-105 transition-transform duration-3000 ease-bs-spring transform-gpu"
       loading="lazy"
     />
