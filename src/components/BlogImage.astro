@@ -66,11 +66,10 @@ const qualityValue = qualityMap[quality];
   <Image
     src={imageMap[src]}
     alt={alt}
-    width={width}
-    height={height}
+    widths={[400, 600, 800, 1200]}
+    sizes={sizes}
     class={className}
     loading={loading}
-    sizes={sizes}
     quality={qualityValue}
     format="avif"
   />
