@@ -108,7 +108,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 4.27 Fix critical prose formatting issues
 - [x] 4.28 Fix missing bullet points in lists
 - [x] 4.29 Image management strategy for git-hosted images
-- [ ] 4.30 Implement Astro Image optimization for blog post images
+- [x] 4.30 Implement Astro Image optimization for blog post images
+- [ ] 4.31 Astro's glob imports to automate img optimization
 
 ### Phase 5: Content Customization ✅ **COMPLETED**
 - [x] 5.1 Filter home page sections
