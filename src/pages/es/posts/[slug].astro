@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
 import { getLangFromUrl } from '../../../i18n/ui';
+import BlogImage from '../../../components/BlogImage.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -112,13 +113,15 @@ const lang = getLangFromUrl(Astro.url);
       <!-- Featured Image -->
       {post.data.image && (
         <div class="mb-8">
-          <img 
+          <BlogImage 
             src={post.data.image} 
             alt={post.data.title}
             width={800}
             height={450}
             class="w-full h-auto object-contain rounded-lg shadow-lg"
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
+            quality="high"
           />
         </div>
       )}

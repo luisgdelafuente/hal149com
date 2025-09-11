@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+// Static imports for all blog images
+import aiEthicsResponsibility from '../assets/blog-images/ai-ethics-responsibility.webp';
+import aiRevolution2024 from '../assets/blog-images/ai-revolution-2024.webp';
+import chatgptCitationGuide from '../assets/blog-images/chatgpt-citation-guide.webp';
+import futureEducationAi from '../assets/blog-images/future-education-ai.webp';
+import machineLearningBasics from '../assets/blog-images/machine-learning-basics.webp';
+import thellmstxtfile from '../assets/blog-images/thellmstxtfile.webp';
+import trueAiNoArtificial from '../assets/blog-images/true-ai-no-artificial.webp';
+
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  quality?: 'low' | 'mid' | 'high';
+}
+
+const { 
+  src, 
+  alt, 
+  width = 800, 
+  height = 450, 
+  class: className = '',
+  loading = 'lazy',
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px',
+  quality = 'high'
+} = Astro.props;
+
+// Image mapping for blog images
+const imageMap: Record<string, any> = {
+  '/blog-images/ai-ethics-responsibility.webp': aiEthicsResponsibility,
+  '/blog-images/ai-revolution-2024.webp': aiRevolution2024,
+  '/blog-images/chatgpt-citation-guide.webp': chatgptCitationGuide,
+  '/blog-images/future-education-ai.webp': futureEducationAi,
+  '/blog-images/machine-learning-basics.webp': machineLearningBasics,
+  '/blog-images/thellmstxtfile.webp': thellmstxtfile,
+  '/blog-images/true-ai-no-artificial.webp': trueAiNoArtificial,
+};
+
+// Get the optimized image or fallback to regular img
+const imageSrc = imageMap[src] || src;
+
+// Debug logging (remove in production)
+if (typeof window === 'undefined') {
+  console.log(`BlogImage: ${src} -> ${typeof imageSrc === 'string' ? 'fallback' : 'optimized'}`);
+}
+
+// Quality mapping
+const qualityMap = {
+  low: 60,
+  mid: 80,
+  high: 90
+};
+
+const qualityValue = qualityMap[quality];
+---
+
+{imageMap[src] ? (
+  <!-- Optimized Astro Image -->
+  <Image
+    src={imageMap[src]}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    sizes={sizes}
+    quality={qualityValue}
+    format="avif"
+  />
+) : (
+  <!-- Fallback to regular img tag if not in map -->
+  <img 
+    src={src} 
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+  />
+)}
