@@ -24,12 +24,12 @@ export interface Props {
 const { 
   src, 
   alt, 
-  width = 800, 
-  height = 450, 
+  width = 400, 
+  height = 225, 
   class: className = '',
   loading = 'lazy',
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px',
-  quality = 'high'
+  sizes = '(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px',
+  quality = 'mid'
 } = Astro.props;
 
 // Image mapping for blog images
