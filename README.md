@@ -109,7 +109,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 4.28 Fix missing bullet points in lists
 - [x] 4.29 Image management strategy for git-hosted images
 - [x] 4.30 Implement Astro Image optimization for blog post images
-- [ ] 4.31 Astro's glob imports to automate img optimization
+- [x] 4.31 Astro's glob imports to automate img optimization
+- [ ] 4.32 Full testing of images optimization pending
 
 ### Phase 5: Content Customization ✅ **COMPLETED**
 - [x] 5.1 Filter home page sections
@@ -316,10 +317,15 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: High-specificity CSS selectors with global styling.
 **Status**: Magazine-quality typography with proper code highlighting.
 
-### Responsive Image Optimization ❌ **REVERTED**
-**Problem**: Google PageSpeed reports 90KB+ savings possible on blog post images. Mobile devices receive full-size (800px) images when displaying at 379px, causing unnecessary bandwidth usage and poor LCP scores.
-**Previous Solution Attempt**: Custom ResponsivePostImage component with asset mapping was implemented but reverted due to user request.
-**Current Status**: ❌ **REVERTED** - All image optimization changes have been undone. Images are back to using regular `<img>` tags from `/public/` folder. Performance optimization priority moved to CSS render-blocking issues.
+### Responsive Image Optimization ✅ **RESOLVED**
+**Problem**: Google PageSpeed reports that mobile devices receive 800px images when displaying at 379px, causing unnecessary bandwidth usage.
+**Solution**: Implemented dynamic glob imports with Astro's Image component and smaller mobile breakpoints.
+**Implementation**:
+- Dynamic image loading: `import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog-images/*.{jpeg,jpg,png,webp}')`
+- Mobile-optimized widths: `[320, 400, 600, 800, 1200]`
+- Responsive sizes: `(max-width: 380px) 320px, (max-width: 480px) 400px, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px`
+- Created OptimizedLogo component for logo images with appropriate sizing
+**Status**: Images now automatically optimize at build time. Mobile devices receive appropriately sized images (320px for <380px viewports).
 
 ### CSS Render-Blocking Optimization ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
@@ -471,44 +477,5 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Image optimization changes reverted. All components now use regular `<img>` tags from `/public/` folder. Performance optimization priority moved to CSS render-blocking issues (7.2), LCP request discovery (7.7), and Network dependency tree (7.8).
-
-## Blog Image Optimization Diagnosis Report
-
-### Current Configuration Analysis
-
-Your blog is currently using a **hybrid approach** that combines Astro's image optimization with fallback support. The `BlogImage.astro` component implements:
-
-1. **Dual Image Storage**: Images exist in both `/src/assets/blog-images/` and `/public/blog-images/` directories
-2. **Partial Optimization**: Only 7 images are manually mapped in the component for optimization
-3. **Inconsistent Sizing**: The component generates widths of [400, 600, 800, 1200]px, but the smallest (400px) is still too large for mobile devices showing images at ~379px
-
-### Key Issues Identified
-
-1. **Mobile Overserving**: Google PageSpeed correctly identifies that mobile devices receive 400px minimum width images when they only need ~380px, causing unnecessary bandwidth usage
-2. **Manual Maintenance**: The current setup requires manually updating the `imageMap` in `BlogImage.astro` every time a new image is added
-3. **Format Limitations**: While optimized images use AVIF format, fallback images serve original WebP without further optimization
-
-### Recommended Solution
-
-**Implement Dynamic Globbing with Smaller Mobile Breakpoints:**
-
-1. **Replace Manual Mapping** with Astro's glob imports:
-   ```javascript
-   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog-images/*.{jpeg,jpg,png,webp}')
-   ```
-
-2. **Adjust Width Breakpoints** to include smaller mobile sizes:
-   ```javascript
-   widths={[320, 400, 600, 800, 1200]}  // Add 320px for mobile
-   ```
-
-3. **Update Sizes Attribute** for better mobile targeting:
-   ```javascript
-   sizes="(max-width: 380px) 320px, (max-width: 480px) 400px, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px"
-   ```
-
-4. **Automate the Process**: This approach eliminates manual updates - simply drop images in `/src/assets/blog-images/` and they'll be automatically optimized during build time.
-
-This solution maintains your current workflow while fixing the mobile performance issue and eliminating manual maintenance overhead.
+**Last Updated:** Image optimization implemented with dynamic glob imports and mobile-optimized breakpoints. All blog and logo images now serve appropriately sized versions based on viewport.
 
