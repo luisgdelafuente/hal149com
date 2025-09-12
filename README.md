@@ -473,3 +473,42 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 **Last Updated:** Image optimization changes reverted. All components now use regular `<img>` tags from `/public/` folder. Performance optimization priority moved to CSS render-blocking issues (7.2), LCP request discovery (7.7), and Network dependency tree (7.8).
 
+## Blog Image Optimization Diagnosis Report
+
+### Current Configuration Analysis
+
+Your blog is currently using a **hybrid approach** that combines Astro's image optimization with fallback support. The `BlogImage.astro` component implements:
+
+1. **Dual Image Storage**: Images exist in both `/src/assets/blog-images/` and `/public/blog-images/` directories
+2. **Partial Optimization**: Only 7 images are manually mapped in the component for optimization
+3. **Inconsistent Sizing**: The component generates widths of [400, 600, 800, 1200]px, but the smallest (400px) is still too large for mobile devices showing images at ~379px
+
+### Key Issues Identified
+
+1. **Mobile Overserving**: Google PageSpeed correctly identifies that mobile devices receive 400px minimum width images when they only need ~380px, causing unnecessary bandwidth usage
+2. **Manual Maintenance**: The current setup requires manually updating the `imageMap` in `BlogImage.astro` every time a new image is added
+3. **Format Limitations**: While optimized images use AVIF format, fallback images serve original WebP without further optimization
+
+### Recommended Solution
+
+**Implement Dynamic Globbing with Smaller Mobile Breakpoints:**
+
+1. **Replace Manual Mapping** with Astro's glob imports:
+   ```javascript
+   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog-images/*.{jpeg,jpg,png,webp}')
+   ```
+
+2. **Adjust Width Breakpoints** to include smaller mobile sizes:
+   ```javascript
+   widths={[320, 400, 600, 800, 1200]}  // Add 320px for mobile
+   ```
+
+3. **Update Sizes Attribute** for better mobile targeting:
+   ```javascript
+   sizes="(max-width: 380px) 320px, (max-width: 480px) 400px, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px"
+   ```
+
+4. **Automate the Process**: This approach eliminates manual updates - simply drop images in `/src/assets/blog-images/` and they'll be automatically optimized during build time.
+
+This solution maintains your current workflow while fixing the mobile performance issue and eliminating manual maintenance overhead.
+
