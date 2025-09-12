@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../assets/theme-images/hal149logo.png'
+import OptimizedLogo from './OptimizedLogo.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 import { createNavLink } from '../i18n/utils';
 
@@ -21,9 +22,9 @@ const t = useTranslations(lang);
         <!-- Logo -->
         <a class="flex" href="#top" aria-label="Back to top">
 
-          <Image 
-            src={Logo} 
-            alt={settings.title}
+          <OptimizedLogo 
+            settings={settings}
+            variant="footer"
             class="h-12 w-auto max-w-40 md:h-16 md:max-w-48"
           />
 

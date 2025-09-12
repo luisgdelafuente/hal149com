@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../assets/theme-images/hal149logo.png';
+
+export interface Props {
+  class?: string;
+  variant?: 'header' | 'footer';
+  settings: any;
+}
+
+const { class: className, variant = 'header', settings } = Astro.props;
+
+// Different sizes for header vs footer
+const widths = variant === 'header' 
+  ? [109, 128, 160, 192] 
+  : [160, 192, 240];
+
+const sizes = variant === 'header'
+  ? "(max-width: 768px) 109px, 160px"
+  : "(max-width: 768px) 160px, 192px";
+---
+
+<Image 
+  src={Logo} 
+  alt={settings.title}
+  widths={widths}
+  sizes={sizes}
+  class={className}
+  loading={variant === 'header' ? 'eager' : 'lazy'}
+  quality={90}
+  format="webp"
+/>
