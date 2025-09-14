@@ -2,6 +2,7 @@
 
 import { Image } from 'astro:assets';
 import Logo from '../assets/theme-images/hal149logo.png'
+import OptimizedLogo from './OptimizedLogo.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 import MobileMenu from './MobileMenu.astro'
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
@@ -21,9 +22,9 @@ const t = useTranslations(lang);
     <!-- Logo -->
     <a class="flex xl:min-w-32" href={lang === 'en' ? '/' : '/es/'} aria-label={ settings.title + ' - Home' }>
 
-      <Image 
-        src={Logo} 
-        alt={settings.title}
+      <OptimizedLogo 
+        settings={settings}
+        variant="header"
         class="h-10 w-auto max-w-32 md:h-12 md:max-w-40"
       />
 
