@@ -59,13 +59,7 @@ const sections = globalSettings.homepage_sections || {
 
 ---
 
-<Layout 
-  title={ globalSettings.title }
-  description={ globalSettings.description }
-  keywords={ globalSettings.keywords }
-  author={ globalSettings.author }
-  image={ globalSettings.social_image }
->
+<Layout>
 
   {sections.hero && (
     <HeroSection

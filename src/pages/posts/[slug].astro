@@ -21,11 +21,8 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout 
-  title={`${post.data.title} - Blog | HAL149`} 
-  description={post.data.description}
   image={post.data.image}
   type="article"
-  keywords={post.data.tags?.join(", ") || ""}
   author={post.data.author}
   publishedTime={post.data.date.toISOString()}
   modifiedTime={post.data.date.toISOString()}

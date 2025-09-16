@@ -25,7 +25,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))];
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title="Blog - Latest Insights & News | Frontier Agency" description="Discover the latest insights, industry news, and expert analysis from Frontier Agency. Stay updated with our comprehensive blog covering technology, design, and business innovation.">
+<Layout>
   
   <!-- Structured Data for Blog Archive -->
   <script type="application/ld+json" set:html={JSON.stringify({

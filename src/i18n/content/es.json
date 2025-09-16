@@ -1,10 +1,13 @@
 {
   "global_settings": {
-    "title": "Desbloquea el Potencial de tu Negocio con IA | HAL149",
-    "description": "Desde automatizaciones de IA hasta programas estratégicos, HAL149 es tu socio para construir e implementar estrategias de IA personalizadas que generen resultados empresariales reales.",
-    "keywords": "IA, inteligencia artificial, optimización empresarial, ChatGPT, Perplexity, Google AI, SEO, marketing digital, HAL149, consultoría IA",
+    "title": "HAL149 - Agencia de IA SEO y Automatización de Ventas | Formación de IA Empresarial",
+    "description": "Agencia de IA especializada en IA SEO, automatización de ventas, Formación de IA Empresarial y desarrollo de apps personalizadas. Transforma tu negocio con experiencia en IA.",
     "author": "HAL149",
     "social_image": "/1200x630.png",
+    "og_title": "HAL149 - Agencia de IA SEO, Automatización de Ventas y Formación de IA Empresarial",
+    "og_description": "Agencia experta en IA que ofrece dominio de IA SEO, automatización de ventas, Formación de IA Empresarial y desarrollo de apps personalizadas para negocios modernos.",
+    "twitter_title": "HAL149: Agencia de IA SEO y Automatización de Ventas",
+    "twitter_description": "Agencia experta en IA: dominio de IA SEO, automatización de ventas, Formación de IA Empresarial y soluciones de IA personalizadas.",
     "base_url": "https://hal149.com",
     "demo": {
       "title": "Contactar:",
