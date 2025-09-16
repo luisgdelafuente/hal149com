@@ -16,7 +16,7 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 import global_settings from "../data/global_settings.json"
 
-const { title, description, image, type = "website", keywords, author, publishedTime, modifiedTime, section, tags } = Astro.props
+const { title, description, image, type = "website", author, publishedTime, modifiedTime, section, tags, ogTitle, ogDescription, twitterTitle, twitterDescription } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -46,7 +46,7 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <title>{ title ?? globalSettings.title }</title>
     <meta name="title" content={ title ?? globalSettings.title } />
     <meta name="description" content={ description ?? globalSettings.description } />
-    <meta name="keywords" content={ keywords ?? globalSettings.keywords ?? "AI, artificial intelligence, business optimization, ChatGPT, Perplexity, Google AI, SEO, digital marketing" } />
+    
     <meta name="author" content={ author ?? globalSettings.author ?? "HAL149" } />
     <meta name="robots" content="index, follow" />
     <meta name="language" content={lang === 'es' ? 'es' : 'en'} />
@@ -56,8 +56,8 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ type } />
     <meta property="og:url" content={ Astro.url.href } />
-    <meta property="og:title" content={ title ?? globalSettings.title } />
-    <meta property="og:description" content={ description ?? globalSettings.description } />
+    <meta property="og:title" content={ ogTitle ?? globalSettings.og_title ?? title ?? globalSettings.title } />
+    <meta property="og:description" content={ ogDescription ?? globalSettings.og_description ?? description ?? globalSettings.description } />
     <meta property="og:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -73,8 +73,8 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@hal149" />
     <meta name="twitter:creator" content="@hal149" />
-    <meta name="twitter:title" content={ title ?? globalSettings.title } />
-    <meta name="twitter:description" content={ description ?? globalSettings.description } />
+    <meta name="twitter:title" content={ twitterTitle ?? globalSettings.twitter_title ?? title ?? globalSettings.title } />
+    <meta name="twitter:description" content={ twitterDescription ?? globalSettings.twitter_description ?? description ?? globalSettings.description } />
     <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
     <meta name="twitter:image:alt" content={ title ?? globalSettings.title } />
     <meta name="twitter:image:width" content="1200" />

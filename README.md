@@ -138,14 +138,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 ### Phase 6: Final Configurations
 - [x] 6.1 Robots.txt configuration
 - [x] 6.2 Sitemap.xml configuration
-- [ ] 6.3 SEO metadata for company pages
-- [ ] 6.4 SEO metadata for blog post pages
-- [ ] 6.5 Social metadata for company pages
-- [ ] 6.6 Social metadata for blog post pages
-- [ ] 6.7 WhatsApp image thumb for company and post pages
-- [ ] 6.8 Fix non-functional WhatsApp thumbs and wrong apple icons
-- [ ] 6.9 Implement proper social media preview images
-- [ ] 6.10 Add missing meta tags for better social sharing
+- [x] 6.3 Global metadata for seo, social configuration (completed)
+- [ ] 6.4 Whatsapp and social media image thumb fix (pending)
 
 ### Phase 7: Performance Optimization & Go Live 🎯 PENDING
 
@@ -191,6 +185,9 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 ## VERSION 2 🔮
 **Optimization updates, automatisms to improve V1 functionalities, connection to social media, admin pane, etc.**
+
+### Optimization Phase
+- [ ] Custom meta data social and seo for pages and posts
 
 ### Phase 7.5: Advanced Content Features 📝 FUTURE
 - [ ] **7.5.1** Case studies and portfolio items
