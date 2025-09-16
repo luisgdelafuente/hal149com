@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
 
 # Sitemap
 Sitemap: https://hal149.com/sitemap.xml
