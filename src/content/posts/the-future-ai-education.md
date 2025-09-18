@@ -3,7 +3,6 @@ title: "The Future of Education in AI: A Problem-Solving Approach"
 description: "AI is transforming education from 'just in case' to 'just in time' learning. The shift towards problem-solving approaches and the future of personalized education with AI integration."
 date: 2025-09-02
 author: "Luis García de la Fuente"
-tags: ["AI", "Education", "Future of Learning", "Problem-Solving", "Just in Time Learning", "Educational Technology", "Personalized Learning", "AI Integration"]
 image: "/blog-images/future-education-ai.webp"
 featured: true
 lang: "en"

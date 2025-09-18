@@ -3,7 +3,6 @@ title: "The AI Revolution of 2024: What's Next for Business"
 description: "The transformative impact of AI on business operations, from automation to decision-making; what the future holds for organizations embracing artificial intelligence."
 date: 2024-01-15
 author: "Luis García de la Fuente"
-tags: ["AI", "Business", "Technology", "Innovation"]
 image: "/blog-images/ai-revolution-2024.webp"
 featured: true
 lang: "en"

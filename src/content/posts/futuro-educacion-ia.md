@@ -3,7 +3,6 @@ title: "El Futuro de la Educación en IA: Un Enfoque de Resolución de Problemas
 description: "La IA está transformando la educación de 'por si acaso' a 'justo a tiempo'. El cambio hacia enfoques de resolución de problemas y el futuro de la educación personalizada con integración de IA."
 date: 2025-09-02
 author: "Luis García de la Fuente"
-tags: ["IA", "Educación", "Futuro del Aprendizaje", "Resolución de Problemas", "Aprendizaje Justo a Tiempo", "Tecnología Educativa", "Aprendizaje Personalizado", "Integración de IA"]
 image: "/blog-images/future-education-ai.webp"
 featured: true
 lang: "es"

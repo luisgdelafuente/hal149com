@@ -3,7 +3,6 @@ title: "The LLMs.txt File: A New Standard for AI Training Data Attribution"
 description: "The emerging LLMs.txt standard is a proposed solution for proper attribution and transparency in AI training data, similar to robots.txt but for large language models."
 date: 2024-01-30
 author: "Luis García de la Fuente"
-tags: ["AI Ethics", "Training Data", "Transparency", "Attribution", "LLMs.txt"]
 image: "/blog-images/thellmstxtfile.webp"
 featured: true
 lang: "en"

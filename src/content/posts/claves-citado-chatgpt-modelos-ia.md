@@ -3,7 +3,6 @@ title: "6 Claves para ser Citado por ChatGPT y otros Modelos IA"
 description: "Estrategias esenciales para optimizar tu contenido y aumentar las probabilidades de ser citado por ChatGPT, Gemini, Perplexity y otros modelos de inteligencia artificial."
 date: 2024-01-25
 author: "Luis García de la Fuente"
-tags: ["IA", "SEO", "Optimización", "Contenido", "ChatGPT", "Citación"]
 image: "/blog-images/chatgpt-citation-guide.webp"
 featured: true
 lang: "es"
