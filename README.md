@@ -314,15 +314,21 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: High-specificity CSS selectors with global styling.
 **Status**: Magazine-quality typography with proper code highlighting.
 
-### Responsive Image Optimization ✅ **RESOLVED**
+### Responsive Image Optimization ❌ **NOT SOLVED**
 **Problem**: Google PageSpeed reports that mobile devices receive 800px images when displaying at 379px, causing unnecessary bandwidth usage.
-**Solution**: Implemented dynamic glob imports with Astro's Image component and smaller mobile breakpoints.
+**Initial Solution Attempt**: Implemented dynamic glob imports with Astro's Image component and smaller mobile breakpoints.
 **Implementation**:
 - Dynamic image loading: `import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog-images/*.{jpeg,jpg,png,webp}')`
 - Mobile-optimized widths: `[320, 400, 600, 800, 1200]`
 - Responsive sizes: `(max-width: 380px) 320px, (max-width: 480px) 400px, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px`
 - Created OptimizedLogo component for logo images with appropriate sizing
-**Status**: Images now automatically optimize at build time. Mobile devices receive appropriately sized images (320px for <380px viewports).
+**Recent Attempts (Failed)**:
+- Updated sizes attribute in blog post templates to be more specific about mobile dimensions
+- Discovered Astro won't upscale images - only generates sizes smaller than original
+- Removed 1200px from widths array since original images are ~1024px wide
+- Final widths configuration: `[320, 400, 600, 800]`
+**Current Status**: Despite multiple attempts, responsive images still not working correctly. Astro generates only 600px and original size, not the smaller mobile sizes (320px, 400px) needed.
+**Root Cause**: Unknown - Astro Image component not generating all specified widths despite correct configuration.
 
 ### CSS Render-Blocking Optimization ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.

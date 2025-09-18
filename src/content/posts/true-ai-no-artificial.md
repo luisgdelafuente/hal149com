@@ -4,7 +4,6 @@ title: "True AI won't have anything artificial about it"
 description: "Examining the oversimplified narratives surrounding AI and why the term 'artificial intelligence' should be abandoned in favor of a more nuanced understanding of intelligence."
 date: 2025-08-24
 author: "Luis García de la Fuente"
-tags: ["AI", "Philosophy", "Technology", "Intelligence", "Ethics"]
 image: "/blog-images/true-ai-no-artificial.webp"
 featured: true
 lang: "en"

@@ -46,7 +46,7 @@ export default defineConfig({
             description: { type: 'string', required: true },
             date: { type: 'date', required: true },
             author: { type: 'string', required: true },
-            tags: { type: 'array', of: { type: 'string' }, required: true },
+            tags: { type: 'array', of: { type: 'string' }, required: false },
             image: { type: 'string', required: false },
             lang: { type: 'string', required: true },
             enSlug: { type: 'string', required: false },
