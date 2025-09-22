@@ -9,7 +9,6 @@ const IGNORED_PREFIXES = [
   '/content-images',
   '/favicon',
   '/manifest',
-  '/robots.txt',
   '/sitemap.xml',
 ];
 
