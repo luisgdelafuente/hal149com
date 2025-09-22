@@ -1,14 +1,14 @@
-export async function GET() {
-  // Simply read the environment variable - if it's "true", block indexing
-  const shouldBlock = import.meta.env.DISALLOW_INDEXING === 'true';
+export async function GET({ url }) {
+  // Only allow indexing on the production domain https://hal149.com
+  const isProduction = url.hostname === 'hal149.com';
   
-  const body = shouldBlock
+  const body = isProduction
     ? `User-agent: *
-Disallow: /`
-    : `User-agent: *
 Allow: /
 
-Sitemap: https://hal149.com/sitemap.xml`;
+Sitemap: https://hal149.com/sitemap.xml`
+    : `User-agent: *
+Disallow: /`;
 
   return new Response(body, {
     headers: {
