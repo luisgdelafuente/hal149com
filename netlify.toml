@@ -8,13 +8,13 @@
 
 # Environment-specific settings
 [context.production.environment]
-  DISALLOW_INDEXING = "false"
+  DISALLOW_INDEXING = false
 
 [context.deploy-preview.environment]
-  DISALLOW_INDEXING = "true"
+  DISALLOW_INDEXING = true
 
 [context.branch-deploy.environment]
-  DISALLOW_INDEXING = "true"
+  DISALLOW_INDEXING = true
 
 [[redirects]]
   from = "/*"
