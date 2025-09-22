@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://hal149.com/sitemap.xml

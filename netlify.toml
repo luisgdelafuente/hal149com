@@ -1,20 +1,11 @@
 [build]
   publish = "dist"
-  command = "npm run build && cp public/robots-allow.txt dist/robots.txt"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--no-frozen-lockfile"
 
-# Environment-specific settings
-[context.production]
-  command = "npm run build && cp public/robots-allow.txt dist/robots.txt"
-
-[context.deploy-preview]
-  command = "npm run build && cp public/robots-disallow.txt dist/robots.txt"
-
-[context.branch-deploy]
-  command = "npm run build && cp public/robots-disallow.txt dist/robots.txt"
 
 [[redirects]]
   from = "/*"
