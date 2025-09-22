@@ -44,16 +44,16 @@ const lang = getLangFromUrl(Astro.url);
     },
     "datePublished": post.data.date.toISOString(),
     "dateModified": post.data.date.toISOString(),
-    "url": `https://hal149.com/posts/${post.slug}/`,
-    "image": post.data.image ? `https://hal149.com${post.data.image}` : undefined,
+    "url": `${Astro.url.origin}/posts/${post.slug}/`,
+    "image": post.data.image ? `${Astro.url.origin}${post.data.image}` : undefined,
     "publisher": {
       "@type": "Organization",
       "name": "HAL149",
-      "url": "https://hal149.com"
+      "url": Astro.url.origin
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://hal149.com/posts/${post.slug}/`
+      "@id": `${Astro.url.origin}/posts/${post.slug}/`
     },
     "articleSection": "Blog"
   })} />
