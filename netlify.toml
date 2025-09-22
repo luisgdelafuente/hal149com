@@ -6,6 +6,16 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--no-frozen-lockfile"
 
+# Environment-specific settings
+[context.production.environment]
+  DISALLOW_INDEXING = "false"
+
+[context.deploy-preview.environment]
+  DISALLOW_INDEXING = "true"
+
+[context.branch-deploy.environment]
+  DISALLOW_INDEXING = "true"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
