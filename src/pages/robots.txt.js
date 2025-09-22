@@ -1,23 +1,11 @@
 export async function GET() {
-  const envValue = import.meta.env.DISALLOW_INDEXING;
-  const context = import.meta.env.CONTEXT;
-  const branch = import.meta.env.BRANCH;
-  const disallow = envValue === 'true';
+  // Simply read the environment variable - if it's "true", block indexing
+  const shouldBlock = import.meta.env.DISALLOW_INDEXING === 'true';
   
-  // Debug information
-  const debugInfo = `# Debug Info:
-# DISALLOW_INDEXING: "${envValue}" (type: ${typeof envValue})
-# CONTEXT: "${context}"
-# BRANCH: "${branch}"
-# disallow: ${disallow}
-`;
-  
-  const body = disallow
-    ? `${debugInfo}
-User-agent: *
+  const body = shouldBlock
+    ? `User-agent: *
 Disallow: /`
-    : `${debugInfo}
-User-agent: *
+    : `User-agent: *
 Allow: /
 
 Sitemap: https://hal149.com/sitemap.xml`;
