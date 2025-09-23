@@ -33,12 +33,11 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
 // Navigation data loaded from i18n content or fallback
 
-// Environment-aware origin (Netlify Preview -> DEPLOY_PRIME_URL, else URL, else Astro.site/Astro.url)
-const envOrigin = (process?.env?.DEPLOY_PRIME_URL || process?.env?.URL) ?? (Astro?.site ? new URL(Astro.site).origin : Astro.url.origin);
-const pageUrl = `${envOrigin}${Astro.url.pathname}`;
+// Use relative paths for images and absolute URLs only for page URLs
+const pageUrl = Astro.url.href;
 const resolvedImageUrl = image
-  ? (image.startsWith('http') ? image : `${envOrigin}${image}`)
-  : `${envOrigin}${globalSettings.social_image}`;
+  ? (image.startsWith('http') ? image : image)
+  : globalSettings.social_image;
 
 ---
 
@@ -110,7 +109,7 @@ const resolvedImageUrl = image
       "name": title ?? globalSettings.title,
       "description": description ?? globalSettings.description,
       "url": pageUrl,
-      "logo": envOrigin + "/192.png",
+      "logo": "/192.png",
       "image": resolvedImageUrl,
       "sameAs": globalSettings.social_links?.map((link: any) => link.link) || [],
       "address": {
