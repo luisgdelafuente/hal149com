@@ -33,6 +33,13 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
 // Navigation data loaded from i18n content or fallback
 
+// Environment-aware origin (Netlify Preview -> DEPLOY_PRIME_URL, else URL, else Astro.site/Astro.url)
+const envOrigin = (process?.env?.DEPLOY_PRIME_URL || process?.env?.URL) ?? (Astro?.site ? new URL(Astro.site).origin : Astro.url.origin);
+const pageUrl = `${envOrigin}${Astro.url.pathname}`;
+const resolvedImageUrl = image
+  ? (image.startsWith('http') ? image : `${envOrigin}${image}`)
+  : `${envOrigin}${globalSettings.social_image}`;
+
 ---
 
 <html lang={lang}>
@@ -55,15 +62,15 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ type } />
-    <meta property="og:url" content={ Astro.url.href } />
+    <meta property="og:url" content={ pageUrl } />
     <meta property="og:title" content={ ogTitle ?? title ?? globalSettings.og_title ?? globalSettings.title } />
     <meta property="og:description" content={ ogDescription ?? description ?? globalSettings.og_description ?? globalSettings.description } />
-    <meta property="og:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
+    <meta property="og:image" content={ resolvedImageUrl } />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ title ?? globalSettings.title } />
     <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:secure_url" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
+    <meta property="og:image:secure_url" content={ resolvedImageUrl } />
     <meta property="og:site_name" content="HAL149" />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
     <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
@@ -75,7 +82,7 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
     <meta name="twitter:creator" content="@hal149" />
     <meta name="twitter:title" content={ twitterTitle ?? title ?? globalSettings.twitter_title ?? globalSettings.title } />
     <meta name="twitter:description" content={ twitterDescription ?? description ?? globalSettings.twitter_description ?? globalSettings.description } />
-    <meta name="twitter:image" content={ image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image } />
+    <meta name="twitter:image" content={ resolvedImageUrl } />
     <meta name="twitter:image:alt" content={ title ?? globalSettings.title } />
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="630" />
@@ -102,9 +109,9 @@ const globalSettings = i18nContent?.default?.global_settings || global_settings;
       "@type": type === "article" ? "Article" : "Organization",
       "name": title ?? globalSettings.title,
       "description": description ?? globalSettings.description,
-      "url": Astro.url.href,
-      "logo": Astro.url.origin + "/192.png",
-      "image": image ? (image.startsWith('http') ? image : Astro.url.origin + image) : Astro.url.origin + globalSettings.social_image,
+      "url": pageUrl,
+      "logo": envOrigin + "/192.png",
+      "image": resolvedImageUrl,
       "sameAs": globalSettings.social_links?.map((link: any) => link.link) || [],
       "address": {
         "@type": "PostalAddress",

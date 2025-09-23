@@ -18,6 +18,8 @@ const { post } = Astro.props as { post: any };
 const { Content } = await post.render();
 
 const lang = getLangFromUrl(Astro.url);
+// Environment-aware origin for JSON-LD (Preview -> DEPLOY_PRIME_URL, else URL, else Astro.site/Astro.url)
+const envOrigin = (process?.env?.DEPLOY_PRIME_URL || process?.env?.URL) ?? (Astro?.site ? new URL(Astro.site).origin : Astro.url.origin);
 ---
 
 <Layout 
@@ -44,16 +46,16 @@ const lang = getLangFromUrl(Astro.url);
     },
     "datePublished": post.data.date.toISOString(),
     "dateModified": post.data.date.toISOString(),
-    "url": `${Astro.url.origin}/posts/${post.slug}/`,
-    "image": post.data.image ? `${Astro.url.origin}${post.data.image}` : undefined,
+    "url": `${envOrigin}/posts/${post.slug}/`,
+    "image": post.data.image ? `${envOrigin}${post.data.image}` : undefined,
     "publisher": {
       "@type": "Organization",
       "name": "HAL149",
-      "url": Astro.url.origin
+      "url": envOrigin
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `${Astro.url.origin}/posts/${post.slug}/`
+      "@id": `${envOrigin}/posts/${post.slug}/`
     },
     "articleSection": "Blog"
   })} />
