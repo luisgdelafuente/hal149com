@@ -47,15 +47,17 @@ const currentContent = content[lang as keyof typeof content];
           <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
             {post.data.image && (
               <div class="aspect-16-9 overflow-hidden">
-                <BlogImage 
-                  src={post.data.image} 
-                  alt={post.data.title}
-                  width={400}
-                  height={225}
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+                <a href={`/${lang === 'es' ? 'es/' : ''}posts/${post.slug}/`} class="block w-full h-full">
+                  <BlogImage 
+                    src={post.data.image} 
+                    alt={post.data.title}
+                    width={400}
+                    height={225}
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </a>
               </div>
             )}
             <div class="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4 h-full">

@@ -45,7 +45,7 @@ const lang = getLangFromUrl(Astro.url);
     "datePublished": post.data.date.toISOString(),
     "dateModified": post.data.date.toISOString(),
     "url": `${Astro.url.origin}/posts/${post.slug}/`,
-    "image": post.data.image ? `${Astro.url.origin}${post.data.image}` : undefined,
+    "image": post.data.image ? post.data.image : undefined,
     "publisher": {
       "@type": "Organization",
       "name": "HAL149",

@@ -110,7 +110,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 4.29 Image management strategy for git-hosted images
 - [x] 4.30 Implement Astro Image optimization for blog post images
 - [x] 4.31 Astro's glob imports to automate img optimization
-- [ ] 4.32 Blog and home posts archive thumbs 
+- [x] 4.32 Blog and home posts archive thumbs 
 - [ ] 4.33 Responsive images optimization 
 
 ### Phase 5: Content Customization ✅ **COMPLETED**
