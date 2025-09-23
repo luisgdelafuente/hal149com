@@ -96,7 +96,7 @@ const currentContent = searchContent[lang];
           post.data.title,
           post.data.description,
           post.data.author,
-          ...post.data.tags
+          ...(post.data.tags || [])
         ].join(' ').toLowerCase();
 
         return searchableText.includes(query);
@@ -130,7 +130,7 @@ const currentContent = searchContent[lang];
         post.data.title,
         post.data.description,
         post.data.author,
-        ...post.data.tags
+        ...(post.data.tags || [])
       ].join(' ').toLowerCase();
 
       return searchableText.includes(query);
