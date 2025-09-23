@@ -110,7 +110,8 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 4.29 Image management strategy for git-hosted images
 - [x] 4.30 Implement Astro Image optimization for blog post images
 - [x] 4.31 Astro's glob imports to automate img optimization
-- [ ] 4.32 Full testing of images optimization pending
+- [ ] 4.32 Blog and home posts archive thumbs 
+- [ ] 4.33 Responsive images optimization 
 
 ### Phase 5: Content Customization ✅ **COMPLETED**
 - [x] 5.1 Filter home page sections
@@ -138,8 +139,9 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 ### Phase 6: Final Configurations
 - [x] 6.1 Robots.txt configuration
 - [x] 6.2 Sitemap.xml configuration
-- [x] 6.3 Global metadata for seo, social configuration (completed)
-- [ ] 6.4 Whatsapp and social media image thumb fix (pending)
+- [x] 6.3 Global metadata for seo, og 
+- [x] 6.4 Posts metadata: og, seo
+- [x] 6.5 Whatsapp and social media image thumb fix 
 
 ### Phase 7: Performance Optimization & Go Live 🎯 PENDING
 
