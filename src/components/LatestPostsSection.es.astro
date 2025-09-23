@@ -46,7 +46,7 @@ const currentContent = content[lang as keyof typeof content];
         <article class="@container group">
           <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
             {post.data.image && (
-              <div class="aspect-video overflow-hidden">
+              <div class="aspect-16-9 overflow-hidden">
                 <BlogImage 
                   src={post.data.image} 
                   alt={post.data.title}
