@@ -11,12 +11,12 @@ const posts = allPosts
   .filter(post => post.data.lang === 'en')
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-// Pagination setup
-const postsPerPage = 10;
-const currentPage = 1; // For now, we'll implement dynamic pagination later
+// First page content (9 posts)
+const postsPerPage = 9;
+const currentPage = 1;
 const totalPages = Math.ceil(posts.length / postsPerPage);
-const startIndex = (currentPage - 1) * postsPerPage;
-const endIndex = startIndex + postsPerPage;
+const startIndex = 0;
+const endIndex = postsPerPage;
 const currentPosts = posts.slice(startIndex, endIndex);
 
 // Get unique tags for filtering
@@ -117,29 +117,21 @@ const lang = getLangFromUrl(Astro.url);
     <!-- Pagination -->
     {totalPages > 1 && (
       <div class="flex justify-center items-center gap-2">
-        {currentPage > 1 && (
-          <a href={`/posts/?page=${currentPage - 1}`} class="bs-btn">
-            Previous
-          </a>
-        )}
-        
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-          <a 
-            href={`/posts/?page=${page}`} 
-            class={`px-4 py-2 rounded transition-colors ${
-              page === currentPage 
-                ? 'bg-bs-surface-3 text-bs-foreground-light' 
-                : 'bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70'
-            }`}
-          >
-            {page}
-          </a>
-        ))}
-        
-        {currentPage < totalPages && (
-          <a href={`/posts/?page=${currentPage + 1}`} class="bs-btn">
-            Next
-          </a>
+        {totalPages > 1 && (
+          <>
+            <a 
+              href={`/posts/`} 
+              class={`px-4 py-2 rounded transition-colors bg-bs-surface-3 text-bs-foreground-light`}
+            >
+              1
+            </a>
+            <a 
+              href={`/posts/page/2/`} 
+              class={`px-4 py-2 rounded transition-colors bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70`}
+            >
+              2
+            </a>
+          </>
         )}
       </div>
     )}

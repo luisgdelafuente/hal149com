@@ -142,6 +142,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 6.3 Global metadata for seo, og 
 - [x] 6.4 Posts metadata: og, seo
 - [x] 6.5 Whatsapp and social media image thumb fix 
+- [x] 6.6 Blog pagination fixed
 
 ### Phase 7: Performance Optimization & Go Live 🎯 PENDING
 

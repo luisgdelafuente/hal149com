@@ -1,61 +1,23 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
-import { getLangFromUrl } from '../../../i18n/ui';
-import BlogSearch from "../../../components/BlogSearch.astro";
-import BlogImage from '../../../components/BlogImage.astro';
+import BlogImage from '../../../../components/BlogImage.astro';
 
-// Get all posts and sort by date
-const allPosts = await getCollection('posts');
-const posts = allPosts
-  .filter(post => post.data.lang === 'es')
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts');
+  const posts = allPosts
+    .filter(post => post.data.lang === 'es')
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-// First page content (9 posts)
-const postsPerPage = 9;
-const currentPage = 1;
-const totalPages = Math.ceil(posts.length / postsPerPage);
-const startIndex = 0;
-const endIndex = postsPerPage;
-const currentPosts = posts.slice(startIndex, endIndex);
+  return paginate(posts, { pageSize: 9 });
+}
 
-const lang = getLangFromUrl(Astro.url);
+const { page } = Astro.props as any;
+const currentPosts = page.data;
 ---
 
 <Layout>
-  
-  <!-- Structured Data for Blog Archive -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Blog de HAL149",
-    "description": "Últimas noticias, insights y actualizaciones de HAL149",
-    "url": "/es/posts/",
-    "publisher": {
-      "@type": "Organization",
-      "name": "HAL149",
-      "url": "/"
-    },
-    "blogPost": currentPosts.map(post => ({
-      "@type": "BlogPosting",
-      "headline": post.data.title,
-      "description": post.data.description,
-      "author": {
-        "@type": "Person",
-        "name": post.data.author
-      },
-      "datePublished": post.data.date.toISOString(),
-      "dateModified": post.data.date.toISOString(),
-      "url": `/es/posts/${post.slug}/`,
-      "image": post.data.image ? post.data.image : undefined,
-              "publisher": {
-          "@type": "Organization",
-          "name": "HAL149"
-        }
-    }))
-  })} />
   <div class="bs-container py-16">
-    <!-- Header -->
     <div class="text-center mb-16">
       <h1 class="bs-h1 mb-6">Artículos del Blog</h1>
       <p class="bs-body-text xl:text-xl max-w-2xl mx-auto text-bs-foreground-dark">
@@ -63,10 +25,6 @@ const lang = getLangFromUrl(Astro.url);
       </p>
     </div>
 
-    <!-- Search Component -->
-    <BlogSearch posts={posts} lang="es" />
-
-    <!-- Posts Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
       {currentPosts.map(post => (
         <article class="@container group" data-post-id={post.slug}>
@@ -111,35 +69,32 @@ const lang = getLangFromUrl(Astro.url);
       ))}
     </div>
 
-    <!-- Pagination -->
-    {totalPages > 1 && (
+    {page.lastPage > 1 && (
       <div class="flex justify-center items-center gap-2">
-        {totalPages > 1 && (
-          <>
-            <a 
-              href={`/es/posts/`} 
-              class={`px-4 py-2 rounded transition-colors bg-bs-surface-3 text-bs-foreground-light`}
-            >
-              1
-            </a>
-            <a 
-              href={`/es/posts/page/2/`} 
-              class={`px-4 py-2 rounded transition-colors bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70`}
-            >
-              2
-            </a>
-          </>
+        {page.currentPage > 1 && (
+          <a href={page.currentPage - 1 === 1 ? '/es/posts/' : `/es/posts/page/${page.currentPage - 1}/`} class="bs-btn">
+            Anterior
+          </a>
         )}
-      </div>
-    )}
 
-    <!-- No posts message -->
-    {currentPosts.length === 0 && (
-      <div class="text-center py-16">
-        <div class="bg-bs-surface-0/90 rounded-xl p-8 max-w-md mx-auto">
-          <h3 class="bs-h3 mb-4">No se encontraron artículos</h3>
-          <p class="bs-body-text text-bs-foreground-dark">¡Vuelve pronto para ver nuevo contenido!</p>
-        </div>
+        {Array.from({ length: page.lastPage }, (_, i) => i + 1).map(p => (
+          <a 
+            href={p === 1 ? '/es/posts/' : `/es/posts/page/${p}/`} 
+            class={`px-4 py-2 rounded transition-colors ${
+              p === page.currentPage 
+                ? 'bg-bs-surface-3 text-bs-foreground-light' 
+                : 'bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70'
+            }`}
+          >
+            {p}
+          </a>
+        ))}
+
+        {page.currentPage < page.lastPage && (
+          <a href={`/es/posts/page/${page.currentPage + 1}/`} class="bs-btn">
+            Siguiente
+          </a>
+        )}
       </div>
     )}
   </div>
@@ -159,4 +114,5 @@ const lang = getLangFromUrl(Astro.url);
     overflow: hidden;
   }
 </style>
+
 

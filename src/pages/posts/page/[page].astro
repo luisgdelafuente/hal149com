@@ -1,0 +1,119 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import BlogImage from '../../../components/BlogImage.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts');
+  const posts = allPosts
+    .filter(post => post.data.lang === 'en')
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+  return paginate(posts, { pageSize: 9 });
+}
+
+// Type hint loosened to satisfy linter in .astro context
+const { page } = Astro.props as any;
+const currentPosts = page.data;
+---
+
+<Layout>
+  <div class="bs-container py-16">
+    <div class="text-center mb-16">
+      <h1 class="bs-h1 mb-6">Blog Posts</h1>
+      <p class="bs-body-text xl:text-xl max-w-2xl mx-auto text-bs-foreground-dark">
+        Latest insights, news, and updates from our team
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+      {currentPosts.map(post => (
+        <article class="@container group" data-post-id={post.slug}>
+          <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
+            {post.data.image && (
+              <div class="aspect-16-9 overflow-hidden">
+                <a href={`/posts/${post.slug}/`} class="block w-full h-full">
+                  <BlogImage 
+                    src={post.data.image} 
+                    alt={post.data.title}
+                    width={400}
+                    height={225}
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </a>
+              </div>
+            )}
+            <div class="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4 h-full">
+              <h2 class="bs-h3 line-clamp-2 flex-grow-0">
+                <a href={`/posts/${post.slug}/`} class="hover:text-bs-foreground-light transition-colors">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="bs-body-text text-bs-foreground-dark line-clamp-3 flex-grow">
+                {post.data.description}
+              </p>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-bs-foreground-dark mt-auto gap-1 sm:gap-0">
+                <span>{post.data.author}</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </time>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {page.lastPage > 1 && (
+      <div class="flex justify-center items-center gap-2">
+        {page.currentPage > 1 && (
+          <a href={page.currentPage - 1 === 1 ? '/posts/' : `/posts/page/${page.currentPage - 1}/`} class="bs-btn">
+            Previous
+          </a>
+        )}
+
+        {Array.from({ length: page.lastPage }, (_, i) => i + 1).map(p => (
+          <a 
+            href={p === 1 ? '/posts/' : `/posts/page/${p}/`} 
+            class={`px-4 py-2 rounded transition-colors ${
+              p === page.currentPage 
+                ? 'bg-bs-surface-3 text-bs-foreground-light' 
+                : 'bg-bs-surface-0/90 text-bs-foreground-dark hover:bg-bs-surface-2/70'
+            }`}
+          >
+            {p}
+          </a>
+        ))}
+
+        {page.currentPage < page.lastPage && (
+          <a href={`/posts/page/${page.currentPage + 1}/`} class="bs-btn">
+            Next
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+
