@@ -24,7 +24,7 @@ export default defineConfig({
           // Force single CSS bundle - eliminate code splitting
           manualChunks: undefined, // Disable manual chunking
           assetFileNames: (assetInfo) => {
-            // Force all CSS into single file
+            // Force all CSS into single file to prevent multiple CSS bundles
             if (assetInfo.name && assetInfo.name.endsWith('.css')) {
               return 'assets/styles.[hash].css';
             }
@@ -33,7 +33,8 @@ export default defineConfig({
           chunkFileNames: 'assets/[name].[hash].js',
           entryFileNames: 'assets/[name].[hash].js'
         }
-      }
+      },
+      cssCodeSplit: false // Ensure CSS is not split across multiple files
     }
   },
   content: {
