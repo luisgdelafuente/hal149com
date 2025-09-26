@@ -1,6 +1,6 @@
 ---
 title: "AI Platform API Comparison Report 2025"
-description: "This report focuses on AI platforms that offer **real-time internet access** through their APIs, plus Google Gemini as a notable exception."
+description: "This report focuses on AI platforms that offer real-time internet access through their APIs, plus Google Gemini as a notable exception."
 date: 2025-09-22T00:00:00.000Z
 author: "Luis García de la Fuente"
 image: "/blog-images/ai-api-comparison-report.webp"
