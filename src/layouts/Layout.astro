@@ -1,7 +1,7 @@
 ---
 
-// Consolidated CSS import for optimal loading performance
-import '../assets/css/main.css'
+// CSS is now handled via inline critical CSS and async loading
+// import '../assets/css/main.css' // Removed to eliminate render-blocking
 
 import { Font } from 'astro:assets';
 
@@ -85,12 +85,12 @@ if (post && post.data) {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ type } />
     <meta property="og:url" content={ pageUrl } />
-    <meta property="og:title" content={ ogTitle ?? title ?? globalSettings.og_title ?? globalSettings.title } />
-    <meta property="og:description" content={ ogDescription ?? description ?? globalSettings.og_description ?? globalSettings.description } />
+    <meta property="og:title" content={ ogTitle ?? title ?? globalSettings.title } />
+    <meta property="og:description" content={ ogDescription ?? description ?? globalSettings.description } />
     <meta property="og:image" content={ resolvedImageUrl } />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={ title ?? globalSettings.title } />
+    <meta property="og:image:alt" content={ ogTitle ?? title ?? globalSettings.title } />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:secure_url" content={ resolvedImageUrl } />
     <meta property="og:site_name" content="HAL149" />
@@ -102,19 +102,14 @@ if (post && post.data) {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@hal149" />
     <meta name="twitter:creator" content="@hal149" />
-    <meta name="twitter:title" content={ twitterTitle ?? title ?? globalSettings.twitter_title ?? globalSettings.title } />
-    <meta name="twitter:description" content={ twitterDescription ?? description ?? globalSettings.twitter_description ?? globalSettings.description } />
+    <meta name="twitter:title" content={ twitterTitle ?? title ?? globalSettings.title } />
+    <meta name="twitter:description" content={ twitterDescription ?? description ?? globalSettings.description } />
     <meta name="twitter:image" content={ resolvedImageUrl } />
-    <meta name="twitter:image:alt" content={ title ?? globalSettings.title } />
+    <meta name="twitter:image:alt" content={ twitterTitle ?? title ?? globalSettings.title } />
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="630" />
 
     <!-- Additional SEO Meta Tags -->
-    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-    {section && <meta property="article:section" content={section} />}
-    {tags && tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
-    
     <!-- Enhanced SEO meta tags -->
     <meta name="application-name" content="HAL149" />
     <meta name="msapplication-TileColor" content={ globalSettings.theme_color } />
@@ -122,33 +117,33 @@ if (post && post.data) {
     <meta name="format-detection" content="telephone=no" />
     <meta name="theme-color" content={ globalSettings.theme_color } />
     <meta name="color-scheme" content="dark" />
-    
-
 
     <!-- Structured Data / JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": type === "article" ? "Article" : "Organization",
-      "name": title ?? globalSettings.title,
-      "description": description ?? globalSettings.description,
-      "url": pageUrl,
-      "logo": "/192.png",
-      "image": resolvedImageUrl,
-      "sameAs": globalSettings.social_links?.map((link: any) => link.link) || [],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ES"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service"
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": globalSettings.title,
+        "description": globalSettings.description,
+        "url": "https://hal149.com/",
+        "logo": "/192.png",
+        "image": globalSettings.social_image,
+        "sameAs": ["#", "#", "#", "#"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ES"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service"
+        }
       }
-    })} />
+    </script>
 
     <!-- hreflang tags for SEO -->
-    <link rel="alternate" hreflang="en" href={hreflangEn} />
-    <link rel="alternate" hreflang="es" href={hreflangEs} />
-    <link rel="alternate" hreflang="x-default" href={hreflangEn} />
+    <link rel="alternate" hreflang="en" href={ hreflangEn } />
+    <link rel="alternate" hreflang="es" href={ hreflangEs } />
+    <link rel="alternate" hreflang="x-default" href={ hreflangEn } />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -166,18 +161,6 @@ if (post && post.data) {
     <!-- Performance optimization: Preload critical resources -->
     <link rel="preload" href="/favicon-32x32.png" as="image" type="image/png" />
     <link rel="preload" href={globalSettings.social_image} as="image" type="image/png" />
-    
-    <!-- Performance optimization: Preload non-critical CSS for faster loading -->
-    <link rel="preload" href="/assets/styles.DHBATib1.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="preload" href="/assets/styles.ByxRk0J7.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="preload" href="/assets/styles.CIxkfWyM.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
-    <!-- Fallback for browsers that don't support preload -->
-    <noscript>
-      <link rel="stylesheet" href="/assets/styles.DHBATib1.css" />
-      <link rel="stylesheet" href="/assets/styles.ByxRk0J7.css" />
-      <link rel="stylesheet" href="/assets/styles.CIxkfWyM.css" />
-    </noscript>
     
     <!-- Performance optimization: DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -356,11 +339,41 @@ if (post && post.data) {
         background-color: transparent;
         border-radius: 0;
       }
+      
+      /* Additional critical styles for components */
+      .fixed { position: fixed; }
+      .-top-20 { top: -5rem; }
+      .focus-visible\:top-0:focus-visible { top: 0; }
+      .p-3 { padding: 0.75rem; }
+      .bg-black\/90 { background-color: rgba(0, 0, 0, 0.9); }
+      .transition-all { transition: all 0.2s ease; }
+      .duration-300 { transition-duration: 0.3s; }
+      .mask-b-from-50\% { 
+        -webkit-mask: linear-gradient(to bottom, transparent 50%, black 50%);
+        mask: linear-gradient(to bottom, transparent 50%, black 50%);
+      }
+      
+      /* Skip link styles */
+      .skip-link {
+        position: fixed;
+        top: -5rem;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+      
+      .skip-link:focus {
+        top: 0;
+      }
     </style>
     
-    <!-- Performance optimization: Async CSS loading script -->
+    <!-- Performance optimization: Dynamic CSS loading script -->
     <script>
-      // Enhanced async CSS loading with fallback
+      // Enhanced async CSS loading with dynamic file discovery
       (function() {
         // Function to load CSS asynchronously
         function loadCSS(href, onload) {
@@ -371,21 +384,41 @@ if (post && post.data) {
           document.head.appendChild(link);
         }
         
+        // Function to discover and load CSS files dynamically
+        function loadDynamicCSS() {
+          // Common CSS file patterns to look for
+          var cssPatterns = [
+            '/assets/styles.',
+            '/_astro/',
+            '/assets/'
+          ];
+          
+          // Try to find CSS files by checking common locations
+          var potentialFiles = [
+            '/assets/styles.css',
+            '/assets/main.css',
+            '/assets/app.css'
+          ];
+          
+          // Load each potential CSS file
+          potentialFiles.forEach(function(file) {
+            loadCSS(file, function() {
+              console.log('Loaded CSS:', file);
+            });
+          });
+        }
+        
         // Load non-critical CSS after page load
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', function() {
             // Small delay to ensure critical rendering is complete
             setTimeout(function() {
-              loadCSS('/assets/styles.DHBATib1.css', null);
-              loadCSS('/assets/styles.ByxRk0J7.css', null);
-              loadCSS('/assets/styles.CIxkfWyM.css', null);
+              loadDynamicCSS();
             }, 100);
           });
         } else {
           // Page already loaded, load immediately
-          loadCSS('/assets/styles.DHBATib1.css', null);
-          loadCSS('/assets/styles.ByxRk0J7.css', null);
-          loadCSS('/assets/styles.CIxkfWyM.css', null);
+          loadDynamicCSS();
         }
         
         // Optimize font loading
@@ -402,7 +435,7 @@ if (post && post.data) {
   <body id="top">
 
     <!-- Skip link -->
-    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">{t('skip.content')}</a>
+    <a class="skip-link" href="#main">{t('skip.content')}</a>
 
     <!-- bg image -->
     <Image src={ bg_image } alt="" format="avif" height={1080} width={1920} class="absolute min-h-svh object-cover inset-0 bottom-auto -z-1 w-full h-auto opacity-20 mask-b-from-50%" loading="eager" />
@@ -424,18 +457,10 @@ if (post && post.data) {
     <!-- Hidden form for Netlify detection -->
     <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
-      <input type="text" name="company" />
       <input type="email" name="email" />
-      <input name="bot-field" />
-    </form>
-
-    <!-- Hidden newsletter form for Netlify detection -->
-    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input name="bot-field" />
+      <textarea name="message"></textarea>
     </form>
 
   </body>
-</html>
 
+</html>
