@@ -1,7 +1,7 @@
 {
   "media": {
     "root": "src/assets/blog-images",
-    "public": "public/blog-images"
+    "public": "public"
   },
   "content": {
     "root": "src/content/posts"
@@ -16,5 +16,5 @@
     ".sitepins/config.json"
   ],
   "arrangement": [],
-  "showCommitModal": false
+  "showCommitModal": true
 }
