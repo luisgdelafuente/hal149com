@@ -40,7 +40,7 @@ Cada plataforma representa una intención diferente:
 
 La analítica impulsada por IA te permite mapear exactamente dónde busca tu audiencia y qué tipo de contenido necesita en cada canal. No se trata de estar en todas partes—se trata de **dominar las plataformas correctas primero**.
 
-El <a href="/es/posts/internet-que-conocias-no-existe.md" target="_blank" 90% de las búsquedas</a> se resuelven sin que el usuario visite tu web. Tu contenido alimenta las respuestas de la IA, pero tú no ves ni un click.
+El <a href="/es/posts/internet-que-conocias-no-existe" target="_blank" 90% de las búsquedas</a> se resuelven sin que el usuario visite tu web. Tu contenido alimenta las respuestas de la IA, pero tú no ves ni un click.
 
 ## Construye una Entidad de Marca que la IA Reconozca
 
@@ -48,7 +48,7 @@ La IA necesita entender quién eres. Y para eso, tu marca debe tener una identid
 
 Nombre, descripción, mensajes—todo debe ser consistente. La IA construye un "grafo de entidades" que conecta tu marca con productos, servicios y expertise. Cuanto más clara sea esa conexión, más te citará cuando genere respuestas.
 
-Esta estrategia de <a href="/es/posts/claves-citado-chatgpt-modelos-ia.md" target="_blank">optimización para ser citado por ChatGPT</a> va más allá del SEO tradicional; se trata de construir autoridad que la IA reconozca y recomiende a partir de una presencia plataformas relevantes para cada negocio.
+Esta estrategia de <a href="/es/posts/claves-citado-chatgpt-modelos-ia" target="_blank">optimización para ser citado por ChatGPT</a> va más allá del SEO tradicional; se trata de construir autoridad que la IA reconozca y recomiende a partir de una presencia plataformas relevantes para cada negocio.
 
 ## Crea Ecosistemas de Contenido Adaptables
 
@@ -58,7 +58,7 @@ Empieza con un activo pilar base: un video largo, un artículo detallado, etc. y
 
 Este **enfoque multifuente** refuerza tu autoridad temática y alimenta los motores de síntesis de IA. El contenido interconectado genera señales que mejoran tu ranking y engagement.
 
-Cada vez más plataformas IA ofrecen <a href="/es/posts/ai-api-informe comparativo.md" target="_blank">acceso web en tiempo real de las APIs de IA</a>. Plataformas como Perplexity y Grok están diseñadas específicamente para búsqueda en tiempo real con citas—y necesitas estar ahí.
+Cada vez más plataformas IA ofrecen <a href="/es/posts/ai-api-informe comparativo" target="_blank">acceso web en tiempo real de las APIs de IA</a>. Plataformas como Perplexity y Grok están diseñadas específicamente para búsqueda en tiempo real con citas—y necesitas estar ahí.
 
 ## Optimización Técnica para Interpretación IA
 
