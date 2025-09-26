@@ -9,12 +9,20 @@ export default defineConfig({
     cssCodeSplit: false, // Bundle all CSS into single file to reduce requests
     inlineStylesheets: 'auto', // Inline critical CSS automatically
     assets: '_astro', // Use consistent asset naming
+    // Additional performance optimizations
+    format: 'file', // Generate individual files for better caching
   },
   vite: {
     plugins: [tailwindcss()],
     css: {
       // Optimize CSS processing
       devSourcemap: false, // Disable sourcemaps in production
+      // Additional CSS optimizations
+      postcss: {
+        plugins: [
+          // Add CSS optimization plugins if needed
+        ]
+      }
     },
     build: {
       // Optimize build output
