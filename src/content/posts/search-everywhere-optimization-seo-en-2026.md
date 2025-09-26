@@ -30,11 +30,13 @@ Tus clientes buscan en TikTok, investigan en YouTube, preguntan en Reddit, compa
 
 Cada plataforma representa una intención diferente:
 
-**TikTok** = Descubrimiento por entretenimiento  
+**TikTok** = Descubrimiento por entretenimiento 
+**Linkedin** = Validación profesional  
 **YouTube** = Investigación profunda 
 **LinkedIn** = Validación profesional 
 **Instagram** = Inspiración visual
-**Reddit** = Opiniones sin filtro  
+**Reddit** = Opiniones sin filtro 
+**Instagram** = Inspiración visual  
 **Amazon** = Decisión de compra  
 **IA tools** = Síntesis y respuesta directa
 
