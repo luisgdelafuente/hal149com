@@ -1,10 +1,10 @@
 {
   "media": {
-    "root": "public/blog-images",
+    "root": "src/assets/blog-images",
     "public": "public/blog-images"
   },
   "content": {
-    "root": "src/content"
+    "root": "src/content/posts"
   },
   "code": {
     "root": "src"
