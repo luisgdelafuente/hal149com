@@ -30,6 +30,7 @@ const lang = getLangFromUrl(Astro.url);
   modifiedTime={post.data.date.toISOString()}
   section="Blog"
   tags={post.data.tags}
+  post={post}
 >
   
   <!-- Structured Data for Blog Post -->
