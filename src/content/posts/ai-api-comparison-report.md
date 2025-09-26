@@ -13,7 +13,7 @@ esSlug: "ai-api-informe-comparativo"
 
 ## Executive Summary
 
-This report focuses on AI platforms that offer **real-time internet access** through their APIs, plus Google Gemini as a notable exception. These platforms enable developers to build applications with current, up-to-date information.
+This report focuses on AI platforms that offer **real-time internet access** through their APIs, plus Google Gemini as a notable exception. These platforms enable developers to build applications with current and up-to-date information.
 
 ---
 
