@@ -38,9 +38,9 @@ Each platform represents a different intent:
 - **Amazon** = Purchase decision
 - **AI tools** = Synthesis and direct response
 
-AI-driven analytics allow you to map exactly where your audience searches and what type of content they need on each channel. It's not about being everywhere—it's about **dominating the right platforms first**.
+**AI-driven analytics** allow you to map exactly where your audience searches and what type of content they need on each channel. It's not about being everywhere—it's about dominating the right platforms.
 
-<a href="/posts/internet-you-knew-no-longer-exists" target="_blank">90% of searches</a> are resolved without the user visiting your website. Your content feeds AI responses, but you don't see a single click.
+<a href="/posts/internet-you-knew-no-longer-exists/" target="_blank">90% of searches</a> are resolved without the user visiting your website. Your content feeds AI responses, but you don't see a single click.
 
 ## Build a Brand Entity that AI Recognizes
 
@@ -48,7 +48,7 @@ AI needs to understand who you are. And for that, your brand must have a coheren
 
 Name, description, messages—everything must be consistent. AI builds an "entity graph" that connects your brand with products, services and expertise. The clearer that connection, the more it will cite you when generating responses.
 
-This <a href="/posts/keys-cited-chatgpt-ai-models" target="_blank">optimization strategy to be cited by ChatGPT</a> goes beyond traditional SEO; it's about building authority that AI recognizes and recommends based on a presence on platforms relevant to each business.
+This <a href="/posts/keys-cited-chatgpt-ai-models/" target="_blank">optimization strategy to be cited by ChatGPT</a> goes beyond traditional SEO; it's about building authority that AI recognizes and recommends based on a presence on platforms relevant to each business.
 
 ## Create Adaptable Content Ecosystems
 
@@ -58,7 +58,7 @@ Start with a strong pillar asset: a long video, a detailed article, etc. and use
 
 This **multi-source approach** reinforces your thematic authority and feeds AI synthesis engines. Interconnected content generates signals that improve your ranking and engagement.
 
-More and more AI platforms offer <a href="/posts/ai-api-comparison-report" target="_blank">real-time web access to AI APIs</a>. Platforms like Perplexity and Grok are specifically designed for real-time search with citations—and you need to be there.
+More and more AI platforms offer <a href="/posts/ai-api-comparison-report/" target="_blank">real-time web access to AI APIs</a>. Platforms like Perplexity and Grok are specifically designed for real-time search with citations—and you need to be there.
 
 ## Technical Optimization for AI Interpretation
 
