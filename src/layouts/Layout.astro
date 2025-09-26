@@ -16,7 +16,7 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 import global_settings from "../data/global_settings.json"
 
-const { title, description, image, type = "website", author, publishedTime, modifiedTime, section, tags, ogTitle, ogDescription, twitterTitle, twitterDescription } = Astro.props
+const { title, description, image, type = "website", author, publishedTime, modifiedTime, section, tags, ogTitle, ogDescription, twitterTitle, twitterDescription, post } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -38,6 +38,29 @@ const pageUrl = Astro.url.href;
 const resolvedImageUrl = image
   ? (image.startsWith('http') ? image : image)
   : globalSettings.social_image;
+
+// Generate proper canonical and hreflang URLs for posts
+let canonicalUrl = Astro.url.origin + Astro.url.pathname;
+let hreflangEn = Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '');
+let hreflangEs = Astro.url.origin + (Astro.url.pathname.startsWith('/es') ? Astro.url.pathname : '/es' + Astro.url.pathname);
+
+// If this is a blog post with translation data, use proper slug relationships
+if (post && post.data) {
+  const currentSlug = post.slug;
+  const currentLang = post.data.lang;
+  
+  if (currentLang === 'en' && post.data.esSlug) {
+    // English post - canonical to itself, hreflang to Spanish version
+    canonicalUrl = Astro.url.origin + `/posts/${currentSlug}/`;
+    hreflangEn = Astro.url.origin + `/posts/${currentSlug}/`;
+    hreflangEs = Astro.url.origin + `/es/posts/${post.data.esSlug}/`;
+  } else if (currentLang === 'es' && post.data.enSlug) {
+    // Spanish post - canonical to English version, hreflang to both
+    canonicalUrl = Astro.url.origin + `/posts/${post.data.enSlug}/`;
+    hreflangEn = Astro.url.origin + `/posts/${post.data.enSlug}/`;
+    hreflangEs = Astro.url.origin + `/es/posts/${currentSlug}/`;
+  }
+}
 
 ---
 
@@ -123,12 +146,12 @@ const resolvedImageUrl = image
     })} />
 
     <!-- hreflang tags for SEO -->
-    <link rel="alternate" hreflang="en" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
-    <link rel="alternate" hreflang="es" href={Astro.url.origin + (Astro.url.pathname.startsWith('/es') ? Astro.url.pathname : '/es' + Astro.url.pathname)} />
-    <link rel="alternate" hreflang="x-default" href={Astro.url.origin + Astro.url.pathname.replace(/^\/es/, '')} />
+    <link rel="alternate" hreflang="en" href={hreflangEn} />
+    <link rel="alternate" hreflang="es" href={hreflangEs} />
+    <link rel="alternate" hreflang="x-default" href={hreflangEn} />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={Astro.url.origin + (lang === 'en' ? Astro.url.pathname : Astro.url.pathname.replace(/^\/es/, ''))} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicon - PNG icons only -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
