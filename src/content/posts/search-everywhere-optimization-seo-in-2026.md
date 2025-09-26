@@ -30,13 +30,13 @@ Your customers search on TikTok, research on YouTube, ask on Reddit, compare on 
 
 Each platform represents a different intent:
 
-**TikTok** = Discovery through entertainment  
-**YouTube** = Deep research 
-**LinkedIn** = Professional validation
-**Instagram** = Visual inspiration 
-**Reddit** = Unfiltered opinions  
-**Amazon** = Purchase decision  
-**AI tools** = Synthesis and direct response
+- **TikTok** = Discovery through entertainment
+- **YouTube** = Deep research
+- **LinkedIn** = Professional validation
+- **Instagram** = Visual inspiration
+- **Reddit** = Unfiltered opinions
+- **Amazon** = Purchase decision
+- **AI tools** = Synthesis and direct response
 
 AI-driven analytics allow you to map exactly where your audience searches and what type of content they need on each channel. It's not about being everywhere—it's about **dominating the right platforms first**.
 

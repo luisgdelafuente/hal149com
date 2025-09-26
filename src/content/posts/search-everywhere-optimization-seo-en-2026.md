@@ -30,13 +30,13 @@ Tus clientes buscan en TikTok, investigan en YouTube, preguntan en Reddit, compa
 
 Cada plataforma representa una intención diferente:
 
-**TikTok** = Descubrimiento por entretenimiento  
-**YouTube** = Investigación profunda 
-**LinkedIn** = Validación profesional
-**Instagram** = Inspiración visual 
-**Reddit** = Opiniones sin filtro  
-**Amazon** = Decisión de compra  
-**IA tools** = Síntesis y respuesta directa
+- **TikTok** = Descubrimiento por entretenimiento
+- **YouTube** = Investigación profunda
+- **LinkedIn** = Validación profesional
+- **Instagram** = Inspiración visual
+- **Reddit** = Opiniones sin filtro
+- **Amazon** = Decisión de compra
+- **IA tools** = Síntesis y respuesta directa 
 
 
 La analítica impulsada por IA te permite mapear exactamente dónde busca tu audiencia y qué tipo de contenido necesita en cada canal. No se trata de estar en todas partes—se trata de **dominar las plataformas correctas primero**.
