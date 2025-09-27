@@ -404,4 +404,47 @@ const lang = getLangFromUrl(Astro.url);
   article .post-content > *:last-child {
     margin-bottom: 0 !important;
   }
+
+  /* Mobile responsive typography */
+  @media (max-width: 768px) {
+    article .post-content {
+      font-size: 1rem !important;
+    }
+    
+    article .post-content h1 {
+      font-size: 1.75rem !important;
+      margin: 2rem 0 1rem 0 !important;
+    }
+    
+    article .post-content h2 {
+      font-size: 1.5rem !important;
+      margin: 2rem 0 1rem 0 !important;
+    }
+    
+    article .post-content h3 {
+      font-size: 1.25rem !important;
+      margin: 1.5rem 0 0.75rem 0 !important;
+    }
+    
+    article .post-content h4 {
+      font-size: 1.125rem !important;
+      margin: 1.25rem 0 0.5rem 0 !important;
+    }
+    
+    article .post-content h5,
+    article .post-content h6 {
+      font-size: 1rem !important;
+      margin: 1rem 0 0.5rem 0 !important;
+    }
+    
+    article .post-content p {
+      margin-bottom: 1.25rem !important;
+    }
+    
+    article .post-content blockquote {
+      font-size: 1rem !important;
+      padding: 1rem 1.25rem !important;
+      margin: 1.5rem 0 !important;
+    }
+  }
 </style>
