@@ -17,7 +17,7 @@ La industria de la educación va a experimentar su transformación más dramáti
 
 Aquí está la verdad incómoda: cuando alguien puede preguntarle a ChatGPT, Claude o Gemini que le enseñe cualquier cosa y obtener una experiencia de aprendizaje personalizada e interactiva en segundos, tu curso pregrabado de 40 horas se vuelve difícil de vender.
 
-El mercado ha hablado. <a href="https://www.gs.statcounter.com/search-engine-market-share" target="_blank" rel="nofollow">Más del 25% de los usuarios estadounidenses</a> ahora preguntan primero a asistentes de IA—no a Google, no a plataformas de cursos. ¿Tu hermoso contenido del curso? Se está usando para entrenar modelos que competirán contigo.
+El mercado ha hablado. <a href="https://www.gs.statcounter.com/search-engine-market-share" target="_blank" rel="nofollow">Más del 25% de los usuarios estadounidenses</a> ahora preguntan primero a asistentes de IA—no a Google, no a plataformas de cursos. ¿Y el contenido de ese curso que te costó tanto elaborar? Se va a usar para entrenar modelos que competirán contigo.
 
 Pero aquí es donde se pone interesante: **esto no es el fin de los negocios de educación. Es el comienzo de algo mucho más valioso.**
 
@@ -25,7 +25,7 @@ Pero aquí es donde se pone interesante: **esto no es el fin de los negocios de 
 
 Durante demasiado tiempo, la educación ha operado con un modelo "por si acaso"—consume 40 horas de contenido porque podrías necesitar el 2% algún día. Este enfoque está muriendo, y menos mal.
 
-El futuro es el **aprendizaje Justo a Tiempo (JIT)**: obtener exactamente la ayuda que necesitas, precisamente cuando la necesitas, mientras realmente haces el trabajo.
+El futuro es el **aprendizaje Justo a Tiempo (JIT)** o **aprendizaje en tiempo real**: obtener la ayuda que necesitas cuando la necesitas, mientras realmente haces el trabajo.
 
 > "Justo a Tiempo significa aprender algo solo cuando/porque realmente necesitas usarlo. Pero Por Si Acaso es el modelo predominante para la mayoría de formas de educación (y la mayoría de manuales de usuario). El conocimiento Por Si Acaso es más fácil de presentar, pero más difícil de aprender, entender y recordar. Mucho más difícil." - *Kathy Sierra, Badass: Making Users Awesome*
 
@@ -48,7 +48,7 @@ En lugar de crear un curso masivo "Domina Microsoft Office", divídelo:
 - "Genera presentaciones de PowerPoint desde prompts" (7 minutos)  
 - "Formato de documentos en Word con IA" (4 minutos)
 
-Cada workflow resuelve un problema. Cada uno entrega valor inmediato. Sin burnout. Sin cursos incompletos.
+Cada workflow resuelve un problema. Cada uno entrega valor inmediato. Sin abandonos o 'burnout'. Sin cursos incompletos.
 
 ## Aprendizaje Agéntico: La IA como Profesor Activo
 
@@ -62,7 +62,7 @@ Herramientas como <a href="https://claude.ai" target="_blank" rel="nofollow">el 
 
 ### Ejemplo Real
 
-Un tutor de IA nota que estás luchando con derivadas de cálculo. En lugar de reproducir el mismo video, ella:
+Un tutor de IA nota que estás aprendiendo derivadas en cálculo. En lugar de reproducir el mismo video, ella:
 1. Simplifica el concepto con analogías visuales
 2. Crea problemas de práctica a tu nivel
 3. Identifica la laguna específica en tu comprensión
@@ -70,7 +70,7 @@ Un tutor de IA nota que estás luchando con derivadas de cálculo. En lugar de r
 
 Esto no es ciencia ficción. Está sucediendo ahora.
 
-## IA para Pensar, No Solo Resumir
+## IA para Pensar, no Solo Resumir
 
 La mayoría de la gente usa IA para **compresión de contenido**—resumir, condensar, simplificar. Pero el verdadero poder reside en la **expansión de contenido**: usar IA para profundizar el pensamiento y promover el compromiso crítico.
 
@@ -82,7 +82,7 @@ En lugar de pedirle a la IA que resuma un libro de negocios, úsala para:
 
 Esto cambia la IA de ser un atajo a ser una **herramienta de mejora cognitiva**.
 
-## Los Nuevos Modelos de Negocio Que Realmente Funcionan
+## Los Nuevos Modelos de Negocio que Realmente Funcionan
 
 Si los cursos tradicionales están muriendo, ¿qué los reemplaza? Tres modelos están emergiendo como ganadores claros:
 
@@ -117,16 +117,16 @@ Esto funciona especialmente bien para:
 - Servicios profesionales (legal, contabilidad, consultoría)
 - Software B2B (onboarding, adopción de características, mejores prácticas)
 
-## La Ciencia del Aprendizaje Efectivo (Porque la IA lo Hace Posible)
+## La Ciencia del Aprendizaje Efectivo (que la IA hace Posible)
 
 Aquí hay algo crucial: no todos los métodos de aprendizaje funcionan igual de bien. La ciencia ha probado que ciertas técnicas son mucho más efectivas—y la IA ahora las hace escalables.
 
-### Lo Que No Funciona (Pero Todo el Mundo Hace)
+### Lo que no Funciona (Pero Todo el Mundo Hace)
 - Relectura pasiva
 - Subrayar sin pensar
 - Copiar notas palabra por palabra
 
-### Lo Que Realmente Funciona
+### Lo que Realmente Funciona
 1. **Práctica de Recuperación**: Recordar activamente información fortalece la memoria
 2. **Elaboración**: Explicar conceptos en voz alta y hacer preguntas
 3. **Entrelazamiento**: Mezclar diferentes temas/habilidades durante la práctica
@@ -162,11 +162,11 @@ Quizás la aplicación más poderosa: IA que analiza tu comportamiento real y cr
 4. Proporciona check-ins semanales y desafíos basados en escenarios
 5. Se ajusta según tu progreso y necesidades cambiantes
 
-Herramientas como Claude, ChatGPT y especialmente <a href="https://gemini.google.com/" target="_blank" rel="nofollow">Google Gemini</a> (con su capacidad de acceder a Google Workspace) hacen esto posible hoy.
+Herramientas como Claude, ChatGPT y especialmente Google Gemini (con su capacidad de acceder a Google Workspace) hacen esto posible.
 
 ## Modelos de Membresía Basados en Aplicación
 
-Los negocios de educación más exitosos se están moviendo hacia **comunidades selectivas y curadas** en lugar de inscripción abierta:
+Los negocios de educación más exitosos se están moviendo hacia **comunidades selectivas y supervisadas** en lugar de inscripción abierta:
 
 - Requiere revisión de aplicación
 - Precios más altos (200-500€/mes)
@@ -184,7 +184,7 @@ Necesitan a alguien que haga la IA menos intimidante. Valoran la experiencia sob
 
 El aprendizaje JIT, coaches de IA personalizados y workflows prácticos resuenan poderosamente con profesionales de 45+ que quieren resultados, no entretenimiento.
 
-## Lo Que Esto Significa Para Tu Negocio
+## Lo que esto Significa para Tu Negocio
 
 La transformación es clara:
 1. **El contenido por sí mismo deja de tener valor** - La IA puede replicarlo
@@ -196,7 +196,7 @@ La transformación es clara:
 ## Mi Recomendación: Tres Acciones Inmediatas
 
 ### 1. Audita tus Ofertas Actuales
-Si estás vendiendo cursos tradicionales, pregúntate: *¿Puede la IA entregar este mismo valor gratis?* Si es sí, mejor reaccionar ahora.
+Si estás vendiendo o realizando cursos tradicionales, pregúntate: *¿Puede la IA entregar este mismo valor gratis?* Si es sí, mejor reaccionar ahora.
 
 ### 2. Construye tu Infraestructura JIT
 Comienza a crear workflows de micro-aprendizaje y tutoriales asistidos por IA. Enfócate en **ayudar a la gente mientras trabaja**, no antes.
