@@ -10,7 +10,7 @@
 }
 
 .bs-h3 {
-  @apply font-display font-medium text-balance text-lg md:text-2xl;
+  @apply font-display font-medium text-balance text-xl md:text-2xl;
 }
 
 .bs-body-text {
