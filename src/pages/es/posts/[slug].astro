@@ -407,6 +407,11 @@ const lang = getLangFromUrl(Astro.url);
 
   /* Mobile responsive typography */
   @media (max-width: 768px) {
+    /* Hide last breadcrumb item (title) on mobile */
+    nav[aria-label="Breadcrumb"] ol li:last-child {
+      display: none !important;
+    }
+    
     /* Main blog title override */
     .bs-h1 {
       font-size: 1.75rem !important;
