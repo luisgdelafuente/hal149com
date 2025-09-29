@@ -35,3 +35,39 @@
     active:before:opacity-0
     ;
 }
+
+/* Mobile-specific button styles */
+.bs-btn-mobile {
+  @apply
+    active:translate-y-[1px]
+    active:bg-bs-surface-2
+    bg-bs-surface-3
+    duration-200
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-white/75
+    font-semibold
+    px-3
+    py-2
+    rounded-md
+    text-bs-foreground-light
+    text-center
+    transition-all
+    relative
+    overflow-clip
+    before:flex
+    before:inset-0
+    before:bg-white
+    before:rounded-sm
+    before:absolute
+    before:opacity-0
+    before:-translate-x-full
+    before:transition-all
+    before:duration-300
+    before:ease-out
+    hover:before:translate-x-0
+    hover:before:opacity-10
+    active:before:opacity-0
+    text-sm
+    ;
+}
