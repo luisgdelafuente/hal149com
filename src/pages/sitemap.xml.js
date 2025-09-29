@@ -68,6 +68,7 @@ export async function GET({ request }) {
     const enSlug = isSpanish ? post.data.enSlug : slug;
     const esSlug = isSpanish ? slug : post.data.esSlug;
     
+    // Add English post entry
     if (!isSpanish && enSlug) {
       blogPages.push({
         url: `/posts/${enSlug}`,
@@ -79,6 +80,22 @@ export async function GET({ request }) {
           { lang: 'es', url: `/es/posts/${esSlug}`, hreflang: 'es' }
         ] : [
           { lang: 'en', url: `/posts/${enSlug}`, hreflang: 'en' }
+        ]
+      });
+    }
+    
+    // Add Spanish post entry
+    if (isSpanish && esSlug) {
+      blogPages.push({
+        url: `/es/posts/${esSlug}`,
+        lastmod: post.data.date ? new Date(post.data.date).toISOString() : new Date().toISOString(),
+        changefreq: 'monthly',
+        priority: 0.7,
+        hreflang: enSlug ? [
+          { lang: 'en', url: `/posts/${enSlug}`, hreflang: 'en' },
+          { lang: 'es', url: `/es/posts/${esSlug}`, hreflang: 'es' }
+        ] : [
+          { lang: 'es', url: `/es/posts/${esSlug}`, hreflang: 'es' }
         ]
       });
     }
