@@ -55,8 +55,8 @@ if (post && post.data) {
     hreflangEn = Astro.url.origin + `/posts/${currentSlug}/`;
     hreflangEs = Astro.url.origin + `/es/posts/${post.data.esSlug}/`;
   } else if (currentLang === 'es' && post.data.enSlug) {
-    // Spanish post - canonical to English version, hreflang to both
-    canonicalUrl = Astro.url.origin + `/posts/${post.data.enSlug}/`;
+    // Spanish post - canonical to Spanish version, hreflang to both
+    canonicalUrl = Astro.url.origin + `/es/posts/${currentSlug}/`;
     hreflangEn = Astro.url.origin + `/posts/${post.data.enSlug}/`;
     hreflangEs = Astro.url.origin + `/es/posts/${currentSlug}/`;
   }
