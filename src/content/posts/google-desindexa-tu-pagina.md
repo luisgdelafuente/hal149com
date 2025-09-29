@@ -6,7 +6,7 @@ author: "Luis García de la Fuente"
 image: "/blog-images/the-big-google-deindexing.webp"
 featured: true
 lang: "es"
-esSlug: "google-deindexing-your-webpage"
+enSlug: "google-deindexing-your-webpage"
 ---
 # ¿Está Google desindexando tu página web (y, en cambio, impulsando TikTok, Reddit y YouTube)?
 
