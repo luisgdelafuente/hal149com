@@ -31,7 +31,7 @@ Además, plataformas como Instagram y YouTube han experimentado picos histórico
 
 ## ¿Qué tipo de páginas está desindexando Google?
 
-En muchos casos, Google está eliminando páginas consideradas de "bajo valor": contenido delgado, duplicado, poco actualizado o fuera de contexto respecto al tema central del sitio. También influye la pérdida de <a href="https://moz.com/blog/topical-authority" target="_blank" rel="nofollow">autoridad temática</a>, un factor cada vez más relevante en los algoritmos de búsqueda.
+En muchos casos, Google está eliminando páginas consideradas de "bajo valor": contenido delgado, duplicado, poco actualizado o fuera de contexto respecto al tema central del sitio. También influye la pérdida de autoridad temática, un factor cada vez más relevante en los algoritmos de búsqueda.
 
 Sin embargo, incluso sitios con contenido de buena calidad han reportado pérdidas en el índice. Esto sugiere que **Google está haciendo espacio para nuevo contenido más dinámico**: publicaciones sociales, vídeos cortos, y apps con datos únicos generados por IA o usuarios.
 
