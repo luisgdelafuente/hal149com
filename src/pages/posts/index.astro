@@ -58,6 +58,7 @@ const lang = getLangFromUrl(Astro.url);
     }))
   })} />
   <div class="bs-container py-16">
+    <!-- Prefetch moved to <head> via slot below -->
     <!-- Header -->
     <div class="text-center mb-16">
       <h1 class="bs-h1 mb-6">Blog Posts</h1>
@@ -67,10 +68,10 @@ const lang = getLangFromUrl(Astro.url);
     </div>
 
     <!-- Search Component -->
-    <BlogSearch posts={posts} lang="en" />
+    <BlogSearch lang="en" />
 
     <!-- Posts Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16" data-posts-grid>
       {currentPosts.map(post => (
         <article class="@container group" data-post-id={post.slug}>
           <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
@@ -116,7 +117,7 @@ const lang = getLangFromUrl(Astro.url);
 
     <!-- Pagination -->
     {totalPages > 1 && (
-      <div class="flex justify-center items-center gap-2">
+      <div class="flex justify-center items-center gap-2" data-pagination>
         {totalPages > 1 && (
           <>
             <a 
@@ -162,4 +163,10 @@ const lang = getLangFromUrl(Astro.url);
     overflow: hidden;
   }
 </style>
+
+
+<!-- Head slot: prefetch search index without affecting layout flow -->
+<Fragment slot="head">
+  <link rel="prefetch" href="/posts/index.json" as="fetch" type="application/json" crossorigin="anonymous" />
+</Fragment>
 

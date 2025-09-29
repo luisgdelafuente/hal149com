@@ -1,10 +1,9 @@
 ---
 interface Props {
-  posts: any[];
   lang: 'en' | 'es';
 }
 
-const { posts, lang } = Astro.props;
+const { lang } = Astro.props;
 
 const searchContent = {
   en: {
@@ -51,22 +50,42 @@ const currentContent = searchContent[lang];
   </div>
 </div>
 
-<script define:vars={{ posts, lang }}>
+<script define:vars={{ lang }}>
   class BlogSearch {
     constructor() {
       this.searchInput = document.getElementById('search-input');
       this.resultsCount = document.getElementById('results-count');
       this.resultsNumber = document.getElementById('results-number');
       this.noResults = document.getElementById('no-results');
-      this.posts = posts;
+      this.posts = [];
       this.debounceTimer = null;
       this.searchDelay = 300;
+      this.resultsContainer = null;
+      this.gridContainer = null;
+      this.paginationContainer = null;
+      this.lang = lang;
 
       this.init();
     }
 
     init() {
       if (!this.searchInput) return;
+
+      this.gridContainer = document.querySelector('[data-posts-grid]');
+      this.paginationContainer = document.querySelector('[data-pagination]');
+      this.resultsContainer = document.createElement('div');
+      this.resultsContainer.id = 'search-results';
+      this.resultsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16 hidden';
+      if (this.gridContainer && this.gridContainer.parentElement) {
+        this.gridContainer.after(this.resultsContainer);
+      }
+
+      const fetchIndex = () => this.loadIndex();
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(fetchIndex, { timeout: 2000 });
+      } else {
+        setTimeout(fetchIndex, 500);
+      }
 
       this.searchInput.addEventListener('input', () => {
         clearTimeout(this.debounceTimer);
@@ -83,96 +102,100 @@ const currentContent = searchContent[lang];
       });
     }
 
-    performSearch() {
+    async performSearch() {
       const query = this.searchInput.value.toLowerCase().trim();
       
       if (!query) {
-        this.showAllPosts();
+        this.clearResults();
         return;
+      }
+
+      if (this.posts.length === 0) {
+        await this.loadIndex();
       }
 
       const results = this.posts.filter(post => {
         const searchableText = [
-          post.data.title,
-          post.data.description,
-          post.data.author,
-          ...(post.data.tags || [])
+          post.title,
+          post.description,
+          post.author,
+          ...(post.tags || [])
         ].join(' ').toLowerCase();
 
         return searchableText.includes(query);
       });
 
-      this.updateResults(results, query);
+      this.renderResults(results, query);
     }
 
-    updateResults(results, query) {
-      const postElements = document.querySelectorAll('[data-post-id]');
-      
-      postElements.forEach(element => {
-        const postId = element.getAttribute('data-post-id');
-        const post = this.posts.find(p => p.slug === postId);
-        
-        if (post) {
-          const isMatch = this.isPostMatch(post, query);
-          element.style.display = isMatch ? 'block' : 'none';
-          
-          if (isMatch) {
-            this.highlightText(element, query);
-          }
-        }
+    renderResults(results, query) {
+      if (!this.resultsContainer) return;
+      // Hide grid and pagination while searching
+      if (this.gridContainer) this.gridContainer.classList.add('hidden');
+      if (this.paginationContainer) this.paginationContainer.classList.add('hidden');
+
+      this.resultsContainer.innerHTML = '';
+      this.resultsContainer.classList.remove('hidden');
+
+      const fragment = document.createDocumentFragment();
+      results.forEach(post => {
+        const article = document.createElement('article');
+        article.className = '@container group';
+        article.innerHTML = `
+          <div class="relative isolate flex h-full w-full flex-col overflow-hidden rounded-xl bg-bs-surface-0/90 hover:bg-bs-surface-2/70 transition-colors duration-300">
+            ${post.image ? `
+            <div class="aspect-16-9 overflow-hidden">
+              <a href="${this.lang === 'es' ? '/es/posts/' : '/posts/'}${post.slug}/" class="block w-full h-full">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+            </div>` : ''}
+            <div class="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4 h-full">
+              <h2 class="bs-h3 line-clamp-2 flex-grow-0">
+                <a href="${this.lang === 'es' ? '/es/posts/' : '/posts/'}${post.slug}/" class="hover:text-bs-foreground-light transition-colors">${this.highlightMatches(post.title, query)}</a>
+              </h2>
+              <p class="bs-body-text text-bs-foreground-dark line-clamp-3 flex-grow">${this.highlightMatches(post.description || '', query)}</p>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-bs-foreground-dark mt-auto gap-1 sm:gap-0">
+                <span>${post.author || ''}</span>
+                <time datetime="${post.date}">${new Date(post.date).toLocaleDateString(this.lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              </div>
+            </div>
+          </div>`;
+        fragment.appendChild(article);
       });
+      this.resultsContainer.appendChild(fragment);
 
       this.updateUI(results.length);
     }
 
-    isPostMatch(post, query) {
-      const searchableText = [
-        post.data.title,
-        post.data.description,
-        post.data.author,
-        ...(post.data.tags || [])
-      ].join(' ').toLowerCase();
-
-      return searchableText.includes(query);
-    }
-
-    highlightText(element, query) {
-      const titleElement = element.querySelector('h2 a');
-      const descriptionElement = element.querySelector('p');
-      
-      if (titleElement) {
-        titleElement.innerHTML = this.highlightMatches(titleElement.textContent, query);
-      }
-      
-      if (descriptionElement) {
-        descriptionElement.innerHTML = this.highlightMatches(descriptionElement.textContent, query);
-      }
-    }
-
     highlightMatches(text, query) {
       if (!text || !query) return text;
-      
-      const regex = new RegExp(`(${query})`, 'gi');
+      const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
       return text.replace(regex, '<mark class="bg-yellow-200 text-black px-1 rounded">$1</mark>');
     }
 
-    showAllPosts() {
-      const postElements = document.querySelectorAll('[data-post-id]');
-      postElements.forEach(element => {
-        element.style.display = 'block';
-        // Remove highlighting
-        const titleElement = element.querySelector('h2 a');
-        const descriptionElement = element.querySelector('p');
-        
-        if (titleElement) {
-          titleElement.innerHTML = titleElement.textContent;
-        }
-        if (descriptionElement) {
-          descriptionElement.innerHTML = descriptionElement.textContent;
-        }
-      });
+    clearResults() {
+      if (this.resultsContainer) {
+        this.resultsContainer.innerHTML = '';
+        this.resultsContainer.classList.add('hidden');
+      }
+      if (this.gridContainer) this.gridContainer.classList.remove('hidden');
+      if (this.paginationContainer) this.paginationContainer.classList.remove('hidden');
+      // Hide UI bits when not searching
+      if (this.resultsCount) this.resultsCount.classList.add('hidden');
+      if (this.noResults) this.noResults.classList.add('hidden');
+    }
 
-      this.updateUI(this.posts.length);
+    async loadIndex() {
+      if (this.posts.length > 0) return;
+      const url = this.lang === 'es' ? '/es/posts/index.json' : '/posts/index.json';
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) return;
+        const data = await res.json();
+        this.posts = Array.isArray(data) ? data : data.posts || [];
+      } catch (e) {
+        // swallow
+      }
     }
 
     updateUI(resultsCount) {
