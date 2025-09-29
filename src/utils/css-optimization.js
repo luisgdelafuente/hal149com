@@ -23,6 +23,7 @@ export function getCriticalCSSClasses() {
     
     // Buttons
     'bs-btn',
+    'bs-btn-mobile',
     
     // Essential Tailwind utilities
     'bg-bs-surface-1',
