@@ -1,5 +1,5 @@
 ---
-title: "SEO Decoupling: Why Your Traffic Is Disappearing (And What To Do)"
+title: "SEO Decoupling: Why your Traffic is Disappearing (And what to do)"
 description: "Google's AI Overviews are radically changing search. Organic traffic is evaporating because the search engine no longer needs your click."
 date: 2025-06-22
 author: "Luis García de la Fuente"
@@ -61,5 +61,5 @@ Yes, SEO is changing. But that’s not a crisis—it’s an opportunity. While o
 
 “The great decoupling” isn’t the end of digital marketing. It’s the end of one way of doing digital marketing. Those who adapt now will dominate the next decade.
 
-Want us to audit your current strategy and help you navigate this shift? <a href="#">Let’s talk</a>.
+Want us to audit your current strategy and help you navigate this shift? <a href="#" onclick="demo.showModal(); return false;">Let’s talk</a>.
 

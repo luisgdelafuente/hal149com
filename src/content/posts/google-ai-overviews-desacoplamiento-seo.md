@@ -1,5 +1,5 @@
 ---
-title: "Desacoplamiento SEO: Por Qué Tu Tráfico Desaparece (Y Qué Hacer Al Respecto)"
+title: "Desacoplamiento SEO: Por qué tu Tráfico Desaparece (Y qué hacer al respecto)"
 description: "Algo está cambiando radicalmente debido a los AI Overviews de Google. El tráfico orgánico se está evaporando, porque el buscador ya no necesita que hagas clic."
 date: 2025-06-22
 author: "Luis García de la Fuente"
@@ -45,7 +45,7 @@ Mientras todos siguen peleando por el keyword perfecto, deberías estar creando 
 
 Video, podcasts, newsletters, comunidades. Construye canales propios donde tengas control total sobre la relación con tu audiencia. Porque el verdadero activo no es el tráfico que llega "por si acaso", sino la audiencia que construyes con propósito.
 
-## Lo que hacemos HAL149
+## Lo que hacemos en HAL149
 
 En HAL149 no apostamos al tráfico que depende del humor de Google. Nuestro enfoque combina tres frentes:
 
@@ -61,5 +61,5 @@ Sí, el SEO está cambiando. Pero eso no es una crisis, es una oportunidad. Porq
 
 El "gran desacoplamiento" no es el fin del marketing digital. Es el fin de una forma de hacer marketing digital. Y los que se adapten ahora van a dominar la próxima década.
 
-¿Quieres que auditemos tu estrategia actual y te ayudemos a navegar este cambio? [Escríbeme](#) y hablamos sin compromiso.
+¿Quieres que auditemos tu estrategia actual y te ayudemos a navegar este cambio? Escríbeme y <a href="#" onclick="demo.showModal(); return false;">Hablemos</a>.
 
