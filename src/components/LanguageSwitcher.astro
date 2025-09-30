@@ -12,11 +12,11 @@ const { enUrl, esUrl } = languageUrls;
 
 <div class="language-switcher">
   <button
-    class="language-toggle bs-btn-mobile md:bs-btn !px-4 flex items-center justify-center"
+    class="language-toggle bs-btn-mobile md:bs-btn md:min-w-32 flex items-center justify-center"
     aria-label="Toggle language"
     aria-expanded="false"
   >
-    <span class="text-sm font-semibold">{lang.toUpperCase()}</span>
+    <span class="font-semibold text-sm md:text-base">{lang.toUpperCase()}</span>
   </button>
   
   <div
