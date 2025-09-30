@@ -405,6 +405,36 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: Fixed navigation order in both `src/i18n/content/en.json` and `src/i18n/content/es.json` to match the correct order from the fallback file.
 **Status**: ✅ **RESOLVED** - Navigation menu now displays in correct order across all languages
 
+### Desktop Header Button Height Inconsistency ❌ **NOT SOLVED**
+**Problem**: Language button (EN/ES) and Contact button (Contact/Contacto) display different heights on desktop viewport, creating visual inconsistency in the header.
+
+**Actions Taken**:
+1. **Removed fixed min-width constraints** - Eliminated `min-w-32` from both buttons to allow content-adaptive widths
+2. **Unified button classes** - Attempted to standardize both buttons using `bs-btn` class on desktop
+3. **Added explicit text-base to bs-btn** - Added `text-base` to `.bs-btn` CSS definition to override `text-sm` from mobile
+4. **Responsive class switching** - Used `bs-btn-mobile md:bs-btn` pattern for language button to match contact button behavior
+5. **Removed span wrapper** - Eliminated nested `<span>` element that was interfering with flex alignment
+6. **Multiple text sizing attempts** - Tried various combinations of `text-sm`, `md:text-base`, and explicit font size overrides
+
+**Root Cause Hypothesis**: 
+- CSS specificity conflict when using `bs-btn-mobile md:bs-btn` pattern
+- The `text-sm` from `bs-btn-mobile` (@apply at line 71 in buttons.css) persists even when `md:bs-btn` is applied
+- Tailwind's @apply directive processes classes at build time, and the responsive override pattern doesn't fully replace all mobile properties
+- Adding `text-base` to `.bs-btn` class didn't resolve the height mismatch
+
+**Current State**:
+- Language button uses: `class="language-toggle bs-btn-mobile md:bs-btn flex items-center justify-center"`
+- Contact button uses: `class="bs-btn"`
+- `.bs-btn` CSS includes: `px-5 py-4 text-base` (line 15-16, 20 in buttons.css)
+- `.bs-btn-mobile` CSS includes: `px-3 py-2 text-sm` (line 50-51, 71 in buttons.css)
+
+**Files Modified**:
+- `src/components/LanguageSwitcher.astro` - Multiple attempts to fix button classes
+- `src/components/HeaderMain.astro` - Removed min-width constraints
+- `src/assets/css/buttons.css` - Added explicit `text-base` to `.bs-btn` class
+
+**Status**: ❌ **NOT SOLVED** - Desktop buttons continue to show different heights despite multiple fix attempts. Mobile buttons remain correctly sized and unchanged.
+
 # Deployment Instructions
 
 ### Prerequisites
