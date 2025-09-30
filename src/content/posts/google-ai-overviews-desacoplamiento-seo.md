@@ -1,11 +1,12 @@
 ---
 title: "Desacoplamiento SEO: Por Qué Tu Tráfico Desaparece (Y Qué Hacer Al Respecto)"
 description: "Algo está cambiando radicalmente debido a los AI Overviews de Google. El tráfico orgánico se está evaporando, porque el buscador ya no necesita que hagas clic."
-date: 2025-09-30
+date: 2025-06-22
 author: "Luis García de la Fuente"
 image: "/blog-images/seo-decoupling.webp"
 featured: true
 lang: "es"
+enSlug: "google-ai-overviews-seo-decoupling"
 ---
 
 # El Gran Desacoplamiento del SEO: Por Qué Tu Tráfico Desaparece (Y qué hacer al respecto)
