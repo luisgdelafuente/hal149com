@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   adapter: netlify(),
   site: 'https://hal149.com', // HAL149 domain
   build: {

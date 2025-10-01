@@ -482,9 +482,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - Netlify serves static HTML files directly, bypassing middleware completely
 
 **Solution**:
-- **Switched to Hybrid mode** with Netlify adapter
-- Changed `output: 'static'` → `output: 'hybrid'` in `astro.config.mjs`
+- **Switched to Server mode** with Netlify adapter
+- Changed `output: 'static'` → `output: 'server'` in `astro.config.mjs`
 - Added `@astrojs/netlify` adapter to enable server-side rendering for middleware
+- Upgraded Node version from 18 to 20 (required by Vite and Netlify plugin)
 - Removed SPA fallback redirect from `netlify.toml` (no longer needed)
 - Middleware now runs on Netlify Edge Functions for every request
 
@@ -494,29 +495,29 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   adapter: netlify(),
   // ...
 })
 ```
 
-**How Hybrid Mode Works**:
-- All pages are pre-rendered by default (static)
-- Middleware runs server-side on Netlify Edge
-- Can selectively use SSR for specific pages if needed
-- Best of both worlds: static speed + dynamic middleware
+**How Server Mode Works**:
+- Pages are rendered on-demand (server-side)
+- Middleware runs server-side on Netlify Edge for every request
+- Language detection works in production
+- Slightly slower than static but enables dynamic middleware
 
 **Files Modified**:
 - `package.json` - Added `@astrojs/netlify` dependency
-- `astro.config.mjs` - Changed to hybrid output with netlify adapter
-- `netlify.toml` - Removed SPA fallback redirect
+- `astro.config.mjs` - Changed to server output with netlify adapter
+- `netlify.toml` - Removed SPA fallback redirect, upgraded Node to v20
 
 **Status**: ✅ **RESOLVED** - Middleware now works in production. Language detection runs server-side on every request.
 
 # Deployment Instructions
 
 ### Prerequisites
-- Node.js 18+ installed
+- Node.js 20+ installed (required for Vite and Netlify adapter)
 - Git repository connected to GitHub
 - Netlify account
 
