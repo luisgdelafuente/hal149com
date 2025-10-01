@@ -472,6 +472,47 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 **Status**: ✅ **RESOLVED** - Spanish browsers now see Spanish content on ALL pages. User language preference via manual switching is always preserved and takes priority over browser language.
 
+### Middleware Not Working in Production (Static Build) ✅ **RESOLVED**
+**Problem**: Automatic language detection middleware worked in development but not in production. Spanish browsers were not being redirected to Spanish pages.
+
+**Root Cause**:
+- Astro config was set to `output: 'static'`
+- Astro middleware does NOT run in production with static builds
+- Static builds pre-render all pages at build time; middleware only runs during build, not at request time
+- Netlify serves static HTML files directly, bypassing middleware completely
+
+**Solution**:
+- **Switched to Hybrid mode** with Netlify adapter
+- Changed `output: 'static'` → `output: 'hybrid'` in `astro.config.mjs`
+- Added `@astrojs/netlify` adapter to enable server-side rendering for middleware
+- Removed SPA fallback redirect from `netlify.toml` (no longer needed)
+- Middleware now runs on Netlify Edge Functions for every request
+
+**Technical Implementation**:
+```js
+// astro.config.mjs
+import netlify from '@astrojs/netlify'
+
+export default defineConfig({
+  output: 'hybrid',
+  adapter: netlify(),
+  // ...
+})
+```
+
+**How Hybrid Mode Works**:
+- All pages are pre-rendered by default (static)
+- Middleware runs server-side on Netlify Edge
+- Can selectively use SSR for specific pages if needed
+- Best of both worlds: static speed + dynamic middleware
+
+**Files Modified**:
+- `package.json` - Added `@astrojs/netlify` dependency
+- `astro.config.mjs` - Changed to hybrid output with netlify adapter
+- `netlify.toml` - Removed SPA fallback redirect
+
+**Status**: ✅ **RESOLVED** - Middleware now works in production. Language detection runs server-side on every request.
+
 # Deployment Instructions
 
 ### Prerequisites
