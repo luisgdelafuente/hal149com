@@ -12,6 +12,20 @@ const IGNORED_PREFIXES = [
   '/sitemap.xml',
 ];
 
+// Map English paths to Spanish paths
+const PATH_TRANSLATIONS: Record<string, string> = {
+  '/about/': '/es/nosotros/',
+  '/about': '/es/nosotros/',
+  '/credits/': '/es/creditos/',
+  '/credits': '/es/creditos/',
+  '/legal/': '/es/legal/',
+  '/legal': '/es/legal/',
+  '/thank-you/': '/es/thank-you/',
+  '/thank-you': '/es/thank-you/',
+  '/posts/': '/es/posts/',
+  '/posts': '/es/posts/',
+};
+
 function isBot(userAgent: string | null): boolean {
   if (!userAgent) return false;
   const ua = userAgent.toLowerCase();
@@ -38,6 +52,27 @@ function parseAcceptLanguage(header: string | null): 'en' | 'es' | null {
   // Check for English
   for (const { language } of languages) {
     if (language.startsWith('en')) return 'en';
+  }
+  
+  return null;
+}
+
+function translatePathToSpanish(pathname: string): string | null {
+  // Exact match in translation table
+  if (PATH_TRANSLATIONS[pathname]) {
+    return PATH_TRANSLATIONS[pathname];
+  }
+  
+  // Handle blog post URLs: /posts/slug/ → /es/posts/
+  if (pathname.startsWith('/posts/') && pathname !== '/posts/' && pathname !== '/posts') {
+    // For individual posts, redirect to Spanish blog archive
+    // (since post slugs may differ between languages)
+    return '/es/posts/';
+  }
+  
+  // Handle pagination: /posts/page/2/ → /es/posts/
+  if (pathname.match(/^\/posts\/page\/\d+\/?$/)) {
+    return '/es/posts/';
   }
   
   return null;
@@ -72,31 +107,37 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     return next();
   }
 
-  // Only consider redirecting from the root path '/'
-  if (pathname === '/') {
-    const preferred = cookieLang || parseAcceptLanguage(acceptLanguage) || 'en';
+  // For English pages, check if we should redirect to Spanish
+  const preferred = cookieLang || parseAcceptLanguage(acceptLanguage) || 'en';
 
-    if (preferred === 'es') {
-      // Set cookie and redirect to Spanish home
-      const location = '/es/';
+  if (preferred === 'es') {
+    // User prefers Spanish - redirect to Spanish version
+    let spanishPath: string | null = null;
+
+    if (pathname === '/') {
+      spanishPath = '/es/';
+    } else {
+      spanishPath = translatePathToSpanish(pathname);
+    }
+
+    if (spanishPath) {
       return new Response(null, {
         status: 302,
         headers: new Headers({
-          Location: location,
+          Location: spanishPath,
           'Set-Cookie': 'lang=es; Path=/; Max-Age=31536000; SameSite=Lax',
         }),
       });
-    } else {
-      // Ensure we remember English preference without redirecting (canonical '/')
-      if (cookieLang !== 'en') {
-        const res = await next();
-        res.headers.append('Set-Cookie', 'lang=en; Path=/; Max-Age=31536000; SameSite=Lax');
-        return res;
-      }
-      return next();
     }
   }
 
-  // For other non-/ paths under default locale, do nothing (keep canonical structure)
+  // User prefers English or no Spanish translation available
+  // Ensure we remember English preference
+  if (cookieLang !== 'en') {
+    const res = await next();
+    res.headers.append('Set-Cookie', 'lang=en; Path=/; Max-Age=31536000; SameSite=Lax');
+    return res;
+  }
+
   return next();
 };
