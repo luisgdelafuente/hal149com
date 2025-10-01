@@ -1,10 +1,8 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
-import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
+  output: 'static',
   site: 'https://hal149.com', // HAL149 domain
   build: {
     // Aggressive CSS bundling to eliminate render-blocking
