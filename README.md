@@ -440,84 +440,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 **Status**: ✅ **RESOLVED** - Desktop language button now matches Contact button height exactly. Mobile buttons remain unchanged. Solution uses the exact same pattern as Contact button (separate instances, no responsive class hacks).
 
-### Automatic Language Detection Limited to Homepage ✅ **RESOLVED**
-**Problem**: Automatic language detection only worked on homepage (`/`). Spanish browsers visiting other pages (e.g., `/credits/`, `/posts/`) remained in English instead of being redirected to Spanish equivalents.
-
-**Root Cause**:
-- Middleware had intentional limitation to preserve "canonical structure"
-- Language detection was wrapped in `if (pathname === '/')` condition (line 75-98)
-- All non-homepage paths were ignored (line 100-101: "do nothing (keep canonical structure)")
-
-**Solution**:
-- **Expanded middleware** to handle ALL English pages, not just homepage
-- **Created URL translation mapping** (`PATH_TRANSLATIONS`) for all static pages
-- **Added translation function** (`translatePathToSpanish()`) to map English → Spanish URLs
-- **Preserved cookie priority** - user's manual language choice always overrides browser detection
-- **Blog post handling** - redirects `/posts/article/` to `/es/posts/` (blog archive) since post slugs may differ
-
-**Implementation Details**:
-- Priority order: Cookie → Browser Language → English (fallback)
-- URL Mappings:
-  - `/about/` → `/es/nosotros/`
-  - `/credits/` → `/es/creditos/`
-  - `/legal/` → `/es/legal/`
-  - `/thank-you/` → `/es/thank-you/`
-  - `/posts/` → `/es/posts/`
-  - `/posts/any-slug/` → `/es/posts/` (archive)
-- Cookie persistence: 1 year
-- User manual switch always respected
-
-**Files Modified**:
-- `src/middleware.ts` - Added PATH_TRANSLATIONS, translatePathToSpanish(), expanded redirect logic
-
-**Status**: ✅ **RESOLVED** - Spanish browsers now see Spanish content on ALL pages. User language preference via manual switching is always preserved and takes priority over browser language.
-
-### Middleware Not Working in Production (Static Build) ✅ **RESOLVED**
-**Problem**: Automatic language detection middleware worked in development but not in production. Spanish browsers were not being redirected to Spanish pages.
-
-**Root Cause**:
-- Astro config was set to `output: 'static'`
-- Astro middleware does NOT run in production with static builds
-- Static builds pre-render all pages at build time; middleware only runs during build, not at request time
-- Netlify serves static HTML files directly, bypassing middleware completely
-
-**Solution**:
-- **Switched to Server mode** with Netlify adapter
-- Changed `output: 'static'` → `output: 'server'` in `astro.config.mjs`
-- Added `@astrojs/netlify` adapter to enable server-side rendering for middleware
-- Upgraded Node version from 18 to 20 (required by Vite and Netlify plugin)
-- Removed SPA fallback redirect from `netlify.toml` (no longer needed)
-- Middleware now runs on Netlify Edge Functions for every request
-
-**Technical Implementation**:
-```js
-// astro.config.mjs
-import netlify from '@astrojs/netlify'
-
-export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
-  // ...
-})
-```
-
-**How Server Mode Works**:
-- Pages are rendered on-demand (server-side)
-- Middleware runs server-side on Netlify Edge for every request
-- Language detection works in production
-- Slightly slower than static but enables dynamic middleware
-
-**Files Modified**:
-- `package.json` - Added `@astrojs/netlify` dependency
-- `astro.config.mjs` - Changed to server output with netlify adapter
-- `netlify.toml` - Removed SPA fallback redirect, upgraded Node to v20
-
-**Status**: ✅ **RESOLVED** - Middleware now works in production. Language detection runs server-side on every request.
-
 # Deployment Instructions
 
 ### Prerequisites
-- Node.js 20+ installed (required for Vite and Netlify adapter)
+- Node.js 18+ installed
 - Git repository connected to GitHub
 - Netlify account
 
@@ -569,37 +495,12 @@ The site now supports multiple languages with the following structure:
 
 ### Features Implemented:
 - ✅ Language detection from URL
-- ✅ Automatic browser language detection and redirection
 - ✅ Language switcher component in header
-- ✅ Cookie-based language preference (1 year persistence)
 - ✅ SEO-friendly URLs with proper hreflang tags
 - ✅ Canonical URLs pointing to English version
 - ✅ Open Graph meta tags with locale
 - ✅ Content translation system
 - ✅ Fallback to English content if translation missing
-
-### Automatic Language Detection:
-The middleware (`src/middleware.ts`) automatically redirects users to their preferred language:
-
-**Priority Order:**
-1. **Cookie preference** (if user manually switched language)
-2. **Browser `Accept-Language` header** (for first-time visitors)
-3. **English as fallback** (default)
-
-**How it Works:**
-- Spanish browser visits any page → Auto-redirected to Spanish equivalent
-- User manually switches to English → Cookie set, stays in English forever
-- User manually switches to Spanish → Cookie set, stays in Spanish forever
-- Cookie overrides browser language (user choice always wins)
-
-**URL Mappings:**
-- `/` → `/es/`
-- `/about/` → `/es/nosotros/`
-- `/credits/` → `/es/creditos/`
-- `/legal/` → `/es/legal/`
-- `/thank-you/` → `/es/thank-you/`
-- `/posts/` → `/es/posts/`
-- `/posts/any-article/` → `/es/posts/` (redirects to blog archive)
 
 ### URL Structure:
 - Homepage (English): `https://yoursite.com/`
