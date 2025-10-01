@@ -10,9 +10,49 @@ const languageUrls = await getLanguageUrls(Astro.url);
 const { enUrl, esUrl } = languageUrls;
 ---
 
-<div class="language-switcher">
+<!-- Desktop Language Switcher (hidden on mobile) -->
+<div class="language-switcher hidden md:block">
   <button
-    class="language-toggle bs-btn-mobile md:bs-btn flex items-center justify-center"
+    class="language-toggle bs-btn flex items-center justify-center"
+    aria-label="Toggle language"
+    aria-expanded="false"
+  >
+    {lang.toUpperCase()}
+  </button>
+  
+  <div
+    class="language-menu absolute top-full right-0 mt-2 bg-bs-surface-0 border border-bs-surface-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-200 z-50"
+    role="menu"
+  >
+    <a
+      href={enUrl}
+      data-lang="en"
+      class:list={[
+        'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
+        { 'bg-bs-surface-1': lang === 'en' }
+      ]}
+      role="menuitem"
+    >
+      English
+    </a>
+    <a
+      href={esUrl}
+      data-lang="es"
+      class:list={[
+        'block px-4 py-2 text-sm hover:bg-bs-surface-1 transition-colors',
+        { 'bg-bs-surface-1': lang === 'es' }
+      ]}
+      role="menuitem"
+    >
+      Español
+    </a>
+  </div>
+</div>
+
+<!-- Mobile Language Switcher (hidden on desktop) -->
+<div class="language-switcher md:hidden">
+  <button
+    class="language-toggle bs-btn-mobile flex items-center justify-center"
     aria-label="Toggle language"
     aria-expanded="false"
   >

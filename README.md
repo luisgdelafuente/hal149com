@@ -405,35 +405,40 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 **Solution**: Fixed navigation order in both `src/i18n/content/en.json` and `src/i18n/content/es.json` to match the correct order from the fallback file.
 **Status**: ✅ **RESOLVED** - Navigation menu now displays in correct order across all languages
 
-### Desktop Header Button Height Inconsistency ❌ **NOT SOLVED**
+### Desktop Header Button Height Inconsistency ✅ **RESOLVED** 
 **Problem**: Language button (EN/ES) and Contact button (Contact/Contacto) display different heights on desktop viewport, creating visual inconsistency in the header.
 
-**Actions Taken**:
-1. **Removed fixed min-width constraints** - Eliminated `min-w-32` from both buttons to allow content-adaptive widths
-2. **Unified button classes** - Attempted to standardize both buttons using `bs-btn` class on desktop
-3. **Added explicit text-base to bs-btn** - Added `text-base` to `.bs-btn` CSS definition to override `text-sm` from mobile
-4. **Responsive class switching** - Used `bs-btn-mobile md:bs-btn` pattern for language button to match contact button behavior
-5. **Removed span wrapper** - Eliminated nested `<span>` element that was interfering with flex alignment
-6. **Multiple text sizing attempts** - Tried various combinations of `text-sm`, `md:text-base`, and explicit font size overrides
+**Root Cause**: 
+- CSS specificity conflict when trying to use responsive class switching (`bs-btn-mobile md:bs-btn`)
+- Tailwind's `@apply` directive compiles classes at build time into fixed CSS rules
+- Responsive utility overrides (`md:px-5 md:py-4 md:text-base`) cannot properly override `@apply`-generated CSS due to specificity and cascade issues
+- The mobile properties (px-3 py-2 text-sm) from `bs-btn-mobile` persisted on desktop even with responsive overrides
 
-**Root Cause Hypothesis**: 
-- CSS specificity conflict when using `bs-btn-mobile md:bs-btn` pattern
-- The `text-sm` from `bs-btn-mobile` (@apply at line 71 in buttons.css) persists even when `md:bs-btn` is applied
-- Tailwind's @apply directive processes classes at build time, and the responsive override pattern doesn't fully replace all mobile properties
-- Adding `text-base` to `.bs-btn` class didn't resolve the height mismatch
+**Failed Attempts** (6-7 iterations):
+1. Using `bs-btn-mobile md:bs-btn` pattern - classes conflict
+2. Adding responsive utilities `md:px-5 md:py-4 md:text-base` - insufficient override power
+3. Modifying CSS with explicit `text-base` in `.bs-btn` - didn't resolve height mismatch
+4. Various combinations of responsive classes - all failed due to `@apply` directive limitations
 
-**Current State**:
-- Language button uses: `class="language-toggle bs-btn-mobile md:bs-btn flex items-center justify-center"`
-- Contact button uses: `class="bs-btn"`
-- `.bs-btn` CSS includes: `px-5 py-4 text-base` (line 15-16, 20 in buttons.css)
-- `.bs-btn-mobile` CSS includes: `px-3 py-2 text-sm` (line 50-51, 71 in buttons.css)
+**Nuclear Solution** (Final - Works):
+- **Abandoned responsive class approach entirely**
+- **Created TWO separate language switcher instances** (mirrors Contact button pattern exactly):
+  - Desktop: `<div class="language-switcher hidden md:block">` with `bs-btn` class
+  - Mobile: `<div class="language-switcher md:hidden">` with `bs-btn-mobile` class
+- Each instance has its own button with the appropriate class - NO responsive overrides needed
+- JavaScript event delegation handles both instances seamlessly
+
+**Final Implementation**:
+- Desktop Language button: `class="language-toggle bs-btn flex items-center justify-center"` (hidden on mobile)
+- Mobile Language button: `class="language-toggle bs-btn-mobile flex items-center justify-center"` (hidden on desktop)
+- Contact button Desktop: `class="bs-btn"`
+- Contact button Mobile: `class="bs-btn-mobile"`
+- **All buttons now match perfectly in their respective viewports**
 
 **Files Modified**:
-- `src/components/LanguageSwitcher.astro` - Multiple attempts to fix button classes
-- `src/components/HeaderMain.astro` - Removed min-width constraints
-- `src/assets/css/buttons.css` - Added explicit `text-base` to `.bs-btn` class
+- `src/components/LanguageSwitcher.astro` - Split into separate desktop/mobile instances
 
-**Status**: ❌ **NOT SOLVED** - Desktop buttons continue to show different heights despite multiple fix attempts. Mobile buttons remain correctly sized and unchanged.
+**Status**: ✅ **RESOLVED** - Desktop language button now matches Contact button height exactly. Mobile buttons remain unchanged. Solution uses the exact same pattern as Contact button (separate instances, no responsive class hacks).
 
 # Deployment Instructions
 
