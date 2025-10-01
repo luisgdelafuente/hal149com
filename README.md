@@ -506,7 +506,7 @@ The site now supports multiple languages with the following structure:
 - Homepage (English): `https://yoursite.com/`
 - Homepage (Spanish): `https://yoursite.com/es/`
 - Credits (English): `https://yoursite.com/credits/`
-- Credits (Spanish): `https://yoursite.com/es/credits/`
+- Credits (Spanish): `https://yoursite.com/es/creditos/`
 
 
 
