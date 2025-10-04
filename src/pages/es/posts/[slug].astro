@@ -118,7 +118,8 @@ const lang = getLangFromUrl(Astro.url);
             width={800}
             height={450}
             class="w-full h-auto object-contain rounded-lg shadow-lg"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             sizes="(max-width: 480px) 92vw, (max-width: 768px) 90vw, (max-width: 1200px) 800px, 800px"
             quality="high"
           />

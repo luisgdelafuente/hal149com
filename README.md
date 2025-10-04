@@ -298,6 +298,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 
 # Challenges & Solutions
 
+### Automatic Language Detection ✅ **RESOLVED**
+**Problem**: Middleware-based language detection didn't work in production because the site uses static output mode, where middleware only runs during development.
+**Solution**: Implemented client-side JavaScript detection using `navigator.language` on homepage. Spanish speakers are automatically redirected to `/es/` on first visit, with cookie persistence for returning users.
+
 ### Render-Blocking CSS Performance Issue ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
 **Status**: Optimization attempts broke website layout, changes reverted.
