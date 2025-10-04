@@ -128,3 +128,19 @@ const sections = globalSettings.homepage_sections || {
   )}
 
 </Layout>
+
+<script>
+  // Ensure Spanish cookie is set when visiting Spanish homepage
+  (function() {
+    // Check if we're on the Spanish homepage
+    if (window.location.pathname !== '/es/' && window.location.pathname !== '/es') return;
+    
+    // Check if language cookie already exists and is correct
+    const cookieMatch = document.cookie.match(/(?:^|;\s*)lang=(en|es)/);
+    
+    // Set or update cookie to Spanish
+    if (!cookieMatch || cookieMatch[1] !== 'es') {
+      document.cookie = 'lang=es; Path=/; Max-Age=31536000; SameSite=Lax';
+    }
+  })();
+</script>

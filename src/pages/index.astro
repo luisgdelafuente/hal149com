@@ -129,3 +129,32 @@ const sections = globalSettings.homepage_sections || {
   )}
 
 </Layout>
+
+<script>
+  // Client-side automatic language detection and redirect
+  // Only runs on first visit (no cookie set) and only on English homepage
+  (function() {
+    // Check if we're on the root English homepage
+    if (window.location.pathname !== '/') return;
+    
+    // Check if language cookie already exists
+    const cookieMatch = document.cookie.match(/(?:^|;\s*)lang=(en|es)/);
+    if (cookieMatch) return; // Cookie exists, user has already chosen
+    
+    // Get browser language preference
+    const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+    const langCode = browserLang.toLowerCase().split('-')[0]; // Extract language code (es, en, etc.)
+    
+    // If Spanish speaker, redirect to Spanish version
+    if (langCode === 'es') {
+      // Set cookie to remember preference (1 year)
+      document.cookie = 'lang=es; Path=/; Max-Age=31536000; SameSite=Lax';
+      
+      // Redirect to Spanish homepage
+      window.location.replace('/es/');
+    } else {
+      // For all other languages, set English as default
+      document.cookie = 'lang=en; Path=/; Max-Age=31536000; SameSite=Lax';
+    }
+  })();
+</script>
