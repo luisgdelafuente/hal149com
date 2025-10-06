@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT Instant Checkout: Revolution in E-commerce?"
-description: "ChatGPT's new Instant Checkout lets users buy products, courses, or resources directly within a conversation, without leaving the chat."
+description: "ChatGPT's new Instant Checkout lets users buy product or services directly within a conversation, without leaving the chat."
 date: 2025-10-03
 author: "Luis García de la Fuente"
 image: "/blog-images/chatgpt-instant-checkout-ecommerce-revolution.webp"
@@ -13,7 +13,7 @@ esSlug: "chatgpt-instant-checkout-revolucion-ecommerce"
 
 ## A frictionless shopping experience
 
-**ChatGPT's Instant Checkout** feature is transforming e-commerce by allowing users to purchase products, courses, or resources directly from a conversation without leaving the chat.
+**ChatGPT's Instant Checkout** feature is transforming e-commerce by allowing users to buy product or services directly within a conversation, without leaving the chat.
 
 This integration eliminates intermediate steps and keeps the user focused, which can significantly increase conversion rates and reduce cart abandonment. OpenAI implemented this feature with the <a href="https://openai.com/index/buy-it-in-chatgpt/" rel="nofollow">Agentic Commerce Protocol</a>, designed to connect merchants and users securely and efficiently.
 

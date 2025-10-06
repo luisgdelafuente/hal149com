@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT Instant Checkout: ¿Revolución en el Ecommerce?"
-description: "La nueva función Instant Checkout de ChatGPT permite que los usuarios compren productos, cursos o recursos directamente desde una conversación, sin abandonar el chat."
+description: "La nueva función Instant Checkout de ChatGPT permite que los usuarios compren productos y servicios directamente desde una conversación, sin abandonar el chat."
 date: 2025-10-03
 author: "Luis García de la Fuente"
 image: "/blog-images/chatgpt-instant-checkout-ecommerce-revolution.webp"
@@ -13,7 +13,7 @@ enSlug: "chatgpt-instant-checkout-ecommerce-revolution"
 
 ## Una experiencia de compra sin fricción
 
-La función **Instant Checkout de ChatGPT** puede transformar el comercio electrónico al permitir que los usuarios compren productos, cursos o recursos directamente desde una conversación, sin abandonar el chat. 
+La función **Instant Checkout de ChatGPT** puede transformar el comercio electrónico al permitir que los usuarios compren productos y servicios directamente en una conversación, sin abandonar el chat. 
 
 Esta integración elimina pasos intermedios y mantiene al usuario enfocado en la transacción, lo que puede aumentar significativamente la tasa de conversión y reducir el abandono del carrito. OpenAI implementó esta función con el <a href="https://openai.com/index/buy-it-in-chatgpt/" rel="nofollow">protocolo Agentic Commerce</a>, diseñado para conectar comercios y usuarios de forma segura y ágil.
 
