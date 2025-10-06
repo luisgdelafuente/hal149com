@@ -18,6 +18,9 @@
 /* 5. Components - Buttons and interactive elements */
 @import "./buttons.css";
 
+/* 6. Blog post content styles */
+@import "./blog-post.css";
+
 /* 
  * Performance optimization: Critical CSS inlining
  * These styles are essential for above-the-fold rendering

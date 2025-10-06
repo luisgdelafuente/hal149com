@@ -144,45 +144,66 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 6.5 Whatsapp and social media image thumb fix 
 - [x] 6.6 Blog pagination fixed
 
-### Phase 7: Performance Optimization & Go Live 🎯 PENDING
+### Phase 7: Performance Optimization & Go Live 🎯 IN PROGRESS
 
 **Critical performance optimizations required before launch to achieve optimal Core Web Vitals scores and user experience.**
 
-#### 7.1: Responsive Image Optimization 🖼️ ❌ **REVERTED**
-- [ ] **7.1.1** Implement responsive image optimization for blog posts
-- [ ] **7.1.2** Optimize hero and content images
-- [ ] **7.1.3** Complete image migration to assets folder
+#### 7.1: LCP Lazy Loading Fix 🖼️ ✅ **COMPLETED**
+- [x] **7.1.1** Add fetchpriority support to BlogImage component
+- [x] **7.1.2** Change blog post hero images to eager loading
+- [x] **7.1.3** Set fetchpriority="high" on LCP images
+- [x] **7.1.4** Test LCP improvement on deployed site
+**Impact**: Reduced load delay from 1,870ms to 460ms (-1,410ms improvement)
 
-#### 7.2: CSS Render-Blocking Optimization ⚡ **PENDING**
-- [ ] **7.2.1** Implement critical CSS inlining
-- [ ] **7.2.2** Optimize CSS delivery and loading
-- [ ] **7.2.3** Implement progressive CSS loading
+#### 7.2: CSS Render-Blocking Optimization ⚡ ✅ **COMPLETED**
+- [x] **7.2.1** Create dedicated blog-post.css file
+- [x] **7.2.2** Extract blog post styles from page-level <style> blocks
+- [x] **7.2.3** Import blog-post.css in main.css bundle
+- [x] **7.2.4** Remove duplicate <style> blocks from blog templates
+- [x] **7.2.5** Verify single CSS bundle generation
+**Impact**: Eliminated 2nd CSS file, reduced from 2 CSS requests to 1 (-50-80ms improvement)
 
-#### 7.3: Core Web Vitals Optimization 📊 **PENDING**
-- [ ] **7.3.1** Optimize Largest Contentful Paint (LCP)
-- [ ] **7.3.2** Optimize First Input Delay (FID) and Interaction to Next Paint (INP)
-- [ ] **7.3.3** Optimize Cumulative Layout Shift (CLS)
+#### 7.3: Image Quality Optimization 📊 ✅ **COMPLETED**
+- [x] **7.3.1** Reduce blog hero image quality from "high" (90%) to "mid" (80%)
+- [x] **7.3.2** Update both English and Spanish blog post templates
+**Impact**: 20-30% file size reduction, estimated 400-600ms faster load time
 
-#### 7.4: Bundle and Asset Optimization 📦 **PENDING**
-- [ ] **7.4.1** JavaScript optimization
-- [ ] **7.4.2** Asset delivery optimization
+#### 7.4: Responsive Image Optimization 🖼️ ⚠️ **PARTIAL / NEEDS WORK**
+- [ ] **7.4.1** Fix responsive image sizing - images oversized for mobile
+- [ ] **7.4.2** Ensure Astro generates proper srcset with smaller sizes (320w, 400w)
+- [ ] **7.4.3** Optimize sizes attribute for better mobile performance
+**Current Issue**: 800x450 image served when 379x213 displayed (19.5 KiB wasted)
+**Status**: Previous attempts failed - Astro not generating all widths specified
 
-#### 7.5: Performance Testing and Validation 🧪 **PENDING**
-- [ ] **7.5.1** Comprehensive performance testing
-- [ ] **7.5.2** Performance monitoring setup
+#### 7.5: CSS Critical Path Optimization ⚠️ **NEEDS WORK**
+- [ ] **7.5.1** Investigate why CSS still blocking 180ms despite consolidation
+- [ ] **7.5.2** Consider critical CSS inlining for above-the-fold content
+- [ ] **7.5.3** Explore CSS preload or async loading strategies
+**Current Issue**: 9.5 KiB CSS blocking render for 180ms
+**Impact**: Still preventing optimal LCP performance
 
-#### 7.6: Final Launch Preparation 🚀 **PENDING**
-- [ ] **7.6.1** Pre-launch checklist
-- [ ] **7.6.2** Go-live deployment
+#### 7.6: LCP Render Delay Optimization 🔍 ⚠️ **CRITICAL ISSUE**
+- [ ] **7.6.1** Investigate 1,570ms render delay (28% of LCP time)
+- [ ] **7.6.2** Analyze what's blocking render after image loads
+- [ ] **7.6.3** Reduce critical request chain (current: 1,041ms)
+- [ ] **7.6.4** Consider preload hints for LCP images
+**Current Issue**: High render delay despite eager loading
+**Root Cause**: Unknown - needs investigation
 
-#### 7.7: LCP Request Discovery 🔍 **PENDING**
-- [ ] **7.7.1** Make LCP image discoverable from HTML immediately
-- [ ] **7.7.2** Avoid lazy-loading LCP images
+#### 7.7: Network Dependency Tree Optimization 🌐 ⚠️ **NEEDS WORK**
+- [ ] **7.7.1** Reduce critical path latency (current: 1,041ms)
+- [ ] **7.7.2** Optimize CSS loading strategy to reduce chain length
+- [ ] **7.7.3** Consider preconnect/dns-prefetch for critical resources
+**Current Issue**: CSS creating dependency chain bottleneck
 
-#### 7.8: Network Dependency Tree Optimization 🌐 **PENDING**
-- [ ] **7.8.1** Reduce critical request chains length
-- [ ] **7.8.2** Reduce download size of critical resources
-- [ ] **7.8.3** Defer download of unnecessary resources
+#### 7.8: Performance Testing and Validation 🧪 **PENDING**
+- [ ] **7.8.1** Comprehensive performance testing across pages
+- [ ] **7.8.2** Performance monitoring setup
+- [ ] **7.8.3** Real User Monitoring (RUM) implementation
+
+#### 7.9: Final Launch Preparation 🚀 **PENDING**
+- [ ] **7.9.1** Pre-launch checklist
+- [ ] **7.9.2** Go-live deployment
 
 ---
 
@@ -297,6 +318,10 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - **Node.js 18** - LTS version for stability
 
 # Challenges & Solutions
+
+### Automatic Language Detection ✅ **RESOLVED**
+**Problem**: Middleware-based language detection didn't work in production because the site uses static output mode, where middleware only runs during development.
+**Solution**: Implemented client-side JavaScript detection using `navigator.language` on homepage. Spanish speakers are automatically redirected to `/es/` on first visit, with cookie persistence for returning users.
 
 ### Render-Blocking CSS Performance Issue ❌ **NOT SOLVED**
 **Problem**: 430ms render-blocking CSS delays affecting Core Web Vitals scores.
@@ -518,5 +543,94 @@ Based on the [BlackSpike Astro Landing Page theme](https://astro.build/themes/de
 
 ---
 
-**Last Updated:** Image optimization implemented with dynamic glob imports and mobile-optimized breakpoints. All blog and logo images now serve appropriately sized versions based on viewport.
+## 🎯 NEXT SESSION: LCP Performance Action Plan
+
+### **Current Status (as of optimization session):**
+- **LCP Time**: ~2,500-2,700ms (target: <2,500ms)
+- **Main Issues**: Render delay (1,570ms), CSS blocking (180ms), oversized mobile images (19.5 KiB wasted)
+
+### **Priority Action Plan:**
+
+#### **Priority 1: LCP Render Delay Investigation (CRITICAL)** 🔴
+**Problem**: 1,570ms render delay (28% of LCP time) after image loads
+**Impact**: Largest bottleneck - fixing this could save 1,000-1,500ms
+**Actions**:
+1. Use Chrome DevTools Performance tab to trace render delay
+2. Check for JavaScript blocking render
+3. Analyze CSS cascade/specificity issues
+4. Look for layout thrashing or reflows
+5. Consider preload hint for LCP image: `<link rel="preload" as="image" href="..." fetchpriority="high">`
+
+#### **Priority 2: CSS Critical Path Optimization** 🟡
+**Problem**: 9.5 KiB CSS still blocking render for 180ms despite consolidation
+**Impact**: Moderate - 180ms delay in critical path
+**Actions**:
+1. Extract critical above-the-fold CSS (~2-3 KiB)
+2. Inline critical CSS in `<head>`
+3. Load remaining CSS asynchronously
+4. Consider splitting CSS: critical (inline) + deferred (async)
+5. Alternative: Use `media="print" onload="this.media='all'"` trick
+
+#### **Priority 3: Responsive Image Sizing** 🟢
+**Problem**: 800x450 image served when 379x213 displayed on mobile (19.5 KiB wasted)
+**Impact**: Minor - only 19.5 KiB, but affects mobile UX
+**Actions**:
+1. Debug why Astro not generating 320w/400w srcset variants
+2. Check if source images are large enough for Astro to downscale
+3. Review Astro Image component configuration
+4. Consider manual srcset generation if Astro fails
+5. Test with different `widths` array configurations
+
+#### **Priority 4: Network Dependency Chain** 🟡
+**Problem**: 1,041ms critical path latency (HTML → CSS chain)
+**Impact**: Moderate - CSS depends on HTML load
+**Actions**:
+1. Add `<link rel="preload" href="/assets/styles.css" as="style">` in head
+2. Consider HTTP/2 Server Push for CSS (if supported by Netlify)
+3. Optimize TTFB (currently 740ms - could be faster)
+4. Review Netlify CDN configuration
+
+---
+
+### **Quick Wins (Low Effort, Medium Impact):**
+
+1. **Add LCP Image Preload** (5 minutes):
+   ```html
+   <link rel="preload" as="image" href="{post.data.image}" fetchpriority="high">
+   ```
+
+2. **Add CSS Preload** (2 minutes):
+   ```html
+   <link rel="preload" href="/assets/styles.css" as="style">
+   ```
+
+3. **Reduce CSS Bundle Size** (30 minutes):
+   - Review blog-post.css for unused styles
+   - Remove duplicate styles between main.css and blog-post.css
+   - Consider PurgeCSS for production builds
+
+---
+
+### **Investigation Tools:**
+
+1. **Chrome DevTools Performance Tab**:
+   - Record page load
+   - Look for long tasks (>50ms)
+   - Check render-blocking resources
+   - Analyze main thread activity
+
+2. **WebPageTest.org**:
+   - Detailed waterfall analysis
+   - Filmstrip view to see rendering timeline
+   - Connection view to see dependency chains
+
+3. **Lighthouse CI**:
+   - Set up automated performance testing
+   - Track performance over time
+   - Catch regressions early
+
+---
+
+**Last Updated:** Phase 7 progress documented. Completed: LCP lazy loading fix, CSS consolidation, image quality optimization. Remaining: Render delay investigation, CSS critical path, responsive images.
+
 

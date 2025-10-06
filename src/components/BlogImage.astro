@@ -12,6 +12,7 @@ export interface Props {
   height?: number;
   class?: string;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
   sizes?: string;
   quality?: 'low' | 'mid' | 'high';
 }
@@ -23,6 +24,7 @@ const {
   height = 225, 
   class: className = '',
   loading = 'lazy',
+  fetchpriority = 'auto',
   sizes = '(max-width: 380px) 320px, (max-width: 480px) 400px, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 800px',
   quality = 'mid'
 } = Astro.props;
@@ -79,6 +81,7 @@ if (typeof window === 'undefined') {
     sizes={sizes}
     class={className}
     loading={loading}
+    fetchpriority={fetchpriority}
     quality={qualityValue}
     format="avif"
   />
@@ -91,5 +94,6 @@ if (typeof window === 'undefined') {
     height={height}
     class={className}
     loading={loading}
+    fetchpriority={fetchpriority}
   />
 )}
