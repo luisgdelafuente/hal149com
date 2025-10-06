@@ -1,5 +1,5 @@
 ---
-title: "AI Presence Tracking on AI Platforms"
+title: "AI Presence Tracking: Monitoring Your Brand in the Age of AI Search"
 description: "As AI-powered search engines like ChatGPT, Perplexity, and Gemini reshape how people discover information, tracking your brand's presence in AI responses becomes essential."
 date: 2025-10-06
 author: "Luis García de la Fuente"
