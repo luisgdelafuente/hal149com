@@ -9,15 +9,13 @@ const t = useTranslations(lang);
 
 ---
 
-<dialog id="demo" closedby="any" class="fixed inset-0 bg-bs-surface-0 m-auto z-50 p-6 md:p-12 rounded-xl w-full max-w-[95%] md:max-w-lg">
+<dialog id="demo" closedby="any" class="fixed inset-0 bg-bs-surface-0 m-auto z-50 p-5 md:p-10 rounded-xl w-full max-w-[95%] md:max-w-lg max-h-[85svh]">
 
   <!-- Form -->
   <form 
     name="contact" 
     method="POST" 
-    netlify
-    netlify-honeypot="bot-field"
-    class="flex gap-6 flex-col"
+    class="flex gap-4 flex-col overflow-auto"
     id="contact-form"
   >
     <!-- Netlify form detection -->
@@ -87,6 +85,18 @@ const t = useTranslations(lang);
         class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
         placeholder={t('form.email.placeholder')}
       >
+
+      <!-- Message -->
+      <label class="sr-only" for="message">{t('form.message.label')}</label>
+
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        required
+        class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
+        placeholder={t('form.message.placeholder')}
+      ></textarea>
 
       <!-- Submit -->
       <button type="submit" class="bs-btn form-input px-4 py-3">{t('form.submit')}</button>
