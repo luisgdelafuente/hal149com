@@ -26,7 +26,7 @@ The investment structure reveals interesting patterns:
 
 This interdependence creates an ecosystem where each player reinforces the other's position, but also generates systemic vulnerabilities.
 
-<img src="/blog-images/ai-self-funding-bubble.webp">
+<img src="/blog-images/ai-self-funding-bubble.webp" alt="Artificial Intelligence: Bubble or Real Value?">
 
 
 ## Valuations vs. Economic Reality

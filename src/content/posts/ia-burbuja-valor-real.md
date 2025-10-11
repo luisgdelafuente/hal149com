@@ -26,7 +26,7 @@ La estructura de inversiones revela patrones interesantes:
 
 Esta interdependencia crea un ecosistema donde cada actor refuerza la posición del otro, pero también genera vulnerabilidades sistémicas.
 
-<img src="/blog-images/ai-self-funding-bubble.webp">
+<img src="/blog-images/ai-self-funding-bubble.webp" alt="Inteligencia Artificial: ¿Burbuja o Valor Real?">
 
 ## Valoraciones vs. Realidad Económica
 
