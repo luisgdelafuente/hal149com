@@ -13,8 +13,6 @@ esSlug: "ia-burbuja-valor-real"
 
 The artificial intelligence investment ecosystem is creating a network of financial interdependencies without precedent. OpenAI, valued at $500 billion, sits at the center of a web where major tech players invest in each other in a circular fashion.
 
-<img src="/blog-images/ai-self-funding-bubble.webp">
-
 ## The Anatomy of the Network
 
 The investment structure reveals interesting patterns:
@@ -27,6 +25,9 @@ The investment structure reveals interesting patterns:
 - AMD offers OpenAI purchase options for up to 160 million shares
 
 This interdependence creates an ecosystem where each player reinforces the other's position, but also generates systemic vulnerabilities.
+
+<img src="/blog-images/ai-self-funding-bubble.webp">
+
 
 ## Valuations vs. Economic Reality
 

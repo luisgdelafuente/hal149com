@@ -13,8 +13,6 @@ enSlug: "ai-bubble-real-value"
 
 El ecosistema de inversiones en inteligencia artificial está creando una red de interdependencias financieras sin precedentes. OpenAI, valorada en $500 mil millones, se encuentra en el centro de un entramado donde los principales actores tecnológicos invierten entre sí de forma circular.
 
-<img src="/blog-images/ai-self-funding-bubble.webp">
-
 ## La Anatomía de la Red
 
 La estructura de inversiones revela patrones interesantes:
@@ -27,6 +25,8 @@ La estructura de inversiones revela patrones interesantes:
 - AMD ofrece a OpenAI opciones de compra de hasta 160 millones de acciones
 
 Esta interdependencia crea un ecosistema donde cada actor refuerza la posición del otro, pero también genera vulnerabilidades sistémicas.
+
+<img src="/blog-images/ai-self-funding-bubble.webp">
 
 ## Valoraciones vs. Realidad Económica
 
@@ -43,19 +43,21 @@ Esta situación tiene paralelos instructivos con la burbuja de las <a href="http
 Cuando la burbuja puntocom explotó en 2000-2002:
 
 - El 78% de las empresas internet desaparecieron
-- Se perdieron $5 billones en valoración de mercado
+- Se perdieron $5 trillones en valoración de mercado
 - Pero otros como Amazon, Google y eBay sobrevivieron y prosperaron
 
 **La diferencia clave**: las empresas que construyeron aplicaciones de valor real para usuarios reales no sólo sobrevivieron, sino que dominaron la siguiente década.
 
-Amazon no era la empresa de e-commerce más valorada en 2000. Pero sí era la que mejor resolvía el problema de comprar online. Google no tenía la mayor inversión en buscadores, ni siquiera inventó la publicidad de pago por click. Pero tenía el mejor algoritmo de búsqueda y la forma de monetizarlo. 
+Amazon no era la empresa de e-commerce más valorada en 2000. Pero sí era la que mejor resolvía el problema de comprar online. 
+
+Google no tenía la mayor inversión en buscadores, ni siquiera inventó la publicidad de pago por click. Pero tenía el mejor algoritmo de búsqueda, y la forma de monetizarlo. 
 
 ## Aplicaciones vs. Infraestructura
 
 La burbuja puntocom -y otras como las redes móviles- enseña que la infraestructura sigue un ciclo adelantado que la sobrevalora en las primeras fases de una revolución tecnológica. En cambio las aplicaciones prácticas se subestiman.
 
 En el ciclo actual:
-- **Sobreinversión**: Hardware de IA, capacidad de cómputo, modelos base. 
+- **Sobreinversión**: Hardware de IA, capacidad de cómputo, modelos LLMs base. 
 - **Subinversión potencial**: Aplicaciones específicas que resuelven problemas concretos.
 
 Una vez más es en las aplicaciones de valor añadido donde está la oportunidad 
@@ -73,7 +75,7 @@ Una crisis de confianza desinfla valoraciones rápidamente. Quiebran los jugador
 ### Escenario 3: Nueva Infraestructura Dominante
 La apuesta masiva en capacidad de cómputo crea una nueva capa de infraestructura digital. Como pasó con Amazon Web Services después de la burbuja, pero esta vez mucho más concentrada y además intervenida por los estados, por los intereses geopolíticos en juego. 
 
-Lo más probable es que ocurra una combinación de los escenarios 2 y 3. 
+Lo más probable es que ocurra algún tipo de combinación de los escenarios 2 y 3. 
 
 ## Lo que Importa para las Empresas
 
@@ -81,9 +83,9 @@ Independientemente del escenario, los principios son claros:
 
 **Valor sobre valoración**: Las empresas que generan ROI medible con IA tendrán demanda constante, sin importar las fluctuaciones del mercado.
 
-**Aplicaciones específicas**: Las soluciones verticales para industrias concretas superarán a las herramientas genéricas. La tecnología ya está madura para aplicaciones reales.
+**Aplicaciones específicas**: Las soluciones verticales para industrias concretas superarán a las herramientas genéricas. La tecnología ya está madura para aplicaciones reales en muchos sectores.
 
-**Adopción pragmática**: No se trata de esperar al "momento perfecto" ni de apostar por la empresa mejor valorada. Se trata de identificar procesos que la IA puede optimizar hoy; entrar aunque sea con formación e ir paso a paso. 
+**Adopción pragmática**: No se trata de esperar al "momento perfecto" ni de apostar por la empresa mejor valorada. Se trata de identificar procesos que la IA puede optimizar hoy; entrar e ir paso a paso. 
 
 ## El Valor es lo Único que cuenta 
 
