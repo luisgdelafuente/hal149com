@@ -3,7 +3,7 @@ title: "Summary of The State of AI Report 2025"
 description: "The latest edition of the State of AI Report highlights that competitive advantage no longer depends solely on the smartest model."
 date: 2025-10-13
 author: "Luis García de la Fuente"
-image: "/blog-images/the-state-of-ai-report-2025.webp"
+image: "/blog-images/the-state-ai-report-2025.webp"
 featured: true
 lang: "en"
 esSlug: "state-of-ai-report-2025-resumen"
