@@ -25,15 +25,9 @@ El crecimiento de buscadores basados en IA, como ChatGPT y Perplexity, está des
 
 Proyectos ambiciosos como Stargate apuntan a construir megaplantas de energía y refrigeración para soportar la expansión de la IA, pero la escasez de energía y agua representa un límite real. Según <a href="https://semianalysis.com/p/the-ai-hardware-power-struggle" rel="nofollow" target="_blank">un estudio de SemiAnalysis</a>, este desafío físico añade complejidad y condiciona la continuidad del crecimiento.
 
-
-***
-
 ### Medición real de razonamiento y capacidades económicas
 
 El informe destaca que las mejoras en "inteligencia" son más frágiles de lo que parecen. Para medir el valor real, herramientas como GDP-val de OpenAI evalúan cómo contribuyen las IA a resolver tareas económicas sustantivas.
-
-
-***
 
 ### Ecosistema abierto vs cerrado
 
