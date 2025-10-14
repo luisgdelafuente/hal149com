@@ -3,7 +3,7 @@ title: "Resumen del Informe El Estado de la IA en 2025"
 description: "La reciente edición del State of AI Report destaca que la ventaja competitiva ya no depende solo del modelo más inteligente."
 date: 2025-10-13
 author: "Luis García de la Fuente"
-image: "/blog-images/the-state-of-ai-report-2025"
+image: "/blog-images/the-state-of-ai-report-2025.webp"
 featured: true
 lang: "es"
 enSlug: "state-of-ai-report-2025-summary"
