@@ -9,7 +9,7 @@ import BlogImage from '../../components/BlogImage.astro';
 const allPosts = await getCollection('posts');
 const posts = allPosts
   .filter(post => post.data.lang === 'en')
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  .sort((a, b) => new Date((b.data.updated ?? b.data.date) as Date).getTime() - new Date((a.data.updated ?? a.data.date) as Date).getTime());
 
 // First page content (9 posts)
 const postsPerPage = 9;
@@ -48,7 +48,7 @@ const lang = getLangFromUrl(Astro.url);
         "name": post.data.author
       },
       "datePublished": post.data.date.toISOString(),
-      "dateModified": post.data.date.toISOString(),
+      "dateModified": (post.data.updated ?? post.data.date).toISOString(),
       "url": `/posts/${post.slug}/`,
       "image": post.data.image ? post.data.image : undefined,
               "publisher": {
@@ -101,8 +101,8 @@ const lang = getLangFromUrl(Astro.url);
               </p>
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-bs-foreground-dark mt-auto gap-1 sm:gap-0">
                 <span>{post.data.author}</span>
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString('en-US', { 
+                <time datetime={(post.data.updated ?? post.data.date).toISOString()}>
+                  {(post.data.updated ?? post.data.date).toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 

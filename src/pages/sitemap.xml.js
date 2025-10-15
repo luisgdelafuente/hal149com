@@ -72,7 +72,7 @@ export async function GET({ request }) {
     if (!isSpanish && enSlug) {
       blogPages.push({
         url: `/posts/${enSlug}`,
-        lastmod: post.data.date ? new Date(post.data.date).toISOString() : new Date().toISOString(),
+        lastmod: (post.data.updated ?? post.data.date) ? new Date(post.data.updated ?? post.data.date).toISOString() : new Date().toISOString(),
         changefreq: 'monthly',
         priority: 0.7,
         hreflang: esSlug ? [
@@ -88,7 +88,7 @@ export async function GET({ request }) {
     if (isSpanish && esSlug) {
       blogPages.push({
         url: `/es/posts/${esSlug}`,
-        lastmod: post.data.date ? new Date(post.data.date).toISOString() : new Date().toISOString(),
+        lastmod: (post.data.updated ?? post.data.date) ? new Date(post.data.updated ?? post.data.date).toISOString() : new Date().toISOString(),
         changefreq: 'monthly',
         priority: 0.7,
         hreflang: enSlug ? [

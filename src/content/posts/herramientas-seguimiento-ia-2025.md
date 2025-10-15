@@ -2,6 +2,7 @@
 title: "Herramientas de Seguimiento de Presencia IA: Monitoriza tu Marca en 2025"
 description: "ChatGPT, Perplexity y Gemini están cambiando las reglas. Si no sabes si te mencionan, estás perdiendo la batalla antes de empezar. Analizamos las 25 plataformas clave del mercado."
 date: 2025-10-06
+updated: 2025-10-15
 author: "Luis García de la Fuente"
 image: "/blog-images/ai-presence-tracking.webp"
 featured: true

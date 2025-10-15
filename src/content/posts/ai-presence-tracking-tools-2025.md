@@ -2,6 +2,7 @@
 title: "AI Presence Tracking Tools: Monitor Your Brand in 2025"
 description: "ChatGPT, Perplexity, and Gemini are changing the rules. If you don't know whether they mention you, you're losing the battle before it starts. We analyze the 25 key platforms in the market."
 date: 2025-10-08
+updated: 2025-10-15
 author: "Luis García de la Fuente"
 image: "/blog-images/ai-presence-tracking.webp"
 featured: true

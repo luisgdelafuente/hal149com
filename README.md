@@ -144,129 +144,62 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [x] 6.5 Whatsapp and social media image thumb fix 
 - [x] 6.6 Blog pagination fixed
 
-### Phase 7: Performance Optimization & Go Live 🎯 IN PROGRESS
+## VERSION 2
 
-**Critical performance optimizations required before launch to achieve optimal Core Web Vitals scores and user experience.**
+### Phase 2.1: Content intelligence layer
+Objective: add a layer of interactivity in order for the user to customize web´s content as custom recommendations for his business. 
+- [x] 2.1.1 Content update date 
 
-#### 7.1: LCP Lazy Loading Fix 🖼️ ✅ **COMPLETED**
-- [x] **7.1.1** Add fetchpriority support to BlogImage component
-- [x] **7.1.2** Change blog post hero images to eager loading
-- [x] **7.1.3** Set fetchpriority="high" on LCP images
-- [x] **7.1.4** Test LCP improvement on deployed site
-**Impact**: Reduced load delay from 1,870ms to 460ms (-1,410ms improvement)
+### Phase 2.2: Optimization
+The objetive is to reach Google Test Optimizacion 100% mobile+desktop
 
-#### 7.2: CSS Render-Blocking Optimization ⚡ ✅ **COMPLETED**
-- [x] **7.2.1** Create dedicated blog-post.css file
-- [x] **7.2.2** Extract blog post styles from page-level <style> blocks
-- [x] **7.2.3** Import blog-post.css in main.css bundle
-- [x] **7.2.4** Remove duplicate <style> blocks from blog templates
-- [x] **7.2.5** Verify single CSS bundle generation
-**Impact**: Eliminated 2nd CSS file, reduced from 2 CSS requests to 1 (-50-80ms improvement)
 
-#### 7.3: Image Quality Optimization 📊 ✅ **COMPLETED**
-- [x] **7.3.1** Reduce blog hero image quality from "high" (90%) to "mid" (80%)
-- [x] **7.3.2** Update both English and Spanish blog post templates
-**Impact**: 20-30% file size reduction, estimated 400-600ms faster load time
 
-#### 7.4: Responsive Image Optimization 🖼️ ⚠️ **PARTIAL / NEEDS WORK**
-- [ ] **7.4.1** Fix responsive image sizing - images oversized for mobile
-- [ ] **7.4.2** Ensure Astro generates proper srcset with smaller sizes (320w, 400w)
-- [ ] **7.4.3** Optimize sizes attribute for better mobile performance
-**Current Issue**: 800x450 image served when 379x213 displayed (19.5 KiB wasted)
-**Status**: Previous attempts failed - Astro not generating all widths specified
+## FUTURE FUNCTIONALITIES 
 
-#### 7.5: CSS Critical Path Optimization ⚠️ **NEEDS WORK**
-- [ ] **7.5.1** Investigate why CSS still blocking 180ms despite consolidation
-- [ ] **7.5.2** Consider critical CSS inlining for above-the-fold content
-- [ ] **7.5.3** Explore CSS preload or async loading strategies
-**Current Issue**: 9.5 KiB CSS blocking render for 180ms
-**Impact**: Still preventing optimal LCP performance
+### Content functionalities 
+- Case studies and portfolio items
+- Legal pages (Privacy Policy, Terms of Service)
+- Team member profiles
+- Testimonials and client reviews
+- Author profiles and author pages implementation
+- Content organization strategy (categories vs tags system)
+- Draft posts functionality for unpublished content
+- Post scheduling system for future publications
+- Comments system integration (external like Disqus or built-in)
+- Enhanced social sharing integration for posts
+- Tag functionality enhancement - Advanced tag management system with - - filtering, search, and related posts
+- Related posts system - Implement alternative related posts logic (not tag-based)
 
-#### 7.6: LCP Render Delay Optimization 🔍 ⚠️ **CRITICAL ISSUE**
-- [ ] **7.6.1** Investigate 1,570ms render delay (28% of LCP time)
-- [ ] **7.6.2** Analyze what's blocking render after image loads
-- [ ] **7.6.3** Reduce critical request chain (current: 1,041ms)
-- [ ] **7.6.4** Consider preload hints for LCP images
-**Current Issue**: High render delay despite eager loading
-**Root Cause**: Unknown - needs investigation
+### Content Management System Implementation
+- Leads management system
+- Decap CMS (formerly Netlify CMS) integration setup
+- Git-based content management that works with existing markdown workflow
+- Admin interface accessible at `/admin/` route
+- Seamless integration with current Netlify deployment
+- Maintains version control benefits of git-based content
+- Admin panel configuration for posts CRUD operations
+- Create, read, update, delete functionality for blog posts
+- Rich text editor with markdown support
+- Image upload and management through admin interface
+- Draft/publish workflow management
+- Bilingual content management setup
+- English/Spanish content editing support
+- Cross-reference management (enSlug/esSlug) through admin UI
+- Language-specific content organization
+- Multilingual preview capabilities
+- User authentication and role management
+- Admin user setup and authentication
+- Role-based access control (admin, editor, contributor)
+- Secure admin access with proper authentication flow
+- Multi-user collaboration features
+- Content workflow optimization
+- Auto-deployment triggers on content changes
+- Content preview before publishing
+- Bulk content operations and management
+- SEO metadata management through admin interface
 
-#### 7.7: Network Dependency Tree Optimization 🌐 ⚠️ **NEEDS WORK**
-- [ ] **7.7.1** Reduce critical path latency (current: 1,041ms)
-- [ ] **7.7.2** Optimize CSS loading strategy to reduce chain length
-- [ ] **7.7.3** Consider preconnect/dns-prefetch for critical resources
-**Current Issue**: CSS creating dependency chain bottleneck
-
-#### 7.8: Performance Testing and Validation 🧪 **PENDING**
-- [ ] **7.8.1** Comprehensive performance testing across pages
-- [ ] **7.8.2** Performance monitoring setup
-- [ ] **7.8.3** Real User Monitoring (RUM) implementation
-
-#### 7.9: Final Launch Preparation 🚀 **PENDING**
-- [ ] **7.9.1** Pre-launch checklist
-- [ ] **7.9.2** Go-live deployment
-
----
-
-## VERSION 2 🔮
-**Optimization updates, automatisms to improve V1 functionalities, connection to social media, admin pane, etc.**
-
-### Optimization Phase
-- [ ] Custom meta data social and seo for pages and posts
-
-### Phase 7.5: Advanced Content Features 📝 FUTURE
-- [ ] **7.5.1** Case studies and portfolio items
-- [ ] **7.5.2** Legal pages (Privacy Policy, Terms of Service)
-- [ ] **7.5.3** Content SEO optimization
-- [ ] **7.5.4** Team member profiles
-- [ ] **7.5.5** Testimonials and client reviews
-- [ ] **7.5.6** Custom imagery and graphics
-- [ ] **7.5.7** Multilingual content management
-- [ ] **7.5.8** Author profiles and author pages implementation
-- [ ] **7.5.9** Content organization strategy (categories vs tags system)
-- [ ] **7.5.10** Draft posts functionality for unpublished content
-- [ ] **7.5.11** Post scheduling system for future publications
-- [ ] **7.5.12** Comments system integration (external like Disqus or built-in)
-- [ ] **7.5.13** Enhanced social sharing integration for posts
-- [ ] **7.5.14** Tag functionality enhancement - Advanced tag management system with filtering, search, and related posts
-- [ ] **7.5.15** Related posts system - Implement alternative related posts logic (not tag-based)
-
-### Phase 8: Content Management System Implementation 📝 FUTURE
-- [ ] **8.1** Decap CMS (formerly Netlify CMS) integration setup
-  - Git-based content management that works with existing markdown workflow
-  - Admin interface accessible at `/admin/` route
-  - Seamless integration with current Netlify deployment
-  - Maintains version control benefits of git-based content
-- [ ] **8.2** Admin panel configuration for posts CRUD operations
-  - Create, read, update, delete functionality for blog posts
-  - Rich text editor with markdown support
-  - Image upload and management through admin interface
-  - Draft/publish workflow management
-- [ ] **8.3** Bilingual content management setup
-  - English/Spanish content editing support
-  - Cross-reference management (enSlug/esSlug) through admin UI
-  - Language-specific content organization
-  - Multilingual preview capabilities
-- [ ] **8.4** User authentication and role management
-  - Admin user setup and authentication
-  - Role-based access control (admin, editor, contributor)
-  - Secure admin access with proper authentication flow
-  - Multi-user collaboration features
-- [ ] **8.5** Content workflow optimization
-  - Auto-deployment triggers on content changes
-  - Content preview before publishing
-  - Bulk content operations and management
-  - SEO metadata management through admin interface
-
-### Phase 9: Advanced Performance Optimization 🎯 FUTURE
-- [ ] Render-blocking CSS optimization
-- [ ] Critical CSS inlining
-- [ ] Image delivery optimization (responsive images)
-- [ ] Preconnect hints for critical origins
-- [ ] Core Web Vitals improvement
-- [ ] Bundle size optimization
-- [ ] Lazy loading enhancements
-
-### Phase 9: Social Media & External Integrations 🌐 FUTURE
+### Social Media & External Integrations 🌐 FUTURE
 - [ ] Social media API connections
 - [ ] Automated social sharing
 - [ ] Instagram/LinkedIn feed integration
@@ -275,25 +208,7 @@ This is our complete business agency website built on the [BlackSpike Astro Land
 - [ ] Email marketing automation
 - [ ] Social login functionality
 
-### Phase 10: Content Management & Automation 🤖 FUTURE
-- [ ] Admin panel implementation
-- [ ] Content management interface
-- [ ] Automated content scheduling
-- [ ] Draft management system
-- [ ] Multi-author workflows
-- [ ] Content approval processes
-- [ ] Automated SEO optimization
-- [ ] Bulk content operations
 
-### Phase 11: Advanced Features & Enhancements 🚀 FUTURE
-- [ ] Advanced search functionality
-- [ ] User accounts and profiles
-- [ ] Comment system with moderation
-- [ ] Newsletter automation
-- [ ] Lead scoring system
-- [ ] A/B testing framework
-- [ ] Advanced analytics tracking
-- [ ] Customer portal functionality
 
 # Tech Stack
 
