@@ -3,7 +3,7 @@ export async function GET() {
   const all = await getCollection('posts');
   const posts = all
     .filter(p => p.data.lang === 'es')
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+    .sort((a, b) => new Date((b.data.updated ?? b.data.date)).getTime() - new Date((a.data.updated ?? a.data.date)).getTime())
     .map(p => ({
       slug: p.slug,
       title: p.data.title,
@@ -11,6 +11,7 @@ export async function GET() {
       author: p.data.author,
       tags: p.data.tags || [],
       date: p.data.date instanceof Date ? p.data.date.toISOString() : p.data.date,
+      updated: (p.data.updated instanceof Date ? p.data.updated.toISOString() : (p.data.updated || (p.data.date instanceof Date ? p.data.date.toISOString() : p.data.date))),
       image: p.data.image || null
     }));
 

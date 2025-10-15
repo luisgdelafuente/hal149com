@@ -8,7 +8,7 @@ export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection('posts');
   const posts = allPosts
     .filter(post => post.data.lang === 'es')
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    .sort((a, b) => new Date((b.data.updated ?? b.data.date) as Date).getTime() - new Date((a.data.updated ?? a.data.date) as Date).getTime());
 
   return paginate(posts, { pageSize: 9 });
 }
@@ -60,8 +60,8 @@ const currentPosts = page.data;
               </p>
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-bs-foreground-dark mt-auto gap-1 sm:gap-0">
                 <span>{post.data.author}</span>
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString('es-ES', { 
+                <time datetime={(post.data.updated ?? post.data.date).toISOString()}>
+                  {(post.data.updated ?? post.data.date).toLocaleDateString('es-ES', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 

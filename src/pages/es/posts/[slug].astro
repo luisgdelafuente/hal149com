@@ -18,6 +18,7 @@ const { post } = Astro.props as { post: any };
 const { Content } = await post.render();
 
 const lang = getLangFromUrl(Astro.url);
+const displayDate: Date = (post.data.updated ?? post.data.date) as Date;
 ---
 
 <Layout 
@@ -27,7 +28,7 @@ const lang = getLangFromUrl(Astro.url);
   type="article"
   author={post.data.author}
   publishedTime={post.data.date.toISOString()}
-  modifiedTime={post.data.date.toISOString()}
+  modifiedTime={displayDate.toISOString()}
   section="Blog"
   tags={post.data.tags}
   post={post}
@@ -44,7 +45,7 @@ const lang = getLangFromUrl(Astro.url);
       "name": post.data.author
     },
     "datePublished": post.data.date.toISOString(),
-    "dateModified": post.data.date.toISOString(),
+    "dateModified": displayDate.toISOString(),
     "url": `${Astro.url.origin}/es/posts/${post.slug}/`,
     "image": post.data.image ? `${Astro.url.origin}${post.data.image}` : undefined,
     "publisher": {
@@ -89,24 +90,27 @@ const lang = getLangFromUrl(Astro.url);
 
       <!-- Meta -->
       <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-bs-foreground-dark mb-8">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-          </svg>
-          <span>{post.data.author}</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2v12a2 2 0 002 2z"></path>
-          </svg>
-          <time datetime={post.data.date.toISOString()}>
-            {post.data.date.toLocaleDateString('es-ES', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
-          </time>
-        </div>
+        {post.data.updated ? (
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span class="font-medium">Actualizado:</span>
+            <time datetime={post.data.updated.toISOString()}>
+              {post.data.updated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+          </div>
+        ) : (
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span class="font-medium">Publicado:</span>
+            <time datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+          </div>
+        )}
       </div>
 
       <!-- Featured Image -->
@@ -130,6 +134,34 @@ const lang = getLangFromUrl(Astro.url);
     <!-- Content -->
     <div class="post-content max-w-none mb-16">
       <Content />
+    </div>
+    <hr class="my-8" />
+    <div class="text-sm text-bs-foreground-dark space-y-3">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span class="font-medium">Publicado:</span>
+        <time datetime={post.data.date.toISOString()}>
+          {post.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span class="font-medium">Actualizado:</span>
+        <time datetime={displayDate.toISOString()}>
+          {displayDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        <span class="font-medium">Autor:</span>
+        <span>{post.data.author}</span>
+      </div>
     </div>
   </article>
 </Layout>

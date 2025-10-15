@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const allPosts = await getCollection('posts');
 const latestPosts = allPosts
   .filter(post => post.data.lang === lang)
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .sort((a, b) => new Date((b.data.updated ?? b.data.date) as Date).getTime() - new Date((a.data.updated ?? a.data.date) as Date).getTime())
   .slice(0, 3);
 
 // Content based on language
@@ -72,8 +72,8 @@ const currentContent = content[lang as keyof typeof content];
               <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-bs-foreground-dark mt-auto">
                 <span>{post.data.author}</span>
                 <span>•</span>
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', { 
+                <time datetime={(post.data.updated ?? post.data.date).toISOString()}>
+                  {(post.data.updated ?? post.data.date).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', { 
                     year: 'numeric', 
                     month: 'short', 
                     day: 'numeric' 

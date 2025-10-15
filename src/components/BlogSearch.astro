@@ -156,7 +156,7 @@ const currentContent = searchContent[lang];
               <p class="bs-body-text text-bs-foreground-dark line-clamp-3 flex-grow">${this.highlightMatches(post.description || '', query)}</p>
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-bs-foreground-dark mt-auto gap-1 sm:gap-0">
                 <span>${post.author || ''}</span>
-                <time datetime="${post.date}">${new Date(post.date).toLocaleDateString(this.lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                <time datetime="${post.updated || post.date}">${new Date(post.updated || post.date).toLocaleDateString(this.lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
               </div>
             </div>
           </div>`;
