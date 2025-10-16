@@ -1,5 +1,5 @@
 ---
-title: "La IA se Convierte en el Nuevo Navegador"
+title: "¿Se Está Convirtiendo la IA en el Nuevo Navegador?"
 description: "La www fue construida en una era de información escasa y necesidad de navegar para encontrar, pero eso ha cambiado. "
 date: 2025-10-16
 author: "Luis García de la Fuente"
@@ -8,7 +8,7 @@ featured: true
 lang: "es"
 enSlug: "ai-is-the-new-browser"
 ---
-# La IA se Convierte en el Nuevo Navegador
+# ¿Se Está Convirtiendo la IA en el Nuevo Navegador?
 
 El último <a href="https://openai.com/devday/" target="_blank">Dev Day de OpenAI</a> no fue simplemente un evento de producto. Fue la declaración formal de que **el navegador web tal como lo conocemos está muriendo**, y con él, toda una industria de marketing digital construida durante las últimas dos décadas.
 
