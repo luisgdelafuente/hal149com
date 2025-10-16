@@ -1,5 +1,5 @@
 ---
-title: "AI Becomes the New Browser:"
+title: "Is AI Becoming the New Browser?"
 description: "The www was built in an era of scarce information and the need to navigate to find, but that has changed."
 date: 2025-10-16
 author: "Luis García de la Fuente"
@@ -8,7 +8,7 @@ featured: true
 lang: "en"
 esSlug: "ia-es-el-nuevo-navegador"
 ---
-# AI Becomes the New Browser
+# Is AI Becoming the New Browser?
 
 The latest <a href="https://openai.com/devday/" target="_blank">OpenAI Dev Day</a> wasn't simply a product event. It was the formal declaration that **the web browser as we know it is dying**, and with it, an entire digital marketing industry built over the last two decades.
 

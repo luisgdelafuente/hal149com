@@ -1,5 +1,5 @@
 ---
-title: "La IA se Convierte en el Nuevo Navegador:"
+title: "La IA se Convierte en el Nuevo Navegador"
 description: "La www fue construida en una era de información escasa y necesidad de navegar para encontrar, pero eso ha cambiado. "
 date: 2025-10-16
 author: "Luis García de la Fuente"
