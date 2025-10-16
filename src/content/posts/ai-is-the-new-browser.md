@@ -14,12 +14,6 @@ The latest <a href="https://openai.com/devday/" target="_blank">OpenAI Dev Day</
 
 ChatGPT is no longer a chatbot. It's an **operating system**, an **app store**, and increasingly, the place where users complete tasks without ever leaving the conversation. And this radically changes the rules of the game for any business that depends on web traffic.
 
-## The "Startup Killer" Pattern
-
-OpenAI has perfected a brutal strategy: it allows startups to build on its API, watches which ones gain traction, and then launches native versions that replace them. <a href="https://www.youtube.com/watch?v=gPWmrVSFLRM" target="_blank" rel="nofollow">As analyst Ondrej points out</a>, this explains why so many successful startups built on OpenAI are being eliminated by the platform itself.
-
-It's a cycle we've seen before in other tech industries, but never at this speed or with this reach.
-
 ## The Tools That Change Everything
 
 ### Apps SDK: The End of "Going to a Website"
