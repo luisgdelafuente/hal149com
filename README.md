@@ -151,7 +151,8 @@ Objective: add a layer of interactivity in order for the user to customize web´
 - [x] 2.1.1 Content update date 
 
 ### Phase 2.2: Optimization
-The objetive is to reach Google Test Optimizacion 100% mobile+desktop
+Objetive: Google Test 100% mobile+desktop and fix style issues
+- [] 2.2.1 Table fonts sizes fix 
 
 
 
