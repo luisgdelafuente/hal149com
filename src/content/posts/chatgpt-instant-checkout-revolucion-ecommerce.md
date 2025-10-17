@@ -18,7 +18,7 @@ ChatGPT tiene un problema. A pesar de contar con 800 millones de usuarios y 20 m
 
 La solución no es simplemente cobrar más a los usuarios. OpenAI está transformando ChatGPT de un simple chatbot en una **plataforma de comercio y publicidad completa**. Y esto va a cambiar las reglas del juego para todos los negocios digitales.
 
-## Una experiencia de compra sin fricción
+## ChatGPT Instant Checkout: experiencia de compra sin fricción
 
 La función **Instant Checkout de ChatGPT** permite que los usuarios compren productos, cursos o recursos directamente desde una conversación, sin abandonar el chat. Esta integración elimina los pasos intermedios y mantiene al usuario enfocado, lo que puede aumentar significativamente la tasa de conversión y reducir el abandono del carrito.
 
