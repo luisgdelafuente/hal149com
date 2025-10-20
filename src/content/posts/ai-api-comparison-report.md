@@ -15,7 +15,6 @@ esSlug: "ai-api-informe-comparativo"
 
 This report focuses on AI platforms that offer **real-time internet access** through their APIs, plus Google Gemini as a notable exception. These platforms enable developers to build applications with current and up-to-date information.
 
----
 
 ## 1. Anthropic (Claude)
 
@@ -44,7 +43,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - Web Search Tool: https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool
 - Pricing Details: https://docs.claude.com/en/docs/about-claude/pricing
 
----
 
 ## 2. OpenAI
 
@@ -74,7 +72,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - Web Search Guide: https://platform.openai.com/docs/guides/tools-web-search
 - Pricing: https://openai.com/api/pricing/
 
----
 
 ## 3. Google Gemini
 
@@ -102,7 +99,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - Quickstart: https://ai.google.dev/gemini-api/docs/quickstart
 - Pricing: https://ai.google.dev/gemini-api/docs/pricing
 
----
 
 ## 4. Perplexity
 
@@ -131,7 +127,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - Getting Started: https://docs.perplexity.ai/getting-started
 - Pricing: https://docs.perplexity.ai/getting-started/pricing
 
----
 
 ## 5. Grok (xAI)
 
@@ -163,8 +158,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - Live Search Guide: https://docs.x.ai/docs/guides/live-search
 - Models & Pricing: https://docs.x.ai/docs/models
 
----
-
 ## Quick Comparison Table
 
 | Platform | Internet Access | Free Tier | Lowest Cost | Web Search Cost | Best For |
@@ -177,7 +170,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 
 *⭐ = Purpose-built for web search*
 
----
 
 ## Internet Access Summary
 
@@ -190,7 +182,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 ### **No Internet Access:**
 5. **Gemini** - Included as exception due to free tier and performance
 
----
 
 ## Recommendations
 
@@ -211,7 +202,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 - **OpenAI o3** with web search - Complex problem-solving with current data
 - **Claude Opus** with web search - Deep analysis with citations
 
----
 
 ## Key Insights
 
@@ -225,7 +215,6 @@ This report focuses on AI platforms that offer **real-time internet access** thr
 
 5. **Gemini = No Web But Best Free Tier**: Trade-off between current info and cost
 
----
 
 *Report compiled: September 2025*  
 *Focus: Web-enabled AI platforms only (+ Gemini exception)*  
