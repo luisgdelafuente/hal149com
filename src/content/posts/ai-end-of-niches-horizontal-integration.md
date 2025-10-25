@@ -36,9 +36,7 @@ Each one charges their fee. Each one works in their silo. No one sees the comple
 
 This is where artificial intelligence changes the rules of the game. AI isn't just another tool in the specialist's arsenal; it's the glue that enables integrating end-to-end processes that previously required multiple experts.
 
-Consider digital marketing, a sector fragmented by design:
-
-**The old model (vertical):**
+**Consider the old model (vertical):**
 For example, HR: Recruitment (posting offers and filtering CVs), onboarding (incorporation processes), training (courses and certifications), performance evaluation (annual reviews), payroll (payments and benefits), etc.
 
 **The new model (horizontal with AI):**
