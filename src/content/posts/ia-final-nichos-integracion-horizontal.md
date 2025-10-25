@@ -76,30 +76,6 @@ Estos nuevos perfiles tienen características distintivas:
 - Miden resultados en términos de negocio, no métricas técnicas
 - Entienden que la tecnología es medio, no fin
 
-## El Caso del Marketing Digital: De Silos a Sistemas
-
-El marketing digital es el ejemplo perfecto de una industria que se organizó en verticales ultra-competitivas, pero cuyo valor real está en la integración horizontal.
-
-**La fragmentación actual:**
-
-Cada especialidad se ha convertido en su propia industria:
-- <a href="https://moz.com/beginners-guide-to-seo" target="_blank" rel="nofollow">SEO</a> con sus propias herramientas, métricas y expertos
-- <a href="https://www.wordstream.com/ppc" target="_blank" rel="nofollow">PPC</a> como disciplina completamente separada
-- Content marketing como otro silo independiente
-- Social media como universo paralelo
-
-Cada uno compitiendo por presupuesto y atención, cada uno con su propio stack tecnológico, cada uno midiendo su propio éxito sin ver el panorama completo.
-
-**La integración necesaria:**
-
-Pero cuando un CEO pregunta "¿cuántos clientes nos trajo el marketing este trimestre?", la respuesta requiere integración. Necesita ver:
-- Cómo el contenido SEO alimenta las campañas de pago
-- Cómo las redes sociales amplifican el alcance orgánico
-- Cómo cada punto de contacto contribuye al embudo de ventas. 
-- Qué inversión total generó qué resultado específico
-
-La IA hace posible esta visión integrada. Plataformas como <a href="https://www.hubspot.com/products/marketing" target="_blank" rel="nofollow">HubSpot</a> o <a href="https://www.salesforce.com/products/marketing-cloud/overview/" target="_blank" rel="nofollow">Salesforce Marketing Cloud</a> ya están incorporando IA para conectar todos estos puntos automáticamente.
-
 ## Por Qué Ahora: Las Ventajas Dependen de Datos y Procesos
 
 La efectividad de la IA depende de la calidad de los datos y procesos con los que es alimentada. Y aquí está el problema con los silos: **la miopía generada por la especialización vertical impide ver las oportunidades de optimización del sistema completo**.
@@ -137,20 +113,11 @@ Ahora puedes implementar:
 
 Mantener la fragmentación vertical tiene costes que van más allá de lo obvio:
 
-**Coste de coordinación:**
-Cada proveedor adicional requiere reuniones, alineación, seguimiento. El tiempo de management se multiplica.
-
-**Coste de integración técnica:**
-Hacer que diferentes herramientas de diferentes proveedores se comuniquen es un proyecto en sí mismo.
-
-**Coste de datos fragmentados:**
-Sin visión unificada, las decisiones se toman con información incompleta o contradictoria.
-
-**Coste de oportunidad:**
-Mientras coordinas proveedores, tu competencia que tiene sistemas integrados ya está ejecutando y optimizando.
-
-**Coste de obsolescencia:**
-Los especialistas ultra-enfocados pueden quedarse obsoletos cuando cambia su nicho específico.
+- **Coste de coordinación:** Cada proveedor adicional requiere reuniones, alineación, seguimiento. El tiempo de management se multiplica.
+- **Coste de integración técnica:** Hacer que diferentes herramientas de diferentes proveedores se comuniquen es un proyecto en sí mismo.
+- **Coste de datos fragmentados:** Sin visión unificada, las decisiones se toman con información incompleta o contradictoria.
+- **Coste de oportunidad:** Mientras coordinas proveedores, tu competencia que tiene sistemas integrados ya está ejecutando y optimizando.
+- **Coste de obsolescencia:** Los especialistas ultra-enfocados pueden quedarse obsoletos cuando cambia su nicho específico.
 
 ## El Futuro Pertenece a los Integradores
 
