@@ -2,7 +2,7 @@
 title: "ChatGPT Instant Checkout: E-commerce Revolution?"
 description: "OpenAI transforms ChatGPT into a complete commerce platform. With 800M users but no profitability, Instant Checkout and a $25B advertising ecosystem change the rules of digital e-commerce."
 date: 2025-10-03
-updated: 2025-10-17
+updated: 2025-10-05
 author: "Luis García de la Fuente"
 image: "/blog-images/chatgpt-instant-checkout-ecommerce-revolution.webp"
 featured: true
