@@ -6,6 +6,7 @@ author: "Luis García de la Fuente"
 image: "/blog-images/ai-end-of-niches.webp"
 featured: true
 lang: "es"
+enSlug: "ai-end-of-niches-horizontal-integration"
 ---
 
 # IA y el Final de los Nichos en la Gestión Empresarial: Llega la Integración Horizontal
