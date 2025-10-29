@@ -6,7 +6,7 @@ author: "Luis García de la Fuente"
 image: "/blog-images/ai-will-kill-seo.webp"
 featured: true
 lang: "es"
-esSlug: "ai-presence-matters-reasons"
+enSlug: "ai-presence-matters-reasons"
 ---
 
 # La Gran Mentira de la Visibilidad IA
