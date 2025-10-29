@@ -1,7 +1,7 @@
 ---
 title: "La presencia en IA importa, pero no por lo que te están contando."
 description: "La gente no quiere ver diez enlaces azules para después investigar cuál es el mejor. Quieren que alguien —o algo— les diga directamente qué comprar, qué contratar, qué hacer."
-date: 2025-01-28
+date: 2025-10-28
 author: "Luis García de la Fuente"
 image: "/blog-images/ai-will-kill-seo.webp"
 featured: true
