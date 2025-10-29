@@ -1,7 +1,7 @@
 ---
 title: "AI Presence Matters, But Not for the Reasons They're Telling You."
 description: "People don't want to see ten blue links and then research which one is best. They want someone—or something—to tell them directly what to buy, what to hire, what to do."
-date: 2024-01-28
+date: 2025-01-28
 author: "Luis García de la Fuente"
 image: "/blog-images/ai-will-kill-seo.webp"
 featured: true
