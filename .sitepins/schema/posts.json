@@ -60,6 +60,15 @@
       "type": "string",
       "value": "",
       "defaultValue": ""
+    },
+    {
+      "name": "en_slug",
+      "label": "EnSlug",
+      "type": "string",
+      "value": "",
+      "description": "",
+      "isRequired": false,
+      "defaultValue": ""
     }
   ]
 }
