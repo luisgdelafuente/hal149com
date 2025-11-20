@@ -4,7 +4,7 @@ description: >-
   Gemini 3 is Google's latest and most advanced AI model, marking a new era of
   intelligence with state-of-the-art reasoning, multimodal understanding, and
   grounded tool integration. 
-date: ''
+date: '11-20-2025'
 author: Luis García de la Fuente
 image: /assets/blog-images/ai-presence-tracking.webp
 featured: false
