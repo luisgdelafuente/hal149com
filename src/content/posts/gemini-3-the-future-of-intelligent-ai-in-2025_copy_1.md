@@ -7,7 +7,7 @@ author: Luis García de la Fuente
 image: /assets/blog-images/ai-presence-tracking.webp
 featured: false
 lang: es
-enSlug: gemini-3-the-future-of-intelligent-ai-in-2025
+EnSlug: gemini-3-the-future-of-intelligent-ai-in-2025
 ---
 Gemini 3 es el modelo de IA más avanzado de Google, marcando una nueva era de inteligencia con un razonamiento de última generación, comprensión multimodal e integración con herramientas fundamentadas. Lanzado a finales de 2025, Gemini 3 supera a su predecesor, Gemini 2.5 Pro, y a la competencia actual, estableciendo nuevos estándares en rendimiento de IA y aplicabilidad real.
 
