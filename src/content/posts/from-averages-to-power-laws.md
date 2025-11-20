@@ -6,7 +6,7 @@ author: "Luis García de la Fuente"
 image: "/blog-images/from-averages-to-exponential"
 featured: true
 lang: "en"
-enSlug: "de-promedios-a-exponencial"
+esSlug: "de-promedios-a-exponencial"
 ---
 We built an entire civilization around the concept of average. Bell curves. Normal distributions. The comforting idea that most of us cluster around the middle, and that being slightly better than median was enough.
 
