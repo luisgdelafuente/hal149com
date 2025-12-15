@@ -8,9 +8,7 @@ featured: true
 lang: "es"
 enSlug: "from-averages-to-power-laws"
 ---
-Hemos construido una civilización entera alrededor del concepto de promedio. Curvas de campana. Distribuciones normales. La idea reconfortante de que la mayoría nos agrupamos alrededor del centro, y que estar ligeramente por encima de la mediana es suficiente.
-
-Ese mundo está desapareciendo.
+Hemos construido una civilización entera alrededor del concepto de promedio. Curvas de campana. Distribuciones normales. La idea reconfortante de que la mayoría nos agrupamos alrededor del centro, y que estar ligeramente por encima de la mediana es suficiente. Pero ese mundo está desapareciendo.
 
 ## Bienvenidos al Mundo de las Leyes Exponenciales
 
