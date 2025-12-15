@@ -40,31 +40,19 @@ const currentContent = legalContent;
         <!-- Privacy Policy Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.privacy_policy?.title || "Privacy Policy"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.privacy_policy?.content || "This Privacy Policy describes how HAL149 (\"we,\" \"us,\" or \"our\") collects, uses, and protects your personal information when you use our AI consulting services and visit our website."}
-            </p>
-          </div>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.privacy_policy?.content || "This Privacy Policy describes how HAL149 (\"we,\" \"us,\" or \"our\") collects, uses, and protects your personal information when you use our AI consulting services and visit our website."} />
         </div>
 
         <!-- Terms of Service Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.terms_of_service?.title || "Terms of Service"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.terms_of_service?.content || "These Terms of Service (\"Terms\") govern your use of HAL149's AI consulting services and website. By accessing or using our services, you agree to be bound by these Terms."}
-            </p>
-          </div>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.terms_of_service?.content || "These Terms of Service (\"Terms\") govern your use of HAL149's AI consulting services and website. By accessing or using our services, you agree to be bound by these Terms."} />
         </div>
 
         <!-- Cookie Policy Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.cookie_policy?.title || "Cookie Policy"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.cookie_policy?.content || "Our website uses cookies and similar technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from."}
-            </p>
-          </div>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.cookie_policy?.content || "Our website uses cookies and similar technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from."} />
         </div>
 
         <!-- Call to Action Section -->
