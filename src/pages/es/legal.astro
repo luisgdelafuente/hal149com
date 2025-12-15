@@ -40,30 +40,19 @@ const currentContent = legalContent;
         <!-- Privacy Policy Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.privacy_policy?.title || "Política de Privacidad"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.privacy_policy?.content || "Esta Política de Privacidad describe cómo HAL149 (\"nosotros,\" \"nos,\" o \"nuestro\") recopila, utiliza y protege su información personal cuando utiliza nuestros servicios de consultoría en IA y visita nuestro sitio web."}
-            </p>
-          </div>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.privacy_policy?.content || "Esta Política de Privacidad describe cómo HAL149 (\"nosotros,\" \"nos,\" o \"nuestro\") recopila, utiliza y protege su información personal cuando utiliza nuestros servicios de consultoría en IA y visita nuestro sitio web."} />
         </div>
 
         <!-- Terms of Service Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.terms_of_service?.title || "Términos de Servicio"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.terms_of_service?.content || "Estos Términos de Servicio (\"Términos\") rigen su uso de los servicios de consultoría en IA de HAL149 y del sitio web. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estos Términos."}
-            </p>
-          </div>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.terms_of_service?.content || "Estos Términos de Servicio (\"Términos\") rigen su uso de los servicios de consultoría en IA de HAL149 y del sitio web. Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estos Términos."} />
         </div>
 
         <!-- Cookie Policy Section -->
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-bs-foreground-light">{currentContent.cookie_policy?.title || "Política de Cookies"}</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="bs-body-text text-bs-foreground-light leading-relaxed text-lg mb-6">
-              {currentContent.cookie_policy?.content || "Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio y entender de dónde vienen nuestros visitantes."}
-            </p>
+          <div class="prose prose-lg max-w-none prose-invert prose-headings:text-bs-foreground-light prose-p:text-bs-foreground-light prose-strong:text-bs-foreground-light prose-a:text-bs-primary prose-a:no-underline hover:prose-a:underline prose-ul:text-bs-foreground-light prose-li:text-bs-foreground-light" set:html={currentContent.cookie_policy?.content || "Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio y entender de dónde vienen nuestros visitantes."} />
           </div>
         </div>
 
