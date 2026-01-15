@@ -1,8 +1,11 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
+import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  output: 'static',
+  // Hybrid mode: static by default, SSR for blog pages
+  output: 'hybrid',
+  adapter: netlify(),
   site: 'https://hal149.com', // HAL149 domain
   build: {
     // Aggressive CSS bundling to eliminate render-blocking
