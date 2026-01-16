@@ -3,8 +3,8 @@ import tailwindcss from '@tailwindcss/vite'
 import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  // Hybrid mode: static by default, SSR for blog pages
-  output: 'hybrid',
+  // Server mode: SSR by default, use prerender = true for static pages
+  output: 'server',
   adapter: netlify(),
   site: 'https://hal149.com', // HAL149 domain
   build: {
