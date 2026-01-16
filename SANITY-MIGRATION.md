@@ -140,6 +140,7 @@ hal149com/
 ├── src/
 │   ├── lib/
 │   │   └── sanity.ts         # Sanity client & queries
+│   ├── assets/               # Static assets (fonts, images, CSS)
 │   ├── pages/
 │   │   ├── posts/
 │   │   │   ├── [slug].astro  # SSR individual post (EN)
@@ -154,6 +155,7 @@ hal149com/
 │       └── LatestPostsSection.es.astro # Homepage posts (ES)
 ├── scripts/
 │   └── migrate-to-sanity.js  # Migration script
+├── markdown-backup/          # Original markdown posts (for migration)
 ├── sanity.config.ts          # Sanity configuration
 ├── sanity.cli.ts             # Sanity CLI config
 ├── .env.example              # Environment template

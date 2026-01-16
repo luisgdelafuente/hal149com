@@ -1,7 +1,7 @@
 /**
  * Migration Script: Markdown to Sanity CMS
  *
- * This script reads all markdown blog posts from /src/content/posts/
+ * This script reads all markdown blog posts from /markdown-backup/
  * and uploads them to Sanity CMS.
  *
  * Usage:
@@ -58,8 +58,8 @@ const client = createClient({
   useCdn: false,
 })
 
-// Posts directory
-const POSTS_DIR = path.join(__dirname, '..', 'src', 'content', 'posts')
+// Posts directory (markdown backup for migration)
+const POSTS_DIR = path.join(__dirname, '..', 'markdown-backup')
 
 /**
  * Parse markdown frontmatter and content
