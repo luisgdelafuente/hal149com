@@ -39,26 +39,7 @@ export default defineConfig({
       }
     }
   },
-  content: {
-    collections: {
-      posts: {
-        schema: {
-          type: 'content',
-          fields: {
-            title: { type: 'string', required: true },
-            description: { type: 'string', required: true },
-            date: { type: 'date', required: true },
-            author: { type: 'string', required: true },
-            tags: { type: 'array', of: { type: 'string' }, required: false },
-            image: { type: 'string', required: false },
-            lang: { type: 'string', required: true },
-            enSlug: { type: 'string', required: false },
-            esSlug: { type: 'string', required: false }
-          }
-        }
-      }
-    }
-  },
+  // Content collections disabled - blog content now served from Sanity CMS
   experimental: {
     fonts: [{
       provider: "local",
