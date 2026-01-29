@@ -3,7 +3,6 @@ title: "La IA Juega con la Entropía para Recrear la Realidad"
 description: "El proceso fundamental detrás de la IA generativa no es solo tecnología avanzada, sino una recreación filosófica de cómo percibimos y modelamos la realidad."
 date: 2025-05-02
 author: "Luis García de la Fuente"
-image: "/blog-images/generative-ai-entropy-reality.webp"
 featured: true
 lang: "es"
 enSlug: "generative-ai-entropy"

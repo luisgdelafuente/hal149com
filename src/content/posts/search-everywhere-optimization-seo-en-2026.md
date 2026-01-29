@@ -3,7 +3,6 @@ title: "Search Everywhere Optimization: La Nueva Estrategia SEO en 2026"
 description: "La IA construye un grafo de entidades que conecta tu marca con productos, servicios y expertise. Cuanto más clara sea esa conexión, más te citará cuando genere respuestas."
 date: 2025-09-26
 author: "Luis García de la Fuente"
-image: "/blog-images/search-everywhere-optimization.webp"
 featured: true
 lang: "es"
 enSlug: "search-everywhere-optimization-seo-in-2026"

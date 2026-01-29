@@ -3,7 +3,6 @@ title: "Search Everywhere Optimization: The New SEO Strategy in 2026"
 description: "AI builds an entity graph that connects your brand with products, services and expertise. The clearer that connection, the more it will cite you when generating responses."
 date: 2025-09-26
 author: "Luis García de la Fuente"
-image: "/blog-images/search-everywhere-optimization.webp"
 featured: true
 lang: "en"
 esSlug: "search-everywhere-optimization-seo-en-2026"

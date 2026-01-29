@@ -3,7 +3,6 @@ title: "From Niches to Systems. The Return of the Generalists"
 description: "AI is not just another tool. It's the change that reverses decades of hyper-specialization and returns power to those who understand complete systems."
 date: 2025-10-24
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-end-of-niches.webp"
 featured: true
 lang: "en"
 esSlug: "ia-final-nichos-integracion-horizontal"

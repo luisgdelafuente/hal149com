@@ -3,7 +3,6 @@ title: "La IA en el Futuro de la Educación: De la Teoría a la Práctica"
 description: "La IA ha roto fundamentalmente el modelo de curso tradicional. Nuevos modelos de negocio, enfoques de aprendizaje, estrategias y oportunidades en este nuevo escenario."
 date: 2025-08-28T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/future-education-ai.webp"
 featured: true
 lang: "es"
 enSlug: "ai-education-future"

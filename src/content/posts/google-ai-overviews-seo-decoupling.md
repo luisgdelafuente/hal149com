@@ -3,7 +3,6 @@ title: "SEO Decoupling: Why your Traffic is Disappearing (And what to do)"
 description: "Google's AI Overviews are radically changing search. Organic traffic is evaporating because the search engine no longer needs your click."
 date: 2025-06-22
 author: "Luis García de la Fuente"
-image: "/blog-images/seo-decoupling.webp"
 featured: true
 lang: "en"
 esSlug: "google-ai-overviews-desacoplamiento-seo"

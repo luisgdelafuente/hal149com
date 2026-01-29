@@ -3,7 +3,6 @@ title: "Power Laws Are Replacing Averages"
 description: "We built an entire civilization around the concept of average. Bell curves. Normal distribution. That world is disappearing."
 date: 2025-11-20T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/from-averages-to-exponential"
 featured: true
 lang: "en"
 esSlug: "de-promedios-a-exponencial"

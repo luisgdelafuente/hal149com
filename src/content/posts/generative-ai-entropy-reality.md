@@ -3,7 +3,6 @@ title: "AI Plays with Entropy to Recreate Reality"
 description: "The fundamental process behind generative AI is not just advanced technology, but a philosophical recreation of how we perceive and model reality."
 date: 2025-05-02
 author: "Luis García de la Fuente"
-image: "/blog-images/generative-ai-entropy-reality.webp"
 featured: true
 lang: "en"
 esSlug: "ia-generativa-entropia-realidad"

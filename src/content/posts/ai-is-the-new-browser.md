@@ -3,7 +3,6 @@ title: "Is AI Becoming the New Browser?"
 description: "The www was built in an era of scarce information and the need to navigate to find, but that has changed."
 date: 2025-10-16
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-new-browser.webp"
 featured: true
 lang: "en"
 esSlug: "ia-es-el-nuevo-navegador"

@@ -3,7 +3,6 @@ title: "AI Marketing for Industrial Companies"
 description: "In industrial sectors, where products are complex and sales cycles are long, AI isn't just a competitive edge—it's a strategic necessity."
 date: 2025-09-23T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-industrial-marketing.webp"
 featured: true
 lang: "en"
 esSlug: "marketing-ia-empresas-industriales"

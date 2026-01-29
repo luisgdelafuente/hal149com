@@ -3,7 +3,6 @@ title: "Las Leyes de Potencia Están Reemplazando los Promedios"
 description: "Hemos construido una civilización entera alrededor de la idea reconfortante de que la mayoría nos agrupamos alrededor del centro, y que estar ligeramente por encima de la mediana es suficiente."
 date: 2025-11-20T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/from-averages-to-exponential"
 featured: true
 lang: "es"
 enSlug: "from-averages-to-power-laws"

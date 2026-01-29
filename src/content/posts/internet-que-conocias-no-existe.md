@@ -3,7 +3,6 @@ title: "El internet que conocías ya no existe"
 description: "En los últimos 6 meses ha cambiado más que en toda la década anterior. Y si tu negocio sigue dependiendo del tráfico orgánico, estás en problemas."
 date: 2025-09-15
 author: "Luis García de la Fuente"
-image: "/blog-images/changes-google-ia.webp"
 featured: true
 lang: "es"
 enSlug: "internet-you-knew-no-longer-exists"

@@ -3,7 +3,6 @@ title: "Inteligencia Artificial: ¿Burbuja o Valor Real?"
 description: "Las grandes tech están creando un ecosistema de inversiones mutuas valorado en trillones. Análisis de la dinámica actual y lecciones de la burbuja puntocom."
 date: 2025-10-10
 author: "Luis García de la Fuente"
-image: "/blog-images/the-ai-bubble.webp"
 featured: true
 lang: "es"
 enSlug: "ai-bubble-real-value"

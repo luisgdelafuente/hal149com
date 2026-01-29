@@ -3,7 +3,6 @@ title: "Artificial Intelligence: Bubble or Real Value?"
 description: "Big tech companies are creating an ecosystem of mutual investments valued in trillions. Analysis of current dynamics and lessons from the dot-com bubble."
 date: 2025-10-10
 author: "Luis García de la Fuente"
-image: "/blog-images/the-ai-bubble.webp"
 featured: true
 lang: "en"
 esSlug: "ia-burbuja-valor-real"
