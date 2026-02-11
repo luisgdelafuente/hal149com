@@ -3,7 +3,6 @@ title: "AI in the Future of Education: From Theory to Practice"
 description: "AI has fundamentally broken the traditional course model. Discover the new business models, learning approaches, and strategies that actually work in the age of intelligent machines."
 date: 2025-08-28T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/future-education-ai.webp"
 featured: true
 lang: "en"
 esSlug: "ia-futuro-educacion"

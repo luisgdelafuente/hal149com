@@ -3,7 +3,6 @@ title: "Marketing IA para Empresas Industriales"
 description: "En sectores industriales, donde los productos son complejos y los ciclos de venta largos, la IA no es solo una ventaja competitiva—es una necesidad estratégica."
 date: 2025-09-23T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-industrial-marketing.webp"
 featured: true
 lang: "es"
 enSlug: "ai-marketing-industrial-companies"

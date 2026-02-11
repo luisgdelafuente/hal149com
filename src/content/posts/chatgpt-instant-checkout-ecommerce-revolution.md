@@ -4,7 +4,6 @@ description: "OpenAI transforms ChatGPT into a complete commerce platform. With 
 date: 2025-10-03
 updated: 2025-10-05
 author: "Luis García de la Fuente"
-image: "/blog-images/chatgpt-instant-checkout-ecommerce-revolution.webp"
 featured: true
 lang: "en"
 esSlug: "chatgpt-instant-checkout-revolucion-ecommerce"

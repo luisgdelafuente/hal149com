@@ -3,7 +3,6 @@ title: "La Revolución de la IA en 2024: ¿Qué Sigue para los Negocios?"
 description: "El impacto transformador de la IA en las operaciones empresariales, desde la automatización hasta la toma de decisiones; lo que el futuro depara para las organizaciones que adoptan la inteligencia artificial."
 date: 2024-01-15
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-revolution-2024.webp"
 featured: true
 lang: "es"
 enSlug: "ai-revolution-2024"

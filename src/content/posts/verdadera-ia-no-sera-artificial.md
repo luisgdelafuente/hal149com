@@ -3,7 +3,6 @@ title: "La verdadera IA no tendrá nada de artificial"
 description: "Examinando las narrativas simplistas sobre la IA y por qué el término 'inteligencia artificial' debería abandonarse en favor de una comprensión más matizada de la inteligencia."
 date: 2025-08-24
 author: "Luis García de la Fuente"
-image: "/blog-images/true-ai-no-artificial.webp"
 featured: true
 lang: "es"
 enSlug: "true-ai-no-artificial"

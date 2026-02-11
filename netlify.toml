@@ -6,6 +6,36 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--no-frozen-lockfile"
 
+# 301 Redirects to epicaworks.com
+[[redirects]]
+  from = "/es/posts/search-everywhere-optimization-seo-en-2026/"
+  to = "https://epicaworks.com/blog/search-everywhere-optimization-estrategia-seo-en-2026"
+  status = 301
+
+[[redirects]]
+  from = "/posts/search-everywhere-optimization-seo-in-2026/"
+  to = "https://epicaworks.com/blog/search-everywhere-optimization-estrategia-seo-en-2026"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/internet-que-conocias-no-existe/"
+  to = "https://epicaworks.com/blog/el-internet-que-conocias-ya-no-existe"
+  status = 301
+
+[[redirects]]
+  from = "/posts/internet-you-knew-no-longer-exists/"
+  to = "https://epicaworks.com/blog/el-internet-que-conocias-ya-no-existe"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/google-ai-overviews-desacoplamiento-seo/"
+  to = "https://epicaworks.com/blog/desacoplamiento-seo-por-que-tu-trafico-desaparece"
+  status = 301
+
+[[redirects]]
+  from = "/posts/google-ai-overviews-seo-decoupling/"
+  to = "https://epicaworks.com/blog/desacoplamiento-seo-por-que-tu-trafico-desaparece"
+  status = 301
 
 [[redirects]]
   from = "/*"

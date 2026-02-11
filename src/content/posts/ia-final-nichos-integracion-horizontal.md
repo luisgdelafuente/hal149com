@@ -3,7 +3,6 @@ title: "De los Nichos a los Sistemas. El Retorno de los Generalistas"
 description: "La IA no es una herramienta más. Es el cambio que invierte décadas de hiperespecialización y devuelve el poder a quienes entienden sistemas completos."
 date: 2025-10-24
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-end-of-niches.webp"
 featured: true
 lang: "es"
 enSlug: "ai-end-of-niches-horizontal-integration"

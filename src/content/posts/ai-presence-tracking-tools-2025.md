@@ -4,7 +4,6 @@ description: "ChatGPT, Perplexity, and Gemini are changing the rules. If you don
 date: 2025-10-08
 updated: 2025-10-15
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-presence-tracking.webp"
 featured: true
 lang: "en"
 esSlug: "herramientas-seguimiento-ia-2025"

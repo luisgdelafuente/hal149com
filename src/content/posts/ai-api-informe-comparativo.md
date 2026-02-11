@@ -3,7 +3,6 @@ title: "Informe Comparativo de APIs de Plataformas de IA 2025"
 description: "Este informe se centra en plataformas de IA que ofrecen **acceso a internet en tiempo real** a través de sus APIs, además de Google Gemini como excepción notable."
 date: 2025-09-22T00:00:00.000Z
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-api-comparison-report.webp"
 featured: true
 lang: "es"
 esSlug: "ai-api-comparison-report"

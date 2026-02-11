@@ -3,7 +3,6 @@ title: "Ética de la IA y Responsabilidad: Construyendo Confianza en la Intelige
 description: "La importancia crítica del desarrollo ético de la IA, los desafíos del sesgo y la transparencia. Cómo las organizaciones pueden construir sistemas de inteligencia artificial confiables."
 date: 2024-01-25
 author: "Luis García de la Fuente"
-image: "/blog-images/ai-ethics-responsibility.webp"
 featured: true
 lang: "es"
 enSlug: "ai-ethics-responsibility"
