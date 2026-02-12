@@ -84,16 +84,6 @@
   },
   "case_studies": [
     {
-      "title": "Gen Scoring",
-      "sector": "AI SEO",
-      "content": "How does my business appear in AIs? What ranking am I getting and who is being cited more and better than me? Gen Scoring is a webapp designed to measure and optimize how businesses appear in artificial intelligence recommendations, and discover who is being cited more effectively on these platforms.",
-      "case_study_link": "#",
-      "cta": "Learn More",
-      "image": "/content-images/genscoringthumb.png",
-      "image_alt": "Gen Scoring dashboard interface",
-      "bg": "bg-gradient-to-r from-blue-500 to-purple-600"
-    },
-    {
       "title": "Epica Works",
       "sector": "Customer Acquisition",
       "content": "Epica Works is the AI to automate customer acquisition for your business. Epica analyzes your website or business model in one minute, and designs the optimal strategy to attract more customers or meet your marketing goals, saving time and resources.",
