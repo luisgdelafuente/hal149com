@@ -38,6 +38,56 @@
   status = 301
 
 [[redirects]]
+  from = "/es/posts/claves-citado-chatgpt-modelos-ia/"
+  to = "https://epicaworks.com/blog/6-claves-para-ser-citado-por-chatgpt-y-otros-modelos-ia"
+  status = 301
+
+[[redirects]]
+  from = "/posts/keys-cited-chatgpt-ai-models/"
+  to = "https://epicaworks.com/blog/6-claves-para-ser-citado-por-chatgpt-y-otros-modelos-ia"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/formato-llms-txt/"
+  to = "https://epicaworks.com/blog/llmstxt-el-nuevo-formato-para-la-era-de-la-ia"
+  status = 301
+
+[[redirects]]
+  from = "/posts/llms-txt-file/"
+  to = "https://epicaworks.com/blog/llmstxt-el-nuevo-formato-para-la-era-de-la-ia"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/marketing-ia-empresas-industriales/"
+  to = "https://epicaworks.com/blog/marketing-ia-para-empresas-industriales"
+  status = 301
+
+[[redirects]]
+  from = "/posts/ai-marketing-industrial-companies/"
+  to = "https://epicaworks.com/blog/marketing-ia-para-empresas-industriales"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/presencia-ia-importa-motivos/"
+  to = "https://epicaworks.com/blog/la-presencia-en-ia-importa-pero-no-por-lo-que-te-estan-contando"
+  status = 301
+
+[[redirects]]
+  from = "/posts/ai-presence-matters-reasons/"
+  to = "https://epicaworks.com/blog/la-presencia-en-ia-importa-pero-no-por-lo-que-te-estan-contando"
+  status = 301
+
+[[redirects]]
+  from = "/es/posts/herramientas-seguimiento-ia-2025/"
+  to = "https://epicaworks.com/blog/herramientas-de-seguimiento-de-presencia-ia-en-2025"
+  status = 301
+
+[[redirects]]
+  from = "/posts/ai-presence-tracking-tools-2025/"
+  to = "https://epicaworks.com/blog/herramientas-de-seguimiento-de-presencia-ia-en-2025"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
